@@ -1,0 +1,11 @@
+.footer{
+    background-color: $color_natural_head;
+    padding: 16px;
+
+
+    // Responsive
+    @media (min-width: 576px) {
+        padding-top: 40px;
+        padding-bottom: 20px;
+    }
+}
