@@ -1,0 +1,109 @@
+.navbar {
+    padding: 14px 16px;
+    background-color: $color_white;
+
+    &.sticky {
+        background-color: $color_white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
+        animation: sticky 0.5s;
+    }
+
+    &__brand {
+        img {
+            width: 100px;
+        }
+    }
+
+    &__toggler {
+        padding: 0;
+        border: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:focus {
+            box-shadow: none;
+        }
+
+        i {
+            width: 28px;
+            height: 28px;
+            padding: 6px;
+            border-radius: $radius_circle;
+            border: 1px solid $color_natural_head;
+            color: $color_natural_head;
+            font-size: 15px;
+        }
+
+        &:hover {
+
+            i {
+                border-color: $color_primary;
+                background-color: $color_primary;
+                color: $color_white;
+            }
+        }
+    }
+
+    .navbar-nav {
+        .nav-link {
+            border-bottom: 2px solid transparent;
+            font-weight: 500;
+
+            &.active,
+            &.show {
+                color: $color_primary;
+                border-color: $color_primary;
+            }
+        }
+    }
+
+    .dropdown-item {
+        font-weight: 400;
+
+        &:hover,
+        &:active {
+            background-color: $color_primary;
+            color: $color_white;
+        }
+    }
+
+    // Responsive
+    @media (min-width: 576px) {
+        padding-left: 8%;
+        padding-right: 8%;
+
+    }
+
+    @media (min-width: 768px) {
+        &__brand {
+            img {
+                width: 180px;
+            }
+        }
+    }
+
+    @media (min-width: 1200px) {
+        &__toggler {
+            display: none;
+        }
+
+        .navbar-nav {
+            .nav-link {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+
+        .dropdown-menu {
+            top: 55px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            border: none;
+        }
+    }
+}

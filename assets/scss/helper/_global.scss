@@ -1,0 +1,12 @@
+body{
+    background-color: $color_body;
+    color: $color_natural_description;
+    font-family: $font_open_sans;
+    font-size: 16px;
+}
+
+a{
+    text-decoration: none;
+    transition: $transition;
+    color: $color_primary;
+}

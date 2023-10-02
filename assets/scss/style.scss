@@ -1,0 +1,70 @@
+/*================================================================
+	
+	STYLESHEET INDEXING
+	|
+	|___helper
+	|	|___fonts
+	|	|___variables
+	|	|___global
+	|	|___animation
+	|
+	|___components
+	|	|___nav-top
+	|	|___input
+	|
+	|___layout
+	|	|___header
+	|	|___footer
+	|
+	|___ sections
+	|	|___
+	|
+	|___ END STYLESHEET INDEXING
+
+===================================================================*/
+
+
+/*----------------------------------
+  ~~~ Helper ~~~
+-----------------------------------*/
+
+/* Variables */
+@import 'helper/fonts';
+/* Variables */
+@import 'helper/variables';
+/* Global */
+@import 'helper/global';
+/* Animation */
+@import 'helper/animation';
+
+
+
+/*----------------------------------
+  ~~~ Components ~~~
+-----------------------------------*/
+@import 'components/input';
+@import 'components/nav-top';
+@import 'components/navbar';
+@import 'components/social';
+@import 'components/search-form';
+
+
+/*----------------------------------
+	~~~ Layout ~~~
+-----------------------------------*/
+
+/* Header */
+@import 'layout/header';
+/* Footer */
+@import 'layout/footer';
+
+
+
+/*----------------------------------
+	~~~ Sections ~~~
+-----------------------------------*/
+
+
+/*----------------------------------
+	~~~ Pages ~~~
+----------------------------------- */

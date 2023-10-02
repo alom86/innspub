@@ -1,0 +1,28 @@
+.social{
+ 
+    @media (min-width: 1200px) {
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+
+        &__link{
+            width: 24px;
+            height: 24px;
+            border: 1px solid $color_white;
+            border-radius: $radius_circle;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            i, svg{
+                font-size: 12px;
+            }
+            &:hover{
+                background-color: $color_white;
+                color: $color_natural_head;
+                svg path{
+                    fill: $color_natural_head;
+                }
+            }
+        }
+    }
+}
