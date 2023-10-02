@@ -1,6 +1,7 @@
 .navbar {
     padding: 14px 16px;
     background-color: $color_white;
+    box-shadow: $shadow_1;
 
     &.sticky {
         background-color: $color_white;
@@ -9,7 +10,7 @@
         left: 0;
         right: 0;
         z-index: 999;
-        animation: sticky 0.5s;
+        animation: sticky 0.3s;
     }
 
     &__brand {
@@ -50,6 +51,16 @@
     }
 
     .navbar-nav {
+        .dropdown-toggle{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            &::after{
+                margin-left: 6px;
+                transition: $transition;
+            }
+        }
         .nav-link {
             border-bottom: 2px solid transparent;
             font-weight: 500;
@@ -58,12 +69,23 @@
             &.show {
                 color: $color_primary;
                 border-color: $color_primary;
+
+                &::after{
+                    transform: rotate(180deg);
+                }
             }
         }
     }
 
+    .dropdown-menu {
+        border: none;
+        animation: $transition slide-top;
+    }
+
     .dropdown-item {
         font-weight: 400;
+        padding: 8px 16px;
+        border-bottom: 1px solid $color-secondary;
 
         &:hover,
         &:active {
@@ -93,6 +115,7 @@
         }
 
         .navbar-nav {
+            flex-direction: row;
             .nav-link {
                 padding-left: 10px;
                 padding-right: 10px;
@@ -100,10 +123,13 @@
         }
 
         .dropdown-menu {
+            position: absolute;
             top: 55px;
             border-top-left-radius: 0;
             border-top-right-radius: 0;
             border: none;
+            margin-top: 0;
+            border-top: 1px solid $color-secondary;
         }
     }
 }
