@@ -11,6 +11,10 @@
 	|___components
 	|	|___nav-top
 	|	|___input
+	|	|___navbar
+	|	|___social
+	|	|___search-form
+	|	|___offcanvas
 	|
 	|___layout
 	|	|___header
@@ -42,11 +46,12 @@
 /*----------------------------------
   ~~~ Components ~~~
 -----------------------------------*/
-@import 'components/input';
 @import 'components/nav-top';
+@import 'components/input';
 @import 'components/navbar';
 @import 'components/social';
 @import 'components/search-form';
+@import 'components/offcanvas';
 
 
 /*----------------------------------

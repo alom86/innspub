@@ -32,6 +32,25 @@
         background-color: $color_primary;
         width: 50%;
         font-size: 12px;
+
+        &::after{
+            -moz-border-bottom-colors: none;
+            -moz-border-left-colors: none;
+            -moz-border-right-colors: none;
+            -moz-border-top-colors: none;
+            -o-border-image: none;
+            border-image: none;
+            border-style: solid;
+            border-width: 20px 10px;
+            content: "";
+            height: 40px;
+            position: absolute;
+            right: 50%;
+            top: 0;
+            width: 0;
+            border-color: rgba(0, 0, 0, 0) $color_primary $color_primary rgba(0, 0, 0, 0);
+            display: block;
+        }
     }
     &__right-button{
         text-align: end;
@@ -79,6 +98,10 @@
             gap: 12px;
             padding-top: 8px;
             padding-bottom: 8px;
+            &::after{
+                height: 46px;
+                border-width: 24px 12px;
+            }
             a{
                 color: $color_white;
             }

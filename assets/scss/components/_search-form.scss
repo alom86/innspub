@@ -2,7 +2,8 @@
     display: flex;
     align-items: center;
     position: relative;
-    width: 190px;
+    width: 100%;
+    margin-bottom: 24px;
 
     &__input{
         border-radius: $radius_rounded;
@@ -15,5 +16,17 @@
             color: $color_natural_description;
             opacity: 50%;
         }
+    }
+
+    // responsive
+    @media (min-width: 576px) {
+        margin-bottom: 0;
+        width: 190px;
+    }
+    @media (min-width: 1200px) {
+        width: 170px;
+    }
+    @media (min-width: 1400px) {
+        width: 190px;
     }
 }
