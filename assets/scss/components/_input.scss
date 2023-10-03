@@ -24,3 +24,45 @@
         box-shadow: none;
     }
 }
+
+// btn
+.btn{
+    height: 36px;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 35px;
+    border-radius: $radius_rounded;
+    line-height: 1;
+    border: 1px solid transparent;
+    display: inline-flex;
+    align-items: center;
+}
+// btn_primary
+.btn_primary{
+    background-color: $color_primary;
+    color: $color_white;
+    &:hover, &:active{
+        background-color: $color_white !important;
+        color: $color_primary !important;
+        border-color: $color_primary !important;
+    }
+}
+// btn_secondary
+.btn_secondary{
+    background-color: $color_white ;
+    color: $color_primary;
+    border-color: $color_primary;
+    &:hover, &:active{
+        background-color: $color_primary !important;
+        color: $color_white !important;
+        border-color: $color_primary !important;
+    }
+}
+
+
+// Responsive
+@media (min-width: 768px) {
+    .btn{
+        height: 44px;
+    }
+}

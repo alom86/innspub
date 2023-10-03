@@ -11,15 +11,14 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        i, svg{
+        i{
             font-size: 12px;
             color: $color_white;
         }
         &:hover{
             background-color: $color_white;
-            color: $color_natural_head;
-            svg path{
-                fill: $color_natural_head;
+            i{
+                color: $color_natural_head;
             }
         }
     }
