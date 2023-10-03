@@ -4,7 +4,7 @@
     justify-content: space-between;
 
     &__left{
-        padding: 8px 0 8px 16px;
+        padding: 11px 0 11px 16px;
         background-color: $color_natural_head;
         width: 50%;
     }
@@ -41,9 +41,9 @@
             -o-border-image: none;
             border-image: none;
             border-style: solid;
-            border-width: 20px 10px;
+            border-width: 25px 15px;
             content: "";
-            height: 40px;
+            height: 50px;
             position: absolute;
             right: 50%;
             top: 0;
@@ -82,8 +82,8 @@
 
     @media (min-width: 1200px) { 
         &__left{
-            padding-top: 15px;
-            padding-bottom: 15px;
+            padding-top: 20px;
+            padding-bottom: 20px;
         }
         &__welcome-title{
             font-size: 13px;
@@ -99,8 +99,8 @@
             padding-top: 8px;
             padding-bottom: 8px;
             &::after{
-                height: 46px;
-                border-width: 24px 12px;
+                height: 56px;
+                border-width: 30px 15px;
             }
             a{
                 color: $color_white;

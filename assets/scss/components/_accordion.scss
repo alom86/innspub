@@ -1,0 +1,34 @@
+.accordion{
+    .accordion-item{}
+    .accordion-header{}
+    .accordion-button{
+        padding: 8px 16px;
+        gap: 2px;
+        font-weight: 600;
+        color: $color_natural_description;
+
+        &:not(.collapsed){
+            background-color: $color_primary;
+            color: $color_white;
+        }
+        &:focus{
+            box-shadow: none;
+        }
+        
+    }
+    .accordion-collapse{}
+    .accordion-body{
+        color: $color_natural_description;
+        a{
+            font-weight: 600;
+        }
+    }
+
+
+    // Responsive
+    @media (min-width: 576px) {
+        .accordion-button{
+            padding: 12px 18px;
+        }
+    }
+}

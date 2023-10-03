@@ -16,13 +16,15 @@
 	|	|___search-form
 	|	|___offcanvas
 	|	|___footer-item
+	|	|___accordion
 	|
 	|___layout
 	|	|___header
 	|	|___footer
 	|
 	|___ sections
-	|	|___
+	|	|___banner
+	|	|___about
 	|
 	|___ END STYLESHEET INDEXING
 
@@ -54,22 +56,21 @@
 @import 'components/search-form';
 @import 'components/offcanvas';
 @import 'components/footer-item';
+@import 'components/accordion';
 
 
 /*----------------------------------
 	~~~ Layout ~~~
 -----------------------------------*/
-
-/* Header */
 @import 'layout/header';
-/* Footer */
 @import 'layout/footer';
-
 
 
 /*----------------------------------
 	~~~ Sections ~~~
 -----------------------------------*/
+@import 'sections/banner';
+@import 'sections/about';
 
 
 /*----------------------------------

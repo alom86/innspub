@@ -2,6 +2,16 @@
     background-color: $color_natural_head;
     padding: 16px;
 
+    .social{
+        &__link{
+            &:hover{
+                background-color: $color_primary;
+                i{
+                    color: $color_white;
+                }
+            }
+        }
+    }
 
     // Responsive
     @media (min-width: 576px) {
