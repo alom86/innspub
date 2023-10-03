@@ -650,7 +650,7 @@ ul li::marker {
 	~~~ Sections ~~~
 -----------------------------------*/
 .banner {
-  background-image: url(/assets/images/banner/banner_bg_mobile.jpg);
+  background-image: url(../images/banner/banner_bg_mobile.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
