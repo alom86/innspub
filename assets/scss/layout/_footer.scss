@@ -1,12 +1,13 @@
-.footer{
+.footer {
     background-color: $color_natural_head;
     padding: 16px;
 
-    .social{
-        &__link{
-            &:hover{
+    .social {
+        &__link {
+            &:hover {
                 background-color: $color_primary;
-                i{
+
+                i {
                     color: $color_white;
                 }
             }

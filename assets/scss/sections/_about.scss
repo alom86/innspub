@@ -1,15 +1,16 @@
-.about{
+.about {
     background-color: $color_white;
-    
-    &__content{
+
+    &__content {
         margin-bottom: 40px;
     }
-    &__bg_shap{
+
+    &__bg_shap {
         display: none;
     }
 
     @media (min-width: 1200px) {
-        &__bg_shap{
+        &__bg_shap {
             display: block;
             position: absolute;
             right: -60px;
