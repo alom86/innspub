@@ -36,10 +36,15 @@ main{
 
 h2{
     font-size: 20px;
+    margin-bottom: 24px;
+    line-height: 22px;
+}
+h3{
+    font-size: 16px;
+}
+h2, h3{
     color: $color_natural_head;
     font-weight: 700;
-    margin-bottom: 16px;
-    line-height: 22px;
 }
 
 ul{
@@ -55,6 +60,10 @@ ul{
     }
 }
 
+img{
+    max-width: 100%;
+    height: auto;
+}
 
 
 // Responsive
