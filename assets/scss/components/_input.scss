@@ -1,9 +1,9 @@
-.form-control{
+.form-control {
     background-color: $color-secondary;
     border-color: transparent;
     padding: 8px 16px;
 
-    &:focus{
+    &:focus {
         box-shadow: none;
         border-color: $color_primary;
         border-color: $color_primary;
@@ -11,7 +11,7 @@
 }
 
 // close button
-.btn-close{
+.btn-close {
     color: $color_complementary;
     background: none;
     display: flex;
@@ -20,13 +20,13 @@
     font-size: 24px;
     opacity: 1;
 
-    &:focus{
+    &:focus {
         box-shadow: none;
     }
 }
 
 // btn
-.btn{
+.btn {
     height: 36px;
     font-size: 16px;
     font-weight: 500;
@@ -36,23 +36,30 @@
     border: 1px solid transparent;
     display: inline-flex;
     align-items: center;
+    transition: $transition;
 }
+
 // btn_primary
-.btn_primary{
+.btn_primary {
     background-color: $color_primary;
     color: $color_white;
-    &:hover, &:active{
+
+    &:hover,
+    &:active {
         background-color: $color_white !important;
         color: $color_primary !important;
         border-color: $color_primary !important;
     }
 }
+
 // btn_secondary
-.btn_secondary{
+.btn_secondary {
     background-color: $color_white ;
     color: $color_primary;
     border-color: $color_primary;
-    &:hover, &:active{
+
+    &:hover,
+    &:active {
         background-color: $color_primary !important;
         color: $color_white !important;
         border-color: $color_primary !important;
@@ -62,7 +69,7 @@
 
 // Responsive
 @media (min-width: 768px) {
-    .btn{
+    .btn {
         height: 44px;
     }
 }

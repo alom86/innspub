@@ -1,39 +1,42 @@
-.nav-top{
+.nav-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    &__left{
+    &__left {
         padding: 11px 0 11px 16px;
         background-color: $color_natural_head;
         width: 50%;
     }
-    &__left-link{
-        a{
+
+    &__left-link {
+        a {
             display: inline-block;
             color: $color_white;
-            i{
+
+            i {
                 font-size: 12px;
             }
-            &:first-child{
+
+            &:first-child {
                 padding-right: 8px;
                 border-right: 1px solid $color_white;
                 margin-right: 6px;
             }
 
-            &:hover{
+            &:hover {
                 color: $color_primary;
             }
         }
     }
 
-    &__right{
+    &__right {
         padding: 6px 16px 6px 0;
         background-color: $color_primary;
         width: 50%;
         font-size: 12px;
 
-        &::after{
+        &::after {
             -moz-border-bottom-colors: none;
             -moz-border-left-colors: none;
             -moz-border-right-colors: none;
@@ -52,10 +55,11 @@
             display: block;
         }
     }
-    &__right-button{
+
+    &__right-button {
         text-align: end;
 
-        a{
+        a {
             display: inline-block;
             padding: 5px 10px;
             background-color: $color_complementary;
@@ -63,7 +67,8 @@
             font-size: 12px;
             font-weight: 400;
             color: $color_white;
-            &:hover{
+
+            &:hover {
                 background-color: $color_white;
                 color: $color_natural_head;
             }
@@ -71,67 +76,77 @@
     }
 
     // Responsive
-    @media (min-width: 576px){
-        &__left{
+    @media (min-width: 576px) {
+        &__left {
             padding-left: 8%;
         }
-        &__right{
+
+        &__right {
             padding-right: 8%;
         }
     }
 
-    @media (min-width: 1200px) { 
-        &__left{
+    @media (min-width: 1200px) {
+        &__left {
             padding-top: 20px;
             padding-bottom: 20px;
         }
-        &__welcome-title{
+
+        &__welcome-title {
             font-size: 13px;
             font-weight: 600;
             color: $color_white;
             margin-bottom: 0;
         }
-        &__right{
+
+        &__right {
             display: flex;
             align-items: center;
             justify-content: end;
             gap: 12px;
             padding-top: 8px;
             padding-bottom: 8px;
-            &::after{
+
+            &::after {
                 height: 56px;
                 border-width: 30px 15px;
             }
-            a{
+
+            a {
                 color: $color_white;
             }
         }
-        &__right-link{
-            a{
-                i{
+
+        &__right-link {
+            a {
+                i {
                     margin-right: 2px;
                 }
-                &:first-child{
+
+                &:first-child {
                     padding-right: 8px;
                     border-right: 1px solid $color_white;
                     margin-right: 6px;
                 }
-                &:hover{
+
+                &:hover {
                     color: $color_natural_head;
                 }
             }
         }
-        &__right-button{
-            a{
+
+        &__right-button {
+            a {
                 background-color: $color_white;
                 color: $color_natural_head;
                 font-weight: 600;
                 padding: 6px 12px;
-                &:hover{
+
+                &:hover {
                     background-color: $color_complementary;
                     color: $color_white;
                 }
             }
         }
-     }
+    }
 }

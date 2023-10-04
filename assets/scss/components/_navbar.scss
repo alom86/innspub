@@ -38,6 +38,7 @@
             border: 1px solid $color_natural_head;
             color: $color_natural_head;
             font-size: 15px;
+            transition: $transition;
         }
 
         &:hover {
@@ -51,16 +52,17 @@
     }
 
     .navbar-nav {
-        .dropdown-toggle{
+        .dropdown-toggle {
             display: flex;
             align-items: center;
             justify-content: space-between;
 
-            &::after{
+            &::after {
                 margin-left: 6px;
                 transition: $transition;
             }
         }
+
         .nav-link {
             border-bottom: 2px solid transparent;
             font-weight: 500;
@@ -71,7 +73,7 @@
                 color: $color_primary;
                 border-color: $color_primary;
 
-                &::after{
+                &::after {
                     transform: rotate(180deg);
                 }
             }
@@ -118,6 +120,7 @@
 
         .navbar-nav {
             flex-direction: row;
+
             .nav-link {
                 padding-left: 10px;
                 padding-right: 10px;

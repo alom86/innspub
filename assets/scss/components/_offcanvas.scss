@@ -1,13 +1,13 @@
-.offcanvas{
+.offcanvas {
     padding: 16px;
 
-    &.offcanvas-start{
+    &.offcanvas-start {
         width: 260px;
     }
 
     // Responsive
     @media (min-width: 576px) {
-        &.offcanvas-start{
+        &.offcanvas-start {
             width: 300px;
         }
     }

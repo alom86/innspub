@@ -1,13 +1,12 @@
-.card{
+.card {
     background-color: $color_white;
     border: none;
     padding: 14px 14px 30px;
     align-items: center;
     height: 100%;
-    transition: all $transition;
-    box-shadow: $shadow_card;
+    transition: $transition;
 
-    &__icon{
+    &__icon {
         width: 60px;
         height: 60px;
         border-radius: $radius_circle;
@@ -18,38 +17,46 @@
         align-items: center;
         justify-content: center;
         transition: $transition;
-        i{
+
+        i {
             color: $color_primary;
             font-size: 28px;
         }
     }
 
-    &__img{
+    &__img {
         width: 100%;
-        img{
+
+        img {
             border-radius: $radius_1;
             width: 100%;
         }
+
         padding-bottom: 16px;
         border-bottom: 1px solid $color_primary;
     }
-    h3{
+
+    h3 {
         margin: 16px 0;
     }
-    p{
+
+    p {
         text-align: center;
         margin-bottom: 24px;
     }
-    ul{
+
+    ul {
         margin-bottom: 16px;
     }
 
-    &:hover{
+    &:hover {
         box-shadow: $shadow_hover;
-        .card{
-            &__icon{
+
+        .card {
+            &__icon {
                 background-color: $color_primary;
-                i{
+
+                i {
                     color: $color_white;
                 }
             }
