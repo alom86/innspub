@@ -5,7 +5,7 @@ $color_complementary: #8B014C;
 $color_natural_head: #132833;
 $color_natural_description: #2D3E50;
 $color_white: #FFFFFF;
-$color_body: #D9D9D9;
+$color_body: #F7F7F7;
 
 $accordion-icon-active-color: $color_white;
 
@@ -14,7 +14,7 @@ $font_open_sans: 'Open Sans', sans-serif;
 $font_oswald: 'Oswald', sans-serif;
 
 // Transitions
-$transition: 0.3s;
+$transition: 0.3s ease-in-out;
 
 // Radius
 $radius_1: 4px;
@@ -31,4 +31,8 @@ $radius_circle: 50%;
 
 // Shadow
 $shadow_1: 0px 0px 6px 0px #00000040;
+$shadow_card: 0px -1px 0px 0px #E1E3E5 inset;
+$shadow_hover: 0px 2px 10px 0px #018B4040;
+
+
 

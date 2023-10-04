@@ -17,6 +17,7 @@
 	|	|___offcanvas
 	|	|___footer-item
 	|	|___accordion
+	|	|___card
 	|
 	|___layout
 	|	|___header
@@ -25,6 +26,7 @@
 	|___ sections
 	|	|___banner
 	|	|___about
+	|	|___feature
 	|
 	|___ END STYLESHEET INDEXING
 
@@ -37,7 +39,7 @@
 /* Variables */
 /* Global */
 body {
-  background-color: #D9D9D9;
+  background-color: #F7F7F7;
   color: #2D3E50;
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
@@ -47,7 +49,7 @@ body {
 
 a {
   text-decoration: none;
-  transition: 0.3s;
+  transition: 0.3s ease-in-out;
   color: #018B40;
 }
 
@@ -74,10 +76,17 @@ main {
 
 h2 {
   font-size: 20px;
+  margin-bottom: 24px;
+  line-height: 22px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+h2, h3 {
   color: #132833;
   font-weight: 700;
-  margin-bottom: 16px;
-  line-height: 22px;
 }
 
 ul {
@@ -91,6 +100,11 @@ ul li {
 }
 ul li::marker {
   margin-top: 6px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 @media (min-width: 1200px) {
@@ -400,7 +414,7 @@ ul li::marker {
 }
 .navbar .navbar-nav .dropdown-toggle::after {
   margin-left: 6px;
-  transition: 0.3s;
+  transition: 0.3s ease-in-out;
 }
 .navbar .navbar-nav .nav-link {
   border-bottom: 2px solid transparent;
@@ -416,7 +430,7 @@ ul li::marker {
 }
 .navbar .dropdown-menu {
   border: none;
-  animation: 0.3s slide-top;
+  animation: 0.3s ease-in-out slide-top;
 }
 .navbar .dropdown-item {
   font-weight: 400;
@@ -626,6 +640,60 @@ ul li::marker {
   }
 }
 
+.card {
+  background-color: #FFFFFF;
+  border: none;
+  padding: 14px 14px 30px;
+  align-items: center;
+  height: 100%;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px -1px 0px 0px #E1E3E5 inset;
+}
+.card__icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid #018B40;
+  padding: 20px;
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease-in-out;
+}
+.card__icon i {
+  color: #018B40;
+  font-size: 28px;
+}
+.card__img {
+  width: 100%;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #018B40;
+}
+.card__img img {
+  border-radius: 4px;
+  width: 100%;
+}
+.card h3 {
+  margin: 16px 0;
+}
+.card p {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.card ul {
+  margin-bottom: 16px;
+}
+.card:hover {
+  box-shadow: 0px 2px 10px 0px rgba(1, 139, 64, 0.2509803922);
+}
+.card:hover .card__icon {
+  background-color: #018B40;
+}
+.card:hover .card__icon i {
+  color: #FFFFFF;
+}
+
 /*----------------------------------
 	~~~ Layout ~~~
 -----------------------------------*/
@@ -750,6 +818,13 @@ ul li::marker {
     bottom: 0;
     max-width: 300px;
   }
+}
+
+.feature {
+  margin-bottom: 40px;
+}
+.feature h2 {
+  margin-bottom: 24px;
 }
 
 /*----------------------------------
