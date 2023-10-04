@@ -1,0 +1,53 @@
+.we_have {
+    background-color: $color_natural_description;
+
+    h2,
+    h3,
+    p,
+    span {
+        color: $color_white;
+    }
+
+    h2,
+    p {
+        text-align: center;
+    }
+
+    img {
+        border-radius: $radius_3;
+    }
+
+    &__cards {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    &__card {
+        text-align: center;
+
+        span {
+            font-size: 32px;
+            color: $color_primary;
+            font-weight: 700;
+        }
+
+        h3 {
+            margin-top: 16px;
+            font-weight: 400;
+        }
+    }
+
+    @media (min-width: 992px) {
+
+        h2,
+        p {
+            text-align: start;
+        }
+
+        h2 {
+            font-size: 32px;
+        }
+    }
+}

@@ -28,6 +28,8 @@
 	|	|___about
 	|	|___feature
 	|	|___why_choose
+	|	|___we_have
+	|	|___footer_before
 	|
 	|___ END STYLESHEET INDEXING
 
@@ -77,6 +79,8 @@
 @import 'sections/about';
 @import 'sections/feature';
 @import 'sections/why_choose';
+@import 'sections/we_have';
+@import 'sections/footer_before';
 
 
 /*----------------------------------
