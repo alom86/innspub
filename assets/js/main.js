@@ -37,15 +37,48 @@
 })(window.jQuery);
 
 
-// banner swiper
-const swiper = new Swiper('.swiper', {
-    // Optional parameters
-    // direction: 'vertical',
+// announcements swiper
+const announcements = new Swiper('.announcements', {
     loop: true,
+    autoplay: true,
+    autoplay: { 
+        delay: 3000,  
+        disableOnInteraction: false,
+    },
+    slidesPerView: 1.3,
+    centeredSlides: true,
+    spaceBetween: 10,
+
+    // Responsive breakpoints
+    breakpoints: {
+        // when window width is >= 576px
+        576: {
+        slidesPerView: 2,
+        centeredSlides: false,
+        spaceBetween: 20
+        },
+        // when window width is >= 992px
+        992: {
+        slidesPerView: 3,
+        centeredSlides: false,
+        spaceBetween: 30
+        },
+        // when window width is >= 1200px
+        1400: {
+        slidesPerView: 4,
+        centeredSlides: false,
+        spaceBetween: 40
+        }
+    },
+
   
     // If we need pagination
     pagination: {
-      el: '.swiper-pagination',
+        el: '.swiper-pagination', 
+        slidesPerView: 'auto', 
+        initialSlide: 1, 
+        resistanceRatio: 0, 
+        clickable: true 
     },
   
     // Navigation arrows
@@ -53,9 +86,55 @@ const swiper = new Swiper('.swiper', {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
+  });
+
+// global_editor swiper
+const global_editor = new Swiper('.global_editor', {
+    loop: true,
+    autoplay: true,
+    autoplay: { 
+        delay: 3000,  
+        disableOnInteraction: false,
+    },
+    slidesPerView: 1.3,
+    centeredSlides: true,
+    spaceBetween: 10,
+
+    // Responsive breakpoints
+    breakpoints: {
+        // when window width is >= 576px
+        576: {
+        slidesPerView: 2,
+        centeredSlides: false,
+        spaceBetween: 20
+        },
+        // when window width is >= 992px
+        992: {
+        slidesPerView: 3,
+        centeredSlides: false,
+        spaceBetween: 30
+        },
+        // when window width is >= 1200px
+        1400: {
+        slidesPerView: 4,
+        centeredSlides: false,
+        spaceBetween: 40
+        }
+    },
+
   
-    // And if we need scrollbar
-    scrollbar: {
-      el: '.swiper-scrollbar',
+    // If we need pagination
+    pagination: {
+        el: '.swiper-pagination', 
+        slidesPerView: 'auto', 
+        initialSlide: 1, 
+        resistanceRatio: 0, 
+        clickable: true 
+    },
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     },
   });
