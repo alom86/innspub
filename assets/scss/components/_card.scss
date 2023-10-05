@@ -37,6 +37,34 @@
         border-bottom: 1px solid $color_primary;
     }
 
+    &__journal {
+        img {
+            border-radius: $radius_3;
+        }
+    }
+
+    &__journal_name {
+        background-color: $color_natural_head;
+        padding: 16px;
+        border-radius: 0 0 $radius_3 $radius_3;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+        text-align: center;
+        transition: $transition;
+        opacity: 0;
+
+        a {
+            font-size: 16px;
+        }
+
+        span {
+            color: $color_white;
+            font-size: 14px;
+        }
+    }
+
     h3 {
         margin: 16px 0;
         text-align: center;
@@ -67,7 +95,17 @@
                     color: $color_white;
                 }
             }
+
+            &__journal_name{
+                opacity: 1;
+            }
         }
+    }
+
+    &.card_secondary {
+        background-color: $color_body;
+        padding: 16px;
+        position: relative;
     }
 
 }

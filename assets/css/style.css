@@ -683,6 +683,28 @@ img {
   border-radius: 4px;
   width: 100%;
 }
+.card__journal img {
+  border-radius: 8px;
+}
+.card__journal_name {
+  background-color: #132833;
+  padding: 16px;
+  border-radius: 0 0 8px 8px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  transition: 0.3s;
+  opacity: 0;
+}
+.card__journal_name a {
+  font-size: 16px;
+}
+.card__journal_name span {
+  color: #FFFFFF;
+  font-size: 14px;
+}
 .card h3 {
   margin: 16px 0;
   text-align: center;
@@ -706,6 +728,14 @@ img {
 }
 .card:hover .card__icon i {
   color: #FFFFFF;
+}
+.card:hover .card__journal_name {
+  opacity: 1;
+}
+.card.card_secondary {
+  background-color: #F7F7F7;
+  padding: 16px;
+  position: relative;
 }
 
 .profile {
