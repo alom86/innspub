@@ -62,15 +62,15 @@
         a {
             display: inline-block;
             padding: 5px 10px;
-            background-color: $color_complementary;
+            background-color: $color_white;
+            color: $color_natural_head;
             border-radius: $radius_rounded;
             font-size: 12px;
-            font-weight: 400;
-            color: $color_white;
+            font-weight: 600;
 
             &:hover {
-                background-color: $color_white;
-                color: $color_natural_head;
+                background-color: $color_complementary;
+                color: $color_white;
             }
         }
     }
@@ -139,7 +139,6 @@
             a {
                 background-color: $color_white;
                 color: $color_natural_head;
-                font-weight: 600;
                 padding: 6px 12px;
 
                 &:hover {

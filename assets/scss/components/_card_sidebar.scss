@@ -1,0 +1,39 @@
+.card_sidebar{
+    
+    // Responsive
+    @media (min-width: 992px) {
+        border-radius: 0 0 $radius_1 $radius_1;
+        background-color: $color_white;
+        box-shadow: $shadow_2;
+        padding: 12px 16px;
+
+        h4{
+            font-size: 14px;
+            font-weight: 500;
+            a{
+                color: $color_natural_head;
+                &:hover{
+                    color: $color_primary;
+                }
+            }
+        }
+    
+        &__label{
+            padding: 4px 8px;
+            margin-right: 8px;
+            font-size: 12px;
+            font-weight: 500;
+            background-color: $color_primary;
+            color: $color_white;
+            border-radius: 2px;
+        }
+        &__date{
+            font-size: 12px;
+            font-weight: 400;
+        }
+
+        &:first-child{
+            margin-top: 4px;
+        }
+    }
+}

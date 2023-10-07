@@ -1,0 +1,31 @@
+.nav_tabs {
+    .nav-tabs {
+        border: none;
+        margin-bottom: 16px;
+
+        .nav-item {
+            width: 90px;
+            margin: 0 6px 6px 0;
+        }
+
+        .nav-link {
+            background-color: $color_white;
+            border: none;
+            border-radius: $radius_1;
+            font-size: 12px;
+            font-weight: 700;
+            color: $color_natural_head;
+            padding: 10px;
+
+            &:hover{
+                background-color: $color_primary;
+                color: $color_white;
+            }
+        }
+
+        .active {
+            background-color: $color_primary;
+            color: $color_white;
+        }
+    }
+}

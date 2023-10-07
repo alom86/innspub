@@ -1,0 +1,66 @@
+.sidebar {
+
+    // Responsive
+    @media (min-width: 992px) {
+        .accordion {
+            .accordion-item {
+                box-shadow: none;
+                border-radius: 0;
+
+                &:not(:last-of-type) {
+                    margin-bottom: 16px;
+                }
+
+                &:last-of-type{
+                    .accordion-button{
+                        &.collapsed{
+                            border-radius: $radius_1 $radius_1 0 0;
+                        }
+                    }
+                }
+            }
+
+            .accordion-button {
+                background-color: $color_natural_description;
+                color: $color_white;
+                border-radius: $radius_1 $radius_1 0 0;
+
+                &:not(.collapsed) {
+                    background-color: $color_natural_head;
+                }
+            }
+
+            .accordion-body {
+                background-color: $color_body;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+            }
+
+            .indexed_in{
+                .accordion-header{
+                    position: relative;
+                    .btn{
+                        font-size: 14px;
+                        width: 66px;
+                        height: auto;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        position: absolute;
+                        right: 50px;
+                        padding: 6px 0;
+                    }
+                }
+                .accordion-body{
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 8px;
+                    margin-top: 4px;
+                }
+            }
+        }
+    }
+
+}
