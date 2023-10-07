@@ -1,10 +1,13 @@
 .accordion {
-    .accordion-item {}
+    .accordion-item {
+        border: none;
+        box-shadow: $shadow_2;
+    }
 
     .accordion-header {}
 
     .accordion-button {
-        padding: 8px 16px;
+        padding: 12px 16px;
         gap: 2px;
         font-weight: 600;
         color: $color_natural_description;
