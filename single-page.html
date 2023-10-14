@@ -247,7 +247,7 @@
     <!-- Main Content -->
     <main class="bg-white">
         <!-- page breadcumb -->
-        <section class="breadcrumb_section bg_overlay">
+        <div class="breadcrumb_section bg_overlay">
             <!-- bg image -->
             <div class="breadcrumb_section__bg">
                 <img src="assets/images/banner/breadcumb_bg.jpg" alt="breadcumb_bg">
@@ -255,11 +255,11 @@
 
             <div class="container px-3 px-sm-0">
                 <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
+                    <!-- mobile dropdown -->
+                    <ol class="breadcrumb d-md-none">
                         <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        <!-- mobile dropdown -->
-                        <li class="breadcrumb-item dropdown d-md-none">
-                            <a href="#" class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <li class="breadcrumb-item dropdown">
+                            <a href="#" class="" data-bs-toggle="dropdown" aria-expanded="false">
                                 ...
                             </a>
                             <ul class="dropdown-menu">
@@ -268,16 +268,17 @@
                                 <li><a class="dropdown-item" href="#">Back Page 3</a></li>
                             </ul>
                         </li>
-                        <!-- Large device -->
-                        <div class="breadcrumb-item d-none d-md-flex">
-                            <li class="breadcrumb-item"><a href="#">Athors</a></li>
-                            <!-- <li class="breadcrumb-item"><a href="#">Athors</a></li> -->
-                        </div>
+                        <li class="breadcrumb-item active" aria-current="page">Why choose INNSpub</li>
+                    </ol>
+                    <!-- Large device -->
+                    <ol class="breadcrumb d-none d-md-flex">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item"><a href="#">Athors</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Why choose INNSpub</li>
                     </ol>
                 </nav>
             </div>
-        </section>
+        </div>
 
         <!-- page layout -->
         <section class="section_gap">
@@ -428,10 +429,8 @@
                                     <h3 class="accordion-header">
                                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#indexed_in" aria-expanded="true" aria-controls="indexed_in">
                                             Indexed In
-
-                                            <!-- TODO: error -->
-                                            <a href="#" class="btn btn_primary">More</a>
                                         </button>
+                                        <a href="#" class="btn btn_primary">More</a>
                                     </h3>
                                     <div id="indexed_in" class="accordion-collapse collapse show" data-bs-parent="#accordionSidebar">
                                         <div class="accordion-body">
