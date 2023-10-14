@@ -94,7 +94,7 @@
                         padding: 6px 40px 6px 18px;
                         box-shadow: $shadow_link_card;
 
-                        &::after{
+                        &::after {
                             content: '›';
                             height: 100%;
                             font-size: 32px;
@@ -113,9 +113,9 @@
             }
 
             // links
-            .links{
-                ul{
-                    a{
+            .links {
+                ul {
+                    a {
                         background-color: $color_natural_description;
                         color: $color_white;
                         border-radius: $radius_1 $radius_1 0 0;

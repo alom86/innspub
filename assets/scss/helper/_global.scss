@@ -52,16 +52,13 @@ h3 {
 
 ul {
     list-style-image: url(../images/shape/ul_list_start.png);
-    padding-left: 26px;
+    list-style-position: inside;
+    padding-left: 0;
     margin-bottom: 0;
     line-height: 24px;
 
     li {
         margin-bottom: 12px;
-
-        &::marker {
-            margin-top: 6px;
-        }
     }
 }
 
@@ -69,6 +66,22 @@ img {
     max-width: 100%;
     height: auto;
 }
+
+.bg_overlay {
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: $color_natural_head;
+        opacity: 0.6;
+    }
+}
+
 
 
 // Responsive

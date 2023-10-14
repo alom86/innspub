@@ -1,14 +1,39 @@
 .page_content {
+    p {
+        margin-bottom: 30px;
+    }
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 12px;
+    }
+
+    ul {
+        margin-bottom: 30px;
+        list-style-image: url(../images/shape/ul_list_start2.png);
+    }
+
     &__title {
         height: 52px;
-        padding: 20px 16px;
+        padding: 16px;
+        display: flex;
+        align-items: center;
         background-color: $color_primary;
-        color: $color_white;
         border-radius: $radius_1 $radius_1 0 0;
-        font-size: 16px;
-        font-weight: 700;
         text-transform: capitalize;
         margin-bottom: 20px;
+
+        h2 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 0;
+            color: $color_white;
+        }
     }
 
     &__data {
@@ -26,37 +51,67 @@
             width: 100%;
             object-fit: cover;
         }
-
-        // TODO bg overllay
-        &::after{
-            content: '';
-            display: block;
-            background-color: $color_natural_head;
-        }
-    }
-
-    p {
-        margin-bottom: 30px;
-    }
-
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-size: 16px;
-        font-weight: 700;
-    }
-
-    ul {
-        list-style-image: url(../images/shape/ul_list_start2.png);
-        // padding-left: 0;
-        li {}
     }
 
     &__nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
         a {
-            &.active {}
+            color: $color_natural_head;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+
+            &:not(:last-of-type) {
+                &::after {
+                    content: '';
+                    display: inline-block;
+                    width: 2px;
+                    height: 14px;
+                    background-color: $color_primary;
+                    margin: 0 8px;
+                }
+            }
+
+            &.active,
+            &:hover {
+                color: $color_primary;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    // Responsive
+    @media (min-width: 992px) {
+        &__title {
+            height: 66px;
+            padding: 24px;
+
+            h2 {
+                font-size: 20px;
+            }
+        }
+
+        &__data {
+            padding: 20px;
+        }
+
+        &__img {
+            img {
+                max-height: 180px;
+            }
+        }
+
+        &__nav {
+            justify-content: end;
+
+            a {
+                font-size: 16px;
+            }
         }
     }
 }
