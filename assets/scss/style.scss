@@ -25,6 +25,7 @@
 	|	|___card_sidebar
 	|	|___card_logo
 	|	|___page_content
+	|	|___breadcrumb_section
 	|
 	|___layout
 	|	|___header
@@ -77,6 +78,7 @@
 @import 'components/card_sidebar';
 @import 'components/card_logo';
 @import 'components/page_content';
+@import 'components/breadcrumb_section';
 
 
 /*----------------------------------

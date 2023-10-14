@@ -60,7 +60,7 @@
 
         <!-- main nav -->
         <nav class="navbar">
-            <a class="navbar__brand" href="#">
+            <a class="navbar__brand" href="/">
                 <img src="assets/images/logo/logo.png" alt="logo">
             </a>
 
@@ -153,7 +153,7 @@
             <!-- mobile menu offcanvas -->
             <div class="offcanvas offcanvas-start" tabindex="-1" id="menuOffcanvas" aria-labelledby="menuOffcanvas">
                 <div class="offcanvas-header p-0 mb-4">
-                    <a class="navbar__brand" href="#">
+                    <a class="navbar__brand" href="/">
                         <img src="assets/images/logo/logo.png" alt="logo">
                     </a>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
@@ -247,9 +247,35 @@
     <!-- Main Content -->
     <main class="bg-white">
         <!-- page breadcumb -->
-        <section class="breadcrumb_section section_gap">
-            <div class="container">
-                page breadcumb
+        <section class="breadcrumb_section bg_overlay">
+            <!-- bg image -->
+            <div class="breadcrumb_section__bg">
+                <img src="assets/images/banner/breadcumb_bg.jpg" alt="breadcumb_bg">
+            </div>
+
+            <div class="container px-3 px-sm-0">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <!-- mobile dropdown -->
+                        <li class="breadcrumb-item dropdown d-md-none">
+                            <a href="#" class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                ...
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item active" href="#">Back Page</a></li>
+                                <li><a class="dropdown-item" href="#">Back Page 2</a></li>
+                                <li><a class="dropdown-item" href="#">Back Page 3</a></li>
+                            </ul>
+                        </li>
+                        <!-- Large device -->
+                        <div class="breadcrumb-item d-none d-md-flex">
+                            <li class="breadcrumb-item"><a href="#">Athors</a></li>
+                            <!-- <li class="breadcrumb-item"><a href="#">Athors</a></li> -->
+                        </div>
+                        <li class="breadcrumb-item active" aria-current="page">Why choose INNSpub</li>
+                    </ol>
+                </nav>
             </div>
         </section>
 
@@ -273,17 +299,17 @@
                                             <ul>
                                                 <li>
                                                     <a class="active" href="#">
-                                                        Why choose INNSpub 
+                                                        Why choose INNSpub
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="#">
-                                                        Aim and scope 
+                                                        Aim and scope
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="#">
-                                                        Rapid publication  
+                                                        Rapid publication
                                                     </a>
                                                 </li>
                                                 <li>
@@ -333,17 +359,17 @@
                                             <ul>
                                                 <li>
                                                     <a href="#">
-                                                        Cover letter 
+                                                        Cover letter
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="#">
-                                                        Copyright agreement 
+                                                        Copyright agreement
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="#">
-                                                        Article sample  
+                                                        Article sample
                                                     </a>
                                                 </li>
                                                 <li>
@@ -361,17 +387,17 @@
                                     <ul>
                                         <li>
                                             <a href="#">
-                                                Call for paper 
+                                                Call for paper
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#">
-                                                Paper submission 
+                                                Paper submission
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#">
-                                                Authors service  
+                                                Authors service
                                             </a>
                                         </li>
                                         <li>
@@ -449,7 +475,7 @@
                                             <div class="card_sidebar">
                                                 Member In data here
                                             </div>
-                                            
+
                                         </div>
                                     </div>
                                 </div>
@@ -466,11 +492,11 @@
                                             <div class="card_sidebar">
                                                 Plagiarism Checker
                                             </div>
-                                            
+
                                         </div>
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </aside>
                     </div>
@@ -479,10 +505,12 @@
                     <div class="col-lg-8">
                         <div class="page_content">
                             <!-- page title -->
-                            <h2 class="page_content__title">Why choose INNSpub</h2>
+                            <div class="page_content__title">
+                                <h2>Why choose INNSpub</h2>
+                            </div>
                             <!-- page data -->
                             <div class="page_content__data">
-                                <div class="page_content__img">
+                                <div class="page_content__img bg_overlay">
                                     <img src="assets/images/single_page_feature_image.jpg" alt="single_page_feature_image">
                                 </div>
                                 <p>The International Network for Natural Sciences (INNSpub) is a reputed research journal Publisher and publishes papers professionally from 2010 to date. INNSpub is dedicated to publishing scholarly research papers and books globally and believes in sharing new scientific knowledge with scientific scholars in the field of Natural sciences, Biology, Medicine and Agriculture. All our publications are available on an online platform that concurrently belongs to many Societies, libraries, Universities and Research Institutes all over the world.</p>
@@ -498,7 +526,8 @@
                                 </ul>
 
                                 <h3>Why Choose INNSpub:</h3>
-                                <p>International Network for Natural Sciences is the leading publisher for innovative solutions to scientists' information needs and independently publishes high-quality peer-reviewed Research and Review articles, as well as Short communications, Project reports and Books for the Environmental and Biological research communities. INNSpub uses advanced technologies, innovative formats and first-class editing to provide timely and more informative production for researchers in the public and private sectors, Government agencies, Educators, experts and the general public.</p>
+                                <p>International Network for Natural Sciences is the leading publisher for innovative solutions to scientists' information needs and independently publishes high-quality peer-reviewed Research and Review articles, as well as Short communications, Project reports and Books for the Environmental and Biological research communities. INNSpub uses advanced technologies, innovative formats and first-class editing to provide timely and more informative production for researchers in the public and private sectors, Government agencies, Educators, experts and the general
+                                    public.</p>
 
                                 <h3><em>Publishing with the INNSpub family provides an author with a wide range of benefits:</em></h3>
                                 <ul>
@@ -507,7 +536,8 @@
                                     <li>Faster processing time Modern times demand that processing times are minimized so that authors are able to publish their work quickly. INNSpub has introduced an open access system enabling authors to get their work published rapidly as per their desire. For journals with paid access, the processing times will match international standards ensuring the timely publication of quality manuscripts.</li>
                                     <li>High standard review process All INNSpub Open Access journals provide a high standard of peer review, selecting original research which is high quality and relevant for its discipline. Each journal is editorially independent with its own Editor-in-Chief and Editorial Board which lead journal strategy and take publication decisions on all submissions.</li>
                                     <li>Minimum processing charges INNSpub offers to the authors the minimum rates to get their articles published online as quickly as they prefer. Authors now do not have to wait for long publishing cues and get their work published as per their desired time frame. All manuscripts are expedited through a peer-review procedure ensuring publication of only high-quality publications.</li>
-                                    <li>Maximum indexing system INNSpub possesses a marketing team with hands-on experience in promoting science publications including scholarly journals and books. Building up relationships with indexing and archiving websites will ensure the maximum dispersion of published literature. Citations for high-quality papers will be ensured through indexing in agencies. Those are included in the leading abstracting and indexing services, including ISI, Medline and Scopus. Extensive reference linking via services such as Crossruff, and DOI (Digital Object Identifier) numbers, provide seamless online linking between articles and databases.</li>
+                                    <li>Maximum indexing system INNSpub possesses a marketing team with hands-on experience in promoting science publications including scholarly journals and books. Building up relationships with indexing and archiving websites will ensure the maximum dispersion of published literature. Citations for high-quality papers will be ensured through indexing in agencies. Those are included in the leading abstracting and indexing services, including ISI, Medline and Scopus. Extensive reference linking via services such as Crossruff, and DOI (Digital Object Identifier)
+                                        numbers, provide seamless online linking between articles and databases.</li>
                                 </ul>
 
                                 <!-- page_content__nav -->
