@@ -65,6 +65,15 @@
                         padding: 6px 0;
                         z-index: 10;
                     }
+
+                    &.active{
+                        .accordion-button{
+                            background-color: $color_primary;
+                        }
+                        .btn_primary{
+                            background-color: $color_natural_head;
+                        }
+                    }
                 }
 
                 .accordion-body {
@@ -101,6 +110,8 @@
                             height: 100%;
                             font-size: 32px;
                             font-weight: 300;
+                            position: relative;
+                            top: -4px;
                         }
 
                         &.active,
