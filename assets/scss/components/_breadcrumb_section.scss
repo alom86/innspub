@@ -48,7 +48,7 @@
                 }
 
                 &.show {
-                    transform: translate(-30%, 40px) !important;
+                    transform: translate(-26%, 40px) !important;
                 }
 
                 &::before {
@@ -61,7 +61,7 @@
                     border: 15px solid transparent;
                     border-top: 0;
                     border-bottom: 15px solid $color_white;
-                    transform: translate(-50%, calc(-100% - 5px));
+                    transform: translate(-75%, calc(-100% - 5px));
                 }
             }
         }
@@ -78,7 +78,9 @@
 
         .active {
             color: $color_white;
-            opacity: 0.5;
+            font-size: 14px;
+            font-weight: 600;
+            opacity: 0.6;
         }
     }
 
@@ -97,6 +99,10 @@
                 a {
                     font-size: 20px;
                 }
+            }
+
+            .active{
+                font-size: 20px;
             }
         }
     }
