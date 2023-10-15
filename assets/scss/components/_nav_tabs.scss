@@ -17,7 +17,7 @@
             color: $color_natural_head;
             padding: 10px;
 
-            &:hover{
+            &:hover {
                 background-color: $color_primary;
                 color: $color_white;
             }
@@ -26,6 +26,47 @@
         .active {
             background-color: $color_primary;
             color: $color_white;
+        }
+
+        & ul {
+            list-style: none;
+        }
+    }
+
+    // Responsive
+    @media (min-width: 768px) {
+        &.page_content__archives {
+            flex-direction: column;
+
+            .nav-tabs {
+                .nav-item {
+                    width: auto;
+                    margin: 0 0 12px 0;
+
+
+                }
+
+                .nav-link {
+                    padding: 20px;
+                    background-color: $color_natural_description;
+                    color: $color_white;
+                    position: relative;
+
+                    &::before {
+                        content: '›';
+                        height: 100%;
+                        font-size: 40px;
+                        font-weight: 300;
+                        position: absolute;
+                        right: 16px;
+                        top: 40%;
+                    }
+
+                    &.active, &:hover {
+                        background-color: $color_natural_head;
+                    }
+                }
+            }
         }
     }
 }

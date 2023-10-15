@@ -1,18 +1,36 @@
-.card_logo{
+.card_logo {
+    height: 38px;
+    background-color: $color_white;
+    padding: 6px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $radius_1;
+    box-shadow: $shadow_2;
+
+    img {
+        width: 50px;
+    }
+
+    &:hover {
+        box-shadow: $shadow_hover;
+    }
 
     // Responsive
+    @media (min-width: 576px) {
+        height: 60px;
+
+        img {
+            width: 80px;
+        }
+    }
+
     @media (min-width: 992px) {
         height: 70px;
-        background-color: $color_white;
-        padding: 12px 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         border-radius: $radius_2;
-        box-shadow: $shadow_2;
 
-        img{
-            max-width: 95px;
+        img {
+            width: 95px;
         }
     }
 }

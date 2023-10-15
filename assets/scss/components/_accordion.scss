@@ -4,8 +4,6 @@
         box-shadow: $shadow_2;
     }
 
-    .accordion-header {}
-
     .accordion-button {
         padding: 12px 16px;
         gap: 2px;
@@ -17,7 +15,7 @@
             background-color: $color_primary;
             color: $color_white;
 
-            &::after{
+            &::after {
                 background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
             }
         }
@@ -28,13 +26,102 @@
 
     }
 
-    .accordion-collapse {}
-
     .accordion-body {
         color: $color_natural_description;
 
         a {
             font-weight: 600;
+        }
+    }
+
+    &.tab-content {
+        .accordion-item {
+            box-shadow: none;
+        }
+
+        .accordion-body {
+            padding: 0;
+            padding-bottom: 16px;
+        }
+    }
+
+    // Year accordion
+    &.year_accordion {
+        .accordion-item {
+            &:last-of-type {
+                .accordion-button {
+                    &.collapsed {
+                        border-bottom-left-radius: 0;
+                        border-bottom-right-radius: 0;
+                    }
+                }
+            }
+        }
+
+        .accordion-header {
+            margin-bottom: 4px;
+        }
+
+        .accordion-button {
+            background-color: $color-secondary;
+            color: $color_natural_description;
+            font-weight: 700;
+            border-radius: 0;
+            font-size: 16px;
+
+            &:not(.collapsed) {
+
+                &::after {
+                    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%232D3E50'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+                }
+            }
+        }
+
+        ul {
+            margin-bottom: 0;
+
+            a {
+                color: $color_natural_description;
+                font-weight: 400;
+                font-size: 14px;
+                padding: 8px 16px;
+                display: block;
+                width: 100%;
+                box-shadow: $shadow_card;
+                position: relative;
+                text-decoration: underline;
+
+                &::after {
+                    content: '›';
+                    font-size: 32px;
+                    font-weight: 300;
+                    position: absolute;
+                    top: 4px;
+                    right: 20px;
+                    opacity: 0;
+                    transition: $transition;
+                }
+
+                &.active, &:hover{
+                    color: $color_primary;
+
+                    &::after {
+                        right: 16px;
+                        opacity: 1;
+                    }
+                    
+                }
+            }
+
+            li {
+                margin-bottom: 0;
+
+                &:nth-child(2n){
+                    a{
+                        background-color: $color_artboard;
+                    }
+                }
+            }
         }
     }
 
