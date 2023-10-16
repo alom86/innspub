@@ -64,24 +64,30 @@
                     transform: translate(-75%, calc(-100% - 5px));
                 }
             }
+
+            &.active {
+                color: $color_white;
+                font-size: 14px;
+                font-weight: 600;
+                opacity: 0.6;
+                width: 70vw;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
         }
 
         .breadcrumb-item+.breadcrumb-item::before {
             content: "›";
             height: 100%;
             font-size: 32px;
-            font-weight: 300;
+            font-weight: 400;
             color: $color_white;
             position: relative;
             top: -2px;
         }
 
-        .active {
-            color: $color_white;
-            font-size: 14px;
-            font-weight: 600;
-            opacity: 0.6;
-        }
+        
     }
 
     // Responsive
@@ -99,11 +105,18 @@
                 a {
                     font-size: 20px;
                 }
+
+                &.active{
+                    font-size: 20px;
+                }
             }
 
-            .active{
-                font-size: 20px;
+            .breadcrumb-item+.breadcrumb-item::before{
+                color: $color_primary;
+                font-weight: 500;
             }
+
+            
         }
     }
 }
