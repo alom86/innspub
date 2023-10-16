@@ -63,7 +63,10 @@ body {
 a {
   text-decoration: none;
   transition: 0.3s;
-  color: #018B40;
+  color: #00A6EE;
+}
+a:hover {
+  color: #132833;
 }
 
 p {
@@ -494,7 +497,7 @@ img {
   }
   .navbar .dropdown-menu {
     position: absolute;
-    top: 55px;
+    top: 68px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     border: none;
@@ -570,12 +573,7 @@ img {
   padding: 16px;
 }
 .offcanvas.offcanvas-start {
-  width: 260px;
-}
-@media (min-width: 576px) {
-  .offcanvas.offcanvas-start {
-    width: 300px;
-  }
+  width: 300px;
 }
 
 .footer-item {
@@ -648,18 +646,26 @@ img {
 
 .accordion .accordion-item {
   border: none;
-  box-shadow: 0px 0px 4px 0px rgba(33, 37, 41, 0.25);
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+}
+.accordion .accordion-collapse {
+  margin-bottom: 12px;
+}
+.accordion .accordion-header {
+  margin-bottom: 12px;
 }
 .accordion .accordion-button {
   padding: 12px 16px;
   gap: 2px;
   font-weight: 600;
   color: #2D3E50;
-  border-bottom: 1px solid #F2F2F2;
+  border-radius: 4px;
 }
 .accordion .accordion-button:not(.collapsed) {
   background-color: #018B40;
   color: #FFFFFF;
+  border-radius: 4px 4px 0 0;
 }
 .accordion .accordion-button:not(.collapsed)::after {
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
@@ -671,7 +677,7 @@ img {
   color: #2D3E50;
 }
 .accordion .accordion-body a {
-  font-weight: 600;
+  font-weight: 500;
 }
 .accordion.tab-content .accordion-item {
   box-shadow: none;
@@ -733,6 +739,13 @@ img {
 }
 .accordion.year_accordion ul li:nth-child(2n) a {
   background-color: #F9F9F9;
+}
+.accordion.striped .accordion-item:nth-child(2n) .accordion-button {
+  background-color: #F2F2F2;
+}
+.accordion.striped .accordion-item:nth-child(2n) .accordion-button:not(.collapsed) {
+  background-color: #018B40;
+  color: #FFFFFF;
 }
 @media (min-width: 576px) {
   .accordion .accordion-button {
@@ -1263,6 +1276,7 @@ img {
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 12px;
+  line-height: 24px;
 }
 .page_content ul {
   margin-bottom: 30px;
@@ -1288,11 +1302,28 @@ img {
   padding: 20px 14px;
   box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
+  position: relative;
 }
 .page_content__data p:last-child,
 .page_content__data ul:last-child,
 .page_content__data li:last-child {
   margin-bottom: 0;
+}
+.page_content__data ul li a {
+  color: #00A6EE;
+}
+.page_content__data ul li a:hover {
+  color: #132833;
+}
+.page_content__bg {
+  position: absolute;
+  right: 0;
+  bottom: 190px;
+  text-align: end;
+}
+.page_content__bg img {
+  opacity: 0.1;
+  width: 60%;
 }
 .page_content__contact_type {
   background-color: #2D3E50;
@@ -1391,6 +1422,12 @@ img {
   }
 }
 @media (min-width: 768px) {
+  .page_content__nav {
+    justify-content: end;
+  }
+  .page_content__nav a {
+    font-size: 16px;
+  }
   .page_content__indexed_in {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -1416,12 +1453,6 @@ img {
   }
   .page_content__img img {
     max-height: 180px;
-  }
-  .page_content__nav {
-    justify-content: end;
-  }
-  .page_content__nav a {
-    font-size: 16px;
   }
 }
 @media (min-width: 1200px) {
@@ -1490,20 +1521,24 @@ img {
   border-bottom: 15px solid #FFFFFF;
   transform: translate(-75%, calc(-100% - 5px));
 }
-.breadcrumb_section nav .breadcrumb-item + .breadcrumb-item::before {
-  content: "›";
-  height: 100%;
-  font-size: 32px;
-  font-weight: 300;
-  color: #FFFFFF;
-  position: relative;
-  top: -2px;
-}
-.breadcrumb_section nav .active {
+.breadcrumb_section nav .breadcrumb-item.active {
   color: #FFFFFF;
   font-size: 14px;
   font-weight: 600;
   opacity: 0.6;
+  width: 70vw;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.breadcrumb_section nav .breadcrumb-item + .breadcrumb-item::before {
+  content: "›";
+  height: 100%;
+  font-size: 32px;
+  font-weight: 400;
+  color: #FFFFFF;
+  position: relative;
+  top: -2px;
 }
 @media (min-width: 768px) {
   .breadcrumb_section__bg img {
@@ -1515,8 +1550,12 @@ img {
   .breadcrumb_section nav .breadcrumb-item a {
     font-size: 20px;
   }
-  .breadcrumb_section nav .active {
+  .breadcrumb_section nav .breadcrumb-item.active {
     font-size: 20px;
+  }
+  .breadcrumb_section nav .breadcrumb-item + .breadcrumb-item::before {
+    color: #018B40;
+    font-weight: 500;
   }
 }
 

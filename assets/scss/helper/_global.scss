@@ -10,7 +10,11 @@ body {
 a {
     text-decoration: none;
     transition: $transition;
-    color: $color_primary;
+    color: $color_link;
+
+    &:hover{
+        color: $color_natural_head;
+    }
 }
 
 p {
