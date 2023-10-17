@@ -13,10 +13,19 @@
         position: absolute;
         right: 0;
         border: none;
+        padding: 8px 16px;
+        transition: $transition;
 
         i {
             color: $color_natural_description;
             opacity: 50%;
+        }
+
+        &:hover{
+            i{
+                color: $color_primary;
+                opacity: 1;
+            }
         }
     }
 

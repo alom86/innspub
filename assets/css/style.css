@@ -65,9 +65,6 @@ a {
   transition: 0.3s;
   color: #00A6EE;
 }
-a:hover {
-  color: #132833;
-}
 
 p {
   margin-bottom: 0;
@@ -294,6 +291,9 @@ img {
     font-weight: 600;
     color: #FFFFFF;
     margin-bottom: 0;
+  }
+  .nav-top__welcome-title a {
+    color: #018B40;
   }
   .nav-top__right {
     display: flex;
@@ -547,10 +547,16 @@ img {
   position: absolute;
   right: 0;
   border: none;
+  padding: 8px 16px;
+  transition: 0.3s;
 }
 .search-form__button i {
   color: #2D3E50;
   opacity: 50%;
+}
+.search-form__button:hover i {
+  color: #018B40;
+  opacity: 1;
 }
 @media (min-width: 576px) {
   .search-form {
@@ -850,18 +856,13 @@ img {
   width: 160px;
   height: 160px;
   border-radius: 50%;
-  border: 4px solid #FFFFFF;
+  border: 3px solid #FFFFFF;
   background-color: #F2F2F2;
   overflow: hidden;
   display: flex;
   align-items: end;
   justify-content: center;
   margin-bottom: 32px;
-}
-.profile__img img {
-  width: 120px;
-  position: relative;
-  top: 16px;
 }
 .profile__name {
   color: #132833;
@@ -898,7 +899,6 @@ img {
   color: #FFFFFF;
 }
 .profile:hover .profile__img {
-  background-color: #2D3E50;
   border-color: #018B40;
 }
 .profile:hover .profile__name {
@@ -1346,6 +1346,7 @@ img {
   margin-bottom: 20px;
 }
 .page_content__contact_type a {
+  color: #018B40;
   text-decoration: underline;
 }
 .page_content__corporate_office {
@@ -1415,6 +1416,110 @@ img {
 .page_content__archives ul {
   list-style: none;
 }
+.page_content .profile_cheif {
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+.page_content .profile_cheif__img_wrap {
+  position: relative;
+  display: inline-grid;
+  align-content: flex-start;
+  height: fit-content;
+  overflow: hidden;
+}
+.page_content .profile_cheif__img-cheif {
+  position: relative;
+  border: 3px solid transparent;
+  border-radius: 4px;
+}
+.page_content .profile_cheif__img-cheif img {
+  position: relative;
+  width: 100%;
+  z-index: 10;
+}
+.page_content .profile_cheif__img-shap {
+  background-color: #FFFFFF;
+  width: 150%;
+  height: 65px;
+  transform: rotate(35deg);
+  position: absolute;
+  top: 30%;
+  right: -20%;
+}
+.page_content .profile_cheif__label {
+  font-size: 20px;
+  margin-bottom: 24px;
+  font-weight: 700;
+}
+.page_content .profile_cheif__name,
+.page_content .profile_cheif span,
+.page_content .profile_cheif h4,
+.page_content .profile_cheif p {
+  text-align: start;
+}
+.page_content .profile_cheif__info {
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(45, 62, 80, 0.2);
+}
+.page_content .profile_cheif__info p {
+  margin-bottom: 0;
+}
+.page_content .profile_cheif__contact {
+  font-size: 16px;
+}
+.page_content .profile_cheif__contact .item {
+  display: flex;
+}
+.page_content .profile_cheif__contact .item_title {
+  width: 50px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.page_content .profile_cheif__contact a {
+  margin-left: 12px;
+  white-space: nowrap;
+}
+.page_content .profile_cheif__contact .social {
+  margin-top: 24px;
+}
+.page_content .profile_cheif__contact .social__link {
+  margin-left: 0;
+}
+.page_content .profile_cheif:hover {
+  background-color: #F9F9F9;
+}
+.page_content .profile_cheif:hover .profile_cheif__img-cheif {
+  border-color: #018B40;
+}
+.page_content .profile_cheif:hover .profile_cheif__img-shap {
+  background-color: #F9F9F9;
+}
+.page_content .profile {
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.25);
+}
+.page_content .profile:hover {
+  background-color: #F9F9F9;
+}
+.page_content__editor {
+  margin-top: 60px;
+}
+.page_content__editor .title {
+  background-color: #F2F2F2;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+.page_content__editor .title h2 {
+  margin-bottom: 0;
+  font-weight: 700;
+}
+@media (min-width: 576px) {
+  .page_content .profile_cheif {
+    flex-direction: row;
+    gap: 28px;
+  }
+}
 @media (max-width: 767px) {
   .page_content__archives .tab-content > .tab-pane {
     display: block;
@@ -1438,6 +1543,9 @@ img {
   }
   .page_content__contact_type {
     flex-direction: row;
+  }
+  .page_content .profile_cheif {
+    padding: 24px;
   }
 }
 @media (min-width: 992px) {
@@ -1465,6 +1573,13 @@ img {
   }
   .page_content____corporate_office {
     margin-bottom: 60px;
+  }
+}
+@media (min-width: 1400px) {
+  .page_content .profile_cheif__info {
+    border-bottom: 0;
+    border-right: 1px solid rgba(45, 62, 80, 0.2);
+    padding-bottom: 0;
   }
 }
 
