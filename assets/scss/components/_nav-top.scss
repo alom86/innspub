@@ -97,6 +97,10 @@
             font-weight: 600;
             color: $color_white;
             margin-bottom: 0;
+
+            a{
+                color: $color_primary;
+            }
         }
 
         &__right {
