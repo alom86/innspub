@@ -54,13 +54,63 @@ const announcements = new Swiper('.announcements', {
         576: {
         slidesPerView: 2,
         centeredSlides: false,
-        spaceBetween: 20
+        spaceBetween: 15
         },
         // when window width is >= 992px
         992: {
         slidesPerView: 3,
         centeredSlides: false,
-        spaceBetween: 30
+        spaceBetween: 25
+        },
+        // when window width is >= 1200px
+        1400: {
+        slidesPerView: 4,
+        centeredSlides: false,
+        spaceBetween: 40
+        }
+    },
+
+  
+    // If we need pagination
+    pagination: {
+        el: '.swiper-pagination', 
+        slidesPerView: 'auto', 
+        initialSlide: 1, 
+        resistanceRatio: 0, 
+        clickable: true 
+    },
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+
+// global_editor_home swiper
+const global_editor_home = new Swiper('.global_editor_home', {
+    autoplay: true,
+    autoplay: { 
+        delay: 3000,  
+        disableOnInteraction: false,
+    },
+    slidesPerView: 1.3,
+    centeredSlides: true,
+    spaceBetween: 10,
+
+    // Responsive breakpoints
+    breakpoints: {
+        // when window width is >= 576px
+        576: {
+        slidesPerView: 2,
+        centeredSlides: false,
+        spaceBetween: 15
+        },
+        // when window width is >= 992px
+        992: {
+        slidesPerView: 3,
+        centeredSlides: false,
+        spaceBetween: 25
         },
         // when window width is >= 1200px
         1400: {
@@ -104,19 +154,19 @@ const global_editor = new Swiper('.global_editor', {
         576: {
         slidesPerView: 2,
         centeredSlides: false,
-        spaceBetween: 20
+        spaceBetween: 15
         },
         // when window width is >= 992px
-        992: {
-        slidesPerView: 3,
-        centeredSlides: false,
-        spaceBetween: 30
-        },
+        // 992: {
+        // slidesPerView: 3,
+        // centeredSlides: false,
+        // spaceBetween: 30
+        // },
         // when window width is >= 1200px
         1400: {
-        slidesPerView: 4,
+        slidesPerView: 3,
         centeredSlides: false,
-        spaceBetween: 40
+        spaceBetween: 15
         }
     },
 
@@ -154,13 +204,13 @@ const published_issue = new Swiper('.published_issue', {
         576: {
         slidesPerView: 2,
         centeredSlides: false,
-        spaceBetween: 20
+        spaceBetween: 15
         },
         // when window width is >= 992px
         992: {
         slidesPerView: 3,
         centeredSlides: false,
-        spaceBetween: 30
+        spaceBetween: 25
         },
         // when window width is >= 1200px
         1400: {
@@ -203,13 +253,13 @@ const innspub_journal = new Swiper('.innspub_journal', {
         576: {
         slidesPerView: 2,
         centeredSlides: false,
-        spaceBetween: 20
+        spaceBetween: 15
         },
         // when window width is >= 992px
         992: {
         slidesPerView: 3,
         centeredSlides: false,
-        spaceBetween: 30
+        spaceBetween: 25
         },
         // when window width is >= 1200px
         1400: {
