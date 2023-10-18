@@ -315,11 +315,28 @@
         }
     }
 
+    .swiper-slide{
+        .profile{
+            background-color: $color_artboard;
+            &__img{
+                border-color: $color_artboard;
+            }
+
+            &:hover{
+                box-shadow: $shadow_hover;
+            }
+        }
+    }
+
     // Responsive
     @media (min-width: 576px) {
         .profile_cheif {
             flex-direction: row;
             gap: 28px;
+
+            &__label{
+                margin-bottom: 0;
+            }
         }
     }
 
@@ -377,6 +394,12 @@
         &__img {
             img {
                 max-height: 180px;
+            }
+        }
+
+        &__editor{
+            .title{
+                padding: 20px;
             }
         }
     }
