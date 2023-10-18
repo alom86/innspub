@@ -96,7 +96,7 @@
                 }
             }
 
-            &__journal_name{
+            &__journal_name {
                 opacity: 1;
             }
         }
@@ -185,6 +185,105 @@
 
             &__name {
                 color: $color_primary;
+            }
+        }
+    }
+}
+
+// card journal
+.journal {
+    box-shadow: $shadow_1;
+    transition: $transition;
+    padding: 14px;
+
+    h3,
+    p {
+        text-align: start;
+    }
+
+    &__img {
+        margin-bottom: 16px;
+
+        img {
+            box-shadow: $shadow_journal;
+            border-radius: $radius_1;
+            width: 100%;
+        }
+    }
+
+    &__links{
+
+        a{
+            text-decoration: underline;
+
+            &:hover{
+                color: $color_primary;
+            }
+        }
+
+        .btn{
+            text-decoration: none;
+        }
+    }
+
+    &:hover{
+        background-color: $color_artboard;
+    }
+
+
+    // Responsive
+    @media (min-width: 576px) {
+        &__links{
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    @media (min-width: 768px) {
+        padding: 24px 14px;
+        flex-direction: row;
+        gap: 16px;
+
+        &__img{
+            margin-bottom: 0;
+            img{
+                width: 320px;
+                max-width: unset;
+            }
+        }
+
+        h3{
+            margin-top: 0;
+        }
+        
+    }
+
+    @media (min-width: 992px) {
+        &__img{
+            img{
+                width: 230px;
+            }
+        }
+    }
+
+    @media (min-width: 1200px) {
+        gap: 24px;
+        
+        &__img{
+            img{
+                width: 322px;
+            }
+        }
+    }
+
+    @media (min-width: 1400px) {
+        padding: 24px;
+
+        &__img{
+            img{
+                width: 310px;
             }
         }
     }

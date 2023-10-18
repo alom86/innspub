@@ -166,7 +166,7 @@ const global_editor = new Swiper('.global_editor', {
         1400: {
         slidesPerView: 3,
         centeredSlides: false,
-        spaceBetween: 15
+        spaceBetween: 25
         }
     },
 
