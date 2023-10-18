@@ -28,6 +28,7 @@
 	|	|___page_content
 	|	|___breadcrumb_section
 	|	|___btn_img
+	|	|___data_col
 	|
 	|___layout
 	|	|___header
@@ -389,6 +390,22 @@ img {
   background-color: #018B40 !important;
   color: #FFFFFF !important;
   border-color: #018B40 !important;
+}
+
+.btn_link {
+  padding: 0;
+  margin: 0 !important;
+  font-weight: 700;
+  color: #2D3E50;
+}
+.btn_link i {
+  margin-right: 8px;
+}
+.btn_link:active {
+  border-color: transparent !important;
+}
+.btn_link:hover {
+  color: #018B40;
 }
 
 @media (min-width: 768px) {
@@ -903,6 +920,82 @@ img {
 }
 .profile:hover .profile__name {
   color: #018B40;
+}
+
+.journal {
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2509803922);
+  transition: 0.3s;
+  padding: 14px;
+}
+.journal h3,
+.journal p {
+  text-align: start;
+}
+.journal__img {
+  margin-bottom: 16px;
+}
+.journal__img img {
+  box-shadow: 0px 0px 6px 0px #018B40;
+  border-radius: 4px;
+  width: 100%;
+}
+.journal__links a {
+  text-decoration: underline;
+}
+.journal__links a:hover {
+  color: #018B40;
+}
+.journal__links .btn {
+  text-decoration: none;
+}
+.journal:hover {
+  background-color: #F9F9F9;
+}
+@media (min-width: 576px) {
+  .journal__links {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 768px) {
+  .journal {
+    padding: 24px 14px;
+    flex-direction: row;
+    gap: 16px;
+  }
+  .journal__img {
+    margin-bottom: 0;
+  }
+  .journal__img img {
+    width: 320px;
+    max-width: unset;
+  }
+  .journal h3 {
+    margin-top: 0;
+  }
+}
+@media (min-width: 992px) {
+  .journal__img img {
+    width: 230px;
+  }
+}
+@media (min-width: 1200px) {
+  .journal {
+    gap: 24px;
+  }
+  .journal__img img {
+    width: 322px;
+  }
+}
+@media (min-width: 1400px) {
+  .journal {
+    padding: 24px;
+  }
+  .journal__img img {
+    width: 310px;
+  }
 }
 
 .swiper {
@@ -1725,6 +1818,21 @@ img {
   .nav-link.btn_img span, .accordion-button.btn_img span {
     font-size: 18px;
   }
+}
+
+.data_col {
+  display: flex;
+  gap: 12px;
+}
+.data_col__title {
+  width: 104px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.data_col__data {
+  font-size: 14px;
 }
 
 /*----------------------------------
