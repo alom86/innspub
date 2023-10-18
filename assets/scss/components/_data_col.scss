@@ -1,0 +1,29 @@
+.data_col {
+    display: flex;
+    gap: 12px;
+
+    &__title {
+        width: 104px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        // a{
+        //     color: $color_natural_description;
+        //     font-weight: 700;
+
+        //     i{
+        //         margin-right: 8px;
+        //     }
+
+        //     &:hover{
+        //         color: $color_primary;
+        //     }
+        // }
+    }
+
+    &__data{
+        font-size: 14px;
+    }
+}

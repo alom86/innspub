@@ -67,6 +67,25 @@
     }
 }
 
+// btn_link
+.btn_link{
+    padding: 0;
+    margin: 0 !important;
+    font-weight: 700;
+    color: $color_natural_description;
+
+    i{
+        margin-right: 8px;
+    }
+
+    &:active{
+        border-color: transparent !important;
+    }
+    &:hover{
+        color: $color_primary;
+    }
+}
+
 
 // Responsive
 @media (min-width: 768px) {
