@@ -67,6 +67,10 @@ a {
   color: #00A6EE;
 }
 
+address {
+  margin-bottom: 0;
+}
+
 p {
   margin-bottom: 0;
 }
@@ -998,6 +1002,37 @@ img {
   }
 }
 
+.card-office {
+  padding: 16px 14px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2509803922);
+  height: 100%;
+}
+.card-office h3 {
+  margin: 16px 0 20px;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+}
+.card-office h3 em {
+  font-weight: 400;
+}
+.card-office address {
+  margin-top: 16px;
+  color: #2D3E50;
+  font-weight: 600;
+}
+@media (min-width: 1200px) {
+  .card-office {
+    padding: 20px;
+    display: flex;
+    align-items: start;
+    gap: 12px;
+  }
+  .card-office h3 {
+    margin: 0 0 20px;
+  }
+}
+
 .swiper {
   padding-bottom: 50px;
 }
@@ -1443,20 +1478,17 @@ img {
   text-decoration: underline;
 }
 .page_content__corporate_office {
-  padding: 30px 14px;
-  background-image: url(/assets/images/contact/corporate_bg.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-color: #F9F9F9;
+  padding: 16px 14px;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 16px;
   border-radius: 4px;
   border: 1px solid #018B40;
 }
 .page_content__corporate_office h3 {
   font-size: 28px;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin: 12px 0 20px;
 }
 .page_content__corporate_office h4 {
   font-size: 16px;
@@ -1464,9 +1496,11 @@ img {
   margin-bottom: 4px;
 }
 .page_content__corporate_office a {
+  display: block;
   text-decoration: underline;
   font-weight: 600;
   margin-top: 12px;
+  color: #018B40;
 }
 .page_content__img {
   margin-bottom: 24px;
@@ -1648,6 +1682,11 @@ img {
   }
   .page_content__contact_type {
     flex-direction: row;
+    padding: 38px 20px;
+  }
+  .page_content__corporate_office {
+    padding: 28px 20px;
+    margin-bottom: 24px;
   }
   .page_content .profile_cheif {
     padding: 24px;
@@ -1678,9 +1717,6 @@ img {
   }
   .page_content__contact_type {
     margin: 60px 0;
-  }
-  .page_content____corporate_office {
-    margin-bottom: 60px;
   }
 }
 @media (min-width: 1400px) {

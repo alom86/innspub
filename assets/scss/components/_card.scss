@@ -288,3 +288,38 @@
         }
     }
 }
+
+// card-office
+.card-office{
+    padding: 16px 14px;
+    border-radius: $radius_1;
+    box-shadow: $shadow_1;
+    height: 100%;
+
+    h3{
+        margin: 16px 0 20px;
+        font-size: 20px !important;
+        font-weight: 700 !important;
+
+        em{
+            font-weight: 400;
+        }
+    }
+
+    address{
+        margin-top: 16px;
+        color: $color_natural_description;
+        font-weight: 600;
+    }
+
+    @media (min-width: 1200px) {
+        padding: 20px;
+        display: flex;
+        align-items: start;
+        gap: 12px;
+        
+        h3{
+            margin: 0 0 20px;
+        }
+    }
+}

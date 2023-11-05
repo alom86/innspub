@@ -103,20 +103,17 @@
     }
 
     &__corporate_office {
-        padding: 30px 14px;
-        background-image: url(/assets/images/contact/corporate_bg.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
+        background-color: $color_artboard;
+        padding: 16px 14px;
         text-align: center;
-        margin-bottom: 40px;
+        margin-bottom: 16px;
         border-radius: $radius_1;
         border: 1px solid $color_primary;
 
         h3 {
             font-size: 28px;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin: 12px 0 20px;
         }
 
         h4 {
@@ -126,9 +123,11 @@
         }
 
         a {
+            display: block;
             text-decoration: underline;
             font-weight: 600;
             margin-top: 12px;
+            color: $color_primary;
         }
 
     }
@@ -370,6 +369,12 @@
 
         &__contact_type {
             flex-direction: row;
+            padding: 38px 20px;
+        }
+
+        &__corporate_office {
+            padding: 28px 20px;
+            margin-bottom: 24px;
         }
 
         .profile_cheif {
@@ -412,10 +417,6 @@
 
         &__contact_type {
             margin: 60px 0;
-        }
-
-        &____corporate_office {
-            margin-bottom: 60px;
         }
     }
 
