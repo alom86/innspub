@@ -303,7 +303,7 @@
         margin-top: 60px;
 
         .title {
-            background-color: $color-secondary;
+            background-color: $color_secondary;
             padding: 16px;
             margin-bottom: 20px;
 
@@ -430,4 +430,15 @@
         }
     }
 
+}
+
+// current-issue
+.current-issue{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    @media (min-width: 768px) {
+        gap: 20px;
+    }
 }

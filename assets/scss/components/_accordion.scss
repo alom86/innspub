@@ -72,7 +72,7 @@
         }
 
         .accordion-button {
-            background-color: $color-secondary;
+            background-color: $color_secondary;
             color: $color_natural_description;
             font-weight: 700;
             border-radius: 0;
@@ -138,7 +138,7 @@
         .accordion-item{
             &:nth-child(2n){
                 .accordion-button{
-                    background-color: $color-secondary;
+                    background-color: $color_secondary;
 
                     &:not(.collapsed) {
                         background-color: $color_primary;

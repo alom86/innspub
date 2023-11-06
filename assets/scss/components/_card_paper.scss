@@ -19,10 +19,6 @@
             color: $color_natural_head;
             font-weight: 600;
             font-size: 16px;
-
-            &:hover {
-                color: $color_primary;
-            }
         }
     }
 
@@ -30,8 +26,10 @@
         margin-top: 16px;
 
         a {
-            font-size: 12px;
+            font-size: 14px;
             font-weight: 500;
+            text-transform: lowercase;
+            text-decoration: none;
 
             &:not(:last-child) {
                 &::after {
@@ -39,8 +37,8 @@
                 }
             }
 
-            &:hover {
-                color: $color_natural_head;
+            &:hover{
+                text-decoration: underline;
             }
         }
     }
