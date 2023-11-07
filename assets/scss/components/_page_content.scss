@@ -327,6 +327,11 @@
         }
     }
 
+    .accordion{
+        margin-top: 20px;
+    }
+
+
     // Responsive
     @media (min-width: 576px) {
         .profile_cheif {
@@ -379,6 +384,10 @@
 
         .profile_cheif {
             padding: 24px;
+        }
+
+        .accordion{
+            margin-top: 40px;
         }
     }
 
