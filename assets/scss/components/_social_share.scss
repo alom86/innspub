@@ -1,0 +1,35 @@
+.social_share {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background-color: $color_secondary;
+    width: 100%;
+    border-radius: $radius_1;
+
+    a {
+        padding: 8px 20px;
+        background-color: $color_white;
+        border: 1px solid $color_natural_description_20;
+        border-radius: $radius_rounded;
+        height: 30px;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+
+        svg{
+            transition: $transition;
+        }
+
+        &:hover {
+            border-color: $color_primary;
+            color: $color_primary;
+            & svg{
+                fill: $color_primary;
+            }
+        }
+    }
+}

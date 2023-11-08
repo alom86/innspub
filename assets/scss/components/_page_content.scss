@@ -314,21 +314,34 @@
         }
     }
 
-    .swiper-slide{
-        .profile{
+    .swiper-slide {
+        .profile {
             background-color: $color_artboard;
-            &__img{
+
+            &__img {
                 border-color: $color_artboard;
             }
 
-            &:hover{
+            &:hover {
                 box-shadow: $shadow_hover;
             }
         }
     }
 
-    .accordion{
+    .accordion {
         margin-top: 20px;
+    }
+
+    .reference_item {
+        padding: 16px 0;
+        border-top: 1px solid $color_line;
+        border-bottom: 1px solid $color_line;
+
+        &__title {
+            font-weight: 600;
+            margin-right: 6px;
+            white-space: nowrap;
+        }
     }
 
 
@@ -338,7 +351,7 @@
             flex-direction: row;
             gap: 28px;
 
-            &__label{
+            &__label {
                 margin-bottom: 0;
             }
         }
@@ -386,9 +399,13 @@
             padding: 24px;
         }
 
-        .accordion{
+        .accordion {
             margin-top: 40px;
         }
+
+        // .reference_item {
+        //     display: flex;
+        // }
     }
 
     @media (min-width: 992px) {
@@ -411,8 +428,8 @@
             }
         }
 
-        &__editor{
-            .title{
+        &__editor {
+            .title {
                 padding: 20px;
             }
         }
@@ -442,7 +459,7 @@
 }
 
 // current-issue
-.current-issue{
+.current-issue {
     display: flex;
     flex-direction: column;
     gap: 12px;

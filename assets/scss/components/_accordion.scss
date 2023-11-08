@@ -6,6 +6,10 @@
         &:not(:last-child){
             margin-bottom: 12px;
         }
+        &:last-of-type{
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
 
         p{
             margin-bottom: 0;
@@ -46,8 +50,13 @@
     .accordion-body {
         color: $color_natural_description;
 
+        h3{
+            font-weight: 700;
+        }
+
         a {
             font-weight: 500;
+            color: $color_primary;
         }
     }
 
