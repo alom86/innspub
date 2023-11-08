@@ -211,6 +211,14 @@
         }
     }
 
+    &__description{
+        margin-bottom: 32px;
+
+        p{
+            margin-bottom: 0 !important;
+        }
+    }
+
     &__links {
 
         a {
@@ -223,6 +231,8 @@
 
         .btn {
             text-decoration: none;
+            padding: 6px 12px;
+            justify-content: center;
         }
     }
 
@@ -271,6 +281,7 @@
 
     @media (min-width: 1200px) {
         gap: 24px;
+        padding: 24px;
 
         &__img {
             img {
@@ -280,8 +291,6 @@
     }
 
     @media (min-width: 1400px) {
-        padding: 24px;
-
         &__img {
             img {
                 width: 310px;
