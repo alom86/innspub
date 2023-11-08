@@ -6,21 +6,24 @@ body {
     font-weight: 400;
     line-height: 28px;
 }
-*{
-    &:focus-visible{
+
+* {
+    &:focus-visible {
         outline: none;
     }
 }
+
 a {
     text-decoration: none;
     transition: $transition;
     color: $color_natural_head;
 
-    &:hover{
+    &:hover {
         color: $color_primary;
     }
 }
-address{
+
+address {
     margin-bottom: 0;
 }
 
@@ -91,6 +94,11 @@ img {
         background-color: $color_natural_head;
         opacity: 0.6;
     }
+}
+
+.moreless {
+    color: $color_primary;
+    font-weight: 500;
 }
 
 
