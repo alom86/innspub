@@ -204,7 +204,7 @@
 
         &__img-cheif {
             position: relative;
-            border: 3px solid transparent;
+            border: 3px solid $color_natural_description;
             border-radius: $radius_1;
 
             img {
@@ -264,6 +264,10 @@
             a {
                 margin-left: 12px;
                 white-space: nowrap;
+                color: $color_link;
+                &:hover{
+                    color: $color_primary;
+                }
             }
 
             .social {
@@ -451,6 +455,7 @@
                 border-bottom: 0;
                 border-right: 1px solid $color_natural_description_20;
                 padding-bottom: 0;
+                padding-right: 24px;
             }
         }
     }
@@ -463,7 +468,17 @@
     flex-direction: column;
     gap: 12px;
 
+    .section_title{
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 0;
+    }
+
     @media (min-width: 768px) {
         gap: 20px;
+
+        .section_title{
+            font-size: 24px;
+        }
     }
 }

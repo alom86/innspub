@@ -31,6 +31,7 @@
 	|	|___data_col
 	|	|___pagination
 	|	|___social_share
+	|	|___filter
 	|
 	|___layout
 	|	|___header
@@ -74,6 +75,10 @@ a {
 }
 a:hover {
   color: #018B40;
+}
+
+.mb_60 {
+  margin-bottom: 60px;
 }
 
 address {
@@ -929,8 +934,9 @@ img {
 }
 .profile__name {
   color: #132833;
-  font-weight: 600;
+  font-weight: 700;
   text-align: center;
+  font-size: 16px;
 }
 .profile span,
 .profile h4 {
@@ -1006,6 +1012,12 @@ img {
   background-color: #F9F9F9;
 }
 @media (min-width: 576px) {
+  .journal__img {
+    text-align: center;
+  }
+  .journal__img img {
+    width: 350px;
+  }
   .journal__links {
     display: flex;
     gap: 8px;
@@ -1016,37 +1028,38 @@ img {
 @media (min-width: 768px) {
   .journal {
     padding: 24px 14px;
-    flex-direction: row;
     gap: 16px;
   }
   .journal__img {
     margin-bottom: 0;
   }
   .journal__img img {
-    width: 320px;
+    width: 400px;
     max-width: unset;
   }
   .journal h3 {
     margin-top: 0;
-  }
-}
-@media (min-width: 992px) {
-  .journal__img img {
-    width: 230px;
+    font-weight: 700 !important;
   }
 }
 @media (min-width: 1200px) {
   .journal {
+    flex-direction: row;
     gap: 24px;
     padding: 24px;
   }
   .journal__img img {
-    width: 322px;
+    width: 310px;
   }
 }
 @media (min-width: 1400px) {
   .journal__img img {
-    width: 310px;
+    width: 290px;
+  }
+  .journal .position_xl_fixed {
+    position: absolute;
+    right: 24px;
+    bottom: 24px;
   }
 }
 
@@ -1180,6 +1193,62 @@ img {
   .card-issue__description {
     margin-top: 24px;
     padding-top: 24px;
+  }
+}
+
+.card_feature {
+  padding: 16px;
+  background-color: #F9F9F9;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2509803922);
+  border-radius: 8px;
+  text-align: center;
+  height: 100%;
+}
+.card_feature__icon {
+  width: 80px;
+  min-width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2509803922);
+  margin-bottom: 24px;
+  transition: 0.3s;
+}
+.card_feature__icon img {
+  width: 36px;
+}
+.card_feature h3 a {
+  font-weight: 700;
+}
+.card_feature p {
+  margin-bottom: 0 !important;
+}
+.card_feature:hover .card_feature__icon {
+  box-shadow: 0px 0px 6px 0px #018B40;
+}
+.card_feature:hover a {
+  color: #018B40 !important;
+}
+@media (min-width: 768px) {
+  .card_feature {
+    padding: 24px;
+    text-align: start;
+  }
+}
+
+.card_more {
+  min-height: 364px;
+  justify-content: center;
+}
+.card_more h4 {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+}
+@media (min-width: 1400px) {
+  .card_more {
+    min-height: 208px;
   }
 }
 
@@ -1705,7 +1774,7 @@ img {
 }
 .page_content .profile_cheif__img-cheif {
   position: relative;
-  border: 3px solid transparent;
+  border: 3px solid #2D3E50;
   border-radius: 4px;
 }
 .page_content .profile_cheif__img-cheif img {
@@ -1756,6 +1825,10 @@ img {
 .page_content .profile_cheif__contact a {
   margin-left: 12px;
   white-space: nowrap;
+  color: #00A6EE;
+}
+.page_content .profile_cheif__contact a:hover {
+  color: #018B40;
 }
 .page_content .profile_cheif__contact .social {
   margin-top: 24px;
@@ -1888,6 +1961,7 @@ img {
     border-bottom: 0;
     border-right: 1px solid rgba(45, 62, 80, 0.2);
     padding-bottom: 0;
+    padding-right: 24px;
   }
 }
 
@@ -1896,9 +1970,17 @@ img {
   flex-direction: column;
   gap: 12px;
 }
+.current-issue .section_title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 0;
+}
 @media (min-width: 768px) {
   .current-issue {
     gap: 20px;
+  }
+  .current-issue .section_title {
+    font-size: 24px;
   }
 }
 
@@ -2121,6 +2203,27 @@ ul.pagination .page-link:hover, ul.pagination .page-link:focus, ul.pagination .p
 }
 .social_share a:hover svg {
   fill: #018B40;
+}
+
+.filter .form-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url(/assets/images/icon/filter_icon.png);
+  background-position: center;
+  width: 36px;
+  height: 36px;
+  padding: 16px;
+}
+.filter .form-select:focus {
+  box-shadow: none;
+  border-color: #FFFFFF;
+}
+@media (min-width: 768px) {
+  .filter .form-select {
+    width: auto;
+    background-position: right 0.75rem center;
+    padding: 6px 36px 6px 12px;
+  }
 }
 
 /*----------------------------------
