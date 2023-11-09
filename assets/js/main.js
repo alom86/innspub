@@ -285,6 +285,55 @@ const innspub_journal = new Swiper('.innspub_journal', {
     prevEl: '.swiper-button-prev',
   },
 });
+// published_issue swiper
+const journal_editor = new Swiper('.journal_editor', {
+  autoplay: true,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+  slidesPerView: 1.3,
+  centeredSlides: true,
+  spaceBetween: 10,
+
+  // Responsive breakpoints
+  breakpoints: {
+    // when window width is >= 576px
+    576: {
+      slidesPerView: 2,
+      centeredSlides: false,
+      spaceBetween: 15
+    },
+    // when window width is >= 992px
+    // 992: {
+    //   slidesPerView: 3,
+    //   centeredSlides: false,
+    //   spaceBetween: 25
+    // },
+    // // when window width is >= 1200px
+    // 1400: {
+    //   slidesPerView: 4,
+    //   centeredSlides: false,
+    //   spaceBetween: 40
+    // }
+  },
+
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    slidesPerView: 'auto',
+    initialSlide: 1,
+    resistanceRatio: 0,
+    clickable: true
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
 
 //   Text Truncate
 $(document).ready(function () {
@@ -342,11 +391,11 @@ $(document).ready(function () {
         var c = content.substr(0, showChar);
         var h = content;
         var html =
-          '<div class="truncate-text" style="display:block">' +
+          '<div class="journal__description-text" style="display:block">' +
           c +
           '<span class="moreellipses">' +
           ellipsestext +
-          '&nbsp;&nbsp;<a href="" class="moreless more">Read more</a></span></span></div><div class="truncate-text" style="display:none">' +
+          '&nbsp;&nbsp;<a href="" class="moreless more">Read more</a></span></span></div><div class="journal__description-text" style="display:none">' +
           h +
           '<a href="" class="moreless less">Read less</a></span></div>';
 
@@ -356,8 +405,8 @@ $(document).ready(function () {
 
     $(".moreless").click(function () {
       var thisEl = $(this);
-      var cT = thisEl.closest(".truncate-text");
-      var tX = ".truncate-text";
+      var cT = thisEl.closest(".journal__description-text");
+      var tX = ".journal__description-text";
 
       if (thisEl.hasClass("less")) {
         cT.prev(tX).toggle();

@@ -30,6 +30,7 @@
 	|	|___data_col
 	|	|___pagination
 	|	|___social_share
+	|	|___filter
 	|
 	|___layout
 	|	|___header
@@ -87,6 +88,7 @@
 @import 'components/data_col';
 @import 'components/pagination';
 @import 'components/social_share';
+@import 'components/filter';
 
 
 /*----------------------------------
