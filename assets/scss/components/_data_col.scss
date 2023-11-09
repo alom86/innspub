@@ -8,22 +8,15 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-
-        // a{
-        //     color: $color_natural_description;
-        //     font-weight: 700;
-
-        //     i{
-        //         margin-right: 8px;
-        //     }
-
-        //     &:hover{
-        //         color: $color_primary;
-        //     }
-        // }
     }
 
     &__data{
         font-size: 14px;
+    }
+
+    @media (min-width: 576px) {
+        &__title{
+            width: 150px;
+        }
     }
 }

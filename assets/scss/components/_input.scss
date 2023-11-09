@@ -30,8 +30,8 @@
     height: 36px;
     font-size: 16px;
     font-weight: 500;
-    padding: 10px 35px;
-    border-radius: $radius_rounded;
+    padding: 12px 24px;
+    border-radius: $radius_1;
     line-height: 1;
     border: 1px solid transparent;
     display: inline-flex;
@@ -86,8 +86,18 @@
     }
 }
 
+.btn_full{
+    width: 100%;
+}
+
 
 // Responsive
+@media (min-width: 576px) {
+    .btn_full{
+        width: auto;
+    }
+}
+
 @media (min-width: 768px) {
     .btn {
         height: 44px;
