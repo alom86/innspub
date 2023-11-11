@@ -6,10 +6,7 @@
             .accordion-item {
                 box-shadow: none;
                 border-radius: 0;
-
-                &:not(:last-of-type) {
-                    margin-bottom: 16px;
-                }
+                margin-bottom: 1px;
 
                 &:last-of-type {
                     .accordion-button {
@@ -21,7 +18,7 @@
             }
 
             .accordion-button {
-                background-color: $color_natural_description;
+                background-color: $color_natural_head;
                 color: $color_white;
                 border-radius: $radius_1 $radius_1 0 0;
 
@@ -44,7 +41,6 @@
                 padding: 0;
                 display: flex;
                 flex-direction: column;
-                gap: 4px;
             }
 
             // indexed_in
@@ -52,7 +48,7 @@
                 .accordion-header {
                     position: relative;
 
-                    .btn {
+                    .btn_more {
                         font-size: 14px;
                         width: 66px;
                         height: auto;
@@ -66,11 +62,20 @@
                         z-index: 10;
                     }
 
-                    &.active{
-                        .accordion-button{
+                    .collapsed+.btn_more {
+                        display: none;
+                    }
+
+                    :not(.collapsed)+.btn_more {
+                        display: block;
+                    }
+
+                    &.active {
+                        .accordion-button {
                             background-color: $color_primary;
                         }
-                        .btn_primary{
+
+                        .btn_primary {
                             background-color: $color_natural_head;
                         }
                     }
@@ -92,7 +97,7 @@
                     padding-left: 0;
 
                     li {
-                        margin-bottom: 4px;
+                        margin-bottom: 0;
                     }
 
                     a {
@@ -102,7 +107,7 @@
                         align-items: center;
                         justify-content: space-between;
                         height: 40px;
-                        padding: 6px 40px 6px 18px;
+                        padding: 12px 18px;
                         box-shadow: $shadow_link_card;
 
                         &::after {
@@ -127,12 +132,31 @@
 
             // links
             .links {
+                margin: 8px 0;
+
                 ul {
-                    a {
-                        background-color: $color_natural_description;
-                        color: $color_white;
-                        border-radius: $radius_1 $radius_1 0 0;
-                        padding: 6px 18px;
+                    li {
+                        margin-bottom: 1px;
+
+                        a {
+                            background-color: $color_natural_description;
+                            color: $color_white;
+                            // border-radius: $radius_1 $radius_1 0 0;
+                            padding: 6px 18px;
+                            box-shadow: none;
+                        }
+
+                        &:first-of-type {
+                            a {
+                                border-radius: $radius_1 $radius_1 0 0;
+                            }
+                        }
+
+                        &:last-of-type {
+                            a {
+                                border-radius: 0 0 $radius_1 $radius_1;
+                            }
+                        }
                     }
                 }
             }

@@ -16,8 +16,8 @@
         }
     }
 
-    h2.accordion-header {
-        margin-bottom: 0;
+    .accordion-header {
+        margin-bottom: 0 !important;
     }
 
     .accordion-button {
@@ -84,10 +84,6 @@
             }
         }
 
-        .accordion-header {
-            margin-bottom: 4px;
-        }
-
         .accordion-button {
             background-color: $color_secondary;
             color: $color_natural_description;
@@ -95,11 +91,8 @@
             border-radius: 0;
             font-size: 16px;
 
-            &:not(.collapsed) {
-
-                &::after {
-                    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%232D3E50'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
-                }
+            &::after{
+                background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%232D3E50'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
             }
         }
 
@@ -153,13 +146,25 @@
 
     &.striped{
         .accordion-item{
+            .accordion-button{
+                background-color: $color_white;
+                color: $color_natural_head;
+
+                &::after{
+                    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23018B40'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+                }
+
+                &:not(.collapsed) {
+                    background-color: $color_white;
+                }
+            }
+
             &:nth-child(2n){
                 .accordion-button{
                     background-color: $color_secondary;
 
                     &:not(.collapsed) {
-                        background-color: $color_primary;
-                        color: $color_white;
+                        background-color: $color_secondary;
                     }
                 }
             }
@@ -171,14 +176,6 @@
     @media (min-width: 576px) {
         .accordion-button {
             padding: 12px 18px;
-        }
-    }
-
-    @media (min-width: 992px) {
-        .accordion-item{
-            &:not(:last-child){
-                margin-bottom: 20px;
-            }
         }
     }
 }
