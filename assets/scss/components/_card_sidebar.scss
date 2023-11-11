@@ -1,24 +1,25 @@
-.card_sidebar{
-    
+.card_sidebar {
+
     // Responsive
     @media (min-width: 992px) {
-        border-radius: 0 0 $radius_1 $radius_1;
         background-color: $color_white;
-        box-shadow: $shadow_2;
+        box-shadow: $shadow_link_card;
         padding: 12px 16px;
 
-        h4{
+        h4 {
             font-size: 14px;
             font-weight: 500;
-            a{
-                color: $color_natural_head;
-                &:hover{
-                    color: $color_primary;
+
+            a {
+                color: $color_natural_head !important;
+
+                &:hover {
+                    color: $color_primary !important;
                 }
             }
         }
-    
-        &__label{
+
+        &__label {
             padding: 4px 8px;
             margin-right: 8px;
             font-size: 12px;
@@ -27,13 +28,16 @@
             color: $color_white;
             border-radius: 2px;
         }
-        &__date{
+
+        &__date {
             font-size: 12px;
             font-weight: 400;
         }
+    }
 
-        &:first-child{
-            margin-top: 4px;
-        }
+    &:last-of-type{
+        margin-bottom: 12px;
+        border-bottom-left-radius: $radius_1;
+        border-bottom-right-radius: $radius_1;
     }
 }

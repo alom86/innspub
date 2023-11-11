@@ -105,9 +105,46 @@ img {
     font-weight: 500;
 }
 
+.back-to-top{
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border-radius: $radius_circle;
+    background-color: $color_primary;
+    bottom: 48px;
+    right: 16px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    svg{
+        width: 24px;
+        color: $color_white;
+        transition: $transition;
+    }
+
+    &:hover{
+        svg{
+            color: $color_natural_head;
+        }
+    }
+}
 
 
 // Responsive
+@media (min-width: 768px) {
+    .back-to-top{
+        width: 48px;
+        height: 48px;
+
+        svg{
+            width: 30px;
+        }
+    }
+}
+
 @media (min-width: 1200px) {
     .section_gap {
         padding: 80px 16px;

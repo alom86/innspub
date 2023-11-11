@@ -29,7 +29,7 @@
         text-transform: capitalize;
         margin-bottom: 20px;
 
-        h2 {
+        h1, h2 {
             font-size: 16px;
             font-weight: 700;
             margin-bottom: 0;
@@ -314,6 +314,7 @@
             h2 {
                 margin-bottom: 0;
                 font-weight: 700;
+                font-size: 20px;
             }
         }
     }
@@ -401,14 +402,6 @@
         .profile_cheif {
             padding: 24px;
         }
-
-        .accordion {
-            margin-top: 40px;
-        }
-
-        // .reference_item {
-        //     display: flex;
-        // }
     }
 
     @media (min-width: 992px) {
@@ -416,13 +409,13 @@
             height: 66px;
             padding: 24px;
 
-            h2 {
+            h1, h2 {
                 font-size: 20px;
             }
         }
 
         &__data {
-            padding: 20px;
+            padding: 24px;
         }
 
         &__img {

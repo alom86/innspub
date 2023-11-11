@@ -1,7 +1,7 @@
 .footer_before {
     background-color: $color_natural_description;
     box-shadow: 0px -1px 0px 0px #018B40 inset;
-    padding: 30px 16px;
+    padding: 28px 16px;
 
     .container {
         display: flex;
@@ -9,29 +9,7 @@
         align-items: center;
     }
 
-    h2 {
-        color: $color_white;
-        font-size: 28px;
-        font-weight: 800;
-        text-transform: uppercase;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .btn {
-        height: 44px;
-    }
-
     @media (min-width: 1200px) {
-        padding: 40px;
-
-        h2 {
-            font-size: 32px;
-            margin-bottom: 30px;
-        }
-
-        .btn {
-            height: 54px;
-        }
+        padding: 38px;
     }
 }
