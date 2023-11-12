@@ -351,7 +351,7 @@ $(document).ready(function () {
           c +
           '<span class="moreellipses">' +
           ellipsestext +
-          '&nbsp;&nbsp;<a href="" class="moreless more">Read more</a></span></span></div><div class="truncate-text" style="display:none">' +
+          '&nbsp;&nbsp;<a href="" class="moreless more">Read More <span class="sr-only">read more link button</span></a></span></span></div><div class="truncate-text" style="display:none">' +
           h +
           '<a href="" class="moreless less">Read less</a></span></div>';
 
@@ -395,7 +395,7 @@ $(document).ready(function () {
           c +
           '<span class="moreellipses">' +
           ellipsestext +
-          '&nbsp;&nbsp;<a href="" class="moreless more">Read more</a></span></span></div><div class="journal__description-text" style="display:none">' +
+          '&nbsp;&nbsp;<a href="" class="moreless more">Read More <span class="sr-only">read more link button</span></a></span></span></div><div class="journal__description-text" style="display:none">' +
           h +
           '<a href="" class="moreless less">Read less</a></span></div>';
 
