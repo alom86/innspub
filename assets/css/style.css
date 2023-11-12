@@ -123,7 +123,7 @@ h3 {
 }
 
 ul {
-  list-style-image: url(../images/shape/ul_list_start.png);
+  list-style-image: url(../images/shape/ul_list_start.webp);
   list-style-position: inside;
   padding-left: 0;
   margin-bottom: 0;
@@ -1673,7 +1673,7 @@ img {
 }
 .page_content ul {
   margin-bottom: 30px;
-  list-style-image: url(../images/shape/ul_list_start2.png);
+  list-style-image: url(../images/shape/ul_list_start2.webp);
 }
 .page_content__title {
   height: 52px;
@@ -2253,7 +2253,7 @@ ul.pagination .page-link:hover, ul.pagination .page-link:focus, ul.pagination .p
 .filter .form-select {
   appearance: none;
   -webkit-appearance: none;
-  background-image: url(/assets/images/icon/filter_icon.png);
+  background-image: url(/assets/images/icon/filter_icon.webp);
   background-position: center;
   width: 36px;
   height: 36px;
@@ -2295,7 +2295,7 @@ ul.pagination .page-link:hover, ul.pagination .page-link:focus, ul.pagination .p
 	~~~ Sections ~~~
 -----------------------------------*/
 .banner {
-  background-image: url(../images/banner/banner_bg_mobile.jpg);
+  background-image: url(../images/banner/banner_bg_mobile.webp);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2342,7 +2342,7 @@ ul.pagination .page-link:hover, ul.pagination .page-link:focus, ul.pagination .p
 }
 @media (min-width: 768px) {
   .banner {
-    background-image: url(../images/banner/banner_bg.jpg);
+    background-image: url(../images/banner/banner_bg.webp);
   }
 }
 @media (min-width: 1400px) {
@@ -2405,7 +2405,7 @@ ul.pagination .page-link:hover, ul.pagination .page-link:focus, ul.pagination .p
 }
 
 .why_choose {
-  background-image: url(../images/why_choose/why_choose_bg_image.jpg);
+  background-image: url(../images/why_choose/why_choose_bg_image.webp);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

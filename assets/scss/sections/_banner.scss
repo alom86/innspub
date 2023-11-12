@@ -1,5 +1,5 @@
 .banner {
-    background-image: url(../images/banner/banner_bg_mobile.jpg);
+    background-image: url(../images/banner/banner_bg_mobile.webp);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -56,7 +56,7 @@
 
     // Responsive
     @media (min-width: 768px) {
-        background-image: url(../images/banner/banner_bg.jpg);
+        background-image: url(../images/banner/banner_bg.webp);
     }
 
     @media (min-width: 1400px) {
