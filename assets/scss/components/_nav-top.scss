@@ -2,17 +2,23 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 32px;
 
     &__left {
-        padding: 11px 0 11px 16px;
+        padding-left: 16px;
         background-color: $color_natural_head;
         width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: start;
     }
 
     &__left-link {
         a {
             display: inline-block;
             color: $color_white;
+            line-height: 1;
 
             i {
                 font-size: 12px;
@@ -31,10 +37,14 @@
     }
 
     &__right {
-        padding: 6px 16px 6px 0;
+        padding-right: 16px;
         background-color: $color_primary;
         width: 50%;
         font-size: 12px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: end;
 
         &::after {
             -moz-border-bottom-colors: none;
@@ -60,13 +70,15 @@
         text-align: end;
 
         a {
-            display: inline-block;
-            padding: 5px 10px;
+            display: inline-flex;
+            align-items: center;
+            padding: 0 10px;
             background-color: $color_white;
             color: $color_natural_head;
             border-radius: $radius_rounded;
             font-size: 12px;
             font-weight: 600;
+            height: 21px;
 
             &:hover {
                 background-color: $color_complementary;
@@ -87,10 +99,7 @@
     }
 
     @media (min-width: 1200px) {
-        &__left {
-            padding-top: 20px;
-            padding-bottom: 20px;
-        }
+        height: 38px;
 
         &__welcome-title {
             font-size: 13px;
@@ -98,7 +107,7 @@
             color: $color_white;
             margin-bottom: 0;
 
-            a{
+            a {
                 color: $color_primary;
             }
         }
@@ -124,7 +133,7 @@
         &__right-link {
             a {
                 i {
-                    margin-right: 2px;
+                    margin-right: 4px;
                 }
 
                 &:first-child {
@@ -143,7 +152,8 @@
             a {
                 background-color: $color_white;
                 color: $color_natural_head;
-                padding: 6px 12px;
+                padding: 0 12px;
+                height: 25px;
 
                 &:hover {
                     background-color: $color_complementary;

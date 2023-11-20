@@ -180,6 +180,10 @@ img {
   color: #132833;
 }
 
+.text_primary {
+  color: #018B40;
+}
+
 @media (min-width: 768px) {
   .back-to-top {
     width: 48px;
@@ -268,15 +272,21 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 32px;
 }
 .nav-top__left {
-  padding: 11px 0 11px 16px;
+  padding-left: 16px;
   background-color: #132833;
   width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
 }
 .nav-top__left-link a {
   display: inline-block;
   color: #FFFFFF;
+  line-height: 1;
 }
 .nav-top__left-link a i {
   font-size: 12px;
@@ -290,10 +300,14 @@ img {
   color: #018B40;
 }
 .nav-top__right {
-  padding: 6px 16px 6px 0;
+  padding-right: 16px;
   background-color: #018B40;
   width: 50%;
   font-size: 12px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
 }
 .nav-top__right::after {
   -moz-border-bottom-colors: none;
@@ -317,13 +331,15 @@ img {
   text-align: end;
 }
 .nav-top__right-button a {
-  display: inline-block;
-  padding: 5px 10px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 10px;
   background-color: #FFFFFF;
   color: #132833;
   border-radius: 100px;
   font-size: 12px;
   font-weight: 600;
+  height: 21px;
 }
 .nav-top__right-button a:hover {
   background-color: #8B014C;
@@ -338,9 +354,8 @@ img {
   }
 }
 @media (min-width: 1200px) {
-  .nav-top__left {
-    padding-top: 20px;
-    padding-bottom: 20px;
+  .nav-top {
+    height: 38px;
   }
   .nav-top__welcome-title {
     font-size: 13px;
@@ -367,7 +382,7 @@ img {
     color: #FFFFFF;
   }
   .nav-top__right-link a i {
-    margin-right: 2px;
+    margin-right: 4px;
   }
   .nav-top__right-link a:first-child {
     padding-right: 8px;
@@ -380,7 +395,8 @@ img {
   .nav-top__right-button a {
     background-color: #FFFFFF;
     color: #132833;
-    padding: 6px 12px;
+    padding: 0 12px;
+    height: 25px;
   }
   .nav-top__right-button a:hover {
     background-color: #8B014C;
@@ -476,6 +492,7 @@ img {
   padding: 14px 16px;
   background-color: #FFFFFF;
   box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2509803922);
+  height: 60px;
 }
 .navbar.sticky {
   background-color: #FFFFFF;
@@ -495,6 +512,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: auto;
 }
 .navbar__toggler:focus {
   box-shadow: none;
@@ -548,6 +566,11 @@ img {
 .navbar .dropdown-item:hover, .navbar .dropdown-item:active {
   background-color: #018B40;
   color: #FFFFFF;
+}
+@media (min-width: 576px) {
+  .navbar {
+    height: 78px;
+  }
 }
 @media (min-width: 768px) {
   .navbar__brand img {
@@ -1281,6 +1304,13 @@ img {
   .card_more {
     min-height: 208px;
   }
+}
+
+.bg-white .card {
+  background-color: #F9F9F9;
+}
+.bg-white .card:hover {
+  background-color: #F2F2F2;
 }
 
 .swiper {
