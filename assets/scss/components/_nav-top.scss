@@ -121,7 +121,7 @@
             padding-bottom: 8px;
 
             &::after {
-                height: 56px;
+                height: 38px;
                 border-width: 30px 15px;
             }
 
@@ -159,6 +159,19 @@
                     background-color: $color_complementary;
                     color: $color_white;
                 }
+            }
+        }
+    }
+
+    @media (min-width: 1400px) {
+        &__left{
+            width: 55%;
+        }
+        &__right{
+            width: 45%;
+
+            &::after{
+                right: 45%;
             }
         }
     }
