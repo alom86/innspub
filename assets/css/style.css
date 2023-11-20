@@ -929,6 +929,7 @@ img {
 }
 .card__journal_name a {
   font-size: 16px;
+  color: #018B40;
 }
 .card__journal_name span {
   color: #FFFFFF;
@@ -1196,7 +1197,7 @@ img {
   font-size: 16px;
   font-weight: 700;
   display: inline-block;
-  margin-bottom: 16px;
+  margin-bottom: 0;
 }
 .card-issue__img {
   margin-bottom: 16px;
@@ -1384,6 +1385,10 @@ img {
 .swiper-button-prev:hover::after {
   color: #018B40;
 }
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
+  opacity: 0;
+}
 
 .swiper-button-next {
   right: 4px;
@@ -1462,7 +1467,7 @@ img {
   display: none;
 }
 .card_paper h3 {
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 .card_paper h3 a {
   color: #132833;
@@ -1470,7 +1475,7 @@ img {
   font-size: 16px;
 }
 .card_paper__tags {
-  margin-top: 16px;
+  margin-top: 8px;
 }
 .card_paper__tags a {
   font-size: 14px;

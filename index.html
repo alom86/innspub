@@ -66,7 +66,7 @@
                 <a class="navbar__brand" href="index.html">
                     <img src="assets/images/logo/logo.webp" alt="logo">
                 </a>
-    
+
                 <!-- desktop menu -->
                 <div class="navbar__desktop_menu d-none d-xl-flex">
                     <ul class="navbar-nav mx-auto">
@@ -141,12 +141,12 @@
                     <input class="form-control search-form__input" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn search-form__button" type="submit"><i class="fa-solid fa-magnifying-glass"></i><span class="sr-only">search button</span></button>
                 </form>
-    
+
                 <button class="btn navbar__toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuOffcanvas" aria-controls="menuOffcanvas">
                     <i class="fa-solid fa-bars"></i>
                     <span class="sr-only">nav toggler button</span>
                 </button>
-    
+
                 <!-- mobile menu offcanvas -->
                 <div class="offcanvas offcanvas-start" tabindex="-1" id="menuOffcanvas" aria-labelledby="menuOffcanvas">
                     <div class="offcanvas-header p-0 mb-4">
@@ -161,7 +161,7 @@
                         <input class="form-control search-form__input" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn search-form__button" type="submit"><i class="fa-solid fa-magnifying-glass"></i><span class="sr-only">search button</span></button>
                     </form>
-    
+
                     <ul class="navbar-nav overflow-y-scroll">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -977,24 +977,27 @@
                         <h2>Latest Papers</h2>
 
                         <div class="nav_tabs">
-                            <ul class="nav nav-tabs" id="publicationTab" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link active" id="ijaar-tab" data-bs-toggle="tab" data-bs-target="#ijaar-tab-pane" type="button" role="tab" aria-controls="ijaar-tab-pane" aria-selected="true">IJAAR Publication</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="ijbb-tab" data-bs-toggle="tab" data-bs-target="#ijbb-tab-pane" type="button" role="tab" aria-controls="ijbb-tab-pane" aria-selected="false">IJBB Publication</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="ijb-tab" data-bs-toggle="tab" data-bs-target="#ijb-tab-pane" type="button" role="tab" aria-controls="ijb-tab-pane" aria-selected="false">IJB Publication</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="ijmm-tab" data-bs-toggle="tab" data-bs-target="#ijmm-tab-pane" type="button" role="tab" aria-controls="ijmm-tab-pane" aria-selected="false">IJMM Publication</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="jbes-tab" data-bs-toggle="tab" data-bs-target="#jbes-tab-pane" type="button" role="tab" aria-controls="jbes-tab-pane" aria-selected="false">JBES Publication</button>
-                                </li>
+                            <div class="dropdown">
+                                <div class="select_button">IJAAR Publication</div>
+                                <ul class="nav nav-tabs" id="publicationTab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="ijaar-tab" data-bs-toggle="tab" data-bs-target="#ijaar-tab-pane" type="button" role="tab" aria-controls="ijaar-tab-pane" aria-selected="true">IJAAR Publication</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="ijbb-tab" data-bs-toggle="tab" data-bs-target="#ijbb-tab-pane" type="button" role="tab" aria-controls="ijbb-tab-pane" aria-selected="false">IJBB Publication</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="ijb-tab" data-bs-toggle="tab" data-bs-target="#ijb-tab-pane" type="button" role="tab" aria-controls="ijb-tab-pane" aria-selected="false">IJB Publication</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="ijmm-tab" data-bs-toggle="tab" data-bs-target="#ijmm-tab-pane" type="button" role="tab" aria-controls="ijmm-tab-pane" aria-selected="false">IJMM Publication</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="jbes-tab" data-bs-toggle="tab" data-bs-target="#jbes-tab-pane" type="button" role="tab" aria-controls="jbes-tab-pane" aria-selected="false">JBES Publication</button>
+                                    </li>
 
-                            </ul>
+                                </ul>
+                            </div>
                             <div class="tab-content" id="publicationTabContent">
                                 <!-- IJAAR Publication -->
                                 <div class="tab-pane fade show active" id="ijaar-tab-pane" role="tabpanel" aria-labelledby="ijaar-tab" tabindex="0">
@@ -1601,8 +1604,8 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-xl-4">
-                <div class="col">
+            <div class="row g-4">
+                <div class="col-xl-4">
                     <div class="footer-item">
                         <img class="footer-item__logo" src="assets/images/logo/logo_white.webp" alt="logo_white">
                         <p class="footer-item__description mb-4">International Network for Natural Sciences <em>(INNSpub)</em> is an open access research journal publisher that's dedicated to publish scholarly research papers and books, to believe in sharing new scientific knowledge in the field.</p>
@@ -1616,77 +1619,81 @@
                     </div>
                 </div>
 
-                <div class="col">
-                    <div class="footer-item">
-                        <h2 class="footer-item__title">Approach</h2>
-                        <ul class="footer-item__nav">
-                            <li class="footer-item__nav-item">
-                                <a class="footer-item__nav-link" href="#">Publication policy</a>
-                            </li>
-                            <li class="footer-item__nav-item">
-                                <a class="footer-item__nav-link" href="#">Terms and conditions</a>
-                            </li>
-                            <li class="footer-item__nav-item">
-                                <a class="footer-item__nav-link" href="#">Open access policy</a>
-                            </li>
-                            <li class="footer-item__nav-item">
-                                <a class="footer-item__nav-link" href="#">Privacy statement</a>
-                            </li>
-                            <li class="footer-item__nav-item">
-                                <a class="footer-item__nav-link" href="#">Waver policy</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                <div class="col-xl-8">
+                    <div class="row g-4">
+                        <div class="col-sm-6 col-xl-4">
+                            <div class="footer-item">
+                                <h2 class="footer-item__title">Approach</h2>
+                                <ul class="footer-item__nav">
+                                    <li class="footer-item__nav-item">
+                                        <a class="footer-item__nav-link" href="#">Publication policy</a>
+                                    </li>
+                                    <li class="footer-item__nav-item">
+                                        <a class="footer-item__nav-link" href="#">Terms and conditions</a>
+                                    </li>
+                                    <li class="footer-item__nav-item">
+                                        <a class="footer-item__nav-link" href="#">Open access policy</a>
+                                    </li>
+                                    <li class="footer-item__nav-item">
+                                        <a class="footer-item__nav-link" href="#">Privacy statement</a>
+                                    </li>
+                                    <li class="footer-item__nav-item">
+                                        <a class="footer-item__nav-link" href="#">Waver policy</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
 
-                <div class="col">
-                    <div class="footer-item">
-                        <h2 class="footer-item__title">Quick Links</h2>
-                        <ul class="footer-item__nav">
-                            <li class="footer-item__nav-item">
-                                <a class="footer-item__nav-link" href="#">Affiliated journals</a>
-                            </li>
-                            <li class="footer-item__nav-item">
-                                <a class="footer-item__nav-link" href="#">Paper preparation</a>
-                            </li>
-                            <li class="footer-item__nav-item">
-                                <a class="footer-item__nav-link" href="#">Submit a paper</a>
-                            </li>
-                            <li class="footer-item__nav-item">
-                                <a class="footer-item__nav-link" href="#">Make a payment</a>
-                            </li>
-                            <li class="footer-item__nav-item">
-                                <a class="footer-item__nav-link" href="#">Withdrawal & refund</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                        <div class="col-sm-6 col-xl-4">
+                            <div class="footer-item">
+                                <h2 class="footer-item__title">Quick Links</h2>
+                                <ul class="footer-item__nav">
+                                    <li class="footer-item__nav-item">
+                                        <a class="footer-item__nav-link" href="#">Affiliated journals</a>
+                                    </li>
+                                    <li class="footer-item__nav-item">
+                                        <a class="footer-item__nav-link" href="#">Paper preparation</a>
+                                    </li>
+                                    <li class="footer-item__nav-item">
+                                        <a class="footer-item__nav-link" href="#">Submit a paper</a>
+                                    </li>
+                                    <li class="footer-item__nav-item">
+                                        <a class="footer-item__nav-link" href="#">Make a payment</a>
+                                    </li>
+                                    <li class="footer-item__nav-item">
+                                        <a class="footer-item__nav-link" href="#">Withdrawal & refund</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
 
-                <div class="col">
-                    <div class="footer-item">
-                        <h2 class="footer-item__title">Get In Touch</h2>
-                        <ul class="footer-item__nav">
-                            <li class="footer-item__nav-item">
-                                Email:
-                                <a class="footer-item__nav-link" href="mailto:info@innspub.net">info@innspub.net</a>
-                                (Support)
-                            </li>
-                            <li class="footer-item__nav-item">
-                                Email:
-                                <a class="footer-item__nav-link" href="mailto:submission@innspub.net">submission@innspub.net</a>
-                                (Submis.)
-                            </li>
-                            <li class="footer-item__nav-item">
-                                Phone:
-                                <a class="footer-item__nav-link" href="callto:8801716992866">+8801716992866</a>
-                                (Office)
-                            </li>
-                            <li class="footer-item__nav-item">
-                                Phone:
-                                <a class="footer-item__nav-link" href="callto:8801715482998">+8801715482998</a>
-                                (WhatsApp)
-                            </li>
-                        </ul>
+                        <div class="col-sm-6 col-xl-4">
+                            <div class="footer-item">
+                                <h2 class="footer-item__title">Get In Touch</h2>
+                                <ul class="footer-item__nav">
+                                    <li class="footer-item__nav-item">
+                                        Email:
+                                        <a class="footer-item__nav-link" href="mailto:info@innspub.net">info@innspub.net</a>
+                                        (Support)
+                                    </li>
+                                    <li class="footer-item__nav-item">
+                                        Email:
+                                        <a class="footer-item__nav-link" href="mailto:submission@innspub.net">submission@innspub.net</a>
+                                        (Submis.)
+                                    </li>
+                                    <li class="footer-item__nav-item">
+                                        Phone:
+                                        <a class="footer-item__nav-link" href="callto:8801716992866">+8801716992866</a>
+                                        (Office)
+                                    </li>
+                                    <li class="footer-item__nav-item">
+                                        Phone:
+                                        <a class="footer-item__nav-link" href="callto:8801715482998">+8801715482998</a>
+                                        (WhatsApp)
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

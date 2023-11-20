@@ -39,11 +39,8 @@
 
 // announcements swiper
 const announcements = new Swiper('.announcements', {
-  autoplay: true,
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false,
-  },
+  autoplay: false,
+  
   slidesPerView: 1.3,
   centeredSlides: true,
   spaceBetween: 10,
@@ -89,11 +86,8 @@ const announcements = new Swiper('.announcements', {
 
 // global_editor_home swiper
 const global_editor_home = new Swiper('.global_editor_home', {
-  autoplay: true,
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false,
-  },
+  autoplay: false,
+  
   slidesPerView: 1.3,
   centeredSlides: true,
   spaceBetween: 10,
@@ -139,11 +133,8 @@ const global_editor_home = new Swiper('.global_editor_home', {
 
 // global_editor swiper
 const global_editor = new Swiper('.global_editor', {
-  autoplay: true,
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false,
-  },
+  autoplay: false,
+  
   slidesPerView: 1.3,
   centeredSlides: true,
   spaceBetween: 10,
@@ -189,11 +180,8 @@ const global_editor = new Swiper('.global_editor', {
 
 // published_issue swiper
 const published_issue = new Swiper('.published_issue', {
-  autoplay: true,
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false,
-  },
+  autoplay: false,
+  
   slidesPerView: 1.3,
   centeredSlides: true,
   spaceBetween: 10,
@@ -238,11 +226,8 @@ const published_issue = new Swiper('.published_issue', {
 });
 // published_issue swiper
 const innspub_journal = new Swiper('.innspub_journal', {
-  autoplay: true,
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false,
-  },
+  autoplay: false,
+  
   slidesPerView: 1.3,
   centeredSlides: true,
   spaceBetween: 10,
@@ -287,11 +272,8 @@ const innspub_journal = new Swiper('.innspub_journal', {
 });
 // published_issue swiper
 const journal_editor = new Swiper('.journal_editor', {
-  autoplay: true,
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false,
-  },
+  autoplay: false,
+  
   slidesPerView: 1.3,
   centeredSlides: true,
   spaceBetween: 10,
@@ -333,6 +315,12 @@ const journal_editor = new Swiper('.journal_editor', {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
+});
+
+$(".swiper").hover(function() {
+  (this).swiper.autoplay.start();
+}, function() {
+  (this).swiper.autoplay.stop();
 });
 
 //   Text Truncate
