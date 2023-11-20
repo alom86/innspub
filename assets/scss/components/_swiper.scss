@@ -78,6 +78,10 @@
                 color: $color_primary;
             }
         }
+
+        &.swiper-button-disabled{
+            opacity: 0;
+        }
     }
     .swiper-button-next{
         right: 4px;
