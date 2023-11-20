@@ -40,7 +40,7 @@
 // announcements swiper
 const announcements = new Swiper('.announcements', {
   autoplay: false,
-  
+
   slidesPerView: 1.3,
   centeredSlides: true,
   spaceBetween: 10,
@@ -87,7 +87,7 @@ const announcements = new Swiper('.announcements', {
 // global_editor_home swiper
 const global_editor_home = new Swiper('.global_editor_home', {
   autoplay: false,
-  
+
   slidesPerView: 1.3,
   centeredSlides: true,
   spaceBetween: 10,
@@ -134,7 +134,7 @@ const global_editor_home = new Swiper('.global_editor_home', {
 // global_editor swiper
 const global_editor = new Swiper('.global_editor', {
   autoplay: false,
-  
+
   slidesPerView: 1.3,
   centeredSlides: true,
   spaceBetween: 10,
@@ -181,7 +181,7 @@ const global_editor = new Swiper('.global_editor', {
 // published_issue swiper
 const published_issue = new Swiper('.published_issue', {
   autoplay: false,
-  
+
   slidesPerView: 1.3,
   centeredSlides: true,
   spaceBetween: 10,
@@ -227,7 +227,7 @@ const published_issue = new Swiper('.published_issue', {
 // published_issue swiper
 const innspub_journal = new Swiper('.innspub_journal', {
   autoplay: false,
-  
+
   slidesPerView: 1.3,
   centeredSlides: true,
   spaceBetween: 10,
@@ -273,7 +273,7 @@ const innspub_journal = new Swiper('.innspub_journal', {
 // published_issue swiper
 const journal_editor = new Swiper('.journal_editor', {
   autoplay: false,
-  
+
   slidesPerView: 1.3,
   centeredSlides: true,
   spaceBetween: 10,
@@ -317,9 +317,9 @@ const journal_editor = new Swiper('.journal_editor', {
   },
 });
 
-$(".swiper").hover(function() {
+$(".swiper").hover(function () {
   (this).swiper.autoplay.start();
-}, function() {
+}, function () {
   (this).swiper.autoplay.stop();
 });
 
@@ -410,3 +410,15 @@ $(document).ready(function () {
 
   /* end ready */
 });
+
+// media query with jquery
+if ($(window).width() > 767) {
+  $(".nav_tabs .nav").removeClass('dropdown-menu');
+  $(".nav_tabs .tab_select").removeClass('tab_select');
+}
+if ($(window).width() < 768){
+  const activeText = $(".nav_tabs .tab_select .nav-link.active").text();
+  $(".nav_tabs .tab_select .btn").text(activeText);
+  console.log(activeText);
+  console.log($(".nav_tabs .tab_select .nav-link.active").text());
+}
