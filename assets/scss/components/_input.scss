@@ -44,6 +44,8 @@
 .btn_primary {
     background-color: $color_primary;
     color: $color_white;
+    min-width: 160px;
+    justify-content: center;
 
     &:hover,
     &:active {
@@ -58,6 +60,8 @@
     background-color: $color_white ;
     color: $color_primary;
     border-color: $color_primary;
+    min-width: 160px;
+    justify-content: center;
 
     &:hover,
     &:active {
