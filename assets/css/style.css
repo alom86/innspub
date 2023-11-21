@@ -1469,6 +1469,7 @@ img {
 }
 .nav_tabs .tab_select .dropdown-menu .nav-item {
   width: 100%;
+  border-top: 1px solid #F2F2F2;
 }
 .nav_tabs .tab_select .dropdown-menu .nav-item .nav-link {
   width: 100%;
