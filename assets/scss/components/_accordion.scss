@@ -2,16 +2,17 @@
     .accordion-item {
         border: none;
         box-shadow: $shadow_1;
-       
-        &:not(:last-child){
+
+        &:not(:last-child) {
             margin-bottom: 12px;
         }
-        &:last-of-type{
+
+        &:last-of-type {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
         }
 
-        p{
+        p {
             margin-bottom: 0;
         }
     }
@@ -28,7 +29,7 @@
         border-radius: $radius_1;
         background-color: $color_natural_head;
 
-        &::after{
+        &::after {
             background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
         }
 
@@ -50,7 +51,7 @@
     .accordion-body {
         color: $color_natural_description;
 
-        h3{
+        h3 {
             font-weight: 700;
         }
 
@@ -91,7 +92,7 @@
             border-radius: 0;
             font-size: 16px;
 
-            &::after{
+            &::after {
                 background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%232D3E50'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
             }
         }
@@ -121,22 +122,23 @@
                     transition: $transition;
                 }
 
-                &.active, &:hover{
+                &.active,
+                &:hover {
                     color: $color_primary;
 
                     &::after {
                         right: 16px;
                         opacity: 1;
                     }
-                    
+
                 }
             }
 
             li {
                 margin-bottom: 0;
 
-                &:nth-child(2n){
-                    a{
+                &:nth-child(2n) {
+                    a {
                         background-color: $color_artboard;
                     }
                 }
@@ -144,15 +146,15 @@
         }
     }
 
-    &.striped{
-        .accordion-item{
+    &.striped {
+        .accordion-item {
             border-radius: 4px;
-            
-            .accordion-button{
+
+            .accordion-button {
                 background-color: $color_white;
                 color: $color_natural_head;
 
-                &::after{
+                &::after {
                     background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23018B40'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
                 }
 
@@ -161,11 +163,12 @@
                 }
             }
 
-            &:nth-child(2n){
-                .accordion-header{
+            &:nth-child(2n) {
+                .accordion-header {
                     background-color: $color_secondary;
                 }
-                .accordion-button{
+
+                .accordion-button {
                     background-color: $color_secondary;
 
                     &:not(.collapsed) {
@@ -174,6 +177,39 @@
                 }
             }
         }
+    }
+
+    &.accordion_home {
+        .accordion-item {
+            background-color: $color_white;
+            box-shadow: none;
+            margin-bottom: 0;
+
+            .accordion-button {
+                background-color: $color_white;
+                color: $color_natural_head;
+                box-shadow: none;
+
+                &::before {
+                    background-image: url("/assets/images/icon/plus.png");
+                    flex-shrink: 0;
+                    width: 20px;
+                    height: 20px;
+                    margin-right: 14px;
+                    content: "";
+                    background-repeat: no-repeat;
+                    background-size: 20px;
+                    border-radius: 2px;
+                }
+
+                &:not(.collapsed) {
+                    &::before{
+                        background-image: url("/assets/images/icon/minus.png");
+                    }
+                }
+            }
+        }
+
     }
 
 

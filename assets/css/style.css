@@ -198,12 +198,6 @@ img {
     padding: 80px 16px;
   }
 }
-@media (min-width: 1400px) {
-  .row > * {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-}
 /* Animation */
 @-webkit-keyframes sticky {
   0% {
@@ -898,6 +892,30 @@ img {
 }
 .accordion.striped .accordion-item:nth-child(2n) .accordion-button:not(.collapsed) {
   background-color: #F2F2F2;
+}
+.accordion.accordion_home .accordion-item {
+  background-color: #FFFFFF;
+  box-shadow: none;
+  margin-bottom: 0;
+}
+.accordion.accordion_home .accordion-item .accordion-button {
+  background-color: #FFFFFF;
+  color: #132833;
+  box-shadow: none;
+}
+.accordion.accordion_home .accordion-item .accordion-button::before {
+  background-image: url("/assets/images/icon/plus.png");
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-right: 14px;
+  content: "";
+  background-repeat: no-repeat;
+  background-size: 20px;
+  border-radius: 2px;
+}
+.accordion.accordion_home .accordion-item .accordion-button:not(.collapsed)::before {
+  background-image: url("/assets/images/icon/minus.png");
 }
 @media (min-width: 576px) {
   .accordion .accordion-button {
@@ -1936,7 +1954,7 @@ img {
   z-index: 10;
 }
 .page_content .profile_cheif__img-shap {
-  background-color: #FFFFFF;
+  background-color: #F9F9F9;
   width: 150%;
   height: 65px;
   transform: rotate(35deg);
@@ -2456,7 +2474,7 @@ ul.pagination .page-link:hover, ul.pagination .page-link:focus, ul.pagination .p
     min-height: 720px;
   }
   .banner__content {
-    gap: 20px;
+    gap: 24px;
   }
   .banner__content .issue {
     border-radius: 39px 0 18px 0;
