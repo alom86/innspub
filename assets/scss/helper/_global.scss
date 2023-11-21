@@ -154,3 +154,10 @@ img {
         padding: 80px 16px;
     }
 }
+
+@media (min-width: 1400px) {
+    .row>*{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
