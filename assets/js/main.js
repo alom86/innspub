@@ -417,8 +417,11 @@ if ($(window).width() > 767) {
   $(".nav_tabs .tab_select").removeClass('tab_select');
 }
 if ($(window).width() < 768){
-  const activeText = $(".nav_tabs .tab_select .nav-link.active").text();
-  $(".nav_tabs .tab_select .btn").text(activeText);
-  console.log(activeText);
-  console.log($(".nav_tabs .tab_select .nav-link.active").text());
+  // const activeText = $(".nav_tabs .tab_select .nav-link.active").text();
+  // $(".nav_tabs .tab_select .btn").text(activeText);
+
+  $(document).on("click", '.dropdown-menu .nav-item .nav-link', function(e) {
+    let activeText = $(this).text();
+    $(this).parent().parent().parent().find("button[data-bs-toggle='dropdown']").html(activeText);
+  });
 }
