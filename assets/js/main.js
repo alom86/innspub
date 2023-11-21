@@ -51,19 +51,19 @@ const announcements = new Swiper('.announcements', {
     576: {
       slidesPerView: 2,
       centeredSlides: false,
-      spaceBetween: 15
+      spaceBetween: 24
     },
     // when window width is >= 992px
     992: {
       slidesPerView: 3,
       centeredSlides: false,
-      spaceBetween: 25
+      spaceBetween: 24
     },
     // when window width is >= 1200px
     1400: {
       slidesPerView: 4,
       centeredSlides: false,
-      spaceBetween: 40
+      spaceBetween: 24
     }
   },
 
@@ -98,19 +98,19 @@ const global_editor_home = new Swiper('.global_editor_home', {
     576: {
       slidesPerView: 2,
       centeredSlides: false,
-      spaceBetween: 15
+      spaceBetween: 24
     },
     // when window width is >= 992px
     992: {
       slidesPerView: 3,
       centeredSlides: false,
-      spaceBetween: 25
+      spaceBetween: 24
     },
     // when window width is >= 1200px
     1400: {
       slidesPerView: 4,
       centeredSlides: false,
-      spaceBetween: 40
+      spaceBetween: 24
     }
   },
 
@@ -145,7 +145,7 @@ const global_editor = new Swiper('.global_editor', {
     576: {
       slidesPerView: 2,
       centeredSlides: false,
-      spaceBetween: 15
+      spaceBetween: 24
     },
     // when window width is >= 992px
     // 992: {
@@ -157,7 +157,7 @@ const global_editor = new Swiper('.global_editor', {
     1400: {
       slidesPerView: 3,
       centeredSlides: false,
-      spaceBetween: 25
+      spaceBetween: 24
     }
   },
 
@@ -192,19 +192,19 @@ const published_issue = new Swiper('.published_issue', {
     576: {
       slidesPerView: 2,
       centeredSlides: false,
-      spaceBetween: 15
+      spaceBetween: 24
     },
     // when window width is >= 992px
     992: {
       slidesPerView: 3,
       centeredSlides: false,
-      spaceBetween: 25
+      spaceBetween: 24
     },
     // when window width is >= 1200px
     1400: {
       slidesPerView: 4,
       centeredSlides: false,
-      spaceBetween: 40
+      spaceBetween: 24
     }
   },
 
@@ -238,19 +238,19 @@ const innspub_journal = new Swiper('.innspub_journal', {
     576: {
       slidesPerView: 2,
       centeredSlides: false,
-      spaceBetween: 15
+      spaceBetween: 24
     },
     // when window width is >= 992px
     992: {
       slidesPerView: 3,
       centeredSlides: false,
-      spaceBetween: 25
+      spaceBetween: 24
     },
     // when window width is >= 1200px
     1400: {
       slidesPerView: 4,
       centeredSlides: false,
-      spaceBetween: 40
+      spaceBetween: 24
     }
   },
 
@@ -284,19 +284,19 @@ const journal_editor = new Swiper('.journal_editor', {
     576: {
       slidesPerView: 2,
       centeredSlides: false,
-      spaceBetween: 15
+      spaceBetween: 24
     },
     // when window width is >= 992px
     // 992: {
     //   slidesPerView: 3,
     //   centeredSlides: false,
-    //   spaceBetween: 25
+    //   spaceBetween: 24
     // },
     // // when window width is >= 1200px
     // 1400: {
     //   slidesPerView: 4,
     //   centeredSlides: false,
-    //   spaceBetween: 40
+    //   spaceBetween: 24
     // }
   },
 
