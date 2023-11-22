@@ -194,7 +194,7 @@
                 padding-left: 0;
 
                 &::before {
-                    background-image: url("/assets/images/icon/plus.png");
+                    background-image: url("../images/icon/plus.png");
                     flex-shrink: 0;
                     width: 20px;
                     height: 20px;
@@ -207,7 +207,7 @@
 
                 &:not(.collapsed) {
                     &::before{
-                        background-image: url("/assets/images/icon/minus.png");
+                        background-image: url("../images/icon/minus.png");
                     }
                 }
             }
