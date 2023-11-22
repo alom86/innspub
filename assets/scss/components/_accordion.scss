@@ -189,6 +189,9 @@
                 background-color: $color_white;
                 color: $color_natural_head;
                 box-shadow: none;
+                display: flex;
+                align-items: start;
+                padding-left: 0;
 
                 &::before {
                     background-image: url("/assets/images/icon/plus.png");
@@ -207,6 +210,10 @@
                         background-image: url("/assets/images/icon/minus.png");
                     }
                 }
+            }
+
+            .accordion-body{
+                padding-top: 0;
             }
         }
 

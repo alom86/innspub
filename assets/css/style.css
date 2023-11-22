@@ -108,8 +108,8 @@ main {
 
 h2 {
   font-size: 20px;
-  margin-bottom: 24px;
-  line-height: 22px;
+  margin-bottom: 20px;
+  line-height: 28px;
 }
 
 h3 {
@@ -193,9 +193,29 @@ img {
     width: 30px;
   }
 }
+@media (min-width: 992px) {
+  .layout_sidebar {
+    display: flex;
+    gap: 48px;
+  }
+  .slider_maxw {
+    width: 100%;
+    max-width: 574px;
+  }
+}
 @media (min-width: 1200px) {
   .section_gap {
     padding: 80px 16px;
+  }
+  .slider_maxw {
+    width: 100%;
+    max-width: 754px;
+  }
+}
+@media (min-width: 1400px) {
+  .slider_maxw {
+    width: 100%;
+    max-width: 934px;
   }
 }
 /* Animation */
@@ -902,6 +922,9 @@ img {
   background-color: #FFFFFF;
   color: #132833;
   box-shadow: none;
+  display: flex;
+  align-items: start;
+  padding-left: 0;
 }
 .accordion.accordion_home .accordion-item .accordion-button::before {
   background-image: url("/assets/images/icon/plus.png");
@@ -916,6 +939,9 @@ img {
 }
 .accordion.accordion_home .accordion-item .accordion-button:not(.collapsed)::before {
   background-image: url("/assets/images/icon/minus.png");
+}
+.accordion.accordion_home .accordion-item .accordion-body {
+  padding-top: 0;
 }
 @media (min-width: 576px) {
   .accordion .accordion-button {
@@ -1155,11 +1181,6 @@ img {
 @media (min-width: 1400px) {
   .journal__img img {
     width: 290px;
-  }
-  .journal .position_xl_fixed {
-    position: absolute;
-    right: 24px;
-    bottom: 24px;
   }
 }
 
@@ -1445,7 +1466,6 @@ img {
 
 .nav_tabs .nav-tabs {
   border: none;
-  margin-bottom: 16px;
 }
 .nav_tabs .nav-tabs .nav-item {
   width: 90px;
@@ -1598,6 +1618,9 @@ img {
 }
 
 @media (min-width: 992px) {
+  .sidebar {
+    width: 338px;
+  }
   .sidebar .accordion .accordion-item {
     box-shadow: none;
     border-radius: 0;
@@ -1632,7 +1655,8 @@ img {
   }
   .sidebar .accordion .indexed_in .accordion-header .btn_more {
     font-size: 14px;
-    width: 66px;
+    min-width: 66px;
+    border-radius: 100px;
     height: auto;
     display: flex;
     align-items: center;
@@ -2535,6 +2559,7 @@ ul.pagination .page-link:hover, ul.pagination .page-link:focus, ul.pagination .p
   background-size: cover;
   position: relative;
   z-index: 1;
+  padding: 40px 16px;
 }
 .why_choose::after {
   content: "";
@@ -2551,6 +2576,7 @@ ul.pagination .page-link:hover, ul.pagination .page-link:focus, ul.pagination .p
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
+  margin-bottom: 40px;
 }
 .why_choose__card {
   background-color: #FFFFFF;
@@ -2576,6 +2602,7 @@ ul.pagination .page-link:hover, ul.pagination .page-link:focus, ul.pagination .p
   font-weight: 600;
   color: #2D3E50;
   font-size: 16px;
+  margin-bottom: 4px;
 }
 .why_choose__text span {
   font-size: 24px;
@@ -2587,6 +2614,9 @@ ul.pagination .page-link:hover, ul.pagination .page-link:focus, ul.pagination .p
   color: #FFFFFF;
 }
 @media (min-width: 1200px) {
+  .why_choose {
+    padding: 58px 16px;
+  }
   .why_choose__cards {
     gap: 24px;
   }

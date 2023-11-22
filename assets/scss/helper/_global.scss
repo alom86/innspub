@@ -54,8 +54,8 @@ main {
 
 h2 {
     font-size: 20px;
-    margin-bottom: 24px;
-    line-height: 22px;
+    margin-bottom: 20px;
+    line-height: 28px;
 }
 
 h3 {
@@ -149,15 +149,32 @@ img {
     }
 }
 
+@media (min-width: 992px) {
+    .layout_sidebar{
+        display: flex;
+        gap: 48px;
+    }
+
+    .slider_maxw{
+        width: 100%;
+        max-width: 574px;
+    }
+}
+
 @media (min-width: 1200px) {
     .section_gap {
         padding: 80px 16px;
     }
+
+    .slider_maxw{
+        width: 100%;
+        max-width: 754px;
+    }
 }
 
-// @media (min-width: 1400px) {
-//     .row>*{
-//         padding-left: 20px;
-//         padding-right: 20px;
-//     }
-// }
+@media (min-width: 1400px) {
+    .slider_maxw{
+        width: 100%;
+        max-width: 934px;
+    }
+}

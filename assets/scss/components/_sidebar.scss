@@ -2,6 +2,8 @@
 
     // Responsive
     @media (min-width: 992px) {
+        width: 338px;
+
         .accordion {
             .accordion-item {
                 box-shadow: none;
@@ -50,7 +52,8 @@
 
                     .btn_more {
                         font-size: 14px;
-                        width: 66px;
+                        min-width: 66px;
+                        border-radius: $radius_rounded;
                         height: auto;
                         display: flex;
                         align-items: center;
