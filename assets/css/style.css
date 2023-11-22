@@ -913,7 +913,7 @@ img {
   padding-left: 0;
 }
 .accordion.accordion_home .accordion-item .accordion-button::before {
-  background-image: url("/assets/images/icon/plus.png");
+  background-image: url("../images/icon/plus.png");
   flex-shrink: 0;
   width: 20px;
   height: 20px;
@@ -924,7 +924,7 @@ img {
   border-radius: 2px;
 }
 .accordion.accordion_home .accordion-item .accordion-button:not(.collapsed)::before {
-  background-image: url("/assets/images/icon/minus.png");
+  background-image: url("../images/icon/minus.png");
 }
 .accordion.accordion_home .accordion-item .accordion-body {
   padding-top: 0;
