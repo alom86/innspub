@@ -289,14 +289,11 @@ img {
   ~~~ Components ~~~
 -----------------------------------*/
 .nav-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   height: 32px;
+  background-color: #132833;
+  padding: 0 16px;
 }
 .nav-top__left {
-  padding-left: 16px;
-  background-color: #132833;
   width: 50%;
   height: 100%;
   display: flex;
@@ -320,14 +317,13 @@ img {
   color: #018B40;
 }
 .nav-top__right {
-  padding-right: 16px;
-  background-color: #018B40;
   width: 50%;
   font-size: 12px;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: end;
+  z-index: 10;
 }
 .nav-top__right::after {
   -moz-border-bottom-colors: none;
@@ -337,11 +333,11 @@ img {
   -o-border-image: none;
   border-image: none;
   border-style: solid;
-  border-width: 25px 15px;
+  border-width: 16px 15px;
   content: "";
-  height: 50px;
+  height: 32px;
   position: absolute;
-  right: 50%;
+  right: 45%;
   top: 0;
   width: 0;
   border-color: rgba(0, 0, 0, 0) #018B40 #018B40 rgba(0, 0, 0, 0);
@@ -365,13 +361,12 @@ img {
   background-color: #8B014C;
   color: #FFFFFF;
 }
-@media (min-width: 576px) {
-  .nav-top__left {
-    padding-left: 8%;
-  }
-  .nav-top__right {
-    padding-right: 8%;
-  }
+.nav-top .bg_skey {
+  background-color: #018B40;
+  height: 32px;
+  width: 45%;
+  position: absolute;
+  right: 0;
 }
 @media (min-width: 1200px) {
   .nav-top {
@@ -396,7 +391,7 @@ img {
   }
   .nav-top__right::after {
     height: 38px;
-    border-width: 30px 15px;
+    border-width: 19px 15px;
   }
   .nav-top__right a {
     color: #FFFFFF;
@@ -422,19 +417,10 @@ img {
     background-color: #8B014C;
     color: #FFFFFF;
   }
-}
-@media (min-width: 1400px) {
-  .nav-top__left {
-    width: 55%;
-  }
-  .nav-top__right {
-    width: 45%;
-  }
-  .nav-top__right::after {
-    right: 45%;
+  .nav-top .bg_skey {
+    height: 38px;
   }
 }
-
 .form-control {
   background-color: #F2F2F2;
   border-color: transparent;
