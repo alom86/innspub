@@ -986,6 +986,8 @@ img {
   text-align: center;
   transition: 0.3s;
   opacity: 0;
+  display: flex;
+  flex-direction: column;
 }
 .card__journal_name a {
   font-size: 16px;
@@ -2332,7 +2334,6 @@ img {
 
 ul.pagination {
   margin-bottom: 0;
-  margin-top: 20px;
   list-style: none;
   display: flex;
   gap: 4px;
@@ -2377,7 +2378,6 @@ ul.pagination .page-link:hover, ul.pagination .page-link:focus, ul.pagination .p
   padding: 16px;
   background-color: #F2F2F2;
   width: 100%;
-  border-radius: 4px;
 }
 .social_share a {
   padding: 8px 20px;
