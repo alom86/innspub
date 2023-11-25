@@ -462,7 +462,7 @@ img {
 .btn_primary {
   background-color: #018B40;
   color: #FFFFFF;
-  min-width: 160px;
+  min-width: 120px;
   justify-content: center;
 }
 .btn_primary:hover, .btn_primary:active {
@@ -475,7 +475,7 @@ img {
   background-color: #FFFFFF;
   color: #018B40;
   border-color: #018B40;
-  min-width: 160px;
+  min-width: 120px;
   justify-content: center;
 }
 .btn_secondary:hover, .btn_secondary:active {
@@ -507,6 +507,9 @@ img {
 @media (min-width: 576px) {
   .btn_full {
     width: auto;
+  }
+  .btn_primary, .btn_secondary {
+    min-width: 160px;
   }
 }
 .navbar {
@@ -1088,7 +1091,10 @@ img {
   transition: 0.3s;
   padding: 14px;
 }
-.journal h3,
+.journal h2 {
+  font-weight: 700 !important;
+}
+.journal h2,
 .journal p {
   text-align: start;
 }
@@ -1176,12 +1182,12 @@ img {
   box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2509803922);
   height: 100%;
 }
-.card-office h3 {
+.card-office h2 {
   margin: 16px 0 20px;
   font-size: 20px !important;
   font-weight: 700 !important;
 }
-.card-office h3 em {
+.card-office h2 em {
   font-weight: 400;
 }
 .card-office address {
@@ -1259,7 +1265,7 @@ img {
   padding-top: 16px;
   border-top: 1px solid #F2F2F2;
 }
-.card-issue__description h3 {
+.card-issue__description h2 {
   font-weight: 700 !important;
 }
 .card-issue__description p {
@@ -1863,7 +1869,7 @@ img {
   gap: 40px;
   font-size: 14px;
 }
-.page_content__contact_type h3 {
+.page_content__contact_type h2 {
   font-size: 20px;
   font-weight: 700;
   color: #018B40;
@@ -1952,6 +1958,7 @@ img {
   align-content: flex-start;
   height: fit-content;
   overflow: hidden;
+  margin-bottom: 32px;
 }
 .page_content .profile_cheif__img-cheif {
   position: relative;
@@ -1974,8 +1981,10 @@ img {
 }
 .page_content .profile_cheif__label {
   font-size: 20px;
-  margin-bottom: 24px;
+  margin-top: 18px;
   font-weight: 700;
+  text-align: center;
+  margin-bottom: 0;
 }
 .page_content .profile_cheif__name,
 .page_content .profile_cheif span,
@@ -1990,8 +1999,14 @@ img {
 .page_content .profile_cheif__info p {
   margin-bottom: 0;
 }
+.page_content .profile_cheif__info h3 {
+  text-align: start;
+}
 .page_content .profile_cheif__contact {
   font-size: 16px;
+}
+.page_content .profile_cheif__contact h3 {
+  text-align: start;
 }
 .page_content .profile_cheif__contact .item {
   display: flex;
@@ -2070,6 +2085,9 @@ img {
   .page_content .profile_cheif {
     flex-direction: row;
     gap: 28px;
+  }
+  .page_content .profile_cheif__img_wrap {
+    margin-bottom: 0;
   }
   .page_content .profile_cheif__label {
     margin-bottom: 0;

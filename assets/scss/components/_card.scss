@@ -198,7 +198,11 @@
     transition: $transition;
     padding: 14px;
 
-    h3,
+    h2{
+        font-weight: 700 !important;
+    }
+
+    h2,
     p {
         text-align: start;
     }
@@ -314,7 +318,7 @@
     box-shadow: $shadow_1;
     height: 100%;
 
-    h3 {
+    h2 {
         margin: 16px 0 20px;
         font-size: 20px !important;
         font-weight: 700 !important;
@@ -410,7 +414,7 @@
         padding-top: 16px;
         border-top: 1px solid $color_secondary;
 
-        h3 {
+        h2 {
             font-weight: 700 !important;
         }
 
