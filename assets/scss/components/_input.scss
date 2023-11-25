@@ -44,7 +44,7 @@
 .btn_primary {
     background-color: $color_primary;
     color: $color_white;
-    min-width: 160px;
+    min-width: 120px;
     justify-content: center;
 
     &:hover,
@@ -60,7 +60,7 @@
     background-color: $color_white ;
     color: $color_primary;
     border-color: $color_primary;
-    min-width: 160px;
+    min-width: 120px;
     justify-content: center;
 
     &:hover,
@@ -99,5 +99,9 @@
 @media (min-width: 576px) {
     .btn_full{
         width: auto;
+    }
+
+    .btn_primary, .btn_secondary{
+        min-width: 160px;
     }
 }
