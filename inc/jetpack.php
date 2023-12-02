@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.com/
  *
- * @package mytheme
+ * @package innspub
  */
 
 /**
@@ -14,13 +14,13 @@
  * See: https://jetpack.com/support/responsive-videos/
  * See: https://jetpack.com/support/content-options/
  */
-function mytheme_jetpack_setup() {
+function innspub_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support(
 		'infinite-scroll',
 		array(
 			'container' => 'main',
-			'render'    => 'mytheme_infinite_scroll_render',
+			'render'    => 'innspub_infinite_scroll_render',
 			'footer'    => 'page',
 		)
 	);
@@ -33,7 +33,7 @@ function mytheme_jetpack_setup() {
 		'jetpack-content-options',
 		array(
 			'post-details' => array(
-				'stylesheet' => 'mytheme-style',
+				'stylesheet' => 'innspub-style',
 				'date'       => '.posted-on',
 				'categories' => '.cat-links',
 				'tags'       => '.tags-links',
@@ -48,13 +48,13 @@ function mytheme_jetpack_setup() {
 		)
 	);
 }
-add_action( 'after_setup_theme', 'mytheme_jetpack_setup' );
+add_action( 'after_setup_theme', 'innspub_jetpack_setup' );
 
-if ( ! function_exists( 'mytheme_infinite_scroll_render' ) ) :
+if ( ! function_exists( 'innspub_infinite_scroll_render' ) ) :
 	/**
 	 * Custom render function for Infinite Scroll.
 	 */
-	function mytheme_infinite_scroll_render() {
+	function innspub_infinite_scroll_render() {
 		while ( have_posts() ) {
 			the_post();
 			if ( is_search() ) :
