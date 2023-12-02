@@ -1,10 +1,10 @@
 <?php
 /**
- * mytheme functions and definitions
+ * innspub functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package mytheme
+ * @package innspub
  */
 
 if ( ! defined( '_S_VERSION' ) ) {
@@ -19,14 +19,14 @@ if ( ! defined( '_S_VERSION' ) ) {
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function mytheme_setup() {
+function innspub_setup() {
 	/*
 		* Make theme available for translation.
 		* Translations can be filed in the /languages/ directory.
-		* If you're building a theme based on mytheme, use a find and replace
-		* to change 'mytheme' to the name of your theme in all the template files.
+		* If you're building a theme based on innspub, use a find and replace
+		* to change 'innspub' to the name of your theme in all the template files.
 		*/
-	load_theme_textdomain( 'mytheme', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'innspub', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -49,7 +49,7 @@ function mytheme_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'mytheme' ),
+			'menu-1' => esc_html__( 'Primary', 'innspub' ),
 		)
 	);
 
@@ -74,7 +74,7 @@ function mytheme_setup() {
 	add_theme_support(
 		'custom-background',
 		apply_filters(
-			'mytheme_custom_background_args',
+			'innspub_custom_background_args',
 			array(
 				'default-color' => 'ffffff',
 				'default-image' => '',
@@ -100,7 +100,7 @@ function mytheme_setup() {
 		)
 	);
 }
-add_action( 'after_setup_theme', 'mytheme_setup' );
+add_action( 'after_setup_theme', 'innspub_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -109,22 +109,22 @@ add_action( 'after_setup_theme', 'mytheme_setup' );
  *
  * @global int $content_width
  */
-function mytheme_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'mytheme_content_width', 640 );
-}
-add_action( 'after_setup_theme', 'mytheme_content_width', 0 );
+// function innspub_content_width() {
+// 	$GLOBALS['content_width'] = apply_filters( 'innspub_content_width', 640 );
+// }
+// add_action( 'after_setup_theme', 'innspub_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function mytheme_widgets_init() {
+function innspub_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'mytheme' ),
+			'name'          => esc_html__( 'Sidebar', 'innspub' ),
 			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'mytheme' ),
+			'description'   => esc_html__( 'Add widgets here.', 'innspub' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -132,22 +132,15 @@ function mytheme_widgets_init() {
 		)
 	);
 }
-add_action( 'widgets_init', 'mytheme_widgets_init' );
+add_action( 'widgets_init', 'innspub_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function mytheme_scripts() {
-	wp_enqueue_style( 'mytheme-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'mytheme-style', 'rtl', 'replace' );
+include_once('inc/custom_css_js.php');
 
-	wp_enqueue_script( 'mytheme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-}
-add_action( 'wp_enqueue_scripts', 'mytheme_scripts' );
+// acf register
+require get_template_directory() . '/inc/acf_register.php';
 
 /**
  * Implement the Custom Header feature.
