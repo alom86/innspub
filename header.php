@@ -66,13 +66,13 @@
         <!-- main nav -->
         <nav class="navbar">
             <div class="container px-0">
-                <a class="navbar__brand" href="index.html">
+                <a class="navbar__brand" href="<?php echo home_url(); ?>">
                     <img width="180" height="42" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo/logo.webp" alt="logo">
                 </a>
 
                 <!-- desktop menu -->
                 <div class="navbar__desktop_menu d-none d-xl-flex">
-                    <ul class="navbar-nav mx-auto">
+                    <!-- <ul class="navbar-nav mx-auto">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 INNS Pub
@@ -138,10 +138,24 @@
                                 <li><a class="dropdown-item" href="faqs.html">FAQs</a></li>
                             </ul>
                         </li>
-                    </ul>
+                    </ul> -->
+                    <?php
+                        wp_nav_menu(
+                            array(
+                                'theme_location' => 'header_menu',
+                                'menu_id'        => 'header-menu',
+                                'container'      => '',
+                                'menu_class'     => 'navbar-nav mx-auto',
+                                'li_class'   => 'nav-item dropdown',
+                                'a_class'    => 'nav-link dropdown-toggle',
+                                // 'ul_class'   => 'dropdown-menu',
+                            )
+                        );
+                    ?>
                 </div>
+
                 <form class="search-form d-none d-sm-flex" role="search">
-                    <input class="form-control search-form__input" type="search" placeholder="Search" aria-label="Search">
+                    <input class="form-control search-form__input" type="text" placeholder="Search" aria-label="Search">
                     <button class="btn search-form__button" type="submit"><i class="fa-solid fa-magnifying-glass"></i><span class="sr-only">search button</span></button>
                 </form>
 
@@ -153,7 +167,7 @@
                 <!-- mobile menu offcanvas -->
                 <div class="offcanvas offcanvas-start" tabindex="-1" id="menuOffcanvas" aria-labelledby="menuOffcanvas">
                     <div class="offcanvas-header p-0 mb-4">
-                        <a class="navbar__brand" href="index.html">
+                        <a class="navbar__brand" href="<?php echo home_url(); ?>">
                             <img width="180" height="42" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo/logo.webp" alt="logo">
                         </a>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
@@ -161,7 +175,7 @@
                         </button>
                     </div>
                     <form class="search-form d-sm-none" role="search">
-                        <input class="form-control search-form__input" type="search" placeholder="Search" aria-label="Search">
+                        <input class="form-control search-form__input" type="text" placeholder="Search" aria-label="Search">
                         <button class="btn search-form__button" type="submit"><i class="fa-solid fa-magnifying-glass"></i><span class="sr-only">search button</span></button>
                     </form>
 
