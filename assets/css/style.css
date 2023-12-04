@@ -565,6 +565,9 @@ img {
   margin-left: 6px;
   transition: 0.3s;
 }
+.navbar .navbar-nav .nav-item {
+  margin-bottom: 0;
+}
 .navbar .navbar-nav .nav-link {
   border-bottom: 2px solid transparent;
   font-weight: 500;
@@ -580,6 +583,9 @@ img {
 .navbar .dropdown-menu {
   border: none;
   animation: 0.3s slide-top;
+}
+.navbar .dropdown-menu li {
+  margin-bottom: 0;
 }
 .navbar .dropdown-item {
   font-weight: 400;
@@ -614,7 +620,7 @@ img {
   }
   .navbar .dropdown-menu {
     position: absolute;
-    top: 64px;
+    top: 60px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     border: none;

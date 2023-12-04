@@ -65,6 +65,10 @@
             }
         }
 
+        .nav-item {
+            margin-bottom: 0;
+        }
+
         .nav-link {
             border-bottom: 2px solid transparent;
             font-weight: 500;
@@ -85,6 +89,10 @@
     .dropdown-menu {
         border: none;
         animation: $transition slide-top;
+
+        li{
+            margin-bottom: 0;
+        }
     }
 
     .dropdown-item {
@@ -130,7 +138,7 @@
 
         .dropdown-menu {
             position: absolute;
-            top: 64px;
+            top: 60px;
             border-top-left-radius: 0;
             border-top-right-radius: 0;
             border: none;
