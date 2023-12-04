@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Journals List Page
+ * Template Name: Current Issue Page
  * 
  * The template for displaying all pages
  *
@@ -17,8 +17,8 @@
 get_header();
 ?>
 
-	 <!-- Main Content -->
-     <main class="bg-white">
+    <!-- Main Content -->
+    <main class="bg-white">
         <!-- page breadcumb -->
         <div class="breadcrumb_section bg_overlay">
             <!-- bg image -->
@@ -41,13 +41,13 @@ get_header();
                                 <li><a class="dropdown-item" href="#">Back Page 3</a></li>
                             </ul>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">Editorial Board</li>
+                        <li class="breadcrumb-item active" aria-current="page">Current Issue IJAAR</li>
                     </ol>
                     <!-- Large device -->
                     <ol class="breadcrumb d-none d-md-flex">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Journals</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Editorial Board</li>
+                        <li class="breadcrumb-item"><a href="#">Archives</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Current Issue IJAAR</li>
                     </ol>
                 </nav>
             </div>
@@ -322,281 +322,251 @@ get_header();
                         <div class="page_content">
                             <!-- page title -->
                             <div class="page_content__title">
-                                <h1>Editorial Board</h1>
+                                <h1>Current Issue IJAAR</h1>
                             </div>
+
                             <!-- page data -->
-                            <div class="page_content__data">
-                                <div class="page_content__img bg_overlay">
-                                    <img width="886" height="180" src="<?php echo get_template_directory_uri(); ?>/assets/images/single_page_feature_image.webp" alt="single_page_feature_image">
-                                </div>
-
-                                <p>Welcome to the INNSpub theoretical research tutorial page. These online tutorial reviews will help you to gain core concepts on innovative research and presentation as well as the research conduct, Research paper writing, and academic publication process through some of the steps involved in research, presentation, and publication. This tutorial guides you to improve your ability to research setup carried out research and write better research papers with our collection of interactive tutorials. Each module has an introduction and steps to follow to master
-                                    the elements of research.</p>
-                                <p>Welcome to the INNSpub theoretical research tutorial page. These online tutorial reviews will help you to gain core concepts on innovative research and presentation as well as the research conduct, Research paper writing, and academic publication process through some of the steps involved in research, presentation, and publication. This tutorial guides you to improve your ability to research setup carried out research and write better research papers with our collection of interactive tutorials. Each module has an introduction and steps to follow to master
-                                    the elements of research.</p>
-                                <p>Welcome to the INNSpub theoretical research tutorial page. These online tutorial reviews will help you to gain core concepts on innovative research and presentation as well as the research conduct, Research paper writing, and academic publication process through some of the steps involved in research, presentation, and publication. This tutorial guides you to improve your ability to research setup carried out research and write better research papers with our collection of interactive tutorials. Each module has an introduction and steps to follow to master
-                                    the elements of research.</p>
-                            </div>
-
-                            <div class="page_content__editor">
-                                <div class="row g-4 row-cols-1">
-                                    <!-- IJB -->
-                                    <div class="col">
-                                        <div class="card journal">
-                                            <div class="journal__img">
-                                                <img width="515" height="691" src="<?php echo get_template_directory_uri(); ?>/assets/images/archives/ijb.webp" alt="ijb">
-                                            </div>
-                                            <div>
-                                                <h2>International Journal of Biosciences (IJB)</h2>
-                                                <p>International Journal of Biosciences is a globally known ISI journal with high impact factor & cross-reference indexed journal that publishes high-quality original research papers together with review articles and short communication on Biology and related to Biology.</p>
-
-                                                <div>
-                                                    <div class="data_col">
-                                                        <div class="data_col__title">Short Name <span>:</span></div>
-                                                        <span class="data_col__data">IJB</span>
-                                                    </div>
-                                                    <div class="data_col">
-                                                        <div class="data_col__title">Frequency <span>:</span></div>
-                                                        <span class="data_col__data">12 in a year</span>
-                                                    </div>
-                                                    <div class="data_col">
-                                                        <div class="data_col__title">ISSN <span>:</span></div>
-                                                        <span class="data_col__data">2220-6655 (Print)</span>
-                                                    </div>
-                                                    <div class="data_col">
-                                                        <div class="data_col__title">ISSN <span>:</span></div>
-                                                        <span class="data_col__data">2222-5234 (Online)</span>
-                                                    </div>
-
-                                                    <div class="data_col mt-2">
-                                                        <div class="data_col__title">
-                                                            <button class="btn btn_link" type="button"><i class="fa-solid fa-circle-info"></i>Scope</button>
-                                                        </div>
-                                                    </div>
-
-
-                                                </div>
-
-                                                <div class="journal__links">
-                                                    <div class="d-flex gap-3">
-                                                        <a href="#">Instruction</a>
-                                                        <a href="journal.html">Journal</a>
-                                                    </div>
-                                                    <div class="d-flex align-items-center justify-content-center mt-4 mt-sm-0">
-                                                        <a class="btn btn_primary" href="#">Editorial Board</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-
+                            <div class="current-issue">
+                                <!-- issue card -->
+                                <article class="card-issue">
+                                    <div class="card-issue__header">
+                                        <div class="card-issue__label">
+                                            <span>Open Access</span>
+                                            <span class="d-none d-sm-inline">Research Paper</span>
+                                        </div>
+                                        <div class="card-issue__statistics">
+                                            <span><i class="fa-solid fa-eye"></i> <span class="d-none d-sm-inline">Views</span> (77)</span>
+                                            <span class="view"><i class="fa-solid fa-download"></i> <span class="d-none d-sm-inline">Download</span> (27)</span>
                                         </div>
                                     </div>
-
-                                    <!-- IJAAR -->
-                                    <div class="col">
-                                        <div class="card journal">
-                                            <div class="journal__img">
-                                                <img width="515" height="691" src="<?php echo get_template_directory_uri(); ?>/assets/images/archives/ijaar.webp" alt="ijaar">
-                                            </div>
+                                    <div class="card-issue__content">
+                                        <img class="d-none d-sm-inline" src="<?php echo get_template_directory_uri(); ?>/assets/images/publication/publication_file.svg" alt="publication_file">
+                                        <div class="d-flex flex-column flex-md-row align-items-md-end gap-4">
                                             <div>
-                                                <h2>International Journal of Agronomy and Agricultural Research (IJAAR)</h2>
-                                                <p>International Journal of Biosciences is a globally known ISI journal with high impact factor & cross-reference indexed journal that publishes high-quality original research papers together with review articles and short communication on Biology and related to Biology.</p>
-
+                                                <h2><a class="card-issue__title text-decoration-underline" href="current-issue-details.html">Anti-cancer activity of Carica papaya leaf ethanolic extract and fractions against selected human cancer cell line</a></h2>
+                                                <div><span class="fw-bold">By: </span> Pedro M Gutierrez Jr</div>
+                                                <div class="card_paper__tags mt-0">
+                                                    <span class="fw-bold">Key Words: </span>
+                                                    <a href="#">Anti-cancer</a>
+                                                    <a href="#">Carica papaya</a>
+                                                    <a href="#">Cytotoxicity</a>
+                                                    <a href="#">MTT Assay</a>
+                                                    <a href="#">Plant extract</a>
+                                                </div>
                                                 <div>
-                                                    <div class="data_col">
-                                                        <div class="data_col__title">Short Name <span>:</span></div>
-                                                        <span class="data_col__data">IJAAR</span>
-                                                    </div>
-                                                    <div class="data_col">
-                                                        <div class="data_col__title">Frequency <span>:</span></div>
-                                                        <span class="data_col__data">12 in a year</span>
-                                                    </div>
-                                                    <div class="data_col">
-                                                        <div class="data_col__title">ISSN <span>:</span></div>
-                                                        <span class="data_col__data">2220-6655 (Print)</span>
-                                                    </div>
-                                                    <div class="data_col">
-                                                        <div class="data_col__title">ISSN <span>:</span></div>
-                                                        <span class="data_col__data">2222-5234 (Online)</span>
-                                                    </div>
-
-                                                    <div class="data_col mt-2">
-                                                        <div class="data_col__title">
-                                                            <button class="btn btn_link" type="button"><i class="fa-solid fa-circle-info"></i>Scope</button>
-                                                        </div>
-                                                    </div>
-
-
+                                                    <span>Int. J. Biosci.23( 1), 1-8, July 2023.</span>
                                                 </div>
-
-                                                <div class="journal__links">
-                                                    <div class="d-flex gap-3">
-                                                        <a href="#">Instruction</a>
-                                                        <a href="journal.html">Journal</a>
-                                                    </div>
-                                                    <div class="d-flex align-items-center justify-content-center mt-4 mt-sm-0">
-                                                        <a class="btn btn_primary" href="#">Editorial Board</a>
-                                                    </div>
-                                                </div>
+                                                <div> <span class="fw-bold">DOI: </span><a href="http://dx.doi.org/10.12692/ijb/23.1.1-8" class="text-decoration-underline" target="_blank">http://dx.doi.org/10.12692/ijb/23.1.1-8</a></div>
                                             </div>
-
+                                            <div class="d-flex justify-content-end">
+                                                <a class="btn btn_primary" href="current-issue-details.html">Details</a>
+                                            </div>
                                         </div>
                                     </div>
-
-                                    <!-- IJBB -->
-                                    <div class="col">
-                                        <div class="card journal">
-                                            <div class="journal__img">
-                                                <img width="515" height="691" src="<?php echo get_template_directory_uri(); ?>/assets/images/archives/ijbb.webp" alt="ijbb">
-                                            </div>
-                                            <div>
-                                                <h2>International Journal of Biomolecules and Biomedicine (IJBB)</h2>
-                                                <p>International Journal of Biosciences is a globally known ISI journal with high impact factor & cross-reference indexed journal that publishes high-quality original research papers together with review articles and short communication on Biology and related to Biology.</p>
-
-                                                <div>
-                                                    <div class="data_col">
-                                                        <div class="data_col__title">Short Name <span>:</span></div>
-                                                        <span class="data_col__data">IJBB</span>
-                                                    </div>
-                                                    <div class="data_col">
-                                                        <div class="data_col__title">Frequency <span>:</span></div>
-                                                        <span class="data_col__data">12 in a year</span>
-                                                    </div>
-                                                    <div class="data_col">
-                                                        <div class="data_col__title">ISSN <span>:</span></div>
-                                                        <span class="data_col__data">2220-6655 (Print)</span>
-                                                    </div>
-                                                    <div class="data_col">
-                                                        <div class="data_col__title">ISSN <span>:</span></div>
-                                                        <span class="data_col__data">2222-5234 (Online)</span>
-                                                    </div>
-
-                                                    <div class="data_col mt-2">
-                                                        <div class="data_col__title">
-                                                            <button class="btn btn_link" type="button"><i class="fa-solid fa-circle-info"></i>Scope</button>
-                                                        </div>
-                                                    </div>
-
-
-                                                </div>
-
-                                                <div class="journal__links">
-                                                    <div class="d-flex gap-3">
-                                                        <a href="#">Instruction</a>
-                                                        <a href="journal.html">Journal</a>
-                                                    </div>
-                                                    <div class="d-flex align-items-center justify-content-center mt-4 mt-sm-0">
-                                                        <a class="btn btn_primary" href="#">Editorial Board</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-
+                                </article>
+                                <!-- issue card -->
+                                <article class="card-issue">
+                                    <div class="card-issue__header">
+                                        <div class="card-issue__label">
+                                            <span>Open Access</span>
+                                            <span class="d-none d-sm-inline">Research Paper</span>
+                                        </div>
+                                        <div class="card-issue__statistics">
+                                            <span><i class="fa-solid fa-eye"></i> <span class="d-none d-sm-inline">Views</span> (77)</span>
+                                            <span class="view"><i class="fa-solid fa-download"></i> <span class="d-none d-sm-inline">Download</span> (27)</span>
                                         </div>
                                     </div>
-
-                                    <!-- IJMM -->
-                                    <div class="col">
-                                        <div class="card journal">
-                                            <div class="journal__img">
-                                                <img width="515" height="691" src="<?php echo get_template_directory_uri(); ?>/assets/images/archives/ijmm.webp" alt="ijmm">
-                                            </div>
+                                    <div class="card-issue__content">
+                                        <img class="d-none d-sm-inline" src="<?php echo get_template_directory_uri(); ?>/assets/images/publication/publication_file.svg" alt="publication_file">
+                                        <div class="d-flex flex-column flex-md-row align-items-md-end gap-4">
                                             <div>
-                                                <h2>International journal of Microbiology and Mycology (IJMM)</h2>
-                                                <p>International Journal of Biosciences is a globally known ISI journal with high impact factor & cross-reference indexed journal that publishes high-quality original research papers together with review articles and short communication on Biology and related to Biology.</p>
-
+                                                <h2><a class="card-issue__title text-decoration-underline" href="current-issue-details.html">Anti-cancer activity of Carica papaya leaf ethanolic extract and fractions against selected human cancer cell line</a></h2>
+                                                <div><span class="fw-bold">By: </span> Pedro M Gutierrez Jr</div>
+                                                <div class="card_paper__tags mt-0">
+                                                    <span class="fw-bold">Key Words: </span>
+                                                    <a href="#">Anti-cancer</a>
+                                                    <a href="#">Carica papaya</a>
+                                                    <a href="#">Cytotoxicity</a>
+                                                    <a href="#">MTT Assay</a>
+                                                    <a href="#">Plant extract</a>
+                                                </div>
                                                 <div>
-                                                    <div class="data_col">
-                                                        <div class="data_col__title">Short Name <span>:</span></div>
-                                                        <span class="data_col__data">IJMM</span>
-                                                    </div>
-                                                    <div class="data_col">
-                                                        <div class="data_col__title">Frequency <span>:</span></div>
-                                                        <span class="data_col__data">12 in a year</span>
-                                                    </div>
-                                                    <div class="data_col">
-                                                        <div class="data_col__title">ISSN <span>:</span></div>
-                                                        <span class="data_col__data">2220-6655 (Print)</span>
-                                                    </div>
-                                                    <div class="data_col">
-                                                        <div class="data_col__title">ISSN <span>:</span></div>
-                                                        <span class="data_col__data">2222-5234 (Online)</span>
-                                                    </div>
-
-                                                    <div class="data_col mt-2">
-                                                        <div class="data_col__title">
-                                                            <button class="btn btn_link" type="button"><i class="fa-solid fa-circle-info"></i>Scope</button>
-                                                        </div>
-                                                    </div>
-
-
+                                                    <span>Int. J. Biosci.23( 1), 1-8, July 2023.</span>
                                                 </div>
-
-                                                <div class="journal__links">
-                                                    <div class="d-flex gap-3">
-                                                        <a href="#">Instruction</a>
-                                                        <a href="journal.html">Journal</a>
-                                                    </div>
-                                                    <div class="d-flex align-items-center justify-content-center mt-4 mt-sm-0">
-                                                        <a class="btn btn_primary" href="#">Editorial Board</a>
-                                                    </div>
-                                                </div>
+                                                <div> <span class="fw-bold">DOI: </span><a href="http://dx.doi.org/10.12692/ijb/23.1.1-8" class="text-decoration-underline" target="_blank">http://dx.doi.org/10.12692/ijb/23.1.1-8</a></div>
                                             </div>
-
+                                            <div class="d-flex justify-content-end">
+                                                <a class="btn btn_primary" href="current-issue-details.html">Details</a>
+                                            </div>
                                         </div>
                                     </div>
-
-                                    <!-- JBES -->
-                                    <div class="col">
-                                        <div class="card journal">
-                                            <div class="journal__img">
-                                                <img width="515" height="691" src="<?php echo get_template_directory_uri(); ?>/assets/images/archives/jbes.webp" alt="jbes">
-                                            </div>
-                                            <div>
-                                                <h2>Journal of Biodiversity and Environmental Sciences (JBES)</h2>
-                                                <p>International Journal of Biosciences is a globally known ISI journal with high impact factor & cross-reference indexed journal that publishes high-quality original research papers together with review articles and short communication on Biology and related to Biology.</p>
-
-                                                <div>
-                                                    <div class="data_col">
-                                                        <div class="data_col__title">Short Name <span>:</span></div>
-                                                        <span class="data_col__data">JBES</span>
-                                                    </div>
-                                                    <div class="data_col">
-                                                        <div class="data_col__title">Frequency <span>:</span></div>
-                                                        <span class="data_col__data">12 in a year</span>
-                                                    </div>
-                                                    <div class="data_col">
-                                                        <div class="data_col__title">ISSN <span>:</span></div>
-                                                        <span class="data_col__data">2220-6655 (Print)</span>
-                                                    </div>
-                                                    <div class="data_col">
-                                                        <div class="data_col__title">ISSN <span>:</span></div>
-                                                        <span class="data_col__data">2222-5234 (Online)</span>
-                                                    </div>
-
-                                                    <div class="data_col mt-2">
-                                                        <div class="data_col__title">
-                                                            <button class="btn btn_link" type="button"><i class="fa-solid fa-circle-info"></i>Scope</button>
-                                                        </div>
-                                                    </div>
-
-
-                                                </div>
-
-                                                <div class="journal__links">
-                                                    <div class="d-flex gap-3">
-                                                        <a href="#">Instruction</a>
-                                                        <a href="journal.html">Journal</a>
-                                                    </div>
-                                                    <div class="d-flex align-items-center justify-content-center mt-4 mt-sm-0">
-                                                        <a class="btn btn_primary" href="#">Editorial Board</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-
+                                </article>
+                                <!-- issue card -->
+                                <article class="card-issue">
+                                    <div class="card-issue__header">
+                                        <div class="card-issue__label">
+                                            <span>Open Access</span>
+                                            <span class="d-none d-sm-inline">Research Paper</span>
+                                        </div>
+                                        <div class="card-issue__statistics">
+                                            <span><i class="fa-solid fa-eye"></i> <span class="d-none d-sm-inline">Views</span> (77)</span>
+                                            <span class="view"><i class="fa-solid fa-download"></i> <span class="d-none d-sm-inline">Download</span> (27)</span>
                                         </div>
                                     </div>
+                                    <div class="card-issue__content">
+                                        <img class="d-none d-sm-inline" src="<?php echo get_template_directory_uri(); ?>/assets/images/publication/publication_file.svg" alt="publication_file">
+                                        <div class="d-flex flex-column flex-md-row align-items-md-end gap-4">
+                                            <div>
+                                                <h2><a class="card-issue__title text-decoration-underline" href="current-issue-details.html">Anti-cancer activity of Carica papaya leaf ethanolic extract and fractions against selected human cancer cell line</a></h2>
+                                                <div><span class="fw-bold">By: </span> Pedro M Gutierrez Jr</div>
+                                                <div class="card_paper__tags mt-0">
+                                                    <span class="fw-bold">Key Words: </span>
+                                                    <a href="#">Anti-cancer</a>
+                                                    <a href="#">Carica papaya</a>
+                                                    <a href="#">Cytotoxicity</a>
+                                                    <a href="#">MTT Assay</a>
+                                                    <a href="#">Plant extract</a>
+                                                </div>
+                                                <div>
+                                                    <span>Int. J. Biosci.23( 1), 1-8, July 2023.</span>
+                                                </div>
+                                                <div> <span class="fw-bold">DOI: </span><a href="http://dx.doi.org/10.12692/ijb/23.1.1-8" class="text-decoration-underline" target="_blank">http://dx.doi.org/10.12692/ijb/23.1.1-8</a></div>
+                                            </div>
+                                            <div class="d-flex justify-content-end">
+                                                <a class="btn btn_primary" href="current-issue-details.html">Details</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <!-- issue card -->
+                                <article class="card-issue">
+                                    <div class="card-issue__header">
+                                        <div class="card-issue__label">
+                                            <span>Open Access</span>
+                                            <span class="d-none d-sm-inline">Research Paper</span>
+                                        </div>
+                                        <div class="card-issue__statistics">
+                                            <span><i class="fa-solid fa-eye"></i> <span class="d-none d-sm-inline">Views</span> (77)</span>
+                                            <span class="view"><i class="fa-solid fa-download"></i> <span class="d-none d-sm-inline">Download</span> (27)</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-issue__content">
+                                        <img class="d-none d-sm-inline" src="<?php echo get_template_directory_uri(); ?>/assets/images/publication/publication_file.svg" alt="publication_file">
+                                        <div class="d-flex flex-column flex-md-row align-items-md-end gap-4">
+                                            <div>
+                                                <h2><a class="card-issue__title text-decoration-underline" href="current-issue-details.html">Anti-cancer activity of Carica papaya leaf ethanolic extract and fractions against selected human cancer cell line</a></h2>
+                                                <div><span class="fw-bold">By: </span> Pedro M Gutierrez Jr</div>
+                                                <div class="card_paper__tags mt-0">
+                                                    <span class="fw-bold">Key Words: </span>
+                                                    <a href="#">Anti-cancer</a>
+                                                    <a href="#">Carica papaya</a>
+                                                    <a href="#">Cytotoxicity</a>
+                                                    <a href="#">MTT Assay</a>
+                                                    <a href="#">Plant extract</a>
+                                                </div>
+                                                <div>
+                                                    <span>Int. J. Biosci.23( 1), 1-8, July 2023.</span>
+                                                </div>
+                                                <div> <span class="fw-bold">DOI: </span><a href="http://dx.doi.org/10.12692/ijb/23.1.1-8" class="text-decoration-underline" target="_blank">http://dx.doi.org/10.12692/ijb/23.1.1-8</a></div>
+                                            </div>
+                                            <div class="d-flex justify-content-end">
+                                                <a class="btn btn_primary" href="current-issue-details.html">Details</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <!-- issue card -->
+                                <article class="card-issue">
+                                    <div class="card-issue__header">
+                                        <div class="card-issue__label">
+                                            <span>Open Access</span>
+                                            <span class="d-none d-sm-inline">Research Paper</span>
+                                        </div>
+                                        <div class="card-issue__statistics">
+                                            <span><i class="fa-solid fa-eye"></i> <span class="d-none d-sm-inline">Views</span> (77)</span>
+                                            <span class="view"><i class="fa-solid fa-download"></i> <span class="d-none d-sm-inline">Download</span> (27)</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-issue__content">
+                                        <img class="d-none d-sm-inline" src="<?php echo get_template_directory_uri(); ?>/assets/images/publication/publication_file.svg" alt="publication_file">
+                                        <div class="d-flex flex-column flex-md-row align-items-md-end gap-4">
+                                            <div>
+                                                <h2><a class="card-issue__title text-decoration-underline" href="current-issue-details.html">Anti-cancer activity of Carica papaya leaf ethanolic extract and fractions against selected human cancer cell line</a></h2>
+                                                <div><span class="fw-bold">By: </span> Pedro M Gutierrez Jr</div>
+                                                <div class="card_paper__tags mt-0">
+                                                    <span class="fw-bold">Key Words: </span>
+                                                    <a href="#">Anti-cancer</a>
+                                                    <a href="#">Carica papaya</a>
+                                                    <a href="#">Cytotoxicity</a>
+                                                    <a href="#">MTT Assay</a>
+                                                    <a href="#">Plant extract</a>
+                                                </div>
+                                                <div>
+                                                    <span>Int. J. Biosci.23( 1), 1-8, July 2023.</span>
+                                                </div>
+                                                <div> <span class="fw-bold">DOI: </span><a href="http://dx.doi.org/10.12692/ijb/23.1.1-8" class="text-decoration-underline" target="_blank">http://dx.doi.org/10.12692/ijb/23.1.1-8</a></div>
+                                            </div>
+                                            <div class="d-flex justify-content-end">
+                                                <a class="btn btn_primary" href="current-issue-details.html">Details</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <!-- issue card -->
+                                <article class="card-issue">
+                                    <div class="card-issue__header">
+                                        <div class="card-issue__label">
+                                            <span>Open Access</span>
+                                            <span class="d-none d-sm-inline">Research Paper</span>
+                                        </div>
+                                        <div class="card-issue__statistics">
+                                            <span><i class="fa-solid fa-eye"></i> <span class="d-none d-sm-inline">Views</span> (77)</span>
+                                            <span class="view"><i class="fa-solid fa-download"></i> <span class="d-none d-sm-inline">Download</span> (27)</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-issue__content">
+                                        <img class="d-none d-sm-inline" src="<?php echo get_template_directory_uri(); ?>/assets/images/publication/publication_file.svg" alt="publication_file">
+                                        <div class="d-flex flex-column flex-md-row align-items-md-end gap-4">
+                                            <div>
+                                                <h2><a class="card-issue__title text-decoration-underline" href="current-issue-details.html">Anti-cancer activity of Carica papaya leaf ethanolic extract and fractions against selected human cancer cell line</a></h2>
+                                                <div><span class="fw-bold">By: </span> Pedro M Gutierrez Jr</div>
+                                                <div class="card_paper__tags mt-0">
+                                                    <span class="fw-bold">Key Words: </span>
+                                                    <a href="#">Anti-cancer</a>
+                                                    <a href="#">Carica papaya</a>
+                                                    <a href="#">Cytotoxicity</a>
+                                                    <a href="#">MTT Assay</a>
+                                                    <a href="#">Plant extract</a>
+                                                </div>
+                                                <div>
+                                                    <span>Int. J. Biosci.23( 1), 1-8, July 2023.</span>
+                                                </div>
+                                                <div> <span class="fw-bold">DOI: </span><a href="http://dx.doi.org/10.12692/ijb/23.1.1-8" class="text-decoration-underline" target="_blank">http://dx.doi.org/10.12692/ijb/23.1.1-8</a></div>
+                                            </div>
+                                            <div class="d-flex justify-content-end">
+                                                <a class="btn btn_primary" href="current-issue-details.html">Details</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
 
-                                    
-                                </div>
+                                <!-- pagination -->
+                                <nav class="d-flex align-items-center justify-content-center justify-content-sm-between mt-4">
+                                    <div class="d-none d-sm-inline">
+                                        <span class="fw-bold">Page 1 of 69</span>
+                                    </div>
+                                    <ul class="pagination">
+                                        <li class="page-item d-none d-sm-block"><a class="page-link" href="#"><i class="fa-solid fa-angles-left"></i><span class="sr-only">go to first link</span></a></li>
+                                        <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angle-left"></i><span class="sr-only">previous page link</span></a></li>
+                                        <li class="page-item"><a class="page-link active" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item"><span class="px-2">...</span></li>
+                                        <li class="page-item"><a class="page-link" href="#">10</a></li>
+                                        <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angle-right"></i><span class="sr-only">next page link</span></a></li>
+                                        <li class="page-item d-none d-sm-block"><a class="page-link" href="#"><i class="fa-solid fa-angles-right"></i><span class="sr-only">go to last page link</span></a></li>
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
 
