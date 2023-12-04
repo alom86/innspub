@@ -72,73 +72,6 @@
 
                 <!-- desktop menu -->
                 <div class="navbar__desktop_menu d-none d-xl-flex">
-                    <!-- <ul class="navbar-nav mx-auto">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                INNS Pub
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="single-page.html">About INNSpub</a></li>
-                                <li><a class="dropdown-item" href="single-page.html">Aim And Scrope</a></li>
-                                <li><a class="dropdown-item" href="single-page.html">Why Choose INNSpub</a></li>
-                                <li><a class="dropdown-item" href="contact.html">Offices I Contacts</a></li>
-                                <li><a class="dropdown-item" href="single-page.html">Announcement</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Journals
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="editorial-board.html">Editorial Board</a></li>
-                                <li><a class="dropdown-item" href="board-members.html">Board Members</a></li>
-                                <li><a class="dropdown-item" href="contact.html">Offices I Contacts</a></li>
-                                <li><a class="dropdown-item" href="single-page.html">Announcement</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                For Authors
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="single-page.html">About INNSpub</a></li>
-                                <li><a class="dropdown-item" href="single-page.html">Aim And Scrope</a></li>
-                                <li><a class="dropdown-item" href="single-page.html">Why Choose INNSpub</a></li>
-                                <li><a class="dropdown-item" href="contact.html">Offices I Contacts</a></li>
-                                <li><a class="dropdown-item" href="single-page.html">Announcement</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Archives
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="current-issue-ijaar.html">Current Issue IJAAR</a></li>
-                                <li><a class="dropdown-item" href="archives.html">INNSPUB Library</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Excellence
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="single-page.html">About INNSpub</a></li>
-                                <li><a class="dropdown-item" href="single-page.html">Aim And Scrope</a></li>
-                                <li><a class="dropdown-item" href="single-page.html">Why Choose INNSpub</a></li>
-                                <li><a class="dropdown-item" href="contact.html">Offices I Contacts</a></li>
-                                <li><a class="dropdown-item" href="single-page.html">Announcement</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Tutorials
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="tutorial.html">Tutorial on Theoretical Research</a></li>
-                                <li><a class="dropdown-item" href="faqs.html">FAQs</a></li>
-                            </ul>
-                        </li>
-                    </ul> -->
                     <?php
                         wp_nav_menu(
                             array(
@@ -148,7 +81,6 @@
                                 'menu_class'     => 'navbar-nav mx-auto',
                                 'li_class'   => 'nav-item dropdown',
                                 'a_class'    => 'nav-link dropdown-toggle',
-                                // 'ul_class'   => 'dropdown-menu',
                             )
                         );
                     ?>
@@ -164,7 +96,7 @@
                     <span class="sr-only">nav toggler button</span>
                 </button>
 
-                <!-- mobile menu offcanvas -->
+                 <!-- mobile menu -->
                 <div class="offcanvas offcanvas-start" tabindex="-1" id="menuOffcanvas" aria-labelledby="menuOffcanvas">
                     <div class="offcanvas-header p-0 mb-4">
                         <a class="navbar__brand" href="<?php echo home_url(); ?>">
@@ -178,74 +110,19 @@
                         <input class="form-control search-form__input" type="text" placeholder="Search" aria-label="Search">
                         <button class="btn search-form__button" type="submit"><i class="fa-solid fa-magnifying-glass"></i><span class="sr-only">search button</span></button>
                     </form>
-
-                    <ul class="navbar-nav overflow-y-scroll">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                INNS Pub
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="single-page.html">About INNSpub</a></li>
-                                <li><a class="dropdown-item" href="single-page.html">Aim And Scrope</a></li>
-                                <li><a class="dropdown-item" href="single-page.html">Why Choose INNSpub</a></li>
-                                <li><a class="dropdown-item" href="contact.html">Offices I Contacts</a></li>
-                                <li><a class="dropdown-item" href="single-page.html">Announcement</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Journals
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="editorial-board.html">Editorial Board</a></li>
-                                <li><a class="dropdown-item" href="board-members.html">Board Members</a></li>
-                                <li><a class="dropdown-item" href="contact.html">Offices I Contacts</a></li>
-                                <li><a class="dropdown-item" href="single-page.html">Announcement</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                For Authors
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="single-page.html">About INNSpub</a></li>
-                                <li><a class="dropdown-item" href="single-page.html">Aim And Scrope</a></li>
-                                <li><a class="dropdown-item" href="single-page.html">Why Choose INNSpub</a></li>
-                                <li><a class="dropdown-item" href="contact.html">Offices I Contacts</a></li>
-                                <li><a class="dropdown-item" href="single-page.html">Announcement</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Archives
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="current-issue-ijaar.html">Current Issue IJAAR</a></li>
-                                <li><a class="dropdown-item" href="archives.html">INNSPUB Library</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Excellence
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="single-page.html">About INNSpub</a></li>
-                                <li><a class="dropdown-item" href="single-page.html">Aim And Scrope</a></li>
-                                <li><a class="dropdown-item" href="single-page.html">Why Choose INNSpub</a></li>
-                                <li><a class="dropdown-item" href="contact.html">Offices I Contacts</a></li>
-                                <li><a class="dropdown-item" href="single-page.html">Announcement</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Tutorials
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="tutorial.html">Tutorial on Theoretical Research</a></li>
-                                <li><a class="dropdown-item" href="faqs.html">FAQs</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                   
+                    <?php
+                        wp_nav_menu(
+                            array(
+                                'theme_location' => 'header_menu',
+                                'menu_id'        => 'header-menu',
+                                'container'      => '',
+                                'menu_class'     => 'navbar-nav overflow-y-scroll',
+                                'li_class'   => 'nav-item dropdown',
+                                'a_class'    => 'nav-link dropdown-toggle',
+                            )
+                        );
+                    ?>
                 </div>
             </div>
         </nav>
