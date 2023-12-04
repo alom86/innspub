@@ -28,6 +28,8 @@ function innspub_css_js()
     wp_enqueue_script('aos_js', get_template_directory_uri() . "/assets/vendors/aos/aos.js", array(), "2.3.1", 'true');
     // swiper_js
     wp_enqueue_script('swiper_js', get_template_directory_uri() . "/assets/vendors/swiper-10.3.1/swiper-bundle.min.js", array(), "10.3.1", 'true');
+    // wp_menu js
+    wp_enqueue_script('wp_menu_js', get_template_directory_uri() . "/assets/js/wp_menu.js", array(), "1.0.0", 'true');
     // main js
     wp_enqueue_script('main_js', get_template_directory_uri() . "/assets/js/main.js", array(), "1.0.0", 'true');
 
