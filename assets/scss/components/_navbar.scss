@@ -67,6 +67,17 @@
 
         .nav-item {
             margin-bottom: 0;
+
+            &.active {
+                .dropdown-toggle {
+                    color: $color_primary;
+                    border-color: $color_primary;
+
+                    &::after {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
         }
 
         .nav-link {
@@ -90,8 +101,15 @@
         border: none;
         animation: $transition slide-top;
 
-        li{
+        li {
             margin-bottom: 0;
+        }
+
+        .active {
+            .dropdown-item{
+                background-color: $color_primary;
+                color: $color_white;
+            }
         }
     }
 
@@ -107,6 +125,8 @@
             color: $color_white;
         }
     }
+
+    
 
     // Responsive
     @media (min-width: 576px) {
