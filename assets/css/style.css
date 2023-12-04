@@ -568,6 +568,13 @@ img {
 .navbar .navbar-nav .nav-item {
   margin-bottom: 0;
 }
+.navbar .navbar-nav .nav-item.active .dropdown-toggle {
+  color: #018B40;
+  border-color: #018B40;
+}
+.navbar .navbar-nav .nav-item.active .dropdown-toggle::after {
+  transform: rotate(180deg);
+}
 .navbar .navbar-nav .nav-link {
   border-bottom: 2px solid transparent;
   font-weight: 500;
@@ -586,6 +593,10 @@ img {
 }
 .navbar .dropdown-menu li {
   margin-bottom: 0;
+}
+.navbar .dropdown-menu .active .dropdown-item {
+  background-color: #018B40;
+  color: #FFFFFF;
 }
 .navbar .dropdown-item {
   font-weight: 400;
