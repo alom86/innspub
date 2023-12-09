@@ -3,6 +3,8 @@
 register_nav_menus(
     array(
         'header_menu' => esc_html__( 'Header Menu', 'innspub' ),
+        'approach_menu' => esc_html__( 'Approach Menu', 'innspub' ),
+        'quick_links_menu' => esc_html__( 'Quick Links Menu', 'innspub' ),
     )
 );
 

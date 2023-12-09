@@ -38,46 +38,38 @@
                         <div class="col-sm-6 col-xl-4">
                             <div class="footer-item">
                                 <h2 class="footer-item__title">Approach</h2>
-                                <ul class="footer-item__nav">
-                                    <li class="footer-item__nav-item">
-                                        <a class="footer-item__nav-link" href="#">Publication policy</a>
-                                    </li>
-                                    <li class="footer-item__nav-item">
-                                        <a class="footer-item__nav-link" href="#">Terms and conditions</a>
-                                    </li>
-                                    <li class="footer-item__nav-item">
-                                        <a class="footer-item__nav-link" href="#">Open access policy</a>
-                                    </li>
-                                    <li class="footer-item__nav-item">
-                                        <a class="footer-item__nav-link" href="#">Privacy statement</a>
-                                    </li>
-                                    <li class="footer-item__nav-item">
-                                        <a class="footer-item__nav-link" href="#">Waver policy</a>
-                                    </li>
-                                </ul>
+                                <!-- dynamic approach menu -->
+                                <?php
+                                    wp_nav_menu(
+                                        array(
+                                            'theme_location' => 'approach_menu',
+                                            'menu_id'        => 'approach-menu',
+                                            'container'      => '',
+                                            'menu_class'     => 'footer-item__nav',
+                                            'li_class'   => 'footer-item__nav-item',
+                                            'a_class'    => 'footer-item__nav-link',
+                                        )
+                                    );
+                                ?>
                             </div>
                         </div>
 
                         <div class="col-sm-6 col-xl-4">
                             <div class="footer-item">
                                 <h2 class="footer-item__title">Quick Links</h2>
-                                <ul class="footer-item__nav">
-                                    <li class="footer-item__nav-item">
-                                        <a class="footer-item__nav-link" href="#">Affiliated journals</a>
-                                    </li>
-                                    <li class="footer-item__nav-item">
-                                        <a class="footer-item__nav-link" href="#">Paper preparation</a>
-                                    </li>
-                                    <li class="footer-item__nav-item">
-                                        <a class="footer-item__nav-link" href="#">Submit a paper</a>
-                                    </li>
-                                    <li class="footer-item__nav-item">
-                                        <a class="footer-item__nav-link" href="#">Make a payment</a>
-                                    </li>
-                                    <li class="footer-item__nav-item">
-                                        <a class="footer-item__nav-link" href="#">Withdrawal & refund</a>
-                                    </li>
-                                </ul>
+                                <!-- dynamic Quick Links menu -->
+                                <?php
+                                    wp_nav_menu(
+                                        array(
+                                            'theme_location' => 'quick_links_menu',
+                                            'menu_id'        => 'quick_links-menu',
+                                            'container'      => '',
+                                            'menu_class'     => 'footer-item__nav',
+                                            'li_class'   => 'footer-item__nav-item',
+                                            'a_class'    => 'footer-item__nav-link',
+                                        )
+                                    );
+                                ?>
                             </div>
                         </div>
 
