@@ -25,4 +25,8 @@
     });
   }
 
+  // sidebar active menu
+  $("#for_authors-menu .current-menu-item a").addClass('active');
+  $("#downloads-menu .current-menu-item a").addClass('active');
+
 })(window.jQuery);

@@ -15,7 +15,7 @@
                 <nav aria-label="breadcrumb">
                     <!-- mobile dropdown -->
                     <ol class="breadcrumb d-md-none">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="<?php echo home_url(); ?>">Home</a></li>
                         <li class="breadcrumb-item dropdown">
                             <a href="#" class="" data-bs-toggle="dropdown" aria-expanded="false">
                                 ...
@@ -30,7 +30,7 @@
                     </ol>
                     <!-- Large device -->
                     <ol class="breadcrumb d-none d-md-flex">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="<?php echo home_url(); ?>">Home</a></li>
                         <li class="breadcrumb-item active" aria-current="page"><?php echo the_title(); ?></li>
                     </ol>
                 </nav>

@@ -5,6 +5,8 @@ register_nav_menus(
         'header_menu' => esc_html__( 'Header Menu', 'innspub' ),
         'approach_menu' => esc_html__( 'Approach Menu', 'innspub' ),
         'quick_links_menu' => esc_html__( 'Quick Links Menu', 'innspub' ),
+        'for_authors_menu' => esc_html__( 'For Authors Menu', 'innspub' ),
+        'downloads_menu' => esc_html__( 'Downloads Menu', 'innspub' ),
     )
 );
 
