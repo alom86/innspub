@@ -44,28 +44,6 @@
                                     </h3>
                                     <div id="downloads" class="accordion-collapse collapse" data-bs-parent="#accordionSidebar">
                                         <div class="accordion-body">
-                                            <!-- <ul>
-                                                <li>
-                                                    <a href="#">
-                                                        Cover letter
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        Copyright agreement
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        Article sample
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        Publication certificate
-                                                    </a>
-                                                </li>
-                                            </ul> -->
 
                                             <!-- Downloads Menu -->
                                             <?php
@@ -131,7 +109,8 @@
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#indexed_in" aria-expanded="false" aria-controls="indexed_in">
                                             Indexed In
                                         </button>
-                                        <a href="indexed-in.html" class="btn btn_primary btn_more">More <span class="sr-only">read more link button</span></a>
+                                        <!-- TODO update link -->
+                                        <a href="https://innspub.dev/indexed-in" class="btn btn_primary btn_more">More <span class="sr-only">read more link button</span></a>
                                     </h3>
                                     <div id="indexed_in" class="accordion-collapse collapse" data-bs-parent="#accordionSidebar">
                                         <div class="accordion-body">
