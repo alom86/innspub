@@ -16,7 +16,8 @@ get_header();
 ?>
 
 	<!-- Main Content -->
-	<main></main>
+	<main>
+	</main>
 
 <?php
 get_footer();
