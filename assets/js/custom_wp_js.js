@@ -29,6 +29,10 @@
   $("#for_authors-menu .current-menu-item a").addClass('active');
   $("#downloads-menu .current-menu-item a").addClass('active');
 
+  // sidebar_direct_links-menu active
+  $('#sidebar_direct_links-menu .current_page_item a').addClass('active');
+
+
   // pagination calss add
   $('.pagination .page-item .page-numbers').addClass('page-link');
   $('.pagination .page-item .current').addClass('active');
