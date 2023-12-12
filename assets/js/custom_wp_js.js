@@ -29,4 +29,8 @@
   $("#for_authors-menu .current-menu-item a").addClass('active');
   $("#downloads-menu .current-menu-item a").addClass('active');
 
+  // pagination calss add
+  $('.pagination .page-item .page-numbers').addClass('page-link');
+  $('.pagination .page-item .current').addClass('active');
+
 })(window.jQuery);
