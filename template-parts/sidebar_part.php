@@ -64,43 +64,18 @@
 
                                 <!-- links -->
                                 <div class="accordion-item menu links">
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                Call for paper
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Paper submission
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Authors service
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="archives.html">
-                                                Archive
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Become a reviewer
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Propose a special issue
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Get subscription
-                                            </a>
-                                        </li>
-                                    </ul>
+                                    <?php
+                                        wp_nav_menu(
+                                            array(
+                                                'theme_location' => 'sidebar_direct_links_menu',
+                                                'menu_id'        => 'sidebar_direct_links-menu',
+                                                'container'      => '',
+                                                'menu_class'     => '',
+                                                'li_class'   => '',
+                                                'a_class'    => '',
+                                            )
+                                        );
+                                    ?>
                                 </div>
 
                                 <!-- Indexed In -->

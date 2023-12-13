@@ -7,6 +7,7 @@ register_nav_menus(
         'quick_links_menu' => esc_html__( 'Quick Links Menu', 'innspub' ),
         'for_authors_menu' => esc_html__( 'For Authors Menu', 'innspub' ),
         'downloads_menu' => esc_html__( 'Downloads Menu', 'innspub' ),
+        'sidebar_direct_links_menu' => esc_html__( 'Sidebar Links Menu', 'innspub' ),
     )
 );
 
