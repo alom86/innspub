@@ -7,7 +7,7 @@ function custom_post(){
         array(
             'labels' => array(
                 'name' => ('Indexes'),
-                'singular_name' => ('Index'),
+                'singular_name' => ('Indexed'),
                 'add_new' => ('Add New Post'),
                 'add_new_item' => ('Add New Post'),
                 'edit_item' => ('Edit Post'),
