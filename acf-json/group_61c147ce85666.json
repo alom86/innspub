@@ -1,0 +1,325 @@
+{
+    "key": "group_61c147ce85666",
+    "title": "Article Additional Info",
+    "fields": [
+        {
+            "key": "field_61c147ce896da",
+            "label": "Authors Name",
+            "name": "authors",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_61c147ce89712",
+            "label": "Authors Email",
+            "name": "authors_email",
+            "aria-label": "",
+            "type": "email",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_61c148ea0d764",
+            "label": "Country",
+            "name": "country",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_61c147ce897ed",
+            "label": "DOI",
+            "name": "doi",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "html",
+            "maxlength": ""
+        },
+        {
+            "key": "field_61c15fa7402b6",
+            "label": "Journal Short Name",
+            "name": "journal_short_name",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "IJB": "IJB",
+                "JBES": "JBES",
+                "IJAAR": "IJAAR",
+                "IJBB": "IJBB",
+                "IJMM": "IJMM"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_61c1602a402b7",
+            "label": "Volume",
+            "name": "volume",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_61c1603d402b8",
+            "label": "Number",
+            "name": "number",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_61c147ce897b7",
+            "label": "Month",
+            "name": "month",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_61c160a2402b9",
+            "label": "Year",
+            "name": "year",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_61c160c7402ba",
+            "label": "Page No",
+            "name": "page_no",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_61c147ce89824",
+            "label": "Article Types",
+            "name": "article_types",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Research Paper": "Research Paper",
+                "Review Paper": "Review Paper",
+                "Short Communications": "Short Communications",
+                "Case Study": "Case Study",
+                "Project Report": "Project Report",
+                "Mini Review": "Mini Review",
+                "Short Review": "Short Review"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_61c147ce8985b",
+            "label": "Add file",
+            "name": "add_file",
+            "aria-label": "",
+            "type": "file",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "library": "all",
+            "return_format": "url",
+            "min_size": 0,
+            "max_size": 0,
+            "mime_types": ""
+        },
+        {
+            "key": "field_61c147ce898c8",
+            "label": "Ref Body",
+            "name": "ref_body",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "toolbar": "full",
+            "media_upload": 1,
+            "tabs": "all",
+            "delay": 0
+        },
+        {
+            "key": "field_61c147ce8998c",
+            "label": "Copyright",
+            "name": "copyright",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Copyright © 2022\r\nBy Authors and International Network for\r\nNatural Sciences (INNSPUB)\r\nhttp:\/\/innspub.net\r\nThis article is published under the terms of the Creative \r\nCommons Attribution Liscense 4.0",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "br"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1701861013
+}

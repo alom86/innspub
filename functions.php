@@ -123,13 +123,10 @@ require get_template_directory() . '/inc/widget_register.php';
  */
 include_once('inc/custom_css_js.php');
 
-// acf register
-require get_template_directory() . '/inc/acf_register.php';
+// cpt_register
+require get_template_directory() . '/inc/cpt_register.php';
 
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
+
 
 /**
  * Custom template tags for this theme.
@@ -152,4 +149,52 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+
+
+/**
+ * ACF Pro
+ */
+
+ if ( class_exists('acf') || class_exists('ACF') ) {
+    return; // ACF is active, exit further execution
+}
+	// Define path and URL to the ACF plugin.
+	define( 'MY_ACF_PATH', get_stylesheet_directory() . '/includes/acf/' );
+	define( 'MY_ACF_URL', get_stylesheet_directory_uri() . '/includes/acf/' );
+
+	// Include the ACF plugin.
+	include_once( MY_ACF_PATH . 'acf.php' );
+
+	// Customize the URL setting to fix incorrect asset URLs.
+	add_filter('acf/settings/url', 'my_acf_settings_url');
+	function my_acf_settings_url( $url ) {
+		return MY_ACF_URL;
+	}
+
+
+	function my_acf_json_save_point( $path ) {
+		return get_stylesheet_directory() . '/acf-json';
+	}
+	add_filter( 'acf/settings/save_json', 'my_acf_json_save_point' );
+
+	function my_acf_json_load_point( $paths ) {
+		// Remove the original path (optional).
+		unset($paths[0]);
+	
+		// Append the new path and return it.
+		$paths[] = get_stylesheet_directory() . '/acf-json';
+	
+		return $paths;    
+	}
+	add_filter( 'acf/settings/load_json', 'my_acf_json_load_point' );
+
+	// ACF ends
+
+
+/**
+ * CPT UI
+ */
+
+require_once get_template_directory() . '/includes/cpt/cpt.php';
 
