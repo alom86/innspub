@@ -30,7 +30,7 @@ get_header();
                 <div class="layout_sidebar">
                     <!-- sidebar -->
                     <?php
-                        require get_template_directory() . '/template-parts/sidebar_part.php';
+                        require get_template_directory() . '/template-parts/sidebar_2_part.php';
                     ?>
 
                     <!-- page content -->
