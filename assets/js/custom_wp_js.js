@@ -37,4 +37,8 @@
   $('.pagination .page-item .page-numbers').addClass('page-link');
   $('.pagination .page-item .current').addClass('active');
 
+  // post_references
+  $('#post_references p').addClass('reference_item');
+  $('#post_references p strong').addClass('reference_item__title');
+
 })(window.jQuery);
