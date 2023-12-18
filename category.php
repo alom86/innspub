@@ -45,11 +45,12 @@ get_header();
                                     <?php $post = $posts[0];
                                     ?>
                                     <?php if (is_month()) { ?>
+                                        Paper for | <?php echo single_cat_title(); ?> |
                                         <?php echo "Volume ";
                                         the_field('volume');
-                                        echo "| Number ";
+                                        echo " | Number ";
                                         the_field('number');
-                                        echo "| "; ?>
+                                        echo " | "; ?>
                                         <?php the_time('F, Y'); ?>
 
                                     <?php } elseif (is_category()) { ?>
