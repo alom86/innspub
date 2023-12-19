@@ -10,6 +10,7 @@
  * and that other 'pages' on your WordPress site may use a
  * different template.
  *
+ *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package innspub
@@ -18,7 +19,7 @@
 get_header();
 ?>
 
-<!-- Main Content -->
+<!-- TODO remove this page Main Content -->
 <main class="bg-white">
     <!-- page breadcumb -->
     <?php

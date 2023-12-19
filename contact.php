@@ -34,6 +34,7 @@ get_header();
                     ?>
 
                     <!-- page content -->
+                    <!-- TODO contact page need to dynamic -->
                     <div>
                         <div class="page_content">
                             <!-- page title -->
