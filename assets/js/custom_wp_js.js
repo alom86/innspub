@@ -41,4 +41,7 @@
   $('#post_references p').addClass('reference_item');
   $('#post_references p strong').addClass('reference_item__title');
 
+  // page_content__data
+  $('.page_content__data p.text-end').addClass('page_content__nav');
+
 })(window.jQuery);

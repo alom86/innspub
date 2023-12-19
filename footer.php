@@ -10,7 +10,7 @@
 	<!-- footer before -->
 	<div class="footer_before">
         <div class="container">
-            <a class="btn btn_primary" href="#">Submit Manuscript</a>
+            <a class="btn btn_primary" href="https://innspub.net/innspub-submission-gateway">Submit Manuscript</a>
         </div>
     </div>
 

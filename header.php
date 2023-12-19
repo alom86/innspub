@@ -47,7 +47,7 @@
                         <a href="#"><i class="fa-solid fa-user"></i> My Account</a>
                     </div>
                     <div class="nav-top__right-button">
-                        <a href="#"><span class="d-none d-sm-inline">Submit</span> Manuscript</a>
+                        <a href="https://innspub.net/innspub-submission-gateway"><span class="d-none d-sm-inline">Submit</span> Manuscript</a>
                     </div>
                     <img class="nav-top__right-double_slash d-none d-xl-block" src="<?php echo get_template_directory_uri() ?>/assets/images/shape/double_slash.webp" alt="double_slash">
                     <div class="social d-none d-xl-flex">
