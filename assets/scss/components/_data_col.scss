@@ -1,6 +1,7 @@
 .data_col {
     display: flex;
     gap: 12px;
+    font-size: 14px;
 
     &__title {
         width: 104px;
@@ -8,10 +9,6 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-    }
-
-    &__data{
-        font-size: 14px;
     }
 
     @media (min-width: 576px) {
