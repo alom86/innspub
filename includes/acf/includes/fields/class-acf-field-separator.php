@@ -21,10 +21,10 @@ if ( ! class_exists( 'acf_field_separator' ) ) :
 		function initialize() {
 
 			// vars
-			$this->name          = 'separator';
-			$this->label         = __( 'Separator', 'acf' );
-			$this->preview_image = acf_get_url() . '/assets/images/field-type-previews/field-preview-separator.png';
-			$this->category      = 'layout';
+			$this->name     = 'separator';
+			$this->label    = __( 'Separator', 'acf' );
+			$this->category = 'layout';
+
 		}
 
 
@@ -43,6 +43,7 @@ if ( ! class_exists( 'acf_field_separator' ) ) :
 		function render_field( $field ) {
 
 			/* do nothing */
+
 		}
 
 
@@ -73,10 +74,15 @@ if ( ! class_exists( 'acf_field_separator' ) ) :
 
 			// return
 			return $field;
+
 		}
+
 	}
 
 
 	// initialize
 	acf_register_field_type( 'acf_field_separator' );
+
 endif; // class_exists check
+
+

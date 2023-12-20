@@ -57,7 +57,7 @@ if ( ! class_exists( 'ACF_Ajax_Check_Screen' ) ) :
 						'key'      => $field_group['key'],
 						'title'    => $field_group['title'],
 						'position' => $field_group['position'],
-						'classes'  => postbox_classes( 'acf-' . $field_group['key'], $args['screen'] ),
+						'classes'  => postbox_classes( $item['id'], $args['screen'] ),
 						'style'    => $field_group['style'],
 						'label'    => $field_group['label_placement'],
 						'edit'     => acf_get_field_group_edit_link( $field_group['ID'] ),
@@ -104,4 +104,7 @@ if ( ! class_exists( 'ACF_Ajax_Check_Screen' ) ) :
 	}
 
 	acf_new_instance( 'ACF_Ajax_Check_Screen' );
+
 endif; // class_exists check
+
+

@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! class_exists( 'acf_admin_tools' ) ) :
-	#[AllowDynamicProperties]
+
 	class acf_admin_tools {
 
 
@@ -32,8 +32,10 @@ if ( ! class_exists( 'acf_admin_tools' ) ) :
 		function __construct() {
 
 			// actions
-			add_action( 'admin_menu', array( $this, 'admin_menu' ), 15 );
+			add_action( 'admin_menu', array( $this, 'admin_menu' ) );
+
 		}
+
 
 		/**
 		 *  register_tool
@@ -51,6 +53,7 @@ if ( ! class_exists( 'acf_admin_tools' ) ) :
 
 			$instance                       = new $class();
 			$this->tools[ $instance->name ] = $instance;
+
 		}
 
 
@@ -69,6 +72,7 @@ if ( ! class_exists( 'acf_admin_tools' ) ) :
 		function get_tool( $name ) {
 
 			return isset( $this->tools[ $name ] ) ? $this->tools[ $name ] : null;
+
 		}
 
 
@@ -87,6 +91,7 @@ if ( ! class_exists( 'acf_admin_tools' ) ) :
 		function get_tools() {
 
 			return $this->tools;
+
 		}
 
 
@@ -115,6 +120,7 @@ if ( ! class_exists( 'acf_admin_tools' ) ) :
 
 			// actions
 			add_action( 'load-' . $page, array( $this, 'load' ) );
+
 		}
 
 
@@ -132,8 +138,6 @@ if ( ! class_exists( 'acf_admin_tools' ) ) :
 
 		function load() {
 
-			add_action( 'admin_body_class', array( $this, 'admin_body_class' ) );
-
 			// disable filters (default to raw data)
 			acf_disable_filters();
 
@@ -145,20 +149,9 @@ if ( ! class_exists( 'acf_admin_tools' ) ) :
 
 			// load acf scripts
 			acf_enqueue_scripts();
+
 		}
 
-		/**
-		 * Modifies the admin body class.
-		 *
-		 * @since 6.0.0
-		 *
-		 * @param string $classes Space-separated list of CSS classes.
-		 * @return string
-		 */
-		public function admin_body_class( $classes ) {
-			$classes .= ' acf-admin-page';
-			return $classes;
-		}
 
 		/**
 		 *  include_tools
@@ -181,6 +174,7 @@ if ( ! class_exists( 'acf_admin_tools' ) ) :
 
 			// action
 			do_action( 'acf/include_admin_tools' );
+
 		}
 
 
@@ -209,6 +203,7 @@ if ( ! class_exists( 'acf_admin_tools' ) ) :
 					$tool->submit();
 				}
 			}
+
 		}
 
 
@@ -246,40 +241,46 @@ if ( ! class_exists( 'acf_admin_tools' ) ) :
 
 				// add metabox
 				add_meta_box( 'acf-admin-tool-' . $tool->name, acf_esc_html( $tool->title ), array( $this, 'metabox_html' ), $screen->id, 'normal', 'default', array( 'tool' => $tool->name ) );
+
 			}
 
 			// view
-			acf_get_view( 'tools/tools', $view );
+			acf_get_view( 'html-admin-tools', $view );
+
 		}
 
 
 		/**
-		 * Output the metabox HTML for specific tools
+		 *  meta_box_html
 		 *
-		 * @since 5.6.3
+		 *  description
 		 *
-		 * @param mixed $post    The post this metabox is being displayed on, should be an empty string always for us on a tools page.
-		 * @param array $metabox An array of the metabox attributes.
+		 *  @date    10/10/17
+		 *  @since   5.6.3
 		 *
-		 * @return void
+		 *  @param   n/a
+		 *  @return  n/a
 		 */
-		public function metabox_html( $post, $metabox ) {
-			$tool       = $this->get_tool( $metabox['args']['tool'] );
-			$form_attrs = array( 'method' => 'post' );
 
-			if ( $metabox['args']['tool'] === 'import' ) {
-				$form_attrs['onsubmit'] = 'acf.disableForm(event)';
-			}
+		function metabox_html( $post, $metabox ) {
 
-			printf( '<form %s>', acf_esc_attrs( $form_attrs ) );
-			$tool->html();
-			acf_nonce_input( $tool->name );
-			echo '</form>';
+			// vars
+			$tool = $this->get_tool( $metabox['args']['tool'] );
+
+			?>
+		<form method="post">
+			<?php $tool->html(); ?>
+			<?php acf_nonce_input( $tool->name ); ?>
+		</form>
+			<?php
+
 		}
+
 	}
 
 	// initialize
 	acf()->admin_tools = new acf_admin_tools();
+
 endif; // class_exists check
 
 
@@ -299,6 +300,7 @@ endif; // class_exists check
 function acf_register_admin_tool( $class ) {
 
 	return acf()->admin_tools->register_tool( $class );
+
 }
 
 
@@ -318,6 +320,7 @@ function acf_register_admin_tool( $class ) {
 function acf_get_admin_tools_url() {
 
 	return admin_url( 'edit.php?post_type=acf-field-group&page=acf-tools' );
+
 }
 
 
@@ -337,4 +340,8 @@ function acf_get_admin_tools_url() {
 function acf_get_admin_tool_url( $tool = '' ) {
 
 	return acf_get_admin_tools_url() . '&tool=' . $tool;
+
 }
+
+
+?>

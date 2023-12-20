@@ -21,13 +21,10 @@ if ( ! class_exists( 'acf_field_page_link' ) ) :
 		function initialize() {
 
 			// vars
-			$this->name          = 'page_link';
-			$this->label         = __( 'Page Link', 'acf' );
-			$this->category      = 'relational';
-			$this->description   = __( 'An interactive dropdown to select one or more posts, pages, custom post type items or archive URLs, with the option to search.', 'acf' );
-			$this->preview_image = acf_get_url() . '/assets/images/field-type-previews/field-preview-page-link.png';
-			$this->doc_url       = acf_add_url_utm_tags( 'https://www.advancedcustomfields.com/resources/page-link/', 'docs', 'field-type-selection' );
-			$this->defaults      = array(
+			$this->name     = 'page_link';
+			$this->label    = __( 'Page Link', 'acf' );
+			$this->category = 'relational';
+			$this->defaults = array(
 				'post_type'      => array(),
 				'taxonomy'       => array(),
 				'allow_null'     => 0,
@@ -38,6 +35,7 @@ if ( ! class_exists( 'acf_field_page_link' ) ) :
 			// extra
 			add_action( 'wp_ajax_acf/fields/page_link/query', array( $this, 'ajax_query' ) );
 			add_action( 'wp_ajax_nopriv_acf/fields/page_link/query', array( $this, 'ajax_query' ) );
+
 		}
 
 
@@ -91,6 +89,7 @@ if ( ! class_exists( 'acf_field_page_link' ) ) :
 				// update vars
 				$args['s'] = $s;
 				$is_search = true;
+
 			}
 
 			// load field
@@ -101,16 +100,13 @@ if ( ! class_exists( 'acf_field_page_link' ) ) :
 
 			// update $args
 			if ( ! empty( $field['post_type'] ) ) {
-				$args['post_type'] = acf_get_array( $field['post_type'] );
-			} else {
-				$args['post_type'] = acf_get_post_types();
-			}
 
-			// post status
-			if ( ! empty( $options['post_status'] ) ) {
-				$args['post_status'] = acf_get_array( $options['post_status'] );
-			} elseif ( ! empty( $field['post_status'] ) ) {
-				$args['post_status'] = acf_get_array( $field['post_status'] );
+				$args['post_type'] = acf_get_array( $field['post_type'] );
+
+			} else {
+
+				$args['post_type'] = acf_get_post_types();
+
 			}
 
 			// create tax queries
@@ -124,11 +120,13 @@ if ( ! class_exists( 'acf_field_page_link' ) ) :
 
 				// now create the tax queries
 				foreach ( $taxonomies as $taxonomy => $terms ) {
+
 					$args['tax_query'][] = array(
 						'taxonomy' => $taxonomy,
 						'field'    => 'slug',
 						'terms'    => $terms,
 					);
+
 				}
 			}
 
@@ -175,6 +173,7 @@ if ( ! class_exists( 'acf_field_page_link' ) ) :
 
 			// loop
 			if ( ! empty( $groups ) ) {
+
 				foreach ( array_keys( $groups ) as $group_title ) {
 
 					// vars
@@ -188,21 +187,28 @@ if ( ! class_exists( 'acf_field_page_link' ) ) :
 
 					// convert post objects to post titles
 					foreach ( array_keys( $posts ) as $post_id ) {
+
 						$posts[ $post_id ] = $this->get_post_title( $posts[ $post_id ], $field, $options['post_id'], $is_search );
+
 					}
 
 					// order posts by search
 					if ( $is_search && empty( $args['orderby'] ) && isset( $args['s'] ) ) {
+
 						$posts = acf_order_by_search( $posts, $args['s'] );
+
 					}
 
 					// append to $data
 					foreach ( array_keys( $posts ) as $post_id ) {
+
 						$data['children'][] = $this->get_post_result( $post_id, $posts[ $post_id ] );
+
 					}
 
 					// append to $results
 					$results[] = $data;
+
 				}
 			}
 
@@ -213,6 +219,7 @@ if ( ! class_exists( 'acf_field_page_link' ) ) :
 					'limit'   => $args['posts_per_page'],
 				)
 			);
+
 		}
 
 
@@ -243,12 +250,15 @@ if ( ! class_exists( 'acf_field_page_link' ) ) :
 			$pos    = strpos( $text, $search );
 
 			if ( $pos !== false ) {
+
 				$result['description'] = substr( $text, $pos + 2 );
 				$result['text']        = substr( $text, 0, $pos );
+
 			}
 
 			// return
 			return $result;
+
 		}
 
 
@@ -284,6 +294,7 @@ if ( ! class_exists( 'acf_field_page_link' ) ) :
 
 			// return
 			return $title;
+
 		}
 
 
@@ -309,16 +320,20 @@ if ( ! class_exists( 'acf_field_page_link' ) ) :
 			$post__in = array();
 
 			foreach ( $value as $k => $v ) {
+
 				if ( is_numeric( $v ) ) {
 
 					// append to $post__in
 					$post__in[] = (int) $v;
+
 				}
 			}
 
 			// bail early if no posts
 			if ( empty( $post__in ) ) {
+
 				return $value;
+
 			}
 
 			// get posts
@@ -334,6 +349,7 @@ if ( ! class_exists( 'acf_field_page_link' ) ) :
 
 			// append to $return
 			foreach ( $value as $k => $v ) {
+
 				if ( is_numeric( $v ) ) {
 
 					// extract first post
@@ -341,15 +357,20 @@ if ( ! class_exists( 'acf_field_page_link' ) ) :
 
 					// append
 					if ( $post ) {
+
 						$return[] = $post;
+
 					}
 				} else {
+
 					$return[] = $v;
+
 				}
 			}
 
 			// return
 			return $return;
+
 		}
 
 
@@ -381,6 +402,7 @@ if ( ! class_exists( 'acf_field_page_link' ) ) :
 
 				// set choices
 				if ( ! empty( $posts ) ) {
+
 					foreach ( array_keys( $posts ) as $i ) {
 
 						// vars
@@ -390,10 +412,12 @@ if ( ! class_exists( 'acf_field_page_link' ) ) :
 
 							// append to choices
 							$field['choices'][ $post->ID ] = $this->get_post_title( $post, $field );
+
 						} else {
 
 							// append to choices
 							$field['choices'][ $post ] = $post;
+
 						}
 					}
 				}
@@ -416,7 +440,10 @@ if ( ! class_exists( 'acf_field_page_link' ) ) :
 		*
 		*  @param   $field  - an array holding all the field's data
 		*/
+
 		function render_field_settings( $field ) {
+
+			// post_type
 			acf_render_field_setting(
 				$field,
 				array(
@@ -432,21 +459,7 @@ if ( ! class_exists( 'acf_field_page_link' ) ) :
 				)
 			);
 
-			acf_render_field_setting(
-				$field,
-				array(
-					'label'        => __( 'Filter by Post Status', 'acf' ),
-					'instructions' => '',
-					'type'         => 'select',
-					'name'         => 'post_status',
-					'choices'      => acf_get_pretty_post_statuses(),
-					'multiple'     => 1,
-					'ui'           => 1,
-					'allow_null'   => 1,
-					'placeholder'  => __( 'Any post status', 'acf' ),
-				)
-			);
-
+			// taxonomy
 			acf_render_field_setting(
 				$field,
 				array(
@@ -462,6 +475,19 @@ if ( ! class_exists( 'acf_field_page_link' ) ) :
 				)
 			);
 
+			// allow_null
+			acf_render_field_setting(
+				$field,
+				array(
+					'label'        => __( 'Allow Null?', 'acf' ),
+					'instructions' => '',
+					'name'         => 'allow_null',
+					'type'         => 'true_false',
+					'ui'           => 1,
+				)
+			);
+
+			// allow_archives
 			acf_render_field_setting(
 				$field,
 				array(
@@ -473,38 +499,20 @@ if ( ! class_exists( 'acf_field_page_link' ) ) :
 				)
 			);
 
+			// multiple
 			acf_render_field_setting(
 				$field,
 				array(
-					'label'        => __( 'Select Multiple', 'acf' ),
-					'instructions' => 'Allow content editors to select multiple values',
+					'label'        => __( 'Select multiple values?', 'acf' ),
+					'instructions' => '',
 					'name'         => 'multiple',
 					'type'         => 'true_false',
 					'ui'           => 1,
 				)
 			);
+
 		}
 
-		/**
-		 * Renders the field settings used in the "Validation" tab.
-		 *
-		 * @since 6.0
-		 *
-		 * @param array $field The field settings array.
-		 * @return void
-		 */
-		function render_field_validation_settings( $field ) {
-			acf_render_field_setting(
-				$field,
-				array(
-					'label'        => __( 'Allow Null', 'acf' ),
-					'instructions' => '',
-					'name'         => 'allow_null',
-					'type'         => 'true_false',
-					'ui'           => 1,
-				)
-			);
-		}
 
 		/*
 		*  format_value()
@@ -526,12 +534,16 @@ if ( ! class_exists( 'acf_field_page_link' ) ) :
 
 			// ACF4 null
 			if ( $value === 'null' ) {
+
 				return false;
+
 			}
 
 			// bail early if no value
 			if ( empty( $value ) ) {
+
 				return $value;
+
 			}
 
 			// get posts
@@ -545,20 +557,26 @@ if ( ! class_exists( 'acf_field_page_link' ) ) :
 
 				// convert $post to permalink
 				if ( is_object( $post ) ) {
+
 					$post = get_permalink( $post );
+
 				}
 
 				// append back to $value
 				$value[ $i ] = $post;
+
 			}
 
 			// convert back from array if neccessary
 			if ( ! $field['multiple'] ) {
+
 				$value = array_shift( $value );
+
 			}
 
 			// return value
 			return $value;
+
 		}
 
 
@@ -685,9 +703,13 @@ if ( ! class_exists( 'acf_field_page_link' ) ) :
 		public function format_value_for_rest( $value, $post_id, array $field ) {
 			return acf_format_numerics( $value );
 		}
+
 	}
 
 
 	// initialize
 	acf_register_field_type( 'acf_field_page_link' );
+
 endif; // class_exists check
+
+

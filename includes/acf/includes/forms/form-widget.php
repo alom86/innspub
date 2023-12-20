@@ -11,7 +11,7 @@
 */
 
 if ( ! class_exists( 'acf_form_widget' ) ) :
-	#[AllowDynamicProperties]
+
 	class acf_form_widget {
 
 
@@ -42,6 +42,7 @@ if ( ! class_exists( 'acf_form_widget' ) ) :
 
 			// filters
 			add_filter( 'widget_update_callback', array( $this, 'save_widget' ), 10, 4 );
+
 		}
 
 
@@ -65,8 +66,11 @@ if ( ! class_exists( 'acf_form_widget' ) ) :
 			if ( acf_is_screen( 'widgets' ) || acf_is_screen( 'customize' ) ) {
 
 				// valid
+
 			} else {
+
 				return;
+
 			}
 
 			// load acf scripts
@@ -74,6 +78,7 @@ if ( ! class_exists( 'acf_form_widget' ) ) :
 
 			// actions
 			add_action( 'acf/input/admin_footer', array( $this, 'admin_footer' ), 1 );
+
 		}
 
 
@@ -92,21 +97,19 @@ if ( ! class_exists( 'acf_form_widget' ) ) :
 
 		function acf_validate_save_post() {
 
-			// phpcs:disable WordPress.Security.NonceVerification.Missing -- Verified elsewhere.
-			// bail early if not widget
+			// bail ealry if not widget
 			if ( ! isset( $_POST['_acf_widget_id'] ) ) {
 				return;
 			}
 
 			// vars
-			$id     = sanitize_text_field( $_POST['_acf_widget_id'] );
-			$number = sanitize_text_field( $_POST['_acf_widget_number'] );
-			$prefix = sanitize_text_field( $_POST['_acf_widget_prefix'] );
-			$values = acf_sanitize_request_args( $_POST[ $id ][ $number ]['acf'] );
+			$id     = $_POST['_acf_widget_id'];
+			$number = $_POST['_acf_widget_number'];
+			$prefix = $_POST['_acf_widget_prefix'];
 
 			// validate
-			acf_validate_values( $values, $prefix );
-			// phpcs:enable WordPress.Security.NonceVerification.Missing
+			acf_validate_values( $_POST[ $id ][ $number ]['acf'], $prefix );
+
 		}
 
 
@@ -133,7 +136,9 @@ if ( ! class_exists( 'acf_form_widget' ) ) :
 
 			// get id
 			if ( $widget->number !== '__i__' ) {
+
 				$post_id = "widget_{$widget->id}";
+
 			}
 
 			// get field groups
@@ -176,6 +181,7 @@ if ( ! class_exists( 'acf_form_widget' ) ) :
 
 						// render
 						acf_render_fields( $fields, $post_id, 'div', $field_group['instruction_placement'] );
+
 				}
 
 				// wrap
@@ -193,7 +199,9 @@ if ( ! class_exists( 'acf_form_widget' ) ) :
 			</script>
 					<?php
 			endif;
+
 			}
+
 		}
 
 
@@ -233,6 +241,7 @@ if ( ! class_exists( 'acf_form_widget' ) ) :
 
 			// return
 			return $instance;
+
 		}
 
 
@@ -312,10 +321,12 @@ if ( ! class_exists( 'acf_form_widget' ) ) :
 })(jQuery);	
 </script>
 			<?php
+
 		}
 	}
 
 	new acf_form_widget();
+
 endif;
 
 ?>
