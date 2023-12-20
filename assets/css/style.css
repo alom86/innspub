@@ -59,7 +59,7 @@ body {
   background-color: #F7F7F7;
   color: #2D3E50;
   font-family: "Open Sans", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 24px;
 }
@@ -1827,6 +1827,7 @@ img {
 
 .page_content p {
   margin-bottom: 30px;
+  font-size: 14px;
 }
 .page_content h2,
 .page_content h3,
