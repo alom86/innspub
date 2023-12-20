@@ -33,10 +33,7 @@ function acf_get_object_type( $object_type, $object_subtype = '' ) {
 				$post_type = get_post_type_object( $object_subtype );
 				if ( $post_type ) {
 					$props['label'] = $post_type->labels->name;
-					if ( is_string( $post_type->menu_icon ) && ! preg_match( '/^[\w\-]+$/', $post_type->menu_icon ) ) {
-						$post_type->menu_icon = false;
-					}
-					$props['icon'] = acf_with_default( $post_type->menu_icon, 'dashicons-admin-post' );
+					$props['icon']  = acf_with_default( $post_type->menu_icon, 'dashicons-admin-post' );
 				} else {
 					return false;
 				}
@@ -88,7 +85,7 @@ function acf_get_object_type( $object_type, $object_subtype = '' ) {
 			break;
 		case 'block':
 			$props['label'] = __( 'Blocks', 'acf' );
-			$props['icon']  = 'dashicons-block-default';
+			$props['icon']  = acf_version_compare( 'wp', '>=', '5.5' ) ? 'dashicons-block-default' : 'dashicons-layout';
 			break;
 		default:
 			return false;
@@ -181,7 +178,6 @@ function acf_decode_post_id( $post_id = 0 ) {
 			$id   = absint( $id );
 			break;
 		case 'block_%s':
-		case 'block_%d':
 			$type = 'block';
 			$id   = $post_id;
 			break;
@@ -241,7 +237,7 @@ function acf_get_object_type_rest_base( $type_object ) {
  * Extract the ID of a given object/array. This supports all expected types handled by our update_fields() and
  * load_fields() callbacks.
  *
- * @param WP_Post|WP_User|WP_Term|WP_Comment|array $object
+ * @param WP_Post|WP_User|WP_Term|array $object
  * @return int|mixed|null
  */
 function acf_get_object_id( $object ) {
@@ -250,13 +246,13 @@ function acf_get_object_id( $object ) {
 			case WP_User::class:
 			case WP_Post::class:
 				return (int) $object->ID;
+
 			case WP_Term::class:
 				return (int) $object->term_id;
-			case WP_Comment::class:
-				return (int) $object->comment_ID;
 		}
 	} elseif ( isset( $object['id'] ) ) {
 		return (int) $object['id'];
+
 	} elseif ( isset( $object['ID'] ) ) {
 		return (int) $object['ID'];
 	}

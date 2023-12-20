@@ -21,13 +21,10 @@ if ( ! class_exists( 'acf_field_image' ) ) :
 		function initialize() {
 
 			// vars
-			$this->name          = 'image';
-			$this->label         = __( 'Image', 'acf' );
-			$this->category      = 'content';
-			$this->description   = __( 'Uses the native WordPress media picker to upload, or choose images.', 'acf' );
-			$this->preview_image = acf_get_url() . '/assets/images/field-type-previews/field-preview-image.png';
-			$this->doc_url       = acf_add_url_utm_tags( 'https://www.advancedcustomfields.com/resources/image/', 'docs', 'field-type-selection' );
-			$this->defaults      = array(
+			$this->name     = 'image';
+			$this->label    = __( 'Image', 'acf' );
+			$this->category = 'content';
+			$this->defaults = array(
 				'return_format' => 'array',
 				'preview_size'  => 'medium',
 				'library'       => 'all',
@@ -42,6 +39,7 @@ if ( ! class_exists( 'acf_field_image' ) ) :
 
 			// filters
 			add_filter( 'get_media_item_args', array( $this, 'get_media_item_args' ) );
+
 		}
 
 
@@ -152,7 +150,6 @@ if ( ! class_exists( 'acf_field_image' ) ) :
 					array(
 						'name' => $field['name'],
 						'id'   => $field['id'],
-						'key'  => $field['key'],
 					)
 				);
 				?>
@@ -180,6 +177,27 @@ if ( ! class_exists( 'acf_field_image' ) ) :
 		*/
 
 		function render_field_settings( $field ) {
+
+			// clear numeric settings
+			$clear = array(
+				'min_width',
+				'min_height',
+				'min_size',
+				'max_width',
+				'max_height',
+				'max_size',
+			);
+
+			foreach ( $clear as $k ) {
+
+				if ( empty( $field[ $k ] ) ) {
+
+					$field[ $k ] = '';
+
+				}
+			}
+
+			// return_format
 			acf_render_field_setting(
 				$field,
 				array(
@@ -196,6 +214,19 @@ if ( ! class_exists( 'acf_field_image' ) ) :
 				)
 			);
 
+			// preview_size
+			acf_render_field_setting(
+				$field,
+				array(
+					'label'        => __( 'Preview Size', 'acf' ),
+					'instructions' => '',
+					'type'         => 'select',
+					'name'         => 'preview_size',
+					'choices'      => acf_get_image_sizes(),
+				)
+			);
+
+			// library
 			acf_render_field_setting(
 				$field,
 				array(
@@ -210,42 +241,17 @@ if ( ! class_exists( 'acf_field_image' ) ) :
 					),
 				)
 			);
-		}
 
-		/**
-		 * Renders the field settings used in the "Validation" tab.
-		 *
-		 * @since 6.0
-		 *
-		 * @param array $field The field settings array.
-		 * @return void
-		 */
-		function render_field_validation_settings( $field ) {
-			// Clear numeric settings.
-			$clear = array(
-				'min_width',
-				'min_height',
-				'min_size',
-				'max_width',
-				'max_height',
-				'max_size',
-			);
-
-			foreach ( $clear as $k ) {
-				if ( empty( $field[ $k ] ) ) {
-					$field[ $k ] = '';
-				}
-			}
-
+			// min
 			acf_render_field_setting(
 				$field,
 				array(
-					'label'   => __( 'Minimum', 'acf' ),
-					'hint'    => __( 'Restrict which images can be uploaded', 'acf' ),
-					'type'    => 'text',
-					'name'    => 'min_width',
-					'prepend' => __( 'Width', 'acf' ),
-					'append'  => 'px',
+					'label'        => __( 'Minimum', 'acf' ),
+					'instructions' => __( 'Restrict which images can be uploaded', 'acf' ),
+					'type'         => 'text',
+					'name'         => 'min_width',
+					'prepend'      => __( 'Width', 'acf' ),
+					'append'       => 'px',
 				)
 			);
 
@@ -273,15 +279,16 @@ if ( ! class_exists( 'acf_field_image' ) ) :
 				)
 			);
 
+			// max
 			acf_render_field_setting(
 				$field,
 				array(
-					'label'   => __( 'Maximum', 'acf' ),
-					'hint'    => __( 'Restrict which images can be uploaded', 'acf' ),
-					'type'    => 'text',
-					'name'    => 'max_width',
-					'prepend' => __( 'Width', 'acf' ),
-					'append'  => 'px',
+					'label'        => __( 'Maximum', 'acf' ),
+					'instructions' => __( 'Restrict which images can be uploaded', 'acf' ),
+					'type'         => 'text',
+					'name'         => 'max_width',
+					'prepend'      => __( 'Width', 'acf' ),
+					'append'       => 'px',
 				)
 			);
 
@@ -309,37 +316,19 @@ if ( ! class_exists( 'acf_field_image' ) ) :
 				)
 			);
 
+			// allowed type
 			acf_render_field_setting(
 				$field,
 				array(
-					'label'        => __( 'Allowed File Types', 'acf' ),
+					'label'        => __( 'Allowed file types', 'acf' ),
 					'instructions' => __( 'Comma separated list. Leave blank for all types', 'acf' ),
 					'type'         => 'text',
 					'name'         => 'mime_types',
 				)
 			);
+
 		}
 
-		/**
-		 * Renders the field settings used in the "Presentation" tab.
-		 *
-		 * @since 6.0
-		 *
-		 * @param array $field The field settings array.
-		 * @return void
-		 */
-		function render_field_presentation_settings( $field ) {
-			acf_render_field_setting(
-				$field,
-				array(
-					'label'        => __( 'Preview Size', 'acf' ),
-					'instructions' => '',
-					'type'         => 'select',
-					'name'         => 'preview_size',
-					'choices'      => acf_get_image_sizes(),
-				)
-			);
-		}
 
 		/*
 		*  format_value()
@@ -374,13 +363,18 @@ if ( ! class_exists( 'acf_field_image' ) ) :
 
 			// format
 			if ( $field['return_format'] == 'url' ) {
+
 				return wp_get_attachment_url( $value );
+
 			} elseif ( $field['return_format'] == 'array' ) {
+
 				return acf_get_attachment( $value );
+
 			}
 
 			// return
 			return $value;
+
 		}
 
 
@@ -401,6 +395,7 @@ if ( ! class_exists( 'acf_field_image' ) ) :
 
 			$vars['send'] = true;
 			return( $vars );
+
 		}
 
 
@@ -423,6 +418,7 @@ if ( ! class_exists( 'acf_field_image' ) ) :
 		function update_value( $value, $post_id, $field ) {
 
 			return acf_get_field_type( 'file' )->update_value( $value, $post_id, $field );
+
 		}
 
 
@@ -476,11 +472,13 @@ if ( ! class_exists( 'acf_field_image' ) ) :
 		public function format_value_for_rest( $value, $post_id, array $field ) {
 			return acf_format_numerics( $value );
 		}
+
 	}
 
 
 	// initialize
 	acf_register_field_type( 'acf_field_image' );
+
 endif; // class_exists check
 
 ?>

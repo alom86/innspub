@@ -21,15 +21,13 @@ if ( ! class_exists( 'acf_field_link' ) ) :
 		function initialize() {
 
 			// vars
-			$this->name          = 'link';
-			$this->label         = __( 'Link', 'acf' );
-			$this->category      = 'relational';
-			$this->description   = __( 'Allows you to specify a link and its properties such as title and target using the WordPress native link picker.', 'acf' );
-			$this->preview_image = acf_get_url() . '/assets/images/field-type-previews/field-preview-link.png';
-			$this->doc_url       = acf_add_url_utm_tags( 'https://www.advancedcustomfields.com/resources/link/', 'docs', 'field-type-selection' );
-			$this->defaults      = array(
+			$this->name     = 'link';
+			$this->label    = __( 'Link', 'acf' );
+			$this->category = 'relational';
+			$this->defaults = array(
 				'return_format' => 'array',
 			);
+
 		}
 
 
@@ -57,20 +55,25 @@ if ( ! class_exists( 'acf_field_link' ) ) :
 
 			// array (ACF 5.6.0)
 			if ( is_array( $value ) ) {
+
 				$link = array_merge( $link, $value );
 
 				// post id (ACF < 5.6.0)
 			} elseif ( is_numeric( $value ) ) {
+
 				$link['title'] = get_the_title( $value );
 				$link['url']   = get_permalink( $value );
 
 				// string (ACF < 5.6.0)
 			} elseif ( is_string( $value ) ) {
+
 				$link['url'] = $value;
+
 			}
 
 			// return
 			return $link;
+
 		}
 
 
@@ -114,7 +117,7 @@ if ( ! class_exists( 'acf_field_link' ) ) :
 			echo esc_textarea('<a href="'.$link['url'].'" target="'.$link['target'].'">'.$link['title'].'</a>');
 			?></textarea>*/
 			?>
-<div <?php echo acf_esc_attrs( $div ); ?>>
+<div <?php acf_esc_attr_e( $div ); ?>>
 	
 	<div class="acf-hidden">
 		<a class="link-node" href="<?php echo esc_url( $link['url'] ); ?>" target="<?php echo esc_attr( $link['target'] ); ?>"><?php echo esc_html( $link['title'] ); ?></a>
@@ -141,6 +144,7 @@ if ( ! class_exists( 'acf_field_link' ) ) :
 	
 </div>
 			<?php
+
 		}
 
 
@@ -156,7 +160,10 @@ if ( ! class_exists( 'acf_field_link' ) ) :
 		*
 		*  @param   $field  - an array holding all the field's data
 		*/
+
 		function render_field_settings( $field ) {
+
+			// return_format
 			acf_render_field_setting(
 				$field,
 				array(
@@ -171,7 +178,9 @@ if ( ! class_exists( 'acf_field_link' ) ) :
 					),
 				)
 			);
+
 		}
+
 
 		/*
 		*  format_value()
@@ -201,11 +210,14 @@ if ( ! class_exists( 'acf_field_link' ) ) :
 
 			// format value
 			if ( $field['return_format'] == 'url' ) {
+
 				return $link['url'];
+
 			}
 
 			// return link
 			return $link;
+
 		}
 
 
@@ -231,11 +243,14 @@ if ( ! class_exists( 'acf_field_link' ) ) :
 
 			// URL is required
 			if ( empty( $value ) || empty( $value['url'] ) ) {
+
 				return false;
+
 			}
 
 			// return
 			return $valid;
+
 		}
 
 
@@ -296,6 +311,7 @@ if ( ! class_exists( 'acf_field_link' ) ) :
 
 	// initialize
 	acf_register_field_type( 'acf_field_link' );
+
 endif; // class_exists check
 
 ?>

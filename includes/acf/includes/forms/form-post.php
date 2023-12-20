@@ -50,14 +50,8 @@ if ( ! class_exists( 'ACF_Form_Post' ) ) :
 			// globals
 			global $typenow;
 
-			$acf_post_types = acf_get_internal_post_types();
-
-			foreach ( $acf_post_types as $post_type ) {
-				remove_meta_box( 'submitdiv', $post_type, 'side' );
-			}
-
 			// restrict specific post types
-			$restricted = array_merge( $acf_post_types, array( 'acf-taxonomy', 'attachment' ) );
+			$restricted = array( 'acf-field-group', 'attachment' );
 			if ( in_array( $typenow, $restricted ) ) {
 				return;
 			}
@@ -135,6 +129,7 @@ if ( ! class_exists( 'ACF_Form_Post' ) ) :
 
 					// Add the meta box.
 					add_meta_box( $id, acf_esc_html( $title ), array( $this, 'render_meta_box' ), $post_type, $context, $priority, array( 'field_group' => $field_group ) );
+
 				}
 
 				// Set style from first field group.
@@ -305,7 +300,7 @@ if ( ! class_exists( 'ACF_Form_Post' ) ) :
 
 		function save_post( $post_id, $post ) {
 
-			// bail early if no allowed to save this post type
+			// bail ealry if no allowed to save this post type
 			if ( ! $this->allow_save_post( $post ) ) {
 				return $post_id;
 			}
@@ -338,4 +333,7 @@ if ( ! class_exists( 'ACF_Form_Post' ) ) :
 	}
 
 	acf_new_instance( 'ACF_Form_Post' );
+
 endif;
+
+

@@ -8,12 +8,6 @@
  */
 function acf_get_field_rest_schema( array $field ) {
 	$type   = acf_get_field_type( $field['type'] );
-	$schema = array();
-
-	if ( ! is_object( $type ) || ! method_exists( $type, 'get_rest_schema' ) ) {
-		return $schema;
-	}
-
 	$schema = $type->get_rest_schema( $field );
 
 	/**
@@ -69,6 +63,7 @@ acf_add_filter_variations( 'acf/rest/get_field_links', array( 'type', 'name', 'k
 function acf_format_value_for_rest( $value, $post_id, $field, $format = 'light' ) {
 	if ( $format === 'standard' ) {
 		$value_formatted = acf_format_value( $value, $post_id, $field );
+
 	} else {
 		$type            = acf_get_field_type( $field['type'] );
 		$value_formatted = $type->format_value_for_rest( $value, $post_id, $field );

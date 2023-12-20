@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! class_exists( 'acf_loop' ) ) :
-	#[AllowDynamicProperties]
+
 	class acf_loop {
 
 
@@ -26,6 +26,7 @@ if ( ! class_exists( 'acf_loop' ) ) :
 
 			// vars
 			$this->loops = array();
+
 		}
 
 
@@ -45,6 +46,7 @@ if ( ! class_exists( 'acf_loop' ) ) :
 		function is_empty() {
 
 			return empty( $this->loops );
+
 		}
 
 
@@ -64,6 +66,7 @@ if ( ! class_exists( 'acf_loop' ) ) :
 		function is_loop( $i = 0 ) {
 
 			return isset( $this->loops[ $i ] );
+
 		}
 
 
@@ -94,11 +97,14 @@ if ( ! class_exists( 'acf_loop' ) ) :
 
 			// allow negative to look at end of loops
 			if ( $i < 0 ) {
+
 				$i = count( $this->loops ) + $i;
+
 			}
 
 			// return
 			return $i;
+
 		}
 
 
@@ -137,7 +143,9 @@ if ( ! class_exists( 'acf_loop' ) ) :
 			// Re-index values if this loop starts from index 0.
 			// This allows ajax previews to work ($_POST data contains random unique array keys)
 			if ( $loop['i'] == -1 ) {
+
 				$loop['value'] = array_values( $loop['value'] );
+
 			}
 
 			// append
@@ -145,6 +153,7 @@ if ( ! class_exists( 'acf_loop' ) ) :
 
 			// return
 			return $loop;
+
 		}
 
 
@@ -178,6 +187,7 @@ if ( ! class_exists( 'acf_loop' ) ) :
 
 			// return
 			return true;
+
 		}
 
 
@@ -207,11 +217,14 @@ if ( ! class_exists( 'acf_loop' ) ) :
 
 			// check for key
 			if ( $key !== null ) {
+
 				return $this->loops[ $i ][ $key ];
+
 			}
 
 			// return
 			return $this->loops[ $i ];
+
 		}
 
 
@@ -249,10 +262,12 @@ if ( ! class_exists( 'acf_loop' ) ) :
 				$this->loops = array();
 			}
 		}
+
 	}
 
 	// initialize
 	acf()->loop = new acf_loop();
+
 endif; // class_exists check
 
 
@@ -273,6 +288,7 @@ endif; // class_exists check
 function acf_add_loop( $loop = array() ) {
 
 	return acf()->loop->add_loop( $loop );
+
 }
 
 
@@ -292,6 +308,7 @@ function acf_add_loop( $loop = array() ) {
 function acf_update_loop( $i = 'active', $key = null, $value = null ) {
 
 	return acf()->loop->update_loop( $i, $key, $value );
+
 }
 
 
@@ -311,6 +328,7 @@ function acf_update_loop( $i = 'active', $key = null, $value = null ) {
 function acf_get_loop( $i = 'active', $key = null ) {
 
 	return acf()->loop->get_loop( $i, $key );
+
 }
 
 
@@ -330,4 +348,7 @@ function acf_get_loop( $i = 'active', $key = null ) {
 function acf_remove_loop( $i = 'active' ) {
 
 	return acf()->loop->remove_loop( $i );
+
 }
+
+

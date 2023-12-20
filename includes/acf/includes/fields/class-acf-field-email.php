@@ -21,17 +21,15 @@ if ( ! class_exists( 'acf_field_email' ) ) :
 		function initialize() {
 
 			// vars
-			$this->name          = 'email';
-			$this->label         = __( 'Email', 'acf' );
-			$this->description   = __( 'A text input specifically designed for storing email addresses.', 'acf' );
-			$this->preview_image = acf_get_url() . '/assets/images/field-type-previews/field-preview-email.png';
-			$this->doc_url       = acf_add_url_utm_tags( 'https://www.advancedcustomfields.com/resources/email/', 'docs', 'field-type-selection' );
-			$this->defaults      = array(
+			$this->name     = 'email';
+			$this->label    = __( 'Email', 'acf' );
+			$this->defaults = array(
 				'default_value' => '',
 				'placeholder'   => '',
 				'prepend'       => '',
 				'append'        => '',
 			);
+
 		}
 
 
@@ -57,14 +55,18 @@ if ( ! class_exists( 'acf_field_email' ) ) :
 
 			// prepend
 			if ( $field['prepend'] !== '' ) {
+
 				$field['class'] .= ' acf-is-prepended';
 				$html           .= '<div class="acf-input-prepend">' . acf_esc_html( $field['prepend'] ) . '</div>';
+
 			}
 
 			// append
 			if ( $field['append'] !== '' ) {
+
 				$field['class'] .= ' acf-is-appended';
 				$html           .= '<div class="acf-input-append">' . acf_esc_html( $field['append'] ) . '</div>';
+
 			}
 
 			// atts (value="123")
@@ -89,6 +91,7 @@ if ( ! class_exists( 'acf_field_email' ) ) :
 
 			// return
 			echo $html;
+
 		}
 
 
@@ -104,7 +107,10 @@ if ( ! class_exists( 'acf_field_email' ) ) :
 		*
 		*  @param   $field  - an array holding all the field's data
 		*/
+
 		function render_field_settings( $field ) {
+
+			// default_value
 			acf_render_field_setting(
 				$field,
 				array(
@@ -114,17 +120,8 @@ if ( ! class_exists( 'acf_field_email' ) ) :
 					'name'         => 'default_value',
 				)
 			);
-		}
 
-		/**
-		 * Renders the field settings used in the "Presentation" tab.
-		 *
-		 * @since 6.0
-		 *
-		 * @param array $field The field settings array.
-		 * @return void
-		 */
-		function render_field_presentation_settings( $field ) {
+			// placeholder
 			acf_render_field_setting(
 				$field,
 				array(
@@ -135,6 +132,7 @@ if ( ! class_exists( 'acf_field_email' ) ) :
 				)
 			);
 
+			// prepend
 			acf_render_field_setting(
 				$field,
 				array(
@@ -145,6 +143,7 @@ if ( ! class_exists( 'acf_field_email' ) ) :
 				)
 			);
 
+			// append
 			acf_render_field_setting(
 				$field,
 				array(
@@ -154,6 +153,7 @@ if ( ! class_exists( 'acf_field_email' ) ) :
 					'name'         => 'append',
 				)
 			);
+
 		}
 
 		/**
@@ -190,9 +190,13 @@ if ( ! class_exists( 'acf_field_email' ) ) :
 
 			return $schema;
 		}
+
 	}
 
 
 	// initialize
 	acf_register_field_type( 'acf_field_email' );
+
 endif; // class_exists check
+
+
