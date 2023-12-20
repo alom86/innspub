@@ -41,7 +41,7 @@ get_header();
                                 <h1>Editorial Board</h1>
                             </div>
                             <!-- page data -->
-                            <div class="page_content__data">
+                            <div class="page_content__data truncate">
                                 <div class="page_content__img bg_overlay">
                                     <img width="886" height="180" src="<?php echo get_template_directory_uri(); ?>/assets/images/single_page_feature_image.webp" alt="single_page_feature_image">
                                 </div>
