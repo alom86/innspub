@@ -22,7 +22,7 @@
     }
 
     &__title {
-        height: 52px;
+        min-height: 52px;
         padding: 16px;
         display: flex;
         align-items: center;
@@ -423,7 +423,7 @@
 
     @media (min-width: 992px) {
         &__title {
-            height: 66px;
+            min-height: 66px;
             padding: 24px;
 
             h1, h2 {
