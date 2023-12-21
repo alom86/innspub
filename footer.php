@@ -24,11 +24,11 @@
                         <img class="footer-item__logo" width="140" height="32" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo/logo_white.webp" alt="logo_white">
                         <p class="footer-item__description mb-4">International Network for Natural Sciences <em>(INNSpub)</em> is an open access research journal publisher that's dedicated to publish scholarly research papers and books, to believe in sharing new scientific knowledge in the field.</p>
                         <div class="social d-flex justify-content-start">
-                            <a class="social__link" href="#"><i class="fa-brands fa-facebook-f"></i><span class="sr-only">facebook icon</span></a>
-                            <a class="social__link" href="#"><i class="fa-brands fa-twitter"></i><span class="sr-only">twitter icon</span></a>
-                            <a class="social__link" href="#"><i class="fa-brands fa-linkedin-in"></i><span class="sr-only">linkeding icon</span></a>
-                            <a class="social__link" href="#"><i class="fa-brands fa-instagram"></i><span class="sr-only">instagram icon</span></a>
-                            <a class="social__link" href="#"><i class="fa-brands fa-google"></i><span class="sr-only">google icon</span></a>
+                            <a class="social__link" href="<?php if (!empty(the_field('face_book_url', 'option'))) : esc_html(the_field('face_book_url', 'option')); endif; ?>" target="_blank"><i class="fa-brands fa-facebook-f"></i><span class="sr-only">facebook icon</span></a>
+                            <a class="social__link" href="<?php if (!empty(the_field('twitter_url', 'option'))) : esc_html(the_field('twitter_url', 'option')); endif; ?>" target="_blank"><i class="fa-brands fa-twitter"></i><span class="sr-only">twitter icon</span></a>
+                            <a class="social__link" href="<?php if (!empty(the_field('linkedin_url', 'option'))) : esc_html(the_field('linkedin_url', 'option')); endif; ?>" target="_blank"><i class="fa-brands fa-linkedin-in"></i><span class="sr-only">linkeding icon</span></a>
+                            <a class="social__link" href="<?php if (!empty(the_field('instagram_url', 'option'))) : esc_html(the_field('instagram_url', 'option')); endif; ?>" target="_blank"><i class="fa-brands fa-instagram"></i><span class="sr-only">instagram icon</span></a>
+                            <a class="social__link" href="<?php if (!empty(the_field('google_url', 'option'))) : esc_html(the_field('google_url', 'option')); endif; ?>" target="_blank"><i class="fa-brands fa-google"></i><span class="sr-only">google icon</span></a>
                         </div>
                     </div>
                 </div>
@@ -73,28 +73,28 @@
                             </div>
                         </div>
 
-                        <div class="col-sm-6 col-xl-4">
+                        <div class="col-sm-6 col-xl-4 px-0">
                             <div class="footer-item">
-                                <h2 class="footer-item__title">Get In Touch</h2>
+                                <h2 class="footer-item__title"><?php if (!empty(the_field('get_in_touch_', 'option'))) : esc_html(the_field('get_in_touch_', 'option')); endif; ?></h2>
                                 <ul class="footer-item__nav">
                                     <li class="footer-item__nav-item">
                                         Email:
-                                        <a class="footer-item__nav-link" href="mailto:info@innspub.net">info@innspub.net</a>
+                                        <a class="footer-item__nav-link" href="mailto:<?php if (!empty(the_field('email_one', 'option'))) : esc_html(the_field('email_one', 'option')); endif; ?>"><?php if (!empty(the_field('email_one', 'option'))) : esc_html(the_field('email_one', 'option')); endif; ?></a>
                                         (Support)
                                     </li>
                                     <li class="footer-item__nav-item">
                                         Email:
-                                        <a class="footer-item__nav-link" href="mailto:submission@innspub.net">submission@innspub.net</a>
+                                        <a class="footer-item__nav-link" href="mailto:<?php if (!empty(the_field('email_two', 'option'))) : esc_html(the_field('email_two', 'option')); endif; ?>"><?php if (!empty(the_field('email_two', 'option'))) : esc_html(the_field('email_two', 'option')); endif; ?></a>
                                         (Submis.)
                                     </li>
                                     <li class="footer-item__nav-item">
                                         Phone:
-                                        <a class="footer-item__nav-link" href="callto:8801716992866">+8801716992866</a>
+                                        <a class="footer-item__nav-link" href="callto:<?php if (!empty(the_field('phone_number', 'option'))) : esc_html(the_field('email_two', 'option')); endif; ?>"><?php if (!empty(the_field('phone_number', 'option'))) : esc_html(the_field('email_two', 'option')); endif; ?></a>
                                         (Office)
                                     </li>
                                     <li class="footer-item__nav-item">
                                         Phone:
-                                        <a class="footer-item__nav-link" href="callto:8801715482998">+8801715482998</a>
+                                        <a class="footer-item__nav-link" href="callto:<?php if (!empty(the_field('whatsapp', 'option'))) : esc_html(the_field('email_two', 'option')); endif; ?>"><?php if (!empty(the_field('whatsapp', 'option'))) : esc_html(the_field('email_two', 'option')); endif; ?></a>
                                         (WhatsApp)
                                     </li>
                                 </ul>
