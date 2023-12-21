@@ -124,7 +124,7 @@ require get_template_directory() . '/inc/widget_register.php';
 include_once('inc/custom_css_js.php');
 
 // cpt_register
-// require get_template_directory() . '/inc/cpt_register.php';
+require get_template_directory() . '/inc/cpt_register.php';
 
 // ACF Option Pages
 require get_template_directory() . '/inc/acf_option_pages_register.php';

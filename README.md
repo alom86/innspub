@@ -5,17 +5,17 @@ Affiliated journal, Editorial Board, Author Instruction page same page layout
 
 #TODO Need to do Dynamic
 About > Office | Contact page
-Journals > Affiliated Journal
-Journals > Editorial Board
+<!-- Journals > Affiliated Journal --> theme option already remove page description 
+<!-- Journals > Editorial Board --> page description online static ache theme page content diye dynamic kora hoyeche
+<!-- Authors > Author Instruction --> page description online static ache theme page content diye dynamic kora hoyeche
 Journals > Board Member
-Authors > Author Instruction
 Excellence > Ebook publishing /shortcode
 Tutorials > FAQs
 Sidebar > Get subscription /shortcode
 Sidebar > Indexed In
 Sidebar > Plagiarism Checker
 Sidebar > Member In
-Theme Option > Affilated page settings
+<!-- Theme Option > Affilated page settings --> no need this option and already removed
 Theme Option > Single journal settings
 Theme Option > Contact page settings
 
