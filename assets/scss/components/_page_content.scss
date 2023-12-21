@@ -2,8 +2,12 @@
     // max-width: 932px;
 
     p {
-        margin-bottom: 30px;
+        margin-bottom: 24px;
         font-size: 14px;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
     }
 
     h2,
@@ -32,7 +36,8 @@
         text-transform: capitalize;
         margin-bottom: 20px;
 
-        h1, h2 {
+        h1,
+        h2 {
             font-size: 16px;
             font-weight: 700;
             margin-bottom: 0;
@@ -251,7 +256,7 @@
                 margin-bottom: 0;
             }
 
-            h3{
+            h3 {
                 text-align: start;
             }
         }
@@ -259,7 +264,7 @@
         &__contact {
             font-size: 16px;
 
-            h3{
+            h3 {
                 text-align: start;
             }
 
@@ -279,7 +284,8 @@
                 margin-left: 12px;
                 white-space: nowrap;
                 color: $color_link;
-                &:hover{
+
+                &:hover {
                     color: $color_primary;
                 }
             }
@@ -369,7 +375,7 @@
             flex-direction: row;
             gap: 28px;
 
-            &__img_wrap{
+            &__img_wrap {
                 margin-bottom: 0;
             }
 
@@ -427,7 +433,8 @@
             min-height: 66px;
             padding: 24px;
 
-            h1, h2 {
+            h1,
+            h2 {
                 font-size: 20px;
             }
         }
@@ -479,7 +486,7 @@
     flex-direction: column;
     gap: 12px;
 
-    .section_title{
+    .section_title {
         font-size: 20px;
         font-weight: 700;
         margin-bottom: 0;
@@ -488,7 +495,7 @@
     @media (min-width: 768px) {
         gap: 20px;
 
-        .section_title{
+        .section_title {
             font-size: 24px;
         }
     }
