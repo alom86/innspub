@@ -4,10 +4,6 @@
     p {
         margin-bottom: 24px;
         font-size: 14px;
-
-        &:last-of-type {
-            margin-bottom: 0;
-        }
     }
 
     h2,
@@ -206,8 +202,8 @@
             position: relative;
             display: inline-grid;
             align-content: flex-start;
+            justify-content: center;
             height: fit-content;
-            overflow: hidden;
             margin-bottom: 32px;
         }
 
@@ -215,6 +211,7 @@
             position: relative;
             border: 3px solid $color_natural_description;
             border-radius: $radius_1;
+            width: 260px;
 
             img {
                 position: relative;
@@ -372,7 +369,7 @@
     // Responsive
     @media (min-width: 576px) {
         .profile_cheif {
-            flex-direction: row;
+            flex-direction: column;
             gap: 28px;
 
             &__img_wrap {
@@ -469,6 +466,16 @@
 
     @media (min-width: 1400px) {
         .profile_cheif {
+            flex-direction: row;
+
+            &__img-cheif{
+                width: 195px;
+
+                img{
+                    max-width: unset;
+                }
+            }
+
             &__info {
                 border-bottom: 0;
                 border-right: 1px solid $color_natural_description_20;
