@@ -69,7 +69,7 @@
                 <a class="navbar__brand" href="index.html">
                     <img src="assets/images/logo/logo.webp" alt="logo">
                 </a>
-    
+
                 <!-- desktop menu -->
                 <div class="navbar__desktop_menu d-none d-xl-flex">
                     <ul class="navbar-nav mx-auto">
@@ -144,12 +144,12 @@
                     <input class="form-control search-form__input" type="text" placeholder="Search" aria-label="Search">
                     <button class="btn search-form__button" type="submit"><i class="fa-solid fa-magnifying-glass"></i><span class="sr-only">search button</span></button>
                 </form>
-    
+
                 <button class="btn navbar__toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuOffcanvas" aria-controls="menuOffcanvas">
                     <i class="fa-solid fa-bars"></i>
                     <span class="sr-only">nav toggler button</span>
                 </button>
-    
+
                 <!-- mobile menu offcanvas -->
                 <div class="offcanvas offcanvas-start" tabindex="-1" id="menuOffcanvas" aria-labelledby="menuOffcanvas">
                     <div class="offcanvas-header p-0 mb-4">
@@ -164,7 +164,7 @@
                         <input class="form-control search-form__input" type="text" placeholder="Search" aria-label="Search">
                         <button class="btn search-form__button" type="submit"><i class="fa-solid fa-magnifying-glass"></i><span class="sr-only">search button</span></button>
                     </form>
-    
+
                     <ul class="navbar-nav overflow-y-scroll">
                         <li class="nav-item active dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -539,7 +539,7 @@
                     </div>
 
                     <!-- page content -->
-                    <div >
+                    <div>
                         <div class="page_content">
                             <!-- page title -->
                             <div class="page_content__title">
@@ -591,7 +591,25 @@
 
                                                     <div class="data_col mt-2">
                                                         <div class="data_col__title">
-                                                            <button class="btn btn_link" type="button"><i class="fa-solid fa-circle-info"></i>Scope</button>
+                                                            <button class="btn btn_link" type="button" data-bs-toggle="modal" data-bs-target="#modal_ijb"><i class="fa-solid fa-circle-info"></i>Scope</button>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="modal_ijb" tabindex="-1" aria-labelledby="modal_ijbLabel" aria-hidden="true">
+                                                        <div class="modal-dialog modal-dialog-centered">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h3 class="modal-title">Scope</h3>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <span>It covers all areas of Biology mostly focusing on Plant Sciences, Animal Sciences, Fisheries, Genetics, Biochemistry, Plant Physiology, Biotechnology, Molecular Biology, Microbiology, Pathology, Cell Biology, Aquatic Biology and Agricultural Sciences</span>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <a class="btn btn_primary" href="https://innspub.net/innspub-journal-list/">Details</a>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
 
@@ -816,7 +834,7 @@
                                         </div>
                                     </div>
 
-                                    
+
                                 </div>
                             </div>
                         </div>
