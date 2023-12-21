@@ -65,8 +65,10 @@ get_header();
                                 if ($journalp->have_posts()) :
                                     $countp = 0;
                                     while ($journalp->have_posts()) :
+                                        $countp++;
                                         $journalp->the_post();
                                         global $post; ?>
+
                                         <div class="col">
                                             <div class="card journal">
                                                 <?php if (has_post_thumbnail()) : ?>
@@ -116,10 +118,35 @@ get_header();
                                                                 endif; ?>
                                                             </span>
                                                         </div>
-                                                        <!-- TODO need add modal and dynamic content in the modal -->
+
                                                         <div class="data_col mt-2">
                                                             <div class="data_col__title">
-                                                                <button class="btn btn_link" type="button"><i class="fa-solid fa-circle-info"></i>Scope</button>
+                                                                <button class="btn btn_link" type="button" data-bs-toggle="modal" data-bs-target="#modal_<?php echo $countp ?>"><i class="fa-solid fa-circle-info"></i>Scope</button>
+                                                            </div>
+                                                        </div>
+                                                        <!-- Modal -->
+                                                        <div class="modal fade" id="modal_<?php echo $countp ?>" tabindex="-1" aria-labelledby="modal_<?php echo $countp ?>Label" aria-hidden="true">
+                                                            <div class="modal-dialog modal-dialog-centered">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h3 class="modal-title">Scope</h3>
+                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <span>
+                                                                            <?php if (!empty(the_field('modal_content'))) :
+                                                                                the_field('modal_content');
+                                                                            endif; ?>
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <a class="btn btn_primary" href="
+                                                                            <?php if (!empty(the_field('modal_url'))) :
+                                                                                esc_url(the_field('modal_url'));
+                                                                            endif; ?>
+                                                                        ">Details</a>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
 
@@ -150,6 +177,7 @@ get_header();
 
                                             </div>
                                         </div>
+
                                 <?php
                                     endwhile;
                                 endif;
