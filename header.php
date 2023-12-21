@@ -15,7 +15,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Meta content -->
-    <meta name="description" content="International Network for Natural Sciences">
+    <meta name="description" content="<?php bloginfo('description'); ?>">
+    <meta name="keywords" content="Natural Sciences, Biology Journal, Biological Research, Open access Journals, Journal Publication, Research Journals Publisher, Peer-reviewed Journal Publisher, Environmental sciences Journal, Agricultural sciences Journal">
 
     <!-- Favicon Icons  -->
     <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/logo/favicon.ico" type="image/x-icon">
@@ -36,7 +37,7 @@
                     </div>
 
                     <div class="nav-top__welcome d-none d-xl-block">
-                        <span class="nav-top__welcome-title">Welcome to <?php bloginfo('name'); ?> | <span class="text_primary">INNS Pub.</span></span>
+                        <span class="nav-top__welcome-title"><?php if (!empty(the_field('header_top_right_text', 'option'))) : echo esc_html(the_field('header_top_right_text', 'option')); endif; ?> <span class="text_primary">INNS Pub.</span></span>
                     </div>
                 </div>
 

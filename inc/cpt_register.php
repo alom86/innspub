@@ -1,220 +1,755 @@
 <?php
 // Custom post type function
 
-function custom_post(){
-    // Indexes
-    register_post_type('indexedin',
-        array(
-            'labels' => array(
-                'name' => ('Indexes'),
-                'singular_name' => ('Indexed'),
-                'add_new' => ('Add New Post'),
-                'add_new_item' => ('Add New Post'),
-                'edit_item' => ('Edit Post'),
-                'new_item' => ('New Post'),
-                'view_item' => ('View Post'),
-                'not_found' => ('You don\'t add any Post, please add.'),
-            ),
+function cptui_register_my_cpts() {
 
-            'menu_icon' => 'dashicons-index-card',
-            'public' => true,
-            'publicly_queryable' => true,
-            'exclude_from_search' => true,
-            'menu_position' => 5,
-            'has_archive' => true,
-            'hierarchial' => true,
-            'show_ui' => true,
-            'capability_type' => 'post',
-            'rewrite' => array('slag' => 'indexedin'),
-            'supports' => array('title', 'editor', 'thumbnail'),
-        )
-    );
+	/**
+	 * Post Type: carousels.
+	 */
 
-    // memberin
-    register_post_type('memberin',
-        array(
-            'labels' => array(
-                'name' => ('Members In'),
-                'singular_name' => ('Member In'),
-                'add_new' => ('Add New Post'),
-                'add_new_item' => ('Add New Post'),
-                'edit_item' => ('Edit Post'),
-                'new_item' => ('New Post'),
-                'view_item' => ('View Post'),
-                'not_found' => ('You don\'t add any Post, please add.'),
-            ),
+	$labels = [
+		"name" => esc_html__( "carousels", "custom-post-type-ui" ),
+		"singular_name" => esc_html__( "carousel", "custom-post-type-ui" ),
+	];
 
-            'menu_icon' => 'dashicons-buddicons-groups',
-            'public' => true,
-            'publicly_queryable' => true,
-            'exclude_from_search' => true,
-            'menu_position' => 6,
-            'has_archive' => true,
-            'hierarchial' => true,
-            'show_ui' => true,
-            'capability_type' => 'post',
-            'rewrite' => array('slag' => 'memberin'),
-            'supports' => array('title', 'editor', 'thumbnail'),
-        )
-    );
+	$args = [
+		"label" => esc_html__( "carousels", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"description" => "main carousel",
+		"public" => true,
+		"publicly_queryable" => false,
+		"show_ui" => true,
+		"show_in_rest" => false,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"rest_namespace" => "wp/v2",
+		"has_archive" => false,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => true,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"can_export" => true,
+		"rewrite" => [ "slug" => "carousel", "with_front" => true ],
+		"query_var" => true,
+		"show_in_graphql" => false,
+	];
 
-    // authors
-    register_post_type('authors',
-        array(
-            'labels' => array(
-                'name' => ('Authors'),
-                'singular_name' => ('Author'),
-                'add_new' => ('Add New Author'),
-                'add_new_item' => ('Add New Author'),
-                'edit_item' => ('Edit Author'),
-                'new_item' => ('New Author'),
-                'view_item' => ('View Author'),
-                'not_found' => ('You don\'t add any Author, please add.'),
-            ),
+	register_post_type( "carousel", $args );
 
-            'menu_icon' => 'dashicons-networking',
-            'public' => true,
-            'publicly_queryable' => true,
-            'exclude_from_search' => true,
-            'menu_position' => 7,
-            'has_archive' => true,
-            'hierarchial' => true,
-            'show_ui' => true,
-            'capability_type' => 'post',
-            'rewrite' => array('slag' => 'authors'),
-            'supports' => array('title', 'editor', 'thumbnail'),
-        )
-    );
+	/**
+	 * Post Type: carousels2.
+	 */
 
-    // announcement
-    register_post_type('announcement',
-        array(
-            'labels' => array(
-                'name' => ('Announcements'),
-                'singular_name' => ('Announcement'),
-                'add_new' => ('Add New Announcement'),
-                'add_new_item' => ('Add New Announcement'),
-                'edit_item' => ('Edit Announcement'),
-                'new_item' => ('New Announcement'),
-                'view_item' => ('View Announcement'),
-                'not_found' => ('You don\'t add any Announcement, please add.'),
-            ),
+	$labels = [
+		"name" => esc_html__( "carousels2", "custom-post-type-ui" ),
+		"singular_name" => esc_html__( "carousel2", "custom-post-type-ui" ),
+	];
 
-            'menu_icon' => 'dashicons-controls-volumeon',
-            'public' => true,
-            'publicly_queryable' => true,
-            'exclude_from_search' => true,
-            'menu_position' => 8,
-            'has_archive' => true,
-            'hierarchial' => true,
-            'show_ui' => true,
-            'capability_type' => 'post',
-            'rewrite' => array('slag' => 'announcement'),
-            'supports' => array('title', 'editor', 'thumbnail'),
-        )
-    );
+	$args = [
+		"label" => esc_html__( "carousels2", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"description" => "Multiple item carousel",
+		"public" => true,
+		"publicly_queryable" => false,
+		"show_ui" => true,
+		"show_in_rest" => false,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"rest_namespace" => "wp/v2",
+		"has_archive" => false,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"can_export" => true,
+		"rewrite" => [ "slug" => "carousel2", "with_front" => true ],
+		"query_var" => true,
+		"supports" => [ "title", "editor", "thumbnail" ],
+		"taxonomies" => [ "category" ],
+		"show_in_graphql" => false,
+	];
 
-    // delivery
-    register_post_type('delivery',
-        array(
-            'labels' => array(
-                'name' => ('First Delivery'),
-                'singular_name' => ('First Delivery'),
-                'add_new' => ('Add New First Delivery'),
-                'add_new_item' => ('Add New First Delivery'),
-                'edit_item' => ('Edit First Delivery'),
-                'new_item' => ('New First Delivery'),
-                'view_item' => ('View First Delivery'),
-                'not_found' => ('You don\'t add any First Delivery, please add.'),
-            ),
+	register_post_type( "carousel2", $args );
 
-            'menu_icon' => 'dashicons-editor-expand',
-            'public' => true,
-            'publicly_queryable' => true,
-            'exclude_from_search' => true,
-            'menu_position' => 9,
-            'has_archive' => true,
-            'hierarchial' => true,
-            'show_ui' => true,
-            'capability_type' => 'post',
-            'rewrite' => array('slag' => 'delivery'),
-            'supports' => array('title', 'editor', 'thumbnail'),
-        )
-    );
-    
-    // delivery
-    register_post_type('delivery',
-        array(
-            'labels' => array(
-                'name' => ('First Delivery'),
-                'singular_name' => ('First Delivery'),
-                'add_new' => ('Add New First Delivery'),
-                'add_new_item' => ('Add New First Delivery'),
-                'edit_item' => ('Edit First Delivery'),
-                'new_item' => ('New First Delivery'),
-                'view_item' => ('View First Delivery'),
-                'not_found' => ('You don\'t add any First Delivery, please add.'),
-            ),
+	/**
+	 * Post Type: ijbs.
+	 */
 
-            'menu_icon' => 'dashicons-editor-expand',
-            'public' => true,
-            'publicly_queryable' => true,
-            'exclude_from_search' => true,
-            'menu_position' => 9,
-            'has_archive' => true,
-            'hierarchial' => true,
-            'show_ui' => true,
-            'capability_type' => 'post',
-            'rewrite' => array('slag' => 'delivery'),
-            'supports' => array('title', 'editor', 'thumbnail'),
-        )
-    );
+	$labels = [
+		"name" => esc_html__( "ijbs", "custom-post-type-ui" ),
+		"singular_name" => esc_html__( "ijb", "custom-post-type-ui" ),
+	];
 
-    // portfolio
-    // register_post_type('memberin',
-    //     array(
-    //         'labels' => array(
-    //             'name' => ('Portfolios'),
-    //             'singular_name' => ('Portfolio'),
-    //             'add_new' => ('Add new portfolio'),
-    //             'add_new_item' => ('Add new portfolio'),
-    //             'edit_item' => ('Edit portfolio'),
-    //             'new_item' => ('New portfolio'),
-    //             'view_item' => ('View portfolio'),
-    //             'not_found' => ('You don\'t add any portfolio, please add.'),
-    //         ),
+	$args = [
+		"label" => esc_html__( "ijbs", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"description" => "ijb article post",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"rest_namespace" => "wp/v2",
+		"has_archive" => true,
+		"show_in_menu" => "publish.php",
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => true,
+		"can_export" => true,
+		"rewrite" => [ "slug" => "ijb", "with_front" => true ],
+		"query_var" => true,
+		"supports" => [ "title", "editor", "thumbnail" ],
+		"show_in_graphql" => false,
+	];
 
-    //         'menu_icon' => 'dashicons-portfolio',
-    //         'public' => true,
-    //         'publicly_queryable' => true,
-    //         'exclude_from_search' => true,
-    //         'menu_position' => 7,
-    //         'has_archive' => true,
-    //         'hierarchial' => true,
-    //         'show_ui' => true,
-    //         'capability_type' => 'post',
-    //         'taxonomies' => array ('category'),
-    //         'rewrite' => array('slag' => 'memberin'),
-    //         'supports' => array('title', 'thumbnail', 'editor'),
-    //     )
-    // );
+	register_post_type( "ijb", $args );
+
+	/**
+	 * Post Type: jbes.
+	 */
+
+	$labels = [
+		"name" => esc_html__( "jbes", "custom-post-type-ui" ),
+		"singular_name" => esc_html__( "jbe", "custom-post-type-ui" ),
+	];
+
+	$args = [
+		"label" => esc_html__( "jbes", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"description" => "jbes",
+		"public" => true,
+		"publicly_queryable" => false,
+		"show_ui" => true,
+		"show_in_rest" => false,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"rest_namespace" => "wp/v2",
+		"has_archive" => true,
+		"show_in_menu" => "publish.php",
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => true,
+		"can_export" => true,
+		"rewrite" => [ "slug" => "jbes", "with_front" => true ],
+		"query_var" => true,
+		"supports" => [ "title", "editor" ],
+		"show_in_graphql" => false,
+	];
+
+	register_post_type( "jbes", $args );
+
+	/**
+	 * Post Type: QuickViews.
+	 */
+
+	$labels = [
+		"name" => esc_html__( "QuickViews", "custom-post-type-ui" ),
+		"singular_name" => esc_html__( "QuickView", "custom-post-type-ui" ),
+	];
+
+	$args = [
+		"label" => esc_html__( "QuickViews", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"description" => "QuickView",
+		"public" => true,
+		"publicly_queryable" => false,
+		"show_ui" => true,
+		"show_in_rest" => false,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"rest_namespace" => "wp/v2",
+		"has_archive" => false,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => true,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"can_export" => true,
+		"rewrite" => [ "slug" => "quickview", "with_front" => true ],
+		"query_var" => true,
+		"supports" => [ "title", "editor", "thumbnail" ],
+		"show_in_graphql" => false,
+	];
+
+	register_post_type( "quickview", $args );
+
+	/**
+	 * Post Type: ijaars.
+	 */
+
+	$labels = [
+		"name" => esc_html__( "ijaars", "custom-post-type-ui" ),
+		"singular_name" => esc_html__( "ijaar", "custom-post-type-ui" ),
+	];
+
+	$args = [
+		"label" => esc_html__( "ijaars", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"description" => "ijaar",
+		"public" => true,
+		"publicly_queryable" => false,
+		"show_ui" => true,
+		"show_in_rest" => false,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"rest_namespace" => "wp/v2",
+		"has_archive" => true,
+		"show_in_menu" => "publish.php",
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => true,
+		"can_export" => true,
+		"rewrite" => [ "slug" => "ijaar", "with_front" => true ],
+		"query_var" => true,
+		"show_in_graphql" => false,
+	];
+
+	register_post_type( "ijaar", $args );
+
+	/**
+	 * Post Type: ijbbs.
+	 */
+
+	$labels = [
+		"name" => esc_html__( "ijbbs", "custom-post-type-ui" ),
+		"singular_name" => esc_html__( "ijbb", "custom-post-type-ui" ),
+	];
+
+	$args = [
+		"label" => esc_html__( "ijbbs", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"description" => "ijbb",
+		"public" => true,
+		"publicly_queryable" => false,
+		"show_ui" => true,
+		"show_in_rest" => false,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"rest_namespace" => "wp/v2",
+		"has_archive" => true,
+		"show_in_menu" => "publish.php",
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => true,
+		"can_export" => true,
+		"rewrite" => [ "slug" => "ijbb", "with_front" => true ],
+		"query_var" => true,
+		"show_in_graphql" => false,
+	];
+
+	register_post_type( "ijbb", $args );
+
+	/**
+	 * Post Type: ijmms.
+	 */
+
+	$labels = [
+		"name" => esc_html__( "ijmms", "custom-post-type-ui" ),
+		"singular_name" => esc_html__( "ijmm", "custom-post-type-ui" ),
+	];
+
+	$args = [
+		"label" => esc_html__( "ijmms", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"description" => "ijmm",
+		"public" => true,
+		"publicly_queryable" => false,
+		"show_ui" => true,
+		"show_in_rest" => false,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"rest_namespace" => "wp/v2",
+		"has_archive" => true,
+		"show_in_menu" => "publish.php",
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => true,
+		"can_export" => true,
+		"rewrite" => [ "slug" => "ijmm", "with_front" => true ],
+		"query_var" => true,
+		"show_in_graphql" => false,
+	];
+
+	register_post_type( "ijmm", $args );
+
+	/**
+	 * Post Type: marquees.
+	 */
+
+	$labels = [
+		"name" => esc_html__( "marquees", "custom-post-type-ui" ),
+		"singular_name" => esc_html__( "marquee", "custom-post-type-ui" ),
+	];
+
+	$args = [
+		"label" => esc_html__( "marquees", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"description" => "marquee",
+		"public" => true,
+		"publicly_queryable" => false,
+		"show_ui" => true,
+		"show_in_rest" => false,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"rest_namespace" => "wp/v2",
+		"has_archive" => false,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"can_export" => true,
+		"rewrite" => [ "slug" => "marquee", "with_front" => true ],
+		"query_var" => true,
+		"supports" => [ "title" ],
+		"show_in_graphql" => false,
+	];
+
+	register_post_type( "marquee", $args );
+
+	/**
+	 * Post Type: Journals.
+	 */
+
+	$labels = [
+		"name" => esc_html__( "Journals", "custom-post-type-ui" ),
+		"singular_name" => esc_html__( "journal", "custom-post-type-ui" ),
+		"all_items" => esc_html__( "All Journals", "custom-post-type-ui" ),
+		"add_new" => esc_html__( "Add New Journal", "custom-post-type-ui" ),
+		"edit_item" => esc_html__( "Edit Journal", "custom-post-type-ui" ),
+	];
+
+	$args = [
+		"label" => esc_html__( "Journals", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"description" => "journal",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"rest_namespace" => "wp/v2",
+		"has_archive" => false,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => true,
+		"can_export" => false,
+		"rewrite" => [ "slug" => "journal", "with_front" => true ],
+		"query_var" => true,
+		"supports" => [ "title", "editor", "thumbnail", "custom-fields" ],
+		"taxonomies" => [ "category" ],
+		"show_in_graphql" => false,
+	];
+
+	register_post_type( "journal", $args );
+
+	/**
+	 * Post Type: Blogs.
+	 */
+
+	$labels = [
+		"name" => esc_html__( "Blogs", "custom-post-type-ui" ),
+		"singular_name" => esc_html__( "Blog", "custom-post-type-ui" ),
+	];
+
+	$args = [
+		"label" => esc_html__( "Blogs", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => false,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"rest_namespace" => "wp/v2",
+		"has_archive" => false,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"can_export" => true,
+		"rewrite" => [ "slug" => "innsblog", "with_front" => true ],
+		"query_var" => true,
+		"supports" => [ "title", "editor", "thumbnail" ],
+		"taxonomies" => [ "carousel_category" ],
+		"show_in_graphql" => false,
+	];
+
+	register_post_type( "innsblog", $args );
+
+	/**
+	 * Post Type: JBES Editors.
+	 */
+
+	$labels = [
+		"name" => esc_html__( "JBES Editors", "custom-post-type-ui" ),
+		"singular_name" => esc_html__( "JBES Editor", "custom-post-type-ui" ),
+	];
+
+	$args = [
+		"label" => esc_html__( "JBES Editors", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"rest_namespace" => "wp/v2",
+		"has_archive" => false,
+		"show_in_menu" => "editorinfo.php",
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"can_export" => true,
+		"rewrite" => [ "slug" => "jbeseditor", "with_front" => true ],
+		"query_var" => true,
+		"supports" => [ "title", "editor", "thumbnail" ],
+		"show_in_graphql" => false,
+	];
+
+	register_post_type( "jbeseditor", $args );
+
+	/**
+	 * Post Type: IJB Editors.
+	 */
+
+	$labels = [
+		"name" => esc_html__( "IJB Editors", "custom-post-type-ui" ),
+		"singular_name" => esc_html__( "IJB Editor", "custom-post-type-ui" ),
+	];
+
+	$args = [
+		"label" => esc_html__( "IJB Editors", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"rest_namespace" => "wp/v2",
+		"has_archive" => false,
+		"show_in_menu" => "editorinfo.php",
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"can_export" => true,
+		"rewrite" => [ "slug" => "ijbeditor", "with_front" => true ],
+		"query_var" => true,
+		"supports" => [ "title", "editor", "thumbnail" ],
+		"show_in_graphql" => false,
+	];
+
+	register_post_type( "ijbeditor", $args );
+
+	/**
+	 * Post Type: IJAAR Editors.
+	 */
+
+	$labels = [
+		"name" => esc_html__( "IJAAR Editors", "custom-post-type-ui" ),
+		"singular_name" => esc_html__( "IJAAR Editor", "custom-post-type-ui" ),
+	];
+
+	$args = [
+		"label" => esc_html__( "IJAAR Editors", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"rest_namespace" => "wp/v2",
+		"has_archive" => false,
+		"show_in_menu" => "editorinfo.php",
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"can_export" => true,
+		"rewrite" => [ "slug" => "ijaareditor", "with_front" => true ],
+		"query_var" => true,
+		"supports" => [ "title", "editor", "thumbnail" ],
+		"show_in_graphql" => false,
+	];
+
+	register_post_type( "ijaareditor", $args );
+
+	/**
+	 * Post Type: IJBB Editors.
+	 */
+
+	$labels = [
+		"name" => esc_html__( "IJBB Editors", "custom-post-type-ui" ),
+		"singular_name" => esc_html__( "IJBB Editor", "custom-post-type-ui" ),
+	];
+
+	$args = [
+		"label" => esc_html__( "IJBB Editors", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"rest_namespace" => "wp/v2",
+		"has_archive" => false,
+		"show_in_menu" => "editorinfo.php",
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"can_export" => true,
+		"rewrite" => [ "slug" => "ijbbeditor", "with_front" => true ],
+		"query_var" => true,
+		"supports" => [ "title", "editor", "thumbnail" ],
+		"show_in_graphql" => false,
+	];
+
+	register_post_type( "ijbbeditor", $args );
+
+	/**
+	 * Post Type: IJMM Editors.
+	 */
+
+	$labels = [
+		"name" => esc_html__( "IJMM Editors", "custom-post-type-ui" ),
+		"singular_name" => esc_html__( "IJMM Editor", "custom-post-type-ui" ),
+	];
+
+	$args = [
+		"label" => esc_html__( "IJMM Editors", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"rest_namespace" => "wp/v2",
+		"has_archive" => false,
+		"show_in_menu" => "editorinfo.php",
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"can_export" => true,
+		"rewrite" => [ "slug" => "ijmmeditor", "with_front" => true ],
+		"query_var" => true,
+		"supports" => [ "title", "editor", "thumbnail" ],
+		"show_in_graphql" => false,
+	];
+
+	register_post_type( "ijmmeditor", $args );
+
+	/**
+	 * Post Type: Top Bar Notices.
+	 */
+
+	$labels = [
+		"name" => esc_html__( "Top Bar Notices", "custom-post-type-ui" ),
+		"singular_name" => esc_html__( "Top Bar Notice", "custom-post-type-ui" ),
+	];
+
+	$args = [
+		"label" => esc_html__( "Top Bar Notices", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"rest_namespace" => "wp/v2",
+		"has_archive" => false,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"can_export" => true,
+		"rewrite" => [ "slug" => "top_notice", "with_front" => true ],
+		"query_var" => true,
+		"menu_icon" => "dashicons-welcome-widgets-menus",
+		"supports" => [ "title" ],
+		"show_in_graphql" => false,
+	];
+
+	register_post_type( "top_notice", $args );
+
+	/**
+	 * Post Type: Become an Editor.
+	 */
+
+	$labels = [
+		"name" => esc_html__( "Become an Editor", "custom-post-type-ui" ),
+		"singular_name" => esc_html__( "Become an Editor", "custom-post-type-ui" ),
+	];
+
+	$args = [
+		"label" => esc_html__( "Become an Editor", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"rest_namespace" => "wp/v2",
+		"has_archive" => false,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"can_export" => true,
+		"rewrite" => [ "slug" => "editor", "with_front" => true ],
+		"query_var" => true,
+		"supports" => [ "title", "editor", "author" ],
+		"taxonomies" => [ "category" ],
+		"show_in_graphql" => false,
+	];
+
+	register_post_type( "editor", $args );
+
+	/**
+	 * Post Type: Indexes.
+	 */
+
+	$labels = [
+		"name" => esc_html__( "Indexes", "custom-post-type-ui" ),
+		"singular_name" => esc_html__( "Indexe", "custom-post-type-ui" ),
+	];
+
+	$args = [
+		"label" => esc_html__( "Indexes", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"rest_namespace" => "wp/v2",
+		"has_archive" => false,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"can_export" => true,
+		"rewrite" => [ "slug" => "indexedin", "with_front" => true ],
+		"query_var" => true,
+		"menu_position" => 5,
+		"menu_icon" => "dashicons-index-card",
+		"supports" => [ "title" ],
+		"show_in_graphql" => false,
+	];
+
+	register_post_type( "indexedin", $args );
+
+	/**
+	 * Post Type: Members In.
+	 */
+
+	$labels = [
+		"name" => esc_html__( "Members In", "custom-post-type-ui" ),
+		"singular_name" => esc_html__( "Member In", "custom-post-type-ui" ),
+	];
+
+	$args = [
+		"label" => esc_html__( "Members In", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"rest_namespace" => "wp/v2",
+		"has_archive" => false,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"can_export" => true,
+		"rewrite" => [ "slug" => "memberin", "with_front" => true ],
+		"query_var" => true,
+		"menu_position" => 6,
+		"menu_icon" => "dashicons-buddicons-groups",
+		"supports" => [ "title" ],
+		"show_in_graphql" => false,
+	];
+
+	register_post_type( "memberin", $args );
 }
 
-add_action('init', 'custom_post');
-
-// query post
-function query_post_type($query){
-    if(is_category()){
-        $post_type = get_query_var('post_type');
-        if($post_type){
-            $post_type = $post_type;
-        } else{
-            $post_type = array('post', 'portfolio');
-            $query -> set('post_type', $post_type);
-            
-            return $query;
-        }
-    }
-}
-
-add_filter('pre_get_posts', 'query_post_type');
+add_action( 'init', 'cptui_register_my_cpts' );
