@@ -40,11 +40,11 @@ function register_acf_options_pages() {
             'menu_title'	=> 'Theme Footer Settings',
             'parent_slug'	=> 'theme-general-settings',
         ));
-        acf_add_options_sub_page(array(
-            'page_title' 	=> 'Affiliate Options',
-            'menu_title'	=> 'Affiliate Page Settings',
-            'parent_slug'	=> 'theme-general-settings',
-        ));
+        // acf_add_options_sub_page(array(
+        //     'page_title' 	=> 'Affiliate Options',
+        //     'menu_title'	=> 'Affiliate Page Settings',
+        //     'parent_slug'	=> 'theme-general-settings',
+        // ));
         acf_add_options_sub_page(array(
             'page_title' 	=> 'Single Journal Options',
             'menu_title'	=> 'Single Journal Settings',
