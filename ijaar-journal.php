@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: IJB Journal
+ * Template Name: IJAAR Journal
  * 
  * The template for displaying all pages
  *
@@ -47,7 +47,7 @@ get_header();
                         $journalq = array(
                             'post_type' => 'journal',
                             'posts_per_page' => 1,
-                            'category_name' => 'IJB',
+                            'category_name' => 'IJAAR',
                             'order' => 'ASC',
                         );
                         $journalp = new WP_Query($journalq);
@@ -71,7 +71,7 @@ get_header();
                         <?php
                         $journalq = array(
                             'post_type' => 'journal',
-                            'category_name'  => 'IJB',
+                            'category_name'  => 'IJAAR',
                             'posts_per_page' => 1,
                             'order' => 'ASC',
                         );
@@ -104,7 +104,7 @@ get_header();
                                 array(
                                     'taxonomy' => 'category',
                                     'field'    => 'slug',
-                                    'terms'    => 'IJB'
+                                    'terms'    => 'IJAAR'
                                 ),
                                 array(
                                     'taxonomy' => 'category',
@@ -140,11 +140,11 @@ get_header();
 
                                 $args = array(
                                     'post_type'      => 'editor',
-                                    'category_name'  => 'IJB',
+                                    'category_name'  => 'IJAAR',
                                     'post_status'    => 'publish',
                                     'posts_per_page' => 8,
                                     'tax_query'      => array(
-                                        'relation' => 'AND', // Ensure posts belong to both 'IJB' and other specified categories
+                                        'relation' => 'AND', // Ensure posts belong to both 'IJAAR' and other specified categories
                                         array(
                                             'taxonomy' => 'category',
                                             'field'    => 'slug',
@@ -221,7 +221,7 @@ get_header();
                                             <?php
                                             $journalq = array(
                                                 'post_type' => 'journal',
-                                                'category_name'  => 'IJB',
+                                                'category_name'  => 'IJAAR',
                                                 'posts_per_page' => 1,
                                                 'order' => 'ASC',
                                             );
@@ -282,7 +282,7 @@ get_header();
 
                             $args = array(
                                 'post_type'      => 'post',
-                                'category_name'  => sanitize_text_field('IJB'),
+                                'category_name'  => sanitize_text_field('IJAAR'),
                                 'post_status'    => 'publish',
                                 'posts_per_page' => 2,  // TODO 10 Adjust this if you want more posts per page
                                 'orderby'        => 'meta_value_num',
