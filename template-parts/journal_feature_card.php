@@ -23,7 +23,11 @@
                             <img src="<?php esc_url(the_sub_field('journal_icon')); ?>" alt="<?php esc_html(the_sub_field('journal_icon_title')); ?>">
                         </div>
                         <div>
-                            <h3><a href="<?php esc_url(the_sub_field('single_journal_icon_url')); ?>"><?php esc_html(the_sub_field('journal_icon_title')); ?></a></h3>
+                            <h3><a href="
+
+                            <?php $counter == 2 ? the_field('journal_editorial_board_button_url') : esc_url(the_sub_field('single_journal_icon_url')); ?>
+
+                            "><?php esc_html(the_sub_field('journal_icon_title')); ?></a></h3>
                             <!-- TODO need dynamic field -->
                             <p>Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document</p>
                         </div>
