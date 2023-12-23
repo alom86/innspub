@@ -1,0 +1,123 @@
+{
+    "key": "group_61f3880a6ff30",
+    "title": "Editor\/Reviewer General Info",
+    "fields": [
+        {
+            "key": "field_61f388c54f394",
+            "label": "Interested Journal Name",
+            "name": "interested_journal_name",
+            "type": "select",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "International Journal of Biosciences": "International Journal of Biosciences",
+                "Journal of Biodiversity and Environmental Sciences": "Journal of Biodiversity and Environmental Sciences",
+                "International Journal of Agronomy and Agricultural Research": "International Journal of Agronomy and Agricultural Research",
+                "International journal of Microbiology and Mycology": "International journal of Microbiology and Mycology",
+                "International Journal of Biomolecules and Biomedicine": "International Journal of Biomolecules and Biomedicine"
+            },
+            "default_value": false,
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_61f38a059b596",
+            "label": "Desire Post",
+            "name": "desire_post",
+            "type": "select",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Editor in-Chief": "Editor in-Chief",
+                "Co-editor": "Co-editor",
+                "Managing Editor": "Managing Editor",
+                "Editor": "Editor"
+            },
+            "default_value": false,
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_61f38ad0a4cd3",
+            "label": "Name & Surname (Self)",
+            "name": "name",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_61f629ecd3a3a",
+            "label": "Profile Photo",
+            "name": "profile_photo",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "editor"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1703313744
+}
