@@ -8,6 +8,7 @@ About > Office | Contact page
 <!-- Journals > Affiliated Journal --> theme option already remove page description 
 <!-- Journals > Editorial Board --> page description online static ache theme page content diye dynamic kora hoyeche
 <!-- Authors > Author Instruction --> page description online static ache theme page content diye dynamic kora hoyeche
+5 Journal details template > done()
 Journals > Board Member
 Excellence > Ebook publishing /shortcode
 Tutorials > FAQs
@@ -16,7 +17,7 @@ Sidebar > Indexed In
 Sidebar > Plagiarism Checker
 Sidebar > Member In
 <!-- Theme Option > Affilated page settings --> no need this option and already removed
-Theme Option > Single journal settings
+<!-- Theme Option > Single journal settings -->
 Theme Option > Contact page settings
 
 
