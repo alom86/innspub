@@ -370,120 +370,16 @@ get_header();
 
         </div>
 
-        <!-- TODO dynamic Global Editors Slider -->
+        <!-- Global Editors Slider -->
         <div class="container position-relative">
             <div class="swiper global_editor_home">
                 <h2 class="ps-3 ps-sm-0">Global Editors</h2>
                 <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <div class="swiper-slide">
-                        <div class="card profile">
-                            <div class="profile__img">
-                                <img width="136" height="149" src="<?php echo get_template_directory_uri(); ?>/assets/images/editors/Dr.-Khawaja-Shafique-Ahmad.webp" alt="Dr.-Khawaja-Shafique-Ahmad">
-                            </div>
-                            <a class="profile__name" href="board-member-single.html">
-                                Dr. Khawaja Shafique Ahmad
-                            </a>
 
-                            <span>(Assistant Professor), Pakistan.</span>
-                            <h3>International Journal of Biosciences</h3>
-                            <div class="social">
-                                <a class="social__link" href="#"><i class="fa-brands fa-facebook-f"></i><span class="sr-only">facebook icon</span></a>
-                                <a class="social__link" href="#"><i class="fa-brands fa-twitter"></i><span class="sr-only">twitter icon</span></a>
-                                <a class="social__link" href="#"><i class="fa-brands fa-linkedin-in"></i><span class="sr-only">linkedin icon</span></a>
-                                <a class="social__link" href="#"><i class="fa-brands fa-instagram"></i><span class="sr-only">instagram icon</span></a>
-                                <a class="social__link" href="#"><i class="fa-brands fa-google"></i><span class="sr-only">google icon</span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="card profile">
-                            <div class="profile__img">
-                                <img width="136" height="149" src="<?php echo get_template_directory_uri(); ?>/assets/images/editors/Dr.-Mohammad-Attaullah.webp" alt="Dr.-Mohammad-Attaullah">
-                            </div>
-                            <a class="profile__name" href="board-member-single.html">
-                                Dr. Mohammad Attaullah
-                            </a>
+                <?php
+                require get_template_directory() . '/template-parts/global_editor_slider.php';
+                ?>
 
-                            <span>(Assistant Professor), Pakistan.</span>
-                            <h3>International Journal of Biosciences</h3>
-                            <div class="social">
-                                <a class="social__link" href="#"><i class="fa-brands fa-facebook-f"></i><span class="sr-only">facebook icon</span></a>
-                                <a class="social__link" href="#"><i class="fa-brands fa-twitter"></i><span class="sr-only">twitter icon</span></a>
-                                <a class="social__link" href="#"><i class="fa-brands fa-linkedin-in"></i><span class="sr-only">linkedin icon</span></a>
-                                <a class="social__link" href="#"><i class="fa-brands fa-instagram"></i><span class="sr-only">instagram icon</span></a>
-                                <a class="social__link" href="#"><i class="fa-brands fa-google"></i><span class="sr-only">google icon</span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="card profile">
-                            <div class="profile__img">
-                                <img width="136" height="149" src="<?php echo get_template_directory_uri(); ?>/assets/images/editors/Dr.-Van-Ryan-Kristopher-R.-Galarpe.webp" alt="Dr.-Van-Ryan-Kristopher-R.-Galarpe">
-                            </div>
-                            <a class="profile__name" href="board-member-single.html">
-                                Dr. Van Ryan Kristopher
-                            </a>
-
-                            <span>(Assistant Professor), Pakistan.</span>
-                            <h3>International Journal of Biosciences</h3>
-                            <div class="social">
-                                <a class="social__link" href="#"><i class="fa-brands fa-facebook-f"></i><span class="sr-only">facebook icon</span></a>
-                                <a class="social__link" href="#"><i class="fa-brands fa-twitter"></i><span class="sr-only">twitter icon</span></a>
-                                <a class="social__link" href="#"><i class="fa-brands fa-linkedin-in"></i><span class="sr-only">linkedin icon</span></a>
-                                <a class="social__link" href="#"><i class="fa-brands fa-instagram"></i><span class="sr-only">instagram icon</span></a>
-                                <a class="social__link" href="#"><i class="fa-brands fa-google"></i><span class="sr-only">google icon</span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="card profile">
-                            <div class="profile__img">
-                                <img width="136" height="149" src="<?php echo get_template_directory_uri(); ?>/assets/images/editors/Mr.-Muhammad-Asghar-Hassan.webp" alt="Mr.-Muhammad-Asghar-Hassan">
-                            </div>
-                            <a class="profile__name" href="board-member-single.html">
-                                Mr. Muhammad Asghar
-                            </a>
-
-                            <span>(Assistant Professor), Pakistan.</span>
-                            <h3>International Journal of Biosciences</h3>
-                            <div class="social">
-                                <a class="social__link" href="#"><i class="fa-brands fa-facebook-f"></i><span class="sr-only">facebook icon</span></a>
-                                <a class="social__link" href="#"><i class="fa-brands fa-twitter"></i><span class="sr-only">twitter icon</span></a>
-                                <a class="social__link" href="#"><i class="fa-brands fa-linkedin-in"></i><span class="sr-only">linkedin icon</span></a>
-                                <a class="social__link" href="#"><i class="fa-brands fa-instagram"></i><span class="sr-only">instagram icon</span></a>
-                                <a class="social__link" href="#"><i class="fa-brands fa-google"></i><span class="sr-only">google icon</span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="card profile">
-                            <div class="profile__img">
-                                <img width="136" height="149" src="<?php echo get_template_directory_uri(); ?>/assets/images/editors/Mr.-Muhammad-Asghar-Hassan.webp" alt="Mr.-Muhammad-Asghar-Hassan">
-                            </div>
-                            <a class="profile__name" href="board-member-single.html">
-                                Mr. Muhammad Asghar
-                            </a>
-
-                            <span>(Assistant Professor), Pakistan.</span>
-                            <h3>International Journal of Biosciences</h3>
-                            <div class="social">
-                                <a class="social__link" href="#"><i class="fa-brands fa-facebook-f"></i><span class="sr-only">facebook icon</span></a>
-                                <a class="social__link" href="#"><i class="fa-brands fa-twitter"></i><span class="sr-only">twitter icon</span></a>
-                                <a class="social__link" href="#"><i class="fa-brands fa-linkedin-in"></i><span class="sr-only">linkedin icon</span></a>
-                                <a class="social__link" href="#"><i class="fa-brands fa-instagram"></i><span class="sr-only">instagram icon</span></a>
-                                <a class="social__link" href="#"><i class="fa-brands fa-google"></i><span class="sr-only">google icon</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- If we need pagination -->
-                <div class="swiper-pagination d-lg-none"></div>
-                <!-- If we need navigation buttons -->
-                <div class="swiper-button-prev d-none d-lg-flex"></div>
-                <div class="swiper-button-next d-none d-lg-flex"></div>
             </div>
 
         </div>

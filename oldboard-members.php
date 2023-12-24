@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Board Members Page
+ * 
  * 
  * The template for displaying all pages
  *
