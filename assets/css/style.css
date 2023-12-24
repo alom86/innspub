@@ -2443,7 +2443,7 @@ ul.pagination .page-link:hover, ul.pagination .page-link:focus, ul.pagination .p
 .filter .form-select {
   appearance: none;
   -webkit-appearance: none;
-  background-image: url(/assets/images/icon/filter_icon.webp);
+  background-image: url(../images/icon/filter_icon.webp);
   background-position: center;
   width: 36px;
   height: 36px;
