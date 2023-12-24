@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: IJB Journal
+ * Template Name: Journal JBES
  * 
  * The template for displaying all pages
  *
@@ -47,7 +47,7 @@ get_header();
                         $journalq = array(
                             'post_type' => 'journal',
                             'posts_per_page' => 1,
-                            'category_name' => 'IJB',
+                            'category_name' => 'JBES',
                             'order' => 'ASC',
                         );
                         $journalp = new WP_Query($journalq);
@@ -71,7 +71,7 @@ get_header();
                         <?php
                         $journalq = array(
                             'post_type' => 'journal',
-                            'category_name'  => 'IJB',
+                            'category_name'  => 'JBES',
                             'posts_per_page' => 1,
                             'order' => 'ASC',
                         );
@@ -104,7 +104,7 @@ get_header();
                                 array(
                                     'taxonomy' => 'category',
                                     'field'    => 'slug',
-                                    'terms'    => 'IJB'
+                                    'terms'    => 'JBES'
                                 ),
                                 array(
                                     'taxonomy' => 'category',
@@ -140,11 +140,11 @@ get_header();
 
                                 $args = array(
                                     'post_type'      => 'editor',
-                                    'category_name'  => 'IJB',
+                                    'category_name'  => 'JBES',
                                     'post_status'    => 'publish',
                                     'posts_per_page' => 8,
                                     'tax_query'      => array(
-                                        'relation' => 'AND', // Ensure posts belong to both 'IJB' and other specified categories
+                                        'relation' => 'AND', // Ensure posts belong to both 'JBES' and other specified categories
                                         array(
                                             'taxonomy' => 'category',
                                             'field'    => 'slug',
@@ -197,11 +197,9 @@ get_header();
                                                         endif; ?>
                                                     </h4>
                                                     <div class="social ms-xxl-0">
-                                                        <a class="social__link" href="#"><i class="fa-brands fa-facebook-f"></i><span class="sr-only">facebook icon</span></a>
-                                                        <a class="social__link" href="#"><i class="fa-brands fa-twitter"></i><span class="sr-only">twitter icon</span></a>
-                                                        <a class="social__link" href="#"><i class="fa-brands fa-linkedin-in"></i><span class="sr-only">linkedin icon</span></a>
-                                                        <a class="social__link" href="#"><i class="fa-brands fa-instagram"></i><span class="sr-only">instagram icon</span></a>
-                                                        <a class="social__link" href="#"><i class="fa-brands fa-google"></i><span class="sr-only">google icon</span></a>
+                                                        <?php
+                                                        require get_template_directory() . '/template-parts/profile_social_part.php';
+                                                        ?>
                                                     </div>
                                                 </div>
                                             </div>
@@ -221,7 +219,7 @@ get_header();
                                             <?php
                                             $journalq = array(
                                                 'post_type' => 'journal',
-                                                'category_name'  => 'IJB',
+                                                'category_name'  => 'JBES',
                                                 'posts_per_page' => 1,
                                                 'order' => 'ASC',
                                             );
@@ -282,7 +280,7 @@ get_header();
 
                             $args = array(
                                 'post_type'      => 'post',
-                                'category_name'  => sanitize_text_field('IJB'),
+                                'category_name'  => sanitize_text_field('JBES'),
                                 'post_status'    => 'publish',
                                 'posts_per_page' => 2,  // TODO 10 Adjust this if you want more posts per page
                                 'orderby'        => 'meta_value_num',

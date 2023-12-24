@@ -10,7 +10,9 @@ Current issue query update to one month
 <!-- Journals > Editorial Board --> page description online static ache theme page content diye dynamic kora hoyeche
 <!-- Authors > Author Instruction --> page description online static ache theme page content diye dynamic kora hoyeche
 <!-- 5 Journal details template > done(5 journal) --> TODO Published Paper filter 
-Journals > Board Member
+Board Members
+single member > Publications list design update dynamic content
+
 Excellence > Ebook publishing /shortcode
 Tutorials > FAQs
 Sidebar > Get subscription /shortcode
@@ -20,7 +22,6 @@ Sidebar > Member In
 <!-- Theme Option > Affilated page settings --> no need this option and already removed
 <!-- Theme Option > Single journal settings -->
 Theme Option > Contact page setting
-#design artcle card
 
 
 TODO on live
@@ -29,3 +30,4 @@ Create 'Sidebar Links Menu'
 Archive menu to Category page link
 single page remove '|' Home Journals Submission
 Tutorial page change template: Tutorial Page
+editor photo must same ration
