@@ -30,3 +30,4 @@ Create 'Sidebar Links Menu'
 single page remove '|' Home Journals Submission
 Tutorial page change template: Tutorial Page
 editor photo must same ration
+template-part> logo_menu update link

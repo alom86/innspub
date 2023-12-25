@@ -63,7 +63,7 @@ get_header();
 									<h2>Publications</h2>
 								</div>
 
-								<div class="p-3 p-md-4">
+								<div class="p-3 p-md-4 publication_list">
 									<!-- <div class="reference_item">Improved Technology for Water chest nut Production in Bangladesh submitted to the University Grant Commission (UGC), Bangladesh</div> -->
 
 									<?php if (!empty(the_field('publications_list'))) :
