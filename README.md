@@ -27,7 +27,6 @@ Theme Option > Contact page setting
 TODO on live
 Theme Option text remove 'INNS Pub.'
 Create 'Sidebar Links Menu'
-Archive menu to Category page link
 single page remove '|' Home Journals Submission
 Tutorial page change template: Tutorial Page
 editor photo must same ration

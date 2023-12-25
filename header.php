@@ -52,11 +52,11 @@
                     </div>
                     <img class="nav-top__right-double_slash d-none d-xl-block" src="<?php echo get_template_directory_uri() ?>/assets/images/shape/double_slash.webp" alt="double_slash">
                     <div class="social d-none d-xl-flex">
-                        <a class="social__link" href="#"><i class="fa-brands fa-facebook-f"></i><span class="sr-only">facebook icon</span></a>
-                        <a class="social__link" href="#"><i class="fa-brands fa-twitter"></i><span class="sr-only">twitter icon</span></a>
-                        <a class="social__link" href="#"><i class="fa-brands fa-linkedin-in"></i><span class="sr-only">linkedin icon</span></a>
-                        <a class="social__link" href="#"><i class="fa-brands fa-instagram"></i><span class="sr-only">instagram icon</span></a>
-                        <a class="social__link" href="#"><i class="fa-brands fa-google"></i><span class="sr-only">google icon</span></a>
+                        <a class="social__link" href="<?php if (!empty(the_field('face_book_url', 'option'))) : esc_html(the_field('face_book_url', 'option')); endif; ?>" target="_blank"><i class="fa-brands fa-facebook-f"></i><span class="sr-only">facebook icon</span></a>
+                        <a class="social__link" href="<?php if (!empty(the_field('twitter_url', 'option'))) : esc_html(the_field('twitter_url', 'option')); endif; ?>" target="_blank"><i class="fa-brands fa-twitter"></i><span class="sr-only">twitter icon</span></a>
+                        <a class="social__link" href="<?php if (!empty(the_field('linkedin_url', 'option'))) : esc_html(the_field('linkedin_url', 'option')); endif; ?>" target="_blank"><i class="fa-brands fa-linkedin-in"></i><span class="sr-only">linkeding icon</span></a>
+                        <a class="social__link" href="<?php if (!empty(the_field('instagram_url', 'option'))) : esc_html(the_field('instagram_url', 'option')); endif; ?>" target="_blank"><i class="fa-brands fa-instagram"></i><span class="sr-only">instagram icon</span></a>
+                        <a class="social__link" href="<?php if (!empty(the_field('google_url', 'option'))) : esc_html(the_field('google_url', 'option')); endif; ?>" target="_blank"><i class="fa-brands fa-google"></i><span class="sr-only">google icon</span></a>
                     </div>
                 </div>
                 <div class="bg_skey"></div>

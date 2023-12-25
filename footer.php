@@ -22,6 +22,7 @@
                 <div class="col-xl-4">
                     <div class="footer-item">
                         <img class="footer-item__logo" width="140" height="32" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo/logo_white.webp" alt="logo_white">
+                        <!-- TODO need dynamic field -->
                         <p class="footer-item__description mb-4">International Network for Natural Sciences <em>(INNSpub)</em> is an open access research journal publisher that's dedicated to publish scholarly research papers and books, to believe in sharing new scientific knowledge in the field.</p>
                         <div class="social d-flex justify-content-start">
                             <a class="social__link" href="<?php if (!empty(the_field('face_book_url', 'option'))) : esc_html(the_field('face_book_url', 'option')); endif; ?>" target="_blank"><i class="fa-brands fa-facebook-f"></i><span class="sr-only">facebook icon</span></a>
@@ -109,43 +110,36 @@
             <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-xl-4">
                 <div class="col">
                     <div class="footer-item">
-                        <h2 class="footer-item__title">Philippines Office</h2>
+                        <h2 class="footer-item__title"><?php if (!empty(the_field('philippines_office', 'option'))) : esc_html(the_field('philippines_office', 'option')); endif; ?></h2>
                         <address class="footer-item__description">
-                            Knowledge Technology Management Office,
-                            University Research Development Office,
-                            Cagayan State University, Tuguegarao City,
-                            PHILIPPINES
+                            <?php if (!empty(the_field('philippines_address', 'option'))) : esc_html(the_field('philippines_address', 'option')); endif; ?>
                         </address>
                     </div>
                 </div>
 
                 <div class="col">
                     <div class="footer-item">
-                        <h2 class="footer-item__title">UK Office</h2>
+                        <h2 class="footer-item__title"><?php if (!empty(the_field('uk_office', 'option'))) : esc_html(the_field('uk_office', 'option')); endif; ?></h2>
                         <address class="footer-item__description">
-                            2nd Floor, College House 17, King Edwards
-                            Road, Ruislip, London, HA4 7AE, UK
+                            <?php if (!empty(the_field('uk_office_address', 'option'))) : esc_html(the_field('uk_office_address', 'option')); endif; ?>
                         </address>
                     </div>
                 </div>
 
                 <div class="col">
                     <div class="footer-item">
-                        <h2 class="footer-item__title">Dhaka Office</h2>
+                        <h2 class="footer-item__title"><?php if (!empty(the_field('dhaka_office', 'option'))) : esc_html(the_field('dhaka_office', 'option')); endif; ?></h2>
                         <address class="footer-item__description">
-                            House- 22 (Ground Floor), Road- 4, Block-A,
-                            Monsurabad, Adabor, Dhaka- 1207,
-                            BANGLADESH
+                            <?php if (!empty(the_field('dhaka_office_address', 'option'))) : esc_html(the_field('dhaka_office_address', 'option')); endif; ?>
                         </address>
                     </div>
                 </div>
 
                 <div class="col">
                     <div class="footer-item">
-                        <h2 class="footer-item__title">Rajshahi Office</h2>
+                        <h2 class="footer-item__title"><?php if (!empty(the_field('rajshahi_office', 'option'))) : esc_html(the_field('rajshahi_office', 'option')); endif; ?></h2>
                         <address class="footer-item__description">
-                            Holding: B-280 (Ground floor), Kadirgonj,
-                            Boalia, Rajshahi- 6000, BANGLADESH
+                            <?php if (!empty(the_field('rajshahi_office_address', 'option'))) : esc_html(the_field('rajshahi_office_address', 'option')); endif; ?>
                         </address>
                     </div>
                 </div>
@@ -155,18 +149,23 @@
 
             <div class="footer-item d-flex flex-column flex-lg-row justify-content-lg-between gap-3">
                 <div class="d-flex align-items-center">
-                    <img class="footer-item__copyright_icon" width="21" height="21" src="<?php echo get_template_directory_uri(); ?>/assets/images/shape/copy_right.webp" alt="copy_right">
+                    <img class="footer-item__copyright_icon" width="21" height="21" src="<?php if (!empty(the_field('licence_image', 'option'))) : esc_html(the_field('licence_image', 'option')); endif; ?>" alt="copy_right">
                     <p class="footer-item__description">
-                        This work is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>
+                        <?php if (!empty(the_field('licence_text', 'option'))) : esc_html(the_field('licence_text', 'option')); endif; ?>
+                        <a href="<?php if (!empty(the_field('license_link_url', 'option'))) : esc_html(the_field('license_link_url', 'option')); endif; ?>" target="_blank">
+                            <?php if (!empty(the_field('license_link_text', 'option'))) : esc_html(the_field('license_link_text', 'option')); endif; ?>
+                        </a>
                     </p>
                 </div>
-                <img class="footer-item__payment_method" width="220" height="38" src="<?php echo get_template_directory_uri(); ?>/assets/images/footer/payment_method.webp" alt="payment_method">
+                <img class="footer-item__payment_method" width="220" height="38" src="<?php if (!empty(the_field('license_right_image', 'option'))) : esc_html(the_field('license_right_image', 'option')); endif; ?>" alt="payment_method">
             </div>
 
             <hr>
 
             <div class="footer-item">
-                <p class="footer-item__description_copyright text-center">Copyright © 2009-<?php echo date("Y"); ?> All Rights Reserved by <?php bloginfo('name'); ?> <span class="text-nowrap">[ INNSpub ]</span></p>
+                <div class="footer-item__description_copyright text-center">
+                    <?php if (!empty(the_field('footer_bottom_text', 'option'))) : esc_html(the_field('footer_bottom_text', 'option')); endif; ?>
+                </div>
             </div>
         </div>
     </footer>
