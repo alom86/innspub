@@ -282,7 +282,7 @@ get_header();
                                 'post_type'      => 'post',
                                 'category_name'  => sanitize_text_field('IJAAR'),
                                 'post_status'    => 'publish',
-                                'posts_per_page' => 2,  // TODO 10 Adjust this if you want more posts per page
+                                'posts_per_page' => 10,
                                 'orderby'        => 'meta_value_num',
                                 'paged'          => $paged,
                                 'post__not_in'   => array($current_post_id)  // Exclude the current post

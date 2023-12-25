@@ -1,6 +1,5 @@
 <?php
 /**
- * Template Name: Current Issue Archive Page test
  * 
  * 
  * 
@@ -40,7 +39,7 @@ get_header();
                         <div class="page_content">
                             <!-- page title -->
                             <div class="page_content__title">
-                                <h1>Current Issue IJAAR</h1>
+                                <h1><?php the_title(); ?></h1>
                             </div>
 
                             <!-- page data -->
