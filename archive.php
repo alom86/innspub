@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying archive pages
  *
@@ -10,42 +11,61 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+<!-- Main Content -->
+<main class="bg-white">
+	<!-- page breadcumb -->
+	<?php
+	require get_template_directory() . '/template-parts/breadcumb_part.php';
+	?>
 
-		<?php if ( have_posts() ) : ?>
-
-			<header class="page-header">
+	<!-- page layout -->
+	<section class="section_gap">
+		<div class="container">
+			<div class="layout_sidebar">
+				<!-- sidebar -->
 				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
+				require get_template_directory() . '/template-parts/sidebar_part.php';
 				?>
-			</header><!-- .page-header -->
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+				<!-- page content -->
+				<div>
+					<div class="page_content">
+						<!-- page title -->
+						<div class="page_content__title">
+							<h1><?php the_title(); ?></h1>
+						</div>
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+						<?php if (have_posts()) : ?>
 
-			endwhile;
+						<?php
+							/* Start the Loop */
+							while (have_posts()) :
+								the_post();
 
-			the_posts_navigation();
+							require get_template_directory() . '/template-parts/journal_post_content.php';
 
-		else :
+							endwhile;
 
-			get_template_part( 'template-parts/content', 'none' );
+							require get_template_directory() . '/template-parts/pagination_part.php';
 
-		endif;
-		?>
+						else :
 
-	</main><!-- #main -->
+							get_template_part('template-parts/content', 'none');
+
+						endif;
+						?>
+
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+</main>
 
 <?php
-get_sidebar();
+
+
 get_footer();
