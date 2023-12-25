@@ -934,6 +934,7 @@ img {
   display: flex;
   align-items: start;
   padding-left: 0;
+  line-height: 26px;
 }
 .accordion.accordion_home .accordion-item .accordion-button::before {
   background-image: url("../images/icon/plus.png");
