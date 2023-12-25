@@ -13,17 +13,29 @@
   $('#header-menu .current-menu-ancestor').addClass('active');
   $('#header-menu .current-menu-item').addClass('active');
 
+  // breadcumb parent text add
+  let menu_parent_text = $('.current-menu-parent > a').first().text();
+  if(!menu_parent_text == ''){
+    $('.parent_page > a').text(menu_parent_text);
+  }
+  if(menu_parent_text == ''){
+    $('.parent_page').hide();
+    $('.breadcrumb-item.dropdown').hide();
+  }
+
+  
+
   // home nav-tab to select
-  if ($(window).width() > 767) {
-    $(".nav_tabs .nav").removeClass('dropdown-menu');
-    $(".nav_tabs .tab_select").removeClass('tab_select');
-  }
-  if ($(window).width() < 768){
-    $(document).on("click", '.dropdown-menu .nav-item .nav-link', function(e) {
-      let activeText = $(this).text();
-      $(this).parent().parent().parent().find("button[data-bs-toggle='dropdown']").html(activeText);
-    });
-  }
+  // if ($(window).width() > 767) {
+  //   $(".nav_tabs .nav").removeClass('dropdown-menu');
+  //   $(".nav_tabs .tab_select").removeClass('tab_select');
+  // }
+  // if ($(window).width() < 768){
+  //   $(document).on("click", '.dropdown-menu .nav-item .nav-link', function(e) {
+  //     let activeText = $(this).text();
+  //     $(this).parent().parent().parent().find("button[data-bs-toggle='dropdown']").html(activeText);
+  //   });
+  // }
 
   // sidebar active menu
   $("#for_authors-menu .current-menu-item a").addClass('active');

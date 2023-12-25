@@ -22,38 +22,18 @@
                         ...
                     </a>
                     <ul class="dropdown-menu">
-                        <li class="parent_page"><a class="dropdown-item active" href="#">Back Page</a></li>
+                        <li><a class="dropdown-item active" href="#">Back Page</a></li>
+                        <li><a class="dropdown-item" href="#">Back Page 2</a></li>
+                        <li><a class="dropdown-item" href="#">Back Page 3</a></li>
                     </ul>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page"><?php echo get_breadcrumb_title(); ?></li>
+                <li class="breadcrumb-item active" aria-current="page"><?php echo the_title(); ?></li>
             </ol>
             <!-- Large device -->
             <ol class="breadcrumb d-none d-md-flex">
                 <li class="breadcrumb-item"><a href="<?php echo home_url(); ?>">Home</a></li>
-                <li class="breadcrumb-item parent_page"><a href="#"></a></li>
-                <li class="breadcrumb-item active" aria-current="page"><?php echo get_breadcrumb_title(); ?></li>
+                <li class="breadcrumb-item active" aria-current="page"><?php echo the_title(); ?></li>
             </ol>
         </nav>
     </div>
 </div>
-
-<?php
-function get_breadcrumb_title()
-{
-    if (is_home() || is_front_page()) {
-        return 'Home';
-    } elseif (is_singular('post')) {
-        return get_the_title();
-    } elseif (is_singular('page')) {
-        return get_the_title();
-    } elseif (is_archive()) {
-        return get_the_archive_title();
-    } elseif (is_tag()) {
-        return single_tag_title('>', false);
-    } elseif (is_category()) {
-        return single_cat_title('>', false);
-    } else {
-        return 'Unknown';
-    }
-}
-?>
