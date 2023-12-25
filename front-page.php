@@ -456,424 +456,167 @@ get_header();
                         <div class="tab-content" id="publicationTabContent">
                             <!-- IJAAR Publication -->
                             <div class="tab-pane fade show active" id="ijaar-tab-pane" role="tabpanel" aria-labelledby="ijaar-tab" tabindex="0">
-                                <!-- item -->
-                                <article class="card_paper">
-                                    <div class="card_paper__img">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/publication/publication_file.svg" alt="publication_file">
-                                    </div>
-                                    <div>
-                                        <h3>
-                                            <a href="#">The forecasting of Cattle (Bos taurus) production in the Philippines</a>
-                                        </h3>
-                                        <span>Mohammad Salman Akhtar, Sonam Jahan, Shivam Dubey, Sandeep Kushwaha</span>
-                                        <div class="card_paper__tags">
-                                            <a href="#">Alloxan</a>
-                                            <a href="#">Endemic</a>
-                                            <a href="#">Health science</a>
-                                            <a href="#">Hypoglycemic</a>
-                                            <a href="#">Philippines</a>
-                                            <a href="#">Phytochemicals</a>
-                                            <a href="#">Sprague Dawley Rats</a>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="card_paper">
-                                    <div class="card_paper__img">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/publication/publication_file.svg" alt="publication_file">
-                                    </div>
-                                    <div>
-                                        <h3>
-                                            <a href="#">The forecasting of Cattle (Bos taurus) production in the Philippines</a>
-                                        </h3>
-                                        <span>Mohammad Salman Akhtar, Sonam Jahan, Shivam Dubey, Sandeep Kushwaha</span>
-                                        <div class="card_paper__tags">
-                                            <a href="#">Alloxan</a>
-                                            <a href="#">Endemic</a>
-                                            <a href="#">Health science</a>
-                                            <a href="#">Hypoglycemic</a>
-                                            <a href="#">Philippines</a>
-                                            <a href="#">Phytochemicals</a>
-                                            <a href="#">Sprague Dawley Rats</a>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="card_paper">
-                                    <div class="card_paper__img">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/publication/publication_file.svg" alt="publication_file">
-                                    </div>
-                                    <div>
-                                        <h3>
-                                            <a href="#">The forecasting of Cattle (Bos taurus) production in the Philippines</a>
-                                        </h3>
-                                        <span>Mohammad Salman Akhtar, Sonam Jahan, Shivam Dubey, Sandeep Kushwaha</span>
-                                        <div class="card_paper__tags">
-                                            <a href="#">Alloxan</a>
-                                            <a href="#">Endemic</a>
-                                            <a href="#">Health science</a>
-                                            <a href="#">Hypoglycemic</a>
-                                            <a href="#">Philippines</a>
-                                            <a href="#">Phytochemicals</a>
-                                            <a href="#">Sprague Dawley Rats</a>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="card_paper">
-                                    <div class="card_paper__img">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/publication/publication_file.svg" alt="publication_file">
-                                    </div>
-                                    <div>
-                                        <h3>
-                                            <a href="#">The forecasting of Cattle (Bos taurus) production in the Philippines</a>
-                                        </h3>
-                                        <span>Mohammad Salman Akhtar, Sonam Jahan, Shivam Dubey, Sandeep Kushwaha</span>
-                                        <div class="card_paper__tags">
-                                            <a href="#">Alloxan</a>
-                                            <a href="#">Endemic</a>
-                                            <a href="#">Health science</a>
-                                            <a href="#">Hypoglycemic</a>
-                                            <a href="#">Philippines</a>
-                                            <a href="#">Phytochemicals</a>
-                                            <a href="#">Sprague Dawley Rats</a>
-                                        </div>
-                                    </div>
-                                </article>
+
+                                <?php
+                                $journalq = array(
+                                    'post_type' => 'post',
+                                    'category_name'  => 'IJAAR',
+                                    'orderby' => 'date',
+                                    'order' => 'DESC',
+                                    'post_status'    => 'publish',
+                                    'posts_per_page' => 10
+                                );
+                                $journalp = new WP_Query($journalq);
+                                if ($journalp->have_posts()) :
+                                    $countp = 0;
+                                    while ($journalp->have_posts()) :
+                                        $countp++;
+                                        $journalp->the_post();
+                                        global $post; ?>
+
+                                        <!-- item -->
+                                        <?php
+                                        require get_template_directory() . '/template-parts/home_article_card.php';
+                                        ?>
+
+                                <?php
+                                    endwhile;
+                                endif;
+                                wp_reset_query();
+                                ?>
 
                             </div>
 
                             <!-- IJBB Publication -->
                             <div class="tab-pane fade" id="ijbb-tab-pane" role="tabpanel" aria-labelledby="ijbb-tab" tabindex="0">
-                                <article class="card_paper">
-                                    <div class="card_paper__img">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/publication/publication_file.svg" alt="publication_file">
-                                    </div>
-                                    <div>
-                                        <h3>
-                                            <a href="#">The forecasting of Cattle (Bos taurus) production in the Philippines</a>
-                                        </h3>
-                                        <span>Mohammad Salman Akhtar, Sonam Jahan, Shivam Dubey, Sandeep Kushwaha</span>
-                                        <div class="card_paper__tags">
-                                            <a href="#">Alloxan</a>
-                                            <a href="#">Endemic</a>
-                                            <a href="#">Health science</a>
-                                            <a href="#">Hypoglycemic</a>
-                                            <a href="#">Philippines</a>
-                                            <a href="#">Phytochemicals</a>
-                                            <a href="#">Sprague Dawley Rats</a>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="card_paper">
-                                    <div class="card_paper__img">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/publication/publication_file.svg" alt="publication_file">
-                                    </div>
-                                    <div>
-                                        <h3>
-                                            <a href="#">The forecasting of Cattle (Bos taurus) production in the Philippines</a>
-                                        </h3>
-                                        <span>Mohammad Salman Akhtar, Sonam Jahan, Shivam Dubey, Sandeep Kushwaha</span>
-                                        <div class="card_paper__tags">
-                                            <a href="#">Alloxan</a>
-                                            <a href="#">Endemic</a>
-                                            <a href="#">Health science</a>
-                                            <a href="#">Hypoglycemic</a>
-                                            <a href="#">Philippines</a>
-                                            <a href="#">Phytochemicals</a>
-                                            <a href="#">Sprague Dawley Rats</a>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="card_paper">
-                                    <div class="card_paper__img">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/publication/publication_file.svg" alt="publication_file">
-                                    </div>
-                                    <div>
-                                        <h3>
-                                            <a href="#">The forecasting of Cattle (Bos taurus) production in the Philippines</a>
-                                        </h3>
-                                        <span>Mohammad Salman Akhtar, Sonam Jahan, Shivam Dubey, Sandeep Kushwaha</span>
-                                        <div class="card_paper__tags">
-                                            <a href="#">Alloxan</a>
-                                            <a href="#">Endemic</a>
-                                            <a href="#">Health science</a>
-                                            <a href="#">Hypoglycemic</a>
-                                            <a href="#">Philippines</a>
-                                            <a href="#">Phytochemicals</a>
-                                            <a href="#">Sprague Dawley Rats</a>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="card_paper">
-                                    <div class="card_paper__img">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/publication/publication_file.svg" alt="publication_file">
-                                    </div>
-                                    <div>
-                                        <h3>
-                                            <a href="#">The forecasting of Cattle (Bos taurus) production in the Philippines</a>
-                                        </h3>
-                                        <span>Mohammad Salman Akhtar, Sonam Jahan, Shivam Dubey, Sandeep Kushwaha</span>
-                                        <div class="card_paper__tags">
-                                            <a href="#">Alloxan</a>
-                                            <a href="#">Endemic</a>
-                                            <a href="#">Health science</a>
-                                            <a href="#">Hypoglycemic</a>
-                                            <a href="#">Philippines</a>
-                                            <a href="#">Phytochemicals</a>
-                                            <a href="#">Sprague Dawley Rats</a>
-                                        </div>
-                                    </div>
-                                </article>
+
+                                <?php
+                                $journalq = array(
+                                    'post_type' => 'post',
+                                    'category_name'  => 'IJBB',
+                                    'orderby' => 'date',
+                                    'order' => 'DESC',
+                                    'post_status'    => 'publish',
+                                    'posts_per_page' => 10
+                                );
+                                $journalp = new WP_Query($journalq);
+                                if ($journalp->have_posts()) :
+                                    $countp = 0;
+                                    while ($journalp->have_posts()) :
+                                        $countp++;
+                                        $journalp->the_post();
+                                        global $post; ?>
+
+                                        <!-- item -->
+                                        <?php
+                                        require get_template_directory() . '/template-parts/home_article_card.php';
+                                        ?>
+
+                                <?php
+                                    endwhile;
+                                endif;
+                                wp_reset_query();
+                                ?>
+
                             </div>
 
                             <!-- IJB Publication -->
                             <div class="tab-pane fade" id="ijb-tab-pane" role="tabpanel" aria-labelledby="ijb-tab" tabindex="0">
-                                <article class="card_paper">
-                                    <div class="card_paper__img">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/publication/publication_file.svg" alt="publication_file">
-                                    </div>
-                                    <div>
-                                        <h3>
-                                            <a href="#">The forecasting of Cattle (Bos taurus) production in the Philippines</a>
-                                        </h3>
-                                        <span>Mohammad Salman Akhtar, Sonam Jahan, Shivam Dubey, Sandeep Kushwaha</span>
-                                        <div class="card_paper__tags">
-                                            <a href="#">Alloxan</a>
-                                            <a href="#">Endemic</a>
-                                            <a href="#">Health science</a>
-                                            <a href="#">Hypoglycemic</a>
-                                            <a href="#">Philippines</a>
-                                            <a href="#">Phytochemicals</a>
-                                            <a href="#">Sprague Dawley Rats</a>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="card_paper">
-                                    <div class="card_paper__img">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/publication/publication_file.svg" alt="publication_file">
-                                    </div>
-                                    <div>
-                                        <h3>
-                                            <a href="#">The forecasting of Cattle (Bos taurus) production in the Philippines</a>
-                                        </h3>
-                                        <span>Mohammad Salman Akhtar, Sonam Jahan, Shivam Dubey, Sandeep Kushwaha</span>
-                                        <div class="card_paper__tags">
-                                            <a href="#">Alloxan</a>
-                                            <a href="#">Endemic</a>
-                                            <a href="#">Health science</a>
-                                            <a href="#">Hypoglycemic</a>
-                                            <a href="#">Philippines</a>
-                                            <a href="#">Phytochemicals</a>
-                                            <a href="#">Sprague Dawley Rats</a>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="card_paper">
-                                    <div class="card_paper__img">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/publication/publication_file.svg" alt="publication_file">
-                                    </div>
-                                    <div>
-                                        <h3>
-                                            <a href="#">The forecasting of Cattle (Bos taurus) production in the Philippines</a>
-                                        </h3>
-                                        <span>Mohammad Salman Akhtar, Sonam Jahan, Shivam Dubey, Sandeep Kushwaha</span>
-                                        <div class="card_paper__tags">
-                                            <a href="#">Alloxan</a>
-                                            <a href="#">Endemic</a>
-                                            <a href="#">Health science</a>
-                                            <a href="#">Hypoglycemic</a>
-                                            <a href="#">Philippines</a>
-                                            <a href="#">Phytochemicals</a>
-                                            <a href="#">Sprague Dawley Rats</a>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="card_paper">
-                                    <div class="card_paper__img">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/publication/publication_file.svg" alt="publication_file">
-                                    </div>
-                                    <div>
-                                        <h3>
-                                            <a href="#">The forecasting of Cattle (Bos taurus) production in the Philippines</a>
-                                        </h3>
-                                        <span>Mohammad Salman Akhtar, Sonam Jahan, Shivam Dubey, Sandeep Kushwaha</span>
-                                        <div class="card_paper__tags">
-                                            <a href="#">Alloxan</a>
-                                            <a href="#">Endemic</a>
-                                            <a href="#">Health science</a>
-                                            <a href="#">Hypoglycemic</a>
-                                            <a href="#">Philippines</a>
-                                            <a href="#">Phytochemicals</a>
-                                            <a href="#">Sprague Dawley Rats</a>
-                                        </div>
-                                    </div>
-                                </article>
+
+                                <?php
+                                $journalq = array(
+                                    'post_type' => 'post',
+                                    'category_name'  => 'IJB',
+                                    'orderby' => 'date',
+                                    'order' => 'DESC',
+                                    'post_status'    => 'publish',
+                                    'posts_per_page' => 10
+                                );
+                                $journalp = new WP_Query($journalq);
+                                if ($journalp->have_posts()) :
+                                    $countp = 0;
+                                    while ($journalp->have_posts()) :
+                                        $countp++;
+                                        $journalp->the_post();
+                                        global $post; ?>
+
+                                        <!-- item -->
+                                        <?php
+                                        require get_template_directory() . '/template-parts/home_article_card.php';
+                                        ?>
+
+                                <?php
+                                    endwhile;
+                                endif;
+                                wp_reset_query();
+                                ?>
+
                             </div>
 
                             <!-- IJMM Publication -->
                             <div class="tab-pane fade" id="ijmm-tab-pane" role="tabpanel" aria-labelledby="ijmm-tab" tabindex="0">
-                                <article class="card_paper">
-                                    <div class="card_paper__img">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/publication/publication_file.svg" alt="publication_file">
-                                    </div>
-                                    <div>
-                                        <h3>
-                                            <a href="#">The forecasting of Cattle (Bos taurus) production in the Philippines</a>
-                                        </h3>
-                                        <span>Mohammad Salman Akhtar, Sonam Jahan, Shivam Dubey, Sandeep Kushwaha</span>
-                                        <div class="card_paper__tags">
-                                            <a href="#">Alloxan</a>
-                                            <a href="#">Endemic</a>
-                                            <a href="#">Health science</a>
-                                            <a href="#">Hypoglycemic</a>
-                                            <a href="#">Philippines</a>
-                                            <a href="#">Phytochemicals</a>
-                                            <a href="#">Sprague Dawley Rats</a>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="card_paper">
-                                    <div class="card_paper__img">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/publication/publication_file.svg" alt="publication_file">
-                                    </div>
-                                    <div>
-                                        <h3>
-                                            <a href="#">The forecasting of Cattle (Bos taurus) production in the Philippines</a>
-                                        </h3>
-                                        <span>Mohammad Salman Akhtar, Sonam Jahan, Shivam Dubey, Sandeep Kushwaha</span>
-                                        <div class="card_paper__tags">
-                                            <a href="#">Alloxan</a>
-                                            <a href="#">Endemic</a>
-                                            <a href="#">Health science</a>
-                                            <a href="#">Hypoglycemic</a>
-                                            <a href="#">Philippines</a>
-                                            <a href="#">Phytochemicals</a>
-                                            <a href="#">Sprague Dawley Rats</a>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="card_paper">
-                                    <div class="card_paper__img">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/publication/publication_file.svg" alt="publication_file">
-                                    </div>
-                                    <div>
-                                        <h3>
-                                            <a href="#">The forecasting of Cattle (Bos taurus) production in the Philippines</a>
-                                        </h3>
-                                        <span>Mohammad Salman Akhtar, Sonam Jahan, Shivam Dubey, Sandeep Kushwaha</span>
-                                        <div class="card_paper__tags">
-                                            <a href="#">Alloxan</a>
-                                            <a href="#">Endemic</a>
-                                            <a href="#">Health science</a>
-                                            <a href="#">Hypoglycemic</a>
-                                            <a href="#">Philippines</a>
-                                            <a href="#">Phytochemicals</a>
-                                            <a href="#">Sprague Dawley Rats</a>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="card_paper">
-                                    <div class="card_paper__img">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/publication/publication_file.svg" alt="publication_file">
-                                    </div>
-                                    <div>
-                                        <h3>
-                                            <a href="#">The forecasting of Cattle (Bos taurus) production in the Philippines</a>
-                                        </h3>
-                                        <span>Mohammad Salman Akhtar, Sonam Jahan, Shivam Dubey, Sandeep Kushwaha</span>
-                                        <div class="card_paper__tags">
-                                            <a href="#">Alloxan</a>
-                                            <a href="#">Endemic</a>
-                                            <a href="#">Health science</a>
-                                            <a href="#">Hypoglycemic</a>
-                                            <a href="#">Philippines</a>
-                                            <a href="#">Phytochemicals</a>
-                                            <a href="#">Sprague Dawley Rats</a>
-                                        </div>
-                                    </div>
-                                </article>
+
+                                <?php
+                                $journalq = array(
+                                    'post_type' => 'post',
+                                    'category_name'  => 'IJMM',
+                                    'orderby' => 'date',
+                                    'order' => 'DESC',
+                                    'post_status'    => 'publish',
+                                    'posts_per_page' => 10
+                                );
+                                $journalp = new WP_Query($journalq);
+                                if ($journalp->have_posts()) :
+                                    $countp = 0;
+                                    while ($journalp->have_posts()) :
+                                        $countp++;
+                                        $journalp->the_post();
+                                        global $post; ?>
+
+                                        <!-- item -->
+                                        <?php
+                                        require get_template_directory() . '/template-parts/home_article_card.php';
+                                        ?>
+
+                                <?php
+                                    endwhile;
+                                endif;
+                                wp_reset_query();
+                                ?>
+
                             </div>
 
                             <!-- JBES Publication -->
                             <div class="tab-pane fade" id="jbes-tab-pane" role="tabpanel" aria-labelledby="jbes-tab" tabindex="0">
-                                <article class="card_paper">
-                                    <div class="card_paper__img">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/publication/publication_file.svg" alt="publication_file">
-                                    </div>
-                                    <div>
-                                        <h3>
-                                            <a href="#">The forecasting of Cattle (Bos taurus) production in the Philippines</a>
-                                        </h3>
-                                        <span>Mohammad Salman Akhtar, Sonam Jahan, Shivam Dubey, Sandeep Kushwaha</span>
-                                        <div class="card_paper__tags">
-                                            <a href="#">Alloxan</a>
-                                            <a href="#">Endemic</a>
-                                            <a href="#">Health science</a>
-                                            <a href="#">Hypoglycemic</a>
-                                            <a href="#">Philippines</a>
-                                            <a href="#">Phytochemicals</a>
-                                            <a href="#">Sprague Dawley Rats</a>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="card_paper">
-                                    <div class="card_paper__img">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/publication/publication_file.svg" alt="publication_file">
-                                    </div>
-                                    <div>
-                                        <h3>
-                                            <a href="#">The forecasting of Cattle (Bos taurus) production in the Philippines</a>
-                                        </h3>
-                                        <span>Mohammad Salman Akhtar, Sonam Jahan, Shivam Dubey, Sandeep Kushwaha</span>
-                                        <div class="card_paper__tags">
-                                            <a href="#">Alloxan</a>
-                                            <a href="#">Endemic</a>
-                                            <a href="#">Health science</a>
-                                            <a href="#">Hypoglycemic</a>
-                                            <a href="#">Philippines</a>
-                                            <a href="#">Phytochemicals</a>
-                                            <a href="#">Sprague Dawley Rats</a>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="card_paper">
-                                    <div class="card_paper__img">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/publication/publication_file.svg" alt="publication_file">
-                                    </div>
-                                    <div>
-                                        <h3>
-                                            <a href="#">The forecasting of Cattle (Bos taurus) production in the Philippines</a>
-                                        </h3>
-                                        <span>Mohammad Salman Akhtar, Sonam Jahan, Shivam Dubey, Sandeep Kushwaha</span>
-                                        <div class="card_paper__tags">
-                                            <a href="#">Alloxan</a>
-                                            <a href="#">Endemic</a>
-                                            <a href="#">Health science</a>
-                                            <a href="#">Hypoglycemic</a>
-                                            <a href="#">Philippines</a>
-                                            <a href="#">Phytochemicals</a>
-                                            <a href="#">Sprague Dawley Rats</a>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="card_paper">
-                                    <div class="card_paper__img">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/publication/publication_file.svg" alt="publication_file">
-                                    </div>
-                                    <div>
-                                        <h3>
-                                            <a href="#">The forecasting of Cattle (Bos taurus) production in the Philippines</a>
-                                        </h3>
-                                        <span>Mohammad Salman Akhtar, Sonam Jahan, Shivam Dubey, Sandeep Kushwaha</span>
-                                        <div class="card_paper__tags">
-                                            <a href="#">Alloxan</a>
-                                            <a href="#">Endemic</a>
-                                            <a href="#">Health science</a>
-                                            <a href="#">Hypoglycemic</a>
-                                            <a href="#">Philippines</a>
-                                            <a href="#">Phytochemicals</a>
-                                            <a href="#">Sprague Dawley Rats</a>
-                                        </div>
-                                    </div>
-                                </article>
+
+                                <?php
+                                $journalq = array(
+                                    'post_type' => 'post',
+                                    'category_name'  => 'JBES',
+                                    'orderby' => 'date',
+                                    'order' => 'DESC',
+                                    'post_status'    => 'publish',
+                                    'posts_per_page' => 10
+                                );
+                                $journalp = new WP_Query($journalq);
+                                if ($journalp->have_posts()) :
+                                    $countp = 0;
+                                    while ($journalp->have_posts()) :
+                                        $countp++;
+                                        $journalp->the_post();
+                                        global $post; ?>
+
+                                        <!-- item -->
+                                        <?php
+                                        require get_template_directory() . '/template-parts/home_article_card.php';
+                                        ?>
+
+                                <?php
+                                    endwhile;
+                                endif;
+                                wp_reset_query();
+                                ?>
+
                             </div>
                         </div>
                     </div>
@@ -885,7 +628,7 @@ get_header();
 
     <!-- Published issue & INNSPUB JOURNALS slide -->
     <section class="section_gap bg-white px-0">
-        <!-- Published issue Slider -->
+        <!-- TODO dynamic Published issue Slider -->
         <div class="container position-relative mb-5">
             <div class="swiper published_issue">
                 <h2 class="ps-3 ps-sm-0">Published issue</h2>
@@ -964,7 +707,7 @@ get_header();
 
         </div>
 
-        <!-- INNSPUB JOURNALS Slider -->
+        <!-- TODO dyn INNSPUB JOURNALS Slider -->
         <div class="container position-relative">
             <div class="swiper innspub_journal">
                 <h2 class="ps-3 ps-sm-0">INNSPUB journals</h2>
