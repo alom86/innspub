@@ -365,6 +365,24 @@
         }
     }
 
+    .publication_list {
+
+        p {
+            padding: 16px 0;
+            border-top: 1px solid $color_line;
+            border-bottom: 1px solid $color_line;
+        }
+
+        table {
+            tr {
+                display: block;
+                padding: 16px 0;
+                border-top: 1px solid $color_line;
+                border-bottom: 1px solid $color_line;
+            }
+        }
+    }
+
 
     // Responsive
     @media (min-width: 576px) {
@@ -468,10 +486,10 @@
         .profile_cheif {
             flex-direction: row;
 
-            &__img-cheif{
+            &__img-cheif {
                 width: 195px;
 
-                img{
+                img {
                     max-width: unset;
                 }
             }

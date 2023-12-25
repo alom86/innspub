@@ -2121,6 +2121,17 @@ img {
   font-weight: 600;
   margin-right: 6px;
 }
+.page_content .publication_list p {
+  padding: 16px 0;
+  border-top: 1px solid #DBDBDB;
+  border-bottom: 1px solid #DBDBDB;
+}
+.page_content .publication_list table tr {
+  display: block;
+  padding: 16px 0;
+  border-top: 1px solid #DBDBDB;
+  border-bottom: 1px solid #DBDBDB;
+}
 @media (min-width: 576px) {
   .page_content .profile_cheif {
     flex-direction: column;
