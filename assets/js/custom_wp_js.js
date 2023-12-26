@@ -23,8 +23,6 @@
     $('.breadcrumb-item.dropdown').hide();
   }
 
-  
-
   // home nav-tab to select
   // if ($(window).width() > 767) {
   //   $(".nav_tabs .nav").removeClass('dropdown-menu');
