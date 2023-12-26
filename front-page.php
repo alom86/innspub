@@ -72,6 +72,7 @@ get_header();
                         <h2><?php esc_html(the_field('faqs_title', 'option')); ?></h2>
 
                         <div class="accordion accordion_home" id="accordionFAQ">
+                            
                             <?php if (have_rows('faqu_group', 'option')) : ?>
                                 <?php $fcounts = 0;
                                 while (have_rows('faqu_group', 'option')) : the_row();
