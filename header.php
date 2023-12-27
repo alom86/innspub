@@ -33,11 +33,26 @@
                 <div class="nav-top__left">
                     <div class="nav-top__left-link d-xl-none">
                         <a href="<?php echo home_url(); ?>"><i class="fa-solid fa-house"></i> <span class="sr-only">home icon</span></a>
+                        <!-- TODO dynamic -->
                         <a href="#"><i class="fa-solid fa-user"></i> <span class="sr-only">user icon</span></a>
                     </div>
 
                     <div class="nav-top__welcome d-none d-xl-block">
-                        <span class="nav-top__welcome-title"><?php if (!empty(the_field('header_top_right_text', 'option'))) : echo esc_html(the_field('header_top_right_text', 'option')); endif; ?> <span class="text_primary">INNS Pub.</span></span>
+                        <span class="nav-top__welcome-title">
+                            <?php 
+                                $welcome_home_text = get_field('welcome_home_text', 'option'); // Fetch the ACF value
+
+                                if ($welcome_home_text): // If ACF field has a value
+                                ?>
+                                    <?php echo $welcome_home_text; ?>
+                                <?php else: // If ACF field is empty or doesn't have a value
+                                ?>
+                                    Welcome to International Network for Natural Sciences
+                                <?php endif;
+                            ?>
+
+                            |<span class="text_primary"> INNS Pub.</span>
+                        </span>
                     </div>
                 </div>
 
@@ -45,10 +60,12 @@
                     <!-- need add style on xl -->
                     <div class="nav-top__right-link d-none d-xl-block">
                         <a href="<?php echo home_url(); ?>"><i class="fa-solid fa-house"></i> Home</a>
+                        <!-- TODO dynamic -->
                         <a href="#"><i class="fa-solid fa-user"></i> My Account</a>
                     </div>
                     <div class="nav-top__right-button">
-                        <a href="https://innspub.net/innspub-submission-gateway"><span class="d-none d-sm-inline">Submit</span> Manuscript</a>
+                        <!-- TODO dynamic -->
+                        <a href="https://innspub.net/innspub-submission-gateway" class="d-sm-flex gap-1"><span class="d-none d-sm-inline">Submit </span> Manuscript</a>
                     </div>
                     <img class="nav-top__right-double_slash d-none d-xl-block" src="<?php echo get_template_directory_uri() ?>/assets/images/shape/double_slash.webp" alt="double_slash">
                     <div class="social d-none d-xl-flex">
@@ -68,7 +85,19 @@
         <nav class="navbar">
             <div class="container px-0">
                 <a class="navbar__brand" href="<?php echo home_url(); ?>">
-                    <img width="180" height="42" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo/logo.webp" alt="logo">
+
+                    <?php 
+                        $header_logo_url = esc_url(get_field('header_logo', 'option')); // Fetch the ACF value
+
+                        if ($header_logo_url): // If ACF field has a value
+                        ?>
+                            <img width="180" height="42" src="<?php echo $header_logo_url; ?>" alt="header logo">
+                        <?php else: // If ACF field is empty or doesn't have a value
+                        ?>
+                            <img width="180" height="42" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo/logo.webp" alt="header logo">
+                        <?php endif; 
+                    ?>
+
                 </a>
 
                 <!-- desktop menu -->
@@ -101,7 +130,19 @@
                 <div class="offcanvas offcanvas-start" tabindex="-1" id="menuOffcanvas" aria-labelledby="menuOffcanvas">
                     <div class="offcanvas-header p-0 mb-4">
                         <a class="navbar__brand" href="<?php echo home_url(); ?>">
-                            <img width="180" height="42" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo/logo.webp" alt="logo">
+                            
+                            <?php 
+                                $header_logo_url = esc_url(get_field('header_logo', 'option')); // Fetch the ACF value
+
+                                if ($header_logo_url): // If ACF field has a value
+                                ?>
+                                    <img width="180" height="42" src="<?php echo $header_logo_url; ?>" alt="header logo">
+                                <?php else: // If ACF field is empty or doesn't have a value
+                                ?>
+                                    <img width="180" height="42" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo/logo.webp" alt="header logo">
+                                <?php endif; 
+                            ?>
+
                         </a>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
                             <i class="fa-solid fa-xmark"></i>

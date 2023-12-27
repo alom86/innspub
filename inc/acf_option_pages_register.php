@@ -56,11 +56,11 @@ function register_acf_options_pages() {
             'parent_slug'	=> 'theme-general-settings',
         ));
         
-        acf_add_options_sub_page(array(
-            'page_title' 	=> 'Header Top Options',
-            'menu_title'	=> 'Header Top Right Settings',
-            'parent_slug'	=> 'theme-general-settings',
-        ));
+        // acf_add_options_sub_page(array(
+        //     'page_title' 	=> 'Header Top Options',
+        //     'menu_title'	=> 'Header Top Right Settings',
+        //     'parent_slug'	=> 'theme-general-settings',
+        // ));
     }
 }
 add_action('acf/init', 'register_acf_options_pages');

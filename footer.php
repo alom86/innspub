@@ -21,9 +21,33 @@
             <div class="row g-4">
                 <div class="col-xl-4">
                     <div class="footer-item">
-                        <img class="footer-item__logo" width="140" height="32" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo/logo_white.webp" alt="logo_white">
-                        <!-- TODO need dynamic field -->
-                        <p class="footer-item__description mb-4">International Network for Natural Sciences <em>(INNSpub)</em> is an open access research journal publisher that's dedicated to publish scholarly research papers and books, to believe in sharing new scientific knowledge in the field.</p>
+                        
+                        <a href="<?php home_url(); ?>">
+                            <?php 
+                                $footer_logo_url = esc_url(get_field('footer_logo', 'option')); // Fetch the ACF value
+
+                                if ($footer_logo_url): // If ACF field has a value
+                                ?>
+                                    <img class="footer-item__logo" width="140" height="32" src="<?php echo $footer_logo_url; ?>" alt="footer logo">
+                                <?php else: // If ACF field is empty or doesn't have a value
+                                ?>
+                                    <img class="footer-item__logo" width="140" height="32" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo/logo_white.webp" alt="footer logo">
+                                <?php endif; 
+                            ?>
+                        </a>
+
+                        <?php 
+                            $footer_short_description = get_field('footer_short_description', 'option'); // Fetch the ACF value
+
+                            if ($footer_short_description): // If ACF field has a value
+                            ?>
+                                <p class="footer-item__description mb-4"><?php echo $footer_short_description; ?></p>
+                            <?php else: // If ACF field is empty or doesn't have a value
+                            ?>
+                                <p class="footer-item__description mb-4">International Network for Natural Sciences <em>(INNSpub)</em> is an open access research journal publisher that's dedicated to publish scholarly research papers and books, to believe in sharing new scientific knowledge in the field.</p>
+                            <?php endif;
+                        ?>
+                        
                         <div class="social d-flex justify-content-start">
                             <a class="social__link" href="<?php if (!empty(the_field('face_book_url', 'option'))) : esc_html(the_field('face_book_url', 'option')); endif; ?>" target="_blank"><i class="fa-brands fa-facebook-f"></i><span class="sr-only">facebook icon</span></a>
                             <a class="social__link" href="<?php if (!empty(the_field('twitter_url', 'option'))) : esc_html(the_field('twitter_url', 'option')); endif; ?>" target="_blank"><i class="fa-brands fa-twitter"></i><span class="sr-only">twitter icon</span></a>
