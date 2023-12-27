@@ -115,54 +115,41 @@ get_header();
     <!-- Feature & author -->
     <section class="section_gap">
         <div class="container">
-            <!-- TODO dynamic feature -->
+            <!-- feature -->
             <div class="feature">
                 <h2>Features</h2>
                 <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-xl-4">
-                    <div class="col">
-                        <div class="card">
-                            <div class="card__icon">
-                                <i class="fa-solid fa-globe"></i>
+                    
+                    <?php
+                    $authorss         = new WP_Query(array(
+                        'post_type' => 'feature',
+                        'posts_per_page' => 4,
+                        'orderby'        => 'DESC'
+                    ));
+                    while ($authorss->have_posts()) :
+                        $authorss->the_post();
+                    ?>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="card__icon">
+                                    <!-- <i class="fa-solid fa-globe"></i> -->
+                                    <?php the_post_thumbnail(); ?>
+                                    <img src="<?php esc_url(the_field('delivery_hover_icon')); ?>" alt="<?php the_title(); ?>">
+                                </div>
+                                <h3><?php the_title(); ?></h3>
+                                <?php the_content(); ?>
+                                <a class="btn btn_secondary" href="<?php if (!empty('delivery_button_url')) : esc_url(the_field('delivery_button_url')); endif; ?>"><?php if (!empty('delivery_button_text')) : esc_url(the_field('delivery_button_text')); endif; ?></a>
                             </div>
-                            <h3>Scope and Area</h3>
-                            <p>INNSpub aims to be a significant
-                                contributor to the scientific areas in the
-                                digital era and presents the latest
-                                informations concerning high technologies
-                                around the world.</p>
-                            <a class="btn btn_secondary" href="#">Details</a>
                         </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <div class="card__icon">
-                                <i class="fa-solid fa-book-open-reader"></i>
-                            </div>
-                            <h3>Peer Review</h3>
-                            <p>We follow the peer review process in selecting research publications where the scholars and experts evaluate the research work presented and certify with a quick response.</p>
-                            <a class="btn btn_secondary" href="#">Details</a>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <div class="card__icon">
-                                <i class="fa-solid fa-book-journal-whills"></i>
-                            </div>
-                            <h3>Rapid Publication</h3>
-                            <p>We are happy to introduce a super-fast publication model. The global authors can publish their work as quickly as possible depending on their requirement.</p>
-                            <a class="btn btn_secondary" href="#">Details</a>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <div class="card__icon">
-                                <i class="fa-solid fa-unlock"></i>
-                            </div>
-                            <h3>Open Access</h3>
-                            <p>INNSpub supports fully open access policy, every user and reads have the right to download, copy, distribute and print with free of cost after final publications.</p>
-                            <a class="btn btn_secondary" href="#">Details</a>
-                        </div>
-                    </div>
+                    
+                    <?php
+                    endwhile;
+                    wp_reset_query();
+                    ?>
+
+                    
+                
                 </div>
             </div>
 
