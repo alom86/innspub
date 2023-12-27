@@ -2,6 +2,8 @@ International Network for Natural Sciences
 
 
 #TODO Need to do Dynamic
+<!-- Header > Header Top Right Settings to Theme Options General Settings  -->
+Header > Top header > My Account, Submit Manuscript
 Home > Banner section (online static)
 <!-- Home > About section --> TODO unique feature list
 <!-- Home > Feature section  -->
