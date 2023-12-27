@@ -5,20 +5,21 @@ Affiliated journal, Editorial Board, Author Instruction page same page layout
 
 #TODO Need to do Dynamic
 About > Office | Contact page
-Current issue query update to one month
+<!-- Current issue query update to one month -->
 <!-- Journals > Affiliated Journal --> theme option already remove page description 
 <!-- Journals > Editorial Board --> page description online static ache theme page content diye dynamic kora hoyeche
 <!-- Authors > Author Instruction --> page description online static ache theme page content diye dynamic kora hoyeche
 <!-- 5 Journal details template > done(5 journal) --> TODO Published Paper filter 
-Board Members
-single member > Publications list design update dynamic content
+<!-- Board Members -->
+<!-- single member > Publications list design update dynamic content -->
+<!-- Archive > INNSPub Library --> TODO remove sql query to qp query
 
-Excellence > Ebook publishing /shortcode
-Tutorials > FAQs
-Sidebar > Get subscription /shortcode
-Sidebar > Indexed In
+Excellence > Ebook publishing
+<!-- Tutorials > FAQs -->
+Sidebar > Get subscription
+<!-- Sidebar > Indexed In -->
+<!-- Sidebar > Member In -->
 Sidebar > Plagiarism Checker
-Sidebar > Member In
 <!-- Theme Option > Affilated page settings --> no need this option and already removed
 <!-- Theme Option > Single journal settings -->
 Theme Option > Contact page setting
