@@ -1,9 +1,18 @@
 International Network for Natural Sciences
 
-#Note
-Affiliated journal, Editorial Board, Author Instruction page same page layout
 
 #TODO Need to do Dynamic
+Home > Banner section (online static)
+<!-- Home > About section --> TODO unique feature list
+Home > Feature section 
+<!-- Home > For Author section  -->
+<!-- Home > Why choose section  -->
+<!-- Home > Announcement slider section  -->
+<!-- Home > Global editor slider section  -->
+<!-- Home > Counter section  --> TODO title, descripton
+<!-- Home > Latest paper section  --> TODO most popular sidebar accordion
+Home > Published Issue slider section 
+Home > INNSPub Journal slider section 
 About > Office | Contact page
 <!-- Current issue query update to one month -->
 <!-- Journals > Affiliated Journal --> theme option already remove page description 
@@ -12,7 +21,7 @@ About > Office | Contact page
 <!-- 5 Journal details template > done(5 journal) --> TODO Published Paper filter 
 <!-- Board Members -->
 <!-- single member > Publications list design update dynamic content -->
-<!-- Archive > INNSPub Library --> TODO remove sql query to qp query
+<!-- Archive > INNSPub Library remove sql query to qp query -->
 
 Excellence > Ebook publishing
 <!-- Tutorials > FAQs -->

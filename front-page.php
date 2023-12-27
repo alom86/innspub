@@ -72,7 +72,7 @@ get_header();
                         <h2><?php esc_html(the_field('faqs_title', 'option')); ?></h2>
 
                         <div class="accordion accordion_home" id="accordionFAQ">
-                            
+
                             <?php if (have_rows('faqu_group', 'option')) : ?>
                                 <?php $fcounts = 0;
                                 while (have_rows('faqu_group', 'option')) : the_row();
@@ -94,7 +94,7 @@ get_header();
                                     </div>
 
                                 <?php
-                                    if ($fcounts == 5) {
+                                    if ($fcounts == 6) {
                                         break;
                                     }
                                 endwhile;
@@ -166,70 +166,47 @@ get_header();
                 </div>
             </div>
 
-            <!-- TODO dynamic author -->
+            <!-- author -->
             <div class="author">
                 <h2>For authors</h2>
                 <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-xl-4">
-                    <div class="col">
-                        <div class="card">
-                            <div class="card__img">
-                                <img width="515" height="387" src="<?php echo get_template_directory_uri(); ?>/assets/images/authors/INNSpub_Library.webp" alt="INNSpub_Library">
-                            </div>
-                            <h3>INNSpub Library</h3>
-                            <ul>
-                                <li>Linked with global database</li>
-                                <li>Open access library module</li>
-                                <li>Support to reader & researches</li>
-                            </ul>
 
-                            <a class="btn btn_secondary" href="#">View Paper</a>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <div class="card__img">
-                                <img width="515" height="387" src="<?php echo get_template_directory_uri(); ?>/assets/images/authors/Reviewer_Pannel.webp" alt="Reviewer_Pannel">
-                            </div>
-                            <h3>Reviewer Panel</h3>
-                            <ul>
-                                <li>World distributed reviewers</li>
-                                <li>Review of international standards</li>
-                                <li>Fast and prominent review quality</li>
-                            </ul>
+                    <?php
+                    $authorss         = new WP_Query(array(
+                        'post_type' => 'authors',
+                        'posts_per_page' => 4,
+                        'orderby'        => 'DESC'
+                    ));
+                    while ($authorss->have_posts()) :
+                        $authorss->the_post();
+                    ?>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card__img">
+                                    <?php the_post_thumbnail(); ?>
+                                </div>
+                                <h3><?php the_title(); ?></h3>
+                                <ul>
+                                    <?php if (!empty('author_text_one')) : ?>
+                                        <li><?php esc_html(the_field('author_text_one')); ?></li>
+                                    <?php endif; ?>
+                                    <?php if (!empty('author_text_two')) : ?>
+                                        <li><?php esc_html(the_field('author_text_two')); ?></li>
+                                    <?php endif; ?>
+                                    <?php if (!empty('author_text_three')) : ?>
+                                        <li><?php esc_html(the_field('author_text_three')); ?></li>
+                                    <?php endif; ?>
+                                </ul>
 
-                            <a class="btn btn_secondary" href="#">Author Guideline</a>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <div class="card__img">
-                                <img width="515" height="387" src="<?php echo get_template_directory_uri(); ?>/assets/images/authors/Manuscript_Submission.webp" alt="Manuscript_Submission">
+                                <a class="btn btn_secondary" href="<?php if (!empty(the_field('button_url'))) : the_field('button_url'); endif;  ?>"><?php if (!empty(the_field('button_text'))) : the_field('button_text'); endif;  ?></a>
                             </div>
-                            <h3>Manuscript Submission</h3>
-                            <ul>
-                                <li>Schedule to rapid publications</li>
-                                <li>Online submission portal</li>
-                                <li>Quick review response</li>
-                            </ul>
-
-                            <a class="btn btn_secondary" href="#">Editorial Board</a>
                         </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <div class="card__img">
-                                <img width="515" height="387" src="<?php echo get_template_directory_uri(); ?>/assets/images/authors/Manuscript_Preparation.webp" alt="Manuscript_Preparation">
-                            </div>
-                            <h3>Manuscript Preparation</h3>
-                            <ul>
-                                <li>Online submission access</li>
-                                <li>Fast & quality publications</li>
-                                <li>Low cost publications</li>
-                            </ul>
 
-                            <a class="btn btn_secondary" href="#">Online Submission</a>
-                        </div>
-                    </div>
+                    <?php
+                    endwhile;
+                    wp_reset_query();
+                    ?>
+
                 </div>
             </div>
         </div>
@@ -278,88 +255,51 @@ get_header();
 
     <!-- Announcements & Global Editors -->
     <section class="section_gap bg-white px-0">
-        <!-- TODO dynamic Announcements Slider -->
+        <!-- Announcements Slider -->
         <div class="container position-relative mb-5">
             <div class="swiper announcements">
                 <h2 class="ps-3 ps-sm-0">Announcements</h2>
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
+
+                    <?php
+                    $authorss         = new WP_Query(array(
+                        'post_type' => 'announcement',
+                        'posts_per_page' => 4,
+                        'orderby'        => 'DESC'
+                    ));
+                    while ($authorss->have_posts()) :
+                        $authorss->the_post();
+                    ?>
+
                     <!-- Slides -->
                     <div class="swiper-slide">
                         <div class="card">
                             <div class="card__img">
-                                <img width="412" height="310" src="<?php echo get_template_directory_uri(); ?>/assets/images/announcements/Propose-a-Special-Issue.webp" alt="Propose-a-Special-Issue">
+                                <?php the_post_thumbnail(); ?>
                             </div>
-                            <h3>Propose a Special Issue</h3>
+                            <h3><?php the_title(); ?></h3>
                             <ul>
-                                <li>Linked with global database</li>
-                                <li>Open access library module</li>
-                                <li>Support to reader & researches</li>
+                                <?php if (!empty('first_announcement')) : ?>
+                                    <li><?php esc_html(the_field('first_announcement')); ?></li>
+                                <?php endif; ?>
+                                <?php if (!empty('second_announcement')) : ?>
+                                    <li><?php esc_html(the_field('second_announcement')); ?></li>
+                                <?php endif; ?>
+                                <?php if (!empty('third_announcement')) : ?>
+                                    <li><?php esc_html(the_field('third_announcement')); ?></li>
+                                <?php endif; ?>
                             </ul>
 
-                            <a class="btn btn_secondary" href="#">Sen Proposal</a>
+                            <a class="btn btn_secondary" href="<?php if (!empty(the_field('announce_button_url'))) : the_field('announce_button_url'); endif;  ?>"><?php if (!empty(the_field('announce_button_text'))) : the_field('announce_button_text'); endif;  ?></a>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="card">
-                            <div class="card__img">
-                                <img width="412" height="310" src="<?php echo get_template_directory_uri(); ?>/assets/images/announcements/Become-a-Member.webp" alt="Become-a-Member">
-                            </div>
-                            <h3>Become a Member</h3>
-                            <ul>
-                                <li>Linked with global database</li>
-                                <li>Open access library module</li>
-                                <li>Support to reader & researches</li>
-                            </ul>
+                    
+                    <?php
+                    endwhile;
+                    wp_reset_query();
+                    ?>
 
-                            <a class="btn btn_secondary" href="#">Get subcription</a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="card">
-                            <div class="card__img">
-                                <img width="412" height="310" src="<?php echo get_template_directory_uri(); ?>/assets/images/announcements/Become-a-Reviewer.webp" alt="Become-a-Reviewer">
-                            </div>
-                            <h3>Become a Reviewer</h3>
-                            <ul>
-                                <li>Linked with global database</li>
-                                <li>Open access library module</li>
-                                <li>Support to reader & researches</li>
-                            </ul>
-
-                            <a class="btn btn_secondary" href="#">Apply Now</a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="card">
-                            <div class="card__img">
-                                <img width="412" height="310" src="<?php echo get_template_directory_uri(); ?>/assets/images/announcements/Call-for-Paper.webp" alt="Call-for-Paper">
-                            </div>
-                            <h3>Call for Paper</h3>
-                            <ul>
-                                <li>Linked with global database</li>
-                                <li>Open access library module</li>
-                                <li>Support to reader & researches</li>
-                            </ul>
-
-                            <a class="btn btn_secondary" href="#">Submit Now</a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="card">
-                            <div class="card__img">
-                                <img width="412" height="310" src="<?php echo get_template_directory_uri(); ?>/assets/images/announcements/Call-for-Paper.webp" alt="Call-for-Paper">
-                            </div>
-                            <h3>Call for Paper</h3>
-                            <ul>
-                                <li>Linked with global database</li>
-                                <li>Open access library module</li>
-                                <li>Support to reader & researches</li>
-                            </ul>
-
-                            <a class="btn btn_secondary" href="#">Submit Now</a>
-                        </div>
-                    </div>
                 </div>
 
                 <!-- If we need pagination -->
