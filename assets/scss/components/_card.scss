@@ -23,6 +23,14 @@
             color: $color_primary;
             font-size: 28px;
         }
+
+        img {
+            min-width: 30px;
+
+            &:last-child{
+                display: none;
+            }
+        }
     }
 
     &__img {
@@ -96,6 +104,15 @@
 
                 i {
                     color: $color_white;
+                }
+
+                img {
+                    &:first-child{
+                        display: none;
+                    }
+                    &:last-child{
+                        display: block;
+                    }
                 }
             }
 
