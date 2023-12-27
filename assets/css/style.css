@@ -984,6 +984,12 @@ img {
   color: #018B40;
   font-size: 28px;
 }
+.card__icon img {
+  min-width: 30px;
+}
+.card__icon img:last-child {
+  display: none;
+}
 .card__img {
   width: 100%;
   padding-bottom: 16px;
@@ -1041,6 +1047,12 @@ img {
 }
 .card:hover .card__icon i {
   color: #FFFFFF;
+}
+.card:hover .card__icon img:first-child {
+  display: none;
+}
+.card:hover .card__icon img:last-child {
+  display: block;
 }
 .card:hover .card__journal_name {
   opacity: 1;
