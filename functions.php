@@ -129,6 +129,9 @@ require get_template_directory() . '/inc/cpt_register.php';
 // ACF Option Pages
 require get_template_directory() . '/inc/acf_option_pages_register.php';
 
+// Post View Count
+require get_template_directory() . '/inc/post_view.php';
+
 /**
  * Custom template tags for this theme.
  */
