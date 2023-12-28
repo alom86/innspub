@@ -507,12 +507,40 @@ img {
   width: 100%;
 }
 
+.btn_file {
+  gap: 8px;
+  height: 26px;
+  border: 1px solid #132833;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 23px;
+  color: #132833;
+  transition: 0.3s;
+}
+.btn_file:hover, .btn_file:active {
+  background-color: #018B40 !important;
+  color: #FFFFFF !important;
+  border-color: #018B40 !important;
+}
+.btn_file:hover svg path, .btn_file:active svg path {
+  fill: #FFFFFF;
+}
+
 @media (min-width: 576px) {
   .btn_full {
     width: auto;
   }
   .btn_primary, .btn_secondary {
     min-width: 160px;
+  }
+}
+@media (min-width: 768px) {
+  .btn_file {
+    height: 30px;
+    font-size: 14px;
+    padding: 8px 12px;
   }
 }
 .navbar {
@@ -1319,6 +1347,14 @@ img {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+.card-issue__book_button {
+  background-color: #F9F9F9;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 12px;
+}
 @media (min-width: 576px) {
   .card-issue__statistics {
     font-size: 14px;
@@ -1348,6 +1384,9 @@ img {
   .card-issue__description {
     margin-top: 24px;
     padding-top: 24px;
+  }
+  .card-issue__book_button {
+    padding: 12px 24px;
   }
 }
 

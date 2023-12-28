@@ -96,6 +96,31 @@
     width: 100%;
 }
 
+.btn_file{
+    gap: 8px;
+    height: 26px;
+    border: 1px solid $color_natural_head;
+    padding: 6px 12px;
+    border-radius: $radius_1;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 23px;
+    color: $color_natural_head;
+    transition: $transition;
+
+    &:hover, &:active{
+        background-color: $color_primary !important;
+        color: $color_white !important;
+        border-color: $color_primary !important;
+
+        svg {
+            path {
+                fill: $color_white;
+            }
+        }
+    }
+}
+
 
 // Responsive
 @media (min-width: 576px) {
@@ -105,5 +130,13 @@
 
     .btn_primary, .btn_secondary{
         min-width: 160px;
+    }
+}
+
+@media (min-width: 768px) {
+    .btn_file{
+        height: 30px;
+        font-size: 14px;
+        padding: 8px 12px;
     }
 }
