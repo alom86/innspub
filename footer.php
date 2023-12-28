@@ -10,7 +10,19 @@
 	<!-- footer before -->
 	<div class="footer_before">
         <div class="container">
-            <a class="btn btn_primary" href="https://innspub.net/innspub-submission-gateway">Submit Manuscript</a>
+            <a class="btn btn_primary" href="
+                <?php 
+                    $submit_manuscript_page_link = get_field('submit_manuscript_page_link', 'option'); // Fetch the ACF value
+
+                    if ($submit_manuscript_page_link): // If ACF field has a value
+                    ?>
+                        <?php echo $submit_manuscript_page_link; ?>
+                    <?php else: // If ACF field is empty or doesn't have a value
+                    ?>
+                        https://innspub.net/innspub-submission-gateway
+                    <?php endif;
+                ?>
+            ">Submit Manuscript</a>
         </div>
     </div>
 

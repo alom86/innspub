@@ -38,9 +38,8 @@ Theme Option > Contact page setting
 
 
 TODO on live
-Theme Option text remove 'INNS Pub.'
 Create 'Sidebar Links Menu'
 single page remove '|' Home Journals Submission
 Tutorial page change template: Tutorial Page
 editor photo must same ration
-template-part> logo_menu update link
+template-part > logo_menu update link

@@ -65,7 +65,20 @@
                     </div>
                     <div class="nav-top__right-button">
                         <!-- TODO dynamic -->
-                        <a href="https://innspub.net/innspub-submission-gateway" class="d-sm-flex gap-1"><span class="d-none d-sm-inline">Submit </span> Manuscript</a>
+                        <a href="
+                            <?php 
+                                $submit_manuscript_page_link = get_field('submit_manuscript_page_link', 'option'); // Fetch the ACF value
+
+                                if ($submit_manuscript_page_link): // If ACF field has a value
+                                ?>
+                                    <?php echo $submit_manuscript_page_link; ?>
+                                <?php else: // If ACF field is empty or doesn't have a value
+                                ?>
+                                    https://innspub.net/innspub-submission-gateway
+                                <?php endif;
+                            ?>
+                        
+                        " class="d-sm-flex gap-1"><span class="d-none d-sm-inline">Submit </span> Manuscript</a>
                     </div>
                     <img class="nav-top__right-double_slash d-none d-xl-block" src="<?php echo get_template_directory_uri() ?>/assets/images/shape/double_slash.webp" alt="double_slash">
                     <div class="social d-none d-xl-flex">
