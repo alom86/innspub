@@ -130,7 +130,7 @@ require get_template_directory() . '/inc/cpt_register.php';
 require get_template_directory() . '/inc/acf_option_pages_register.php';
 
 // Post View Count
-require get_template_directory() . '/inc/post_view.php';
+require get_template_directory() . '/inc/post_view_download.php';
 
 /**
  * Custom template tags for this theme.

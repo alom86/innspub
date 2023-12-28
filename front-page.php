@@ -53,16 +53,38 @@ get_header();
                         <h2><?php esc_html(the_field('habout_title', 'option')); ?></h2>
                         <p><?php esc_html(the_field('habout_content', 'option')); ?></p>
                     </div>
-                    <!-- TODO need dynamic field -->
                     <div class="about__content">
-                        <h2>Unique features</h2>
-                        <ul>
-                            <li>Fast-track peer-reviewed by international experts</li>
-                            <li>Continuous and Fast nature publications</li>
-                            <li>Open access for facilitating with a higher number of citations</li>
-                            <li>Covered by renowned abstracting and indexing services</li>
-                            <li>All IJB articles are assigned to CrossRef DOI number</li>
-                        </ul>
+                        <h2>
+                            <?php 
+                                $unique_features_title = get_field('unique_features_title', 'option'); // Fetch the ACF value
+
+                                if ($unique_features_title): // If ACF field has a value
+                                ?>
+                                    <?php echo $unique_features_title; ?>
+                                <?php else: // If ACF field is empty or doesn't have a value
+                                ?>
+                                    Unique features
+                                <?php endif;
+                            ?>
+                        </h2>
+                        <?php 
+                            $unique_features_list = get_field('unique_features_list', 'option'); // Fetch the ACF value
+
+                            if ($unique_features_list): // If ACF field has a value
+                            ?>
+                                <?php echo $unique_features_list; ?>
+                            <?php else: // If ACF field is empty or doesn't have a value
+                            ?>
+                            <ul>
+                                <li>Fast-track peer-reviewed by international experts</li>
+                                <li>Continuous and Fast nature publications</li>
+                                <li>Open access for facilitating with a higher number of citations</li>
+                                <li>Covered by renowned abstracting and indexing services</li>
+                                <li>All IJB articles are assigned to CrossRef DOI number</li>
+                            </ul>
+                            <?php endif;
+                        ?>
+                        
                     </div>
                     <a class="btn btn_primary" href="<?php esc_url(the_field('habout_btnurl', 'option')); ?>"><?php esc_html(the_field('habout_btn', 'option')); ?></a>
                 </div>
@@ -319,13 +341,48 @@ get_header();
         <div class="container">
             <div class="row g-4 g-md-5 flex-lg-row-reverse row-cols-1 row-cols-lg-2">
                 <div class="col d-lg-flex align-items-center">
-                    <!-- TODO need dynamic field -->
-                    <img width="720" height="315" src="<?php echo get_template_directory_uri(); ?>/assets/images/we_have/we_have_bg_image.webp" alt="we_have_bg_image">
+                    <img width="720" height="315" src="
+                        <?php 
+                            $counter_up_image = get_field('counter_up_image', 'option'); // Fetch the ACF value
+
+                            if ($counter_up_image): // If ACF field has a value
+                            ?>
+                                <?php echo $counter_up_image; ?>
+                            <?php else: // If ACF field is empty or doesn't have a value
+                            ?>
+                                <?php echo get_template_directory_uri(); ?>/assets/images/we_have/we_have_bg_image.webp
+                            <?php endif;
+                        ?>
+                    " alt="we_have_bg_image">
+
                 </div>
                 <div class="col">
-                    <!-- TODO need dynamic field -->
-                    <h2>A title that engages the visitors</h2>
-                    <p>Is a sales copy really omnipotent? Is there a universal formula for writing copy that will definitely lead to a sale?</p>
+                    <h2>
+                        <?php 
+                            $counter_up_main_title = get_field('counter_up_main_title', 'option'); // Fetch the ACF value
+
+                            if ($counter_up_main_title): // If ACF field has a value
+                            ?>
+                                <?php echo $counter_up_main_title; ?>
+                            <?php else: // If ACF field is empty or doesn't have a value
+                            ?>
+                                A title that engages the visitors
+                            <?php endif;
+                        ?>
+                    </h2>
+                    <p>
+                        <?php 
+                            $counter_up_description = get_field('counter_up_description', 'option'); // Fetch the ACF value
+
+                            if ($counter_up_description): // If ACF field has a value
+                            ?>
+                                <?php echo $counter_up_description; ?>
+                            <?php else: // If ACF field is empty or doesn't have a value
+                            ?>
+                                Is a sales copy really omnipotent? Is there a universal formula for writing copy that will definitely lead to a sale?
+                            <?php endif;
+                        ?>
+                    </p>
                     <div class="we_have__cards">
 
                         <?php if (have_rows('counter_up', 'option')) : ?>
