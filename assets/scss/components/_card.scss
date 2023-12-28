@@ -458,6 +458,15 @@
         }
     }
 
+    &__book_button{
+        background-color: $color_artboard;
+        padding: 8px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        gap: 12px;
+    }
+
 
     @media (min-width: 576px) {
         &__statistics {
@@ -496,6 +505,10 @@
         &__description {
             margin-top: 24px;
             padding-top: 24px;
+        }
+
+        &__book_button{
+            padding: 12px 24px;
         }
     }
 }
