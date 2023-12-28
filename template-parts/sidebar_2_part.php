@@ -22,7 +22,7 @@
 
                         <?php
                         // Specify the category slugs
-                        $category_slugs = array('ijb', 'ijbb', 'jbes', 'ijaar', 'ijmm');
+                        $category_slugs = array('ijaar', 'ijbb', 'ijb', 'ijmm', 'jbes');
 
                         foreach ($category_slugs as $category_slug) {
                             // Set up query arguments to fetch the most popular post in the current category
@@ -45,7 +45,7 @@
                                             <a href="<?php the_permalink() ?>">
                                                 <?php
                                                 $title = get_the_title();
-                                                $p_title = wp_trim_words($title, 8, ' ');
+                                                $p_title = wp_trim_words($title, 10, ' ');
                                                 echo $p_title;
                                                 ?>
                                             </a>

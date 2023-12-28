@@ -79,6 +79,44 @@
             "maxlength": ""
         },
         {
+            "key": "field_658d59c70e9b9",
+            "label": "Unique Features Title",
+            "name": "unique_features_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_658d59ff0e9ba",
+            "label": "Unique Features List",
+            "name": "unique_features_list",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
             "key": "field_628e3b2b1f5c9",
             "label": "Faqs Title",
             "name": "faqs_title",
@@ -194,5 +232,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1703069344
+    "modified": 1703762477
 }

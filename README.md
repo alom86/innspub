@@ -3,7 +3,7 @@ International Network for Natural Sciences
 
 #TODO Need to do Dynamic
 <!-- Header > Header Top Right Settings to Theme Options General Settings  -->
-Header > Top header > My Account, Submit Manuscript
+Header > Top header > My Account
 Home > Banner section (online static)
 <!-- Home > About section --> TODO unique feature list
 <!-- Home > Feature section  -->
@@ -12,7 +12,7 @@ Home > Banner section (online static)
 <!-- Home > Announcement slider section  -->
 <!-- Home > Global editor slider section  -->
 <!-- Home > Counter section  --> TODO title, descripton
-<!-- Home > Latest paper section  --> TODO most popular sidebar accordion
+<!-- Home > Latest paper section  most popular sidebar accordion -->
 Home > Published Issue slider section
 Home > INNSPub Journal slider section
 
