@@ -262,7 +262,6 @@ function cptui_register_my_cpts()
 		"rewrite" => ["slug" => "journal", "with_front" => true],
 		"query_var" => true,
 		"menu_icon" => "dashicons-text-page",
-		"menu_position" => 5,
 		"supports" => ["title", "editor", "thumbnail", "custom-fields"],
 		"taxonomies" => ["category"],
 		"show_in_graphql" => false,
@@ -526,7 +525,6 @@ function cptui_register_my_cpts()
 		"rewrite" => ["slug" => "editor", "with_front" => true],
 		"query_var" => true,
 		"menu_icon" => "dashicons-edit-page",
-		"menu_position" => 6,
 		"supports" => ["title", "editor", "author"],
 		"taxonomies" => ["category"],
 		"show_in_graphql" => false,
@@ -565,7 +563,6 @@ function cptui_register_my_cpts()
 		"can_export" => true,
 		"rewrite" => ["slug" => "indexedin", "with_front" => true],
 		"query_var" => true,
-		"menu_position" => 7,
 		"menu_icon" => "dashicons-index-card",
 		"supports" => ["title"],
 		"show_in_graphql" => false,
@@ -604,13 +601,53 @@ function cptui_register_my_cpts()
 		"can_export" => true,
 		"rewrite" => ["slug" => "memberin", "with_front" => true],
 		"query_var" => true,
-		"menu_position" => 8,
 		"menu_icon" => "dashicons-buddicons-groups",
 		"supports" => ["title"],
 		"show_in_graphql" => false,
 	];
 
 	register_post_type("memberin", $args);
+
+
+
+	/**
+	 * Post Type: Home Feature section
+	 */
+
+	 $labels = [
+		"name" => esc_html__("Features", "custom-post-type-ui"),
+		"singular_name" => esc_html__("Feature", "custom-post-type-ui"),
+	];
+
+	$args = [
+		"label" => esc_html__("Features", "custom-post-type-ui"),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"rest_namespace" => "wp/v2",
+		"has_archive" => false,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"can_export" => true,
+		"rewrite" => ["slug" => "feature", "with_front" => true],
+		"query_var" => true,
+		"menu_icon" => "dashicons-editor-expand",
+		"supports" => ["title", "editor", "thumbnail", "custom-fields"],
+		"show_in_graphql" => false,
+	];
+
+	register_post_type("feature", $args);
+
 
 
 	/**
@@ -644,13 +681,13 @@ function cptui_register_my_cpts()
 		"can_export" => true,
 		"rewrite" => ["slug" => "authors", "with_front" => true],
 		"query_var" => true,
-		"menu_position" => 9,
 		"menu_icon" => "dashicons-networking",
 		"supports" => ["title", "thumbnail", "custom-fields"],
 		"show_in_graphql" => false,
 	];
 
 	register_post_type("authors", $args);
+
 
 
 	/**
@@ -684,7 +721,6 @@ function cptui_register_my_cpts()
 		"can_export" => true,
 		"rewrite" => ["slug" => "announcement", "with_front" => true],
 		"query_var" => true,
-		"menu_position" => 10,
 		"menu_icon" => "dashicons-controls-volumeon",
 		"supports" => ["title", "thumbnail", "custom-fields"],
 		"show_in_graphql" => false,
@@ -693,17 +729,18 @@ function cptui_register_my_cpts()
 	register_post_type("announcement", $args);
 
 
+
 	/**
-	 * Post Type: Home Feature section
+	 * Post Type: Home Published issue section
 	 */
 
 	$labels = [
-		"name" => esc_html__("Features", "custom-post-type-ui"),
-		"singular_name" => esc_html__("Feature", "custom-post-type-ui"),
+		"name" => esc_html__("Published Issues", "custom-post-type-ui"),
+		"singular_name" => esc_html__("Published Issue", "custom-post-type-ui"),
 	];
 
 	$args = [
-		"label" => esc_html__("Features", "custom-post-type-ui"),
+		"label" => esc_html__("Published Issue", "custom-post-type-ui"),
 		"labels" => $labels,
 		"description" => "",
 		"public" => true,
@@ -722,15 +759,17 @@ function cptui_register_my_cpts()
 		"map_meta_cap" => true,
 		"hierarchical" => false,
 		"can_export" => true,
-		"rewrite" => ["slug" => "feature", "with_front" => true],
+		"rewrite" => ["slug" => "published-issue", "with_front" => true],
 		"query_var" => true,
-		"menu_position" => 11,
-		"menu_icon" => "dashicons-editor-expand",
-		"supports" => ["title", "editor", "thumbnail", "custom-fields"],
+		"menu_icon" => "dashicons-table-col-delete",
+		"supports" => ["title", "custom-fields"],
 		"show_in_graphql" => false,
 	];
 
-	register_post_type("feature", $args);
+	register_post_type("published-issue", $args);
+
+
+	
 
 
 }

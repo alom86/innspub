@@ -10,7 +10,7 @@
 <div class="d-none d-lg-block">
     <aside class="sidebar">
         <div class="accordion" id="accordionSidebar">
-            <!-- TODO dynamic Most Popular -->
+            <!-- Most Popular -->
             <div class="accordion-item">
                 <h3 class="accordion-header">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#most_popular" aria-expanded="true" aria-controls="most_popular">
@@ -69,11 +69,6 @@
                             wp_reset_postdata(); // Reset post data for the next category
                         }
                         ?>
-
-
-
-
-
 
                     </div>
                 </div>

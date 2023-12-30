@@ -28,8 +28,19 @@
                             <?php $counter == 2 ? the_field('journal_editorial_board_button_url') : esc_url(the_sub_field('single_journal_icon_url')); ?>
 
                             "><?php esc_html(the_sub_field('journal_icon_title')); ?></a></h3>
-                            <!-- TODO need dynamic field -->
-                            <p>Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document</p>
+                            <p>
+                                <?php 
+                                    $single_journal_description = get_sub_field('single_journal_description', 'option'); // Fetch the ACF value
+
+                                    if ($single_journal_description): // If ACF field has a value
+                                    ?>
+                                        <?php echo $single_journal_description; ?>
+                                    <?php else: // If ACF field is empty or doesn't have a value
+                                    ?>
+                                        Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document
+                                    <?php endif;
+                                ?>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -57,8 +68,19 @@
                         </div>
                         <div>
                             <h3><a href="<?php esc_url(the_sub_field('single_journal_icon_url')); ?>"><?php esc_html(the_sub_field('journal_icon_title')); ?></a></h3>
-                            <!-- TODO need dynamic field -->
-                            <p>Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document</p>
+                            <p>
+                                <?php 
+                                    $single_journal_description = get_sub_field('single_journal_description', 'option'); // Fetch the ACF value
+
+                                    if ($single_journal_description): // If ACF field has a value
+                                    ?>
+                                        <?php echo $single_journal_description; ?>
+                                    <?php else: // If ACF field is empty or doesn't have a value
+                                    ?>
+                                        Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document
+                                    <?php endif;
+                                ?>
+                            </p>
                         </div>
                     </div>
                 </div>

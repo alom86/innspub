@@ -31,7 +31,7 @@ function register_acf_options_pages() {
             'parent_slug'	=> 'theme-general-settings',
         ));
         acf_add_options_sub_page(array(
-            'page_title' 	=> 'Theme About Settings',
+            'page_title' 	=> 'Home Choose Settings',
             'menu_title'	=> 'Home Choose Settings',
             'parent_slug'	=> 'theme-general-settings',
         ));
@@ -53,6 +53,11 @@ function register_acf_options_pages() {
         acf_add_options_sub_page(array(
             'page_title' 	=> 'Single Journal Options',
             'menu_title'	=> 'Single Journal Settings',
+            'parent_slug'	=> 'theme-general-settings',
+        ));
+        acf_add_options_sub_page(array(
+            'page_title' 	=> 'Sidebar Page Links',
+            'menu_title'	=> 'Sidebar Page Links',
             'parent_slug'	=> 'theme-general-settings',
         ));
         acf_add_options_sub_page(array(

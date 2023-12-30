@@ -15,7 +15,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "Welcome to International Network for Natural Sciences",
             "placeholder": "",
             "prepend": "",
             "append": "",
@@ -123,5 +123,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1703739392
+    "modified": 1703926505
 }

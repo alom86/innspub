@@ -1,6 +1,6 @@
 {
     "key": "group_629c22f2c316e",
-    "title": "Single Journal Icon Title",
+    "title": "Single Journal Options",
     "fields": [
         {
             "key": "field_629c237f173ee",
@@ -78,6 +78,25 @@
                         "id": ""
                     },
                     "return_format": "url"
+                },
+                {
+                    "key": "field_658fc5052e268",
+                    "label": "Single Journal Description",
+                    "name": "single_journal_description",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": ""
                 }
             ]
         }
@@ -100,5 +119,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1703306059
+    "modified": 1703921258
 }
