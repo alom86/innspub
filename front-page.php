@@ -333,7 +333,7 @@ get_header();
                             <?php while (have_rows('about_left', 'option')) : the_row(); ?>
                                 <div class="why_choose__card">
                                     <div class="why_choose__icon">
-                                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                                        <img src="<?php esc_url(the_sub_field('about_left_icon')); ?>" alt="<?php the_sub_field('about_left_title'); ?>">
                                     </div>
                                     <div class="why_choose__text">
                                         <h3><?php the_sub_field('about_left_title'); ?></h3>
@@ -374,7 +374,7 @@ get_header();
                     <?php
                     $authorss         = new WP_Query(array(
                         'post_type' => 'announcement',
-                        'posts_per_page' => 4,
+                        'posts_per_page' => 5,
                         'orderby'        => 'DESC'
                     ));
                     while ($authorss->have_posts()) :
@@ -713,73 +713,40 @@ get_header();
 
     <!-- Published issue & INNSPUB JOURNALS slide -->
     <section class="section_gap bg-white px-0">
-        <!-- TODO dynamic Published issue Slider -->
+        <!-- Published issue Slider -->
         <div class="container position-relative mb-5">
             <div class="swiper published_issue">
                 <h2 class="ps-3 ps-sm-0">Published issue</h2>
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <div class="swiper-slide">
-                        <div class="card card_secondary">
-                            <div class="card__journal">
-                                <img width="408" height="577" src="<?php echo get_template_directory_uri(); ?>/assets/images/published_issue/jbes.webp" alt="jbes">
-                            </div>
 
-                            <div class="card__journal_name">
-                                <a href="#">JBES-Number 2 Vol.18 2021</a>
-                                <span>Category: JBES</span>
+                    <?php
+                    $published_issue         = new WP_Query(array(
+                        'post_type' => 'published-issue',
+                        'posts_per_page' => 10,
+                        'orderby'        => 'DESC'
+                    ));
+                    while ($published_issue->have_posts()) :
+                        $published_issue->the_post();
+                    ?>
+
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <div class="card card_secondary">
+                                <div class="card__journal">
+                                    <img width="408" height="577" src="<?php the_field('issue_image'); ?>" alt="<?php the_title(); ?>">
+                                </div>
+                                <div class="card__journal_name">
+                                    <a href="<?php the_field('issue_link'); ?>"><?php the_title(); ?></a>
+                                    <span>Category: <?php the_field('issue_category'); ?></span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="card card_secondary">
-                            <div class="card__journal">
-                                <img width="408" height="577" src="<?php echo get_template_directory_uri(); ?>/assets/images/published_issue/ijaar.webp" alt="ijaar">
-                            </div>
 
-                            <div class="card__journal_name">
-                                <a href="#">ijaar-Number 2 Vol.18 2021</a>
-                                <span>Category: IJAAR</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="card card_secondary">
-                            <div class="card__journal">
-                                <img width="408" height="577" src="<?php echo get_template_directory_uri(); ?>/assets/images/published_issue/ijaar_2.webp" alt="ijaar_2">
-                            </div>
-
-                            <div class="card__journal_name">
-                                <a href="#">ijaar-Number 2 Vol.18 2021</a>
-                                <span>Category: IJAAR</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="card card_secondary">
-                            <div class="card__journal">
-                                <img width="408" height="577" src="<?php echo get_template_directory_uri(); ?>/assets/images/published_issue/jbes_2.webp" alt="jbes_2">
-                            </div>
-
-                            <div class="card__journal_name">
-                                <a href="#">ijaar-Number 2 Vol.18 2021</a>
-                                <span>Category: JBES</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="card card_secondary">
-                            <div class="card__journal">
-                                <img width="408" height="577" src="<?php echo get_template_directory_uri(); ?>/assets/images/published_issue/jbes_2.webp" alt="jbes_2">
-                            </div>
-
-                            <div class="card__journal_name">
-                                <a href="#">ijaar-Number 2 Vol.18 2021</a>
-                                <span>Category: JBES</span>
-                            </div>
-                        </div>
-                    </div>
+                    <?php
+                    endwhile;
+                    wp_reset_query();
+                    ?>
 
                 </div>
 
@@ -792,73 +759,39 @@ get_header();
 
         </div>
 
-        <!-- TODO dyn INNSPUB JOURNALS Slider -->
+        <!-- INNSPUB JOURNALS Slider -->
         <div class="container position-relative">
             <div class="swiper innspub_journal">
                 <h2 class="ps-3 ps-sm-0">INNSPUB journals</h2>
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
+
+                    <?php
+                    $journal_post         = new WP_Query(array(
+                        'post_type' => 'journal',
+                        'posts_per_page' => 10,
+                        'orderby'        => 'DESC'
+                    ));
+                    while ($journal_post->have_posts()) :
+                        $journal_post->the_post();
+                    ?>
                     <!-- Slides -->
                     <div class="swiper-slide">
                         <div class="card card_secondary">
                             <div class="card__journal">
-                                <img width="408" height="544" src="<?php echo get_template_directory_uri(); ?>/assets/images/innspub_journal/ijbb.webp" alt="ijbb">
+                                <?php the_post_thumbnail(); ?>
                             </div>
-
                             <div class="card__journal_name">
-                                <a href="#">JBES-Number 2 Vol.18 2021</a>
-                                <span>Category: ijbb</span>
+                                <a href="<?php the_field('journalmain_btnurl'); ?>"><?php the_title(); ?></a>
+                                <span>Category: <?php the_field('short_name_text'); ?></span>
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="card card_secondary">
-                            <div class="card__journal">
-                                <img width="408" height="544" src="<?php echo get_template_directory_uri(); ?>/assets/images/innspub_journal/ijb.webp" alt="ijb">
-                            </div>
 
-                            <div class="card__journal_name">
-                                <a href="#">ijaar-Number 2 Vol.18 2021</a>
-                                <span>Category: ijb</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="card card_secondary">
-                            <div class="card__journal">
-                                <img width="408" height="544" src="<?php echo get_template_directory_uri(); ?>/assets/images/innspub_journal/jbes.webp" alt="jbes">
-                            </div>
-
-                            <div class="card__journal_name">
-                                <a href="#">ijaar-Number 2 Vol.18 2021</a>
-                                <span>Category: jbes</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="card card_secondary">
-                            <div class="card__journal">
-                                <img width="408" height="544" src="<?php echo get_template_directory_uri(); ?>/assets/images/innspub_journal/ijaar.webp" alt="ijaar">
-                            </div>
-
-                            <div class="card__journal_name">
-                                <a href="#">ijaar-Number 2 Vol.18 2021</a>
-                                <span>Category: ijaar</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="card card_secondary">
-                            <div class="card__journal">
-                                <img width="408" height="544" src="<?php echo get_template_directory_uri(); ?>/assets/images/innspub_journal/ijaar.webp" alt="ijaar">
-                            </div>
-
-                            <div class="card__journal_name">
-                                <a href="#">ijaar-Number 2 Vol.18 2021</a>
-                                <span>Category: ijaar</span>
-                            </div>
-                        </div>
-                    </div>
+                    <?php
+                    endwhile;
+                    wp_reset_query();
+                    ?>
 
                 </div>
 

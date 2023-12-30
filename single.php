@@ -235,7 +235,7 @@ get_header();
 										</div> -->
 									</div>
 									
-									<!-- TODO social share -->
+									<!-- social share -->
 									<div class="social_share">
 										<a href="https://twitter.com/intent/tweet?url=<?php the_permalink(); ?>&text=<?php the_title(); ?>" target="_blank">
 											<svg width="14" height="14" viewBox="0 0 14 14" fill="#2D3E50" xmlns="http://www.w3.org/2000/svg">

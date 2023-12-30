@@ -9,8 +9,7 @@
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#indexed_in" aria-expanded="false" aria-controls="indexed_in">
             Indexed In
         </button>
-        <!-- TODO update link -->
-        <a href="<?php echo home_url(); ?>/indexed-in" class="btn btn_primary btn_more">More <span class="sr-only">read more link button</span></a>
+        <a href="<?php esc_url(the_field('indexed_in_page_link', 'option')); ?>" class="btn btn_primary btn_more">More <span class="sr-only">read more link button</span></a>
     </h3>
     <div id="indexed_in" class="accordion-collapse collapse" data-bs-parent="#accordionSidebar">
         <div class="accordion-body">
@@ -59,7 +58,7 @@
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#member_in" aria-expanded="false" aria-controls="member_in">
             Member In
         </button>
-        <a href="<?php echo home_url(); ?>/member-in" class="btn btn_primary btn_more">More <span class="sr-only">read more link button</span></a>
+        <a href="<?php esc_url(the_field('member_in_page_link', 'option')); ?>" class="btn btn_primary btn_more">More <span class="sr-only">read more link button</span></a>
     </h3>
     <div id="member_in" class="accordion-collapse collapse" data-bs-parent="#accordionSidebar">
         <div class="accordion-body">

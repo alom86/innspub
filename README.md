@@ -13,8 +13,8 @@ Header > Top header > My Account
 <!-- Home > Global editor slider section  -->
 <!-- Home > Counter section  title, descripton -->
 <!-- Home > Latest paper section  most popular sidebar accordion -->
-Home > Published Issue slider section
-Home > INNSPub Journal slider section
+<!-- Home > Published Issue slider section > new custom post -->
+<!-- Home > INNSPub Journal slider section > from jounal post type -->
 
 About > Office | Contact page
 <!-- Current issue query update to one month -->

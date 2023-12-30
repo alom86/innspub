@@ -1,0 +1,57 @@
+{
+    "key": "group_658fd3bfdbb33",
+    "title": "Sidebar Page Links",
+    "fields": [
+        {
+            "key": "field_658fd3cc8a964",
+            "label": "Indexed In Page Link",
+            "name": "indexed_in_page_link",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "https:\/\/innspub.net\/indexed-in\/",
+            "placeholder": ""
+        },
+        {
+            "key": "field_658fd41d8a965",
+            "label": "Member In Page Link",
+            "name": "member_in_page_link",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "https:\/\/innspub.net\/member-in\/",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-sidebar-page-links"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1703924803
+}

@@ -1,6 +1,6 @@
 {
     "key": "group_628df2bc31281",
-    "title": "Home Why Choose Section Content",
+    "title": "Home Why Choose Section",
     "fields": [
         {
             "key": "field_628df2ec2a065",
@@ -187,5 +187,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1703073829
+    "modified": 1703919637
 }
