@@ -64,7 +64,6 @@
                         <a href="#"><i class="fa-solid fa-user"></i> My Account</a>
                     </div>
                     <div class="nav-top__right-button">
-                        <!-- TODO dynamic -->
                         <a href="
                             <?php 
                                 $submit_manuscript_page_link = get_field('submit_manuscript_page_link', 'option'); // Fetch the ACF value
@@ -128,7 +127,8 @@
                         );
                     ?>
                 </div>
-
+                
+                <!-- TODO dynamic search -->
                 <form class="search-form d-none d-sm-flex" role="search">
                     <input class="form-control search-form__input" type="text" placeholder="Search" aria-label="Search">
                     <button class="btn search-form__button" type="submit"><i class="fa-solid fa-magnifying-glass"></i><span class="sr-only">search button</span></button>

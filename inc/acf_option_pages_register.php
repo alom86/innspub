@@ -21,6 +21,11 @@ function register_acf_options_pages() {
             'redirect'		=> false
         ));
         acf_add_options_sub_page(array(
+            'page_title' 	=> 'Home Banner Settings',
+            'menu_title'	=> 'Home Banner Section',
+            'parent_slug'	=> 'theme-general-settings',
+        ));
+        acf_add_options_sub_page(array(
             'page_title' 	=> 'Home About Settings',
             'menu_title'	=> 'Home About Section',
             'parent_slug'	=> 'theme-general-settings',

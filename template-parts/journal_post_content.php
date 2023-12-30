@@ -21,10 +21,17 @@
                 echo '</span>';
             }; ?>
         </div>
-        <!-- TODO -->
+        
         <div class="card-issue__statistics">
-            <span><i class="fa-solid fa-eye"></i> <span class="d-none d-sm-inline">Views</span> (77)</span>
-            <span class="view"><i class="fa-solid fa-download"></i> <span class="d-none d-sm-inline">Download</span> (27)</span>
+            <span><i class="fa-solid fa-eye"></i> <span class="d-none d-sm-inline">Views</span> (<?php echo get_post_views(get_the_ID()); ?>)</span>
+            <!-- TODO counter -->
+            <span class="view"><i class="fa-solid fa-download"></i> <span class="d-none d-sm-inline">Download</span> 
+                <?php if (get_field('dc')) {
+                    echo '(';
+                    the_field('dc');
+                    echo ')';
+                }; ?>
+            </span>
         </div>
     </div>
     <div class="card-issue__content">
