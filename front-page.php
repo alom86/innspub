@@ -24,20 +24,120 @@ get_header();
         <div class="container d-flex align-items-center justify-content-center justify-content-md-end">
             <div class="banner__content">
                 <div class="banner__content_item issue" data-aos="fade-up">
-                    <span class="banner__content_amount">60+</span>
-                    <h2 class="banner__content_title">Issue Released</h2>
+                    <span class="banner__content_amount">
+                        <?php 
+                            $issue_value = get_field('issue_value', 'option'); // Fetch the ACF value
+
+                            if ($issue_value): // If ACF field has a value
+                            ?>
+                                <?php echo $issue_value; ?>
+                            <?php else: // If ACF field is empty or doesn't have a value
+                            ?>
+                                60
+                            <?php endif;
+                        ?>
+                        +
+                    </span>
+                    <h2 class="banner__content_title">
+                        <?php 
+                            $issue_title = get_field('issue_title', 'option'); // Fetch the ACF value
+
+                            if ($issue_title): // If ACF field has a value
+                            ?>
+                                <?php echo $issue_title; ?>
+                            <?php else: // If ACF field is empty or doesn't have a value
+                            ?>
+                                Issue Released
+                            <?php endif;
+                        ?>
+                    </h2>
                 </div>
                 <div class="banner__content_item involve" data-aos="fade-up">
-                    <span class="banner__content_amount">40+</span>
-                    <h2 class="banner__content_title">Involve Universities</h2>
+                    <span class="banner__content_amount">
+                        <?php 
+                            $involve_value = get_field('involve_value', 'option'); // Fetch the ACF value
+
+                            if ($involve_value): // If ACF field has a value
+                            ?>
+                                <?php echo $involve_value; ?>
+                            <?php else: // If ACF field is empty or doesn't have a value
+                            ?>
+                                40
+                            <?php endif;
+                        ?>
+                        +
+                    </span>
+                    <h2 class="banner__content_title">
+                        <?php 
+                            $involve_title = get_field('involve_title', 'option'); // Fetch the ACF value
+
+                            if ($involve_title): // If ACF field has a value
+                            ?>
+                                <?php echo $involve_title; ?>
+                            <?php else: // If ACF field is empty or doesn't have a value
+                            ?>
+                                Involve Universities
+                            <?php endif;
+                        ?>
+                    </h2>
                 </div>
                 <div class="banner__content_item global" data-aos="fade-up">
-                    <span class="banner__content_amount">100+</span>
-                    <h2 class="banner__content_title">Global Reviewer</h2>
+                    <span class="banner__content_amount">
+                        <?php 
+                            $global_reviewer_value = get_field('global_reviewer_value', 'option'); // Fetch the ACF value
+
+                            if ($global_reviewer_value): // If ACF field has a value
+                            ?>
+                                <?php echo $global_reviewer_value; ?>
+                            <?php else: // If ACF field is empty or doesn't have a value
+                            ?>
+                                100
+                            <?php endif;
+                        ?>
+                        +
+                    </span>
+                    <h2 class="banner__content_title">
+                        <?php 
+                            $reviewer_title = get_field('reviewer_title', 'option'); // Fetch the ACF value
+
+                            if ($reviewer_title): // If ACF field has a value
+                            ?>
+                                <?php echo $reviewer_title; ?>
+                            <?php else: // If ACF field is empty or doesn't have a value
+                            ?>
+                                Global Reviewer
+                            <?php endif;
+                        ?>
+                    </h2>
                 </div>
                 <div class="banner__content_item happy" data-aos="fade-up">
-                    <span class="banner__content_amount">60+</span>
-                    <h2 class="banner__content_title">Happy Authors</h2>
+                    <span class="banner__content_amount">
+                        <?php 
+                            $authors_value = get_field('authors_value', 'option'); // Fetch the ACF value
+
+                            if ($authors_value): // If ACF field has a value
+                            ?>
+                                <?php echo $authors_value; ?>
+                            <?php else: // If ACF field is empty or doesn't have a value
+                            ?>
+                                60
+                            <?php endif;
+                        ?>
+                        +
+                    </span>
+                    <h2 class="banner__content_title">
+                        <?php 
+                            $authors_title = get_field('authors_title', 'option'); // Fetch the ACF value
+
+                            if ($authors_title): // If ACF field has a value
+                            ?>
+                                <?php echo $authors_title; ?>
+                            <?php else: // If ACF field is empty or doesn't have a value
+                            ?>
+                                Happy Authors
+                            <?php endif;
+                        ?>
+                    </h2>
                 </div>
             </div>
         </div>

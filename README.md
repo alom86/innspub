@@ -4,14 +4,14 @@ International Network for Natural Sciences
 #TODO Need to do Dynamic
 <!-- Header > Header Top Right Settings to Theme Options General Settings  -->
 Header > Top header > My Account
-Home > Banner section (online static)
-<!-- Home > About section --> TODO unique feature list
+<!-- Home > Banner section (online static) -->
+<!-- Home > About section unique feature list -->
 <!-- Home > Feature section  -->
 <!-- Home > For Author section  -->
 <!-- Home > Why choose section  -->
 <!-- Home > Announcement slider section  -->
 <!-- Home > Global editor slider section  -->
-<!-- Home > Counter section  --> TODO title, descripton
+<!-- Home > Counter section  title, descripton -->
 <!-- Home > Latest paper section  most popular sidebar accordion -->
 Home > Published Issue slider section
 Home > INNSPub Journal slider section
@@ -25,6 +25,9 @@ About > Office | Contact page
 <!-- Board Members -->
 <!-- single member > Publications list design update dynamic content -->
 <!-- Archive > INNSPub Library remove sql query to qp query -->
+Single article > Download counter functional
+
+Search functionality
 
 Excellence > Ebook publishing
 <!-- Tutorials > FAQs -->
