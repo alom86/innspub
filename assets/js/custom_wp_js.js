@@ -15,10 +15,10 @@
 
   // breadcumb parent text add
   let menu_parent_text = $('.current-menu-parent > a').first().text();
-  if(!menu_parent_text == ''){
+  if (!menu_parent_text == '') {
     $('.parent_page > a').text(menu_parent_text);
   }
-  if(menu_parent_text == ''){
+  if (menu_parent_text == '') {
     $('.parent_page').hide();
     $('.breadcrumb-item.dropdown').hide();
   }
@@ -53,5 +53,43 @@
 
   // page_content__data
   $('.page_content__data p.text-end').addClass('page_content__nav');
+
+
+  //Certificate link
+  if (document.getElementsByClassName('ccert')[0]) {
+    var a = document.getElementsByClassName('ccert')[0];
+    var id = document.getElementsByClassName('tptn_counter')[0].id;
+    var pid = id.substring(13);
+    var right = a.href.substring(0, 20);
+    var certl = right + "certificate/?target=" + pid;
+    a.href = certl;
+  }
+
+  //Cover link
+  if (document.getElementsByClassName('cover')[0]) {
+    var a = document.getElementsByClassName('cover')[0];
+    var id = document.getElementsByClassName('tptn_counter')[0].id;
+    var pid = id.substring(13);
+    var right = a.href.substring(0, 20);
+    var coverl = right + "cover/?target=" + pid;
+    a.href = coverl;
+  }
+
+  // download counter
+  if (document.getElementsByClassName('down')[0]) {
+    var a = document.getElementsByClassName('down')[0];
+    var id = document.getElementsByClassName('tptn_counter')[0].id;
+    var pid = id.substring(12);
+    var file = a.href.substring(20);
+    var right = a.href.substring(0, 20);
+    var count = right + "download/?target=" + file + pid;
+    a.href = count;
+    if (document.getElementsByClassName('down')[1]) {
+      var a1 = document.getElementsByClassName('down')[1];
+      a1.href = count;
+      a1.innerHTML = count;
+    }
+  }
+
 
 })(window.jQuery);

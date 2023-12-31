@@ -9,7 +9,7 @@ function register_acf_options_pages() {
             'menu_slug' => 'footer-settings',
             'capability' => 'manage_options',
             'parent_slug' => 'theme_options_slug', 
-            'position' => 10,
+            'position' => 27,
             'icon_url' => 'dashicons-admin-settings'
         ));
 
