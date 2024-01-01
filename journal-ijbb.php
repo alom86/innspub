@@ -35,7 +35,7 @@ get_header();
                 ?>
 
                 <!-- page content -->
-                <div>
+                <div class="w-100">
                     <div class="page_content">
                         <!-- page title -->
                         <div class="page_content__title">

@@ -33,8 +33,7 @@
                 <div class="nav-top__left">
                     <div class="nav-top__left-link d-xl-none">
                         <a href="<?php echo home_url(); ?>"><i class="fa-solid fa-house"></i> <span class="sr-only">home icon</span></a>
-                        <!-- TODO dynamic -->
-                        <a href="#"><i class="fa-solid fa-user"></i> <span class="sr-only">user icon</span></a>
+                        <a href="http://rjm.innspub.net/Login.aspx?ReturnUrl=%2f" target="_blank"><i class="fa-solid fa-user"></i> <span class="sr-only">user icon</span></a>
                     </div>
 
                     <div class="nav-top__welcome d-none d-xl-block">
@@ -60,8 +59,7 @@
                     <!-- need add style on xl -->
                     <div class="nav-top__right-link d-none d-xl-block">
                         <a href="<?php echo home_url(); ?>"><i class="fa-solid fa-house"></i> Home</a>
-                        <!-- TODO dynamic -->
-                        <a href="#"><i class="fa-solid fa-user"></i> My Account</a>
+                        <a href="http://rjm.innspub.net/Login.aspx?ReturnUrl=%2f" target="_blank"><i class="fa-solid fa-user"></i> My Account</a>
                     </div>
                     <div class="nav-top__right-button">
                         <a href="

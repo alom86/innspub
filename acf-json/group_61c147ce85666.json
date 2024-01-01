@@ -6,7 +6,6 @@
             "key": "field_61c147ce896da",
             "label": "Authors Name",
             "name": "authors",
-            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 1,
@@ -16,6 +15,7 @@
                 "class": "",
                 "id": ""
             },
+            "aria-label": "",
             "default_value": "",
             "placeholder": "",
             "prepend": "",
@@ -26,7 +26,6 @@
             "key": "field_61c147ce89712",
             "label": "Authors Email",
             "name": "authors_email",
-            "aria-label": "",
             "type": "email",
             "instructions": "",
             "required": 0,
@@ -36,6 +35,7 @@
                 "class": "",
                 "id": ""
             },
+            "aria-label": "",
             "default_value": "",
             "placeholder": "",
             "prepend": "",
@@ -45,7 +45,6 @@
             "key": "field_61c148ea0d764",
             "label": "Country",
             "name": "country",
-            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -55,6 +54,7 @@
                 "class": "",
                 "id": ""
             },
+            "aria-label": "",
             "default_value": "",
             "placeholder": "",
             "prepend": "",
@@ -65,7 +65,6 @@
             "key": "field_61c147ce897ed",
             "label": "DOI",
             "name": "doi",
-            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -75,6 +74,7 @@
                 "class": "",
                 "id": ""
             },
+            "aria-label": "",
             "default_value": "",
             "placeholder": "",
             "prepend": "",
@@ -86,7 +86,6 @@
             "key": "field_61c15fa7402b6",
             "label": "Journal Short Name",
             "name": "journal_short_name",
-            "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 1,
@@ -96,6 +95,7 @@
                 "class": "",
                 "id": ""
             },
+            "aria-label": "",
             "choices": {
                 "IJB": "IJB",
                 "JBES": "JBES",
@@ -115,7 +115,6 @@
             "key": "field_61c1602a402b7",
             "label": "Volume",
             "name": "volume",
-            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 1,
@@ -125,6 +124,7 @@
                 "class": "",
                 "id": ""
             },
+            "aria-label": "",
             "default_value": "",
             "placeholder": "",
             "prepend": "",
@@ -135,7 +135,6 @@
             "key": "field_61c1603d402b8",
             "label": "Number",
             "name": "number",
-            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 1,
@@ -145,6 +144,7 @@
                 "class": "",
                 "id": ""
             },
+            "aria-label": "",
             "default_value": "",
             "placeholder": "",
             "prepend": "",
@@ -155,7 +155,6 @@
             "key": "field_61c147ce897b7",
             "label": "Month",
             "name": "month",
-            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 1,
@@ -165,6 +164,7 @@
                 "class": "",
                 "id": ""
             },
+            "aria-label": "",
             "default_value": "",
             "placeholder": "",
             "prepend": "",
@@ -175,7 +175,6 @@
             "key": "field_61c160a2402b9",
             "label": "Year",
             "name": "year",
-            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 1,
@@ -185,6 +184,7 @@
                 "class": "",
                 "id": ""
             },
+            "aria-label": "",
             "default_value": "",
             "placeholder": "",
             "prepend": "",
@@ -195,7 +195,6 @@
             "key": "field_61c160c7402ba",
             "label": "Page No",
             "name": "page_no",
-            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 1,
@@ -205,6 +204,7 @@
                 "class": "",
                 "id": ""
             },
+            "aria-label": "",
             "default_value": "",
             "placeholder": "",
             "prepend": "",
@@ -215,7 +215,6 @@
             "key": "field_61c147ce89824",
             "label": "Article Types",
             "name": "article_types",
-            "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 1,
@@ -225,6 +224,7 @@
                 "class": "",
                 "id": ""
             },
+            "aria-label": "",
             "choices": {
                 "Research Paper": "Research Paper",
                 "Review Paper": "Review Paper",
@@ -246,7 +246,6 @@
             "key": "field_61c147ce8985b",
             "label": "Add file",
             "name": "add_file",
-            "aria-label": "",
             "type": "file",
             "instructions": "",
             "required": 1,
@@ -256,6 +255,7 @@
                 "class": "",
                 "id": ""
             },
+            "aria-label": "",
             "library": "all",
             "return_format": "url",
             "min_size": 0,
@@ -266,7 +266,6 @@
             "key": "field_61c147ce898c8",
             "label": "Ref Body",
             "name": "ref_body",
-            "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -276,6 +275,7 @@
                 "class": "",
                 "id": ""
             },
+            "aria-label": "",
             "default_value": "",
             "toolbar": "full",
             "media_upload": 1,
@@ -286,7 +286,6 @@
             "key": "field_61c147ce8998c",
             "label": "Copyright",
             "name": "copyright",
-            "aria-label": "",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -296,6 +295,7 @@
                 "class": "",
                 "id": ""
             },
+            "aria-label": "",
             "default_value": "Copyright © 2022\r\nBy Authors and International Network for\r\nNatural Sciences (INNSPUB)\r\nhttp:\/\/innspub.net\r\nThis article is published under the terms of the Creative \r\nCommons Attribution Liscense 4.0",
             "placeholder": "",
             "maxlength": "",
@@ -321,5 +321,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1702802701
+    "modified": 1704084795
 }
