@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Contacts Page
+ * Template Name: Contact Page
  * 
  * The template for displaying all pages
  *
@@ -79,6 +79,7 @@ get_header();
 
                             <!-- corporate offices cards -->
                             <div class="row row-cols-1 g-3 g-md-4 row-cols-md-2 mb-4">
+
                                 <div class="col">
                                     <div class="card-office">
                                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/contact/corporate_office.webp" alt="corporate_office">
@@ -144,13 +145,15 @@ get_header();
                                         </div>
                                     </div>
                                 </div>
+                                
                             </div>
 
                             <!-- page_content__nav -->
                             <div class="page_content__nav">
-                                <a class="active" href="#">Home</a>
-                                <a href="#">Journals</a>
-                                <a href="#">Submission</a>
+                                <a href="<?php echo home_url(); ?>">Home</a>
+                                <!-- TODO counter -->
+                                <a href="https://innspub.net/innspub-journal-list/">Journals</a>
+                                <a href="https://innspub.net/innspub-submission-gateway/">Submission</a>
                             </div>
 
                         </div>

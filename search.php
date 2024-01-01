@@ -28,43 +28,50 @@ get_header();
 				?>
 
 				<!-- page content -->
-				<article class="w-100">
-					<div class="page_content">
-						<!-- page title -->
-						<div class="page_content__title">
-							<h1>Search Results for : <?php echo get_query_var('s') ?></h1>
-						</div>
-						<!-- page data -->
-
-						<?php
-						if (have_posts()) :
-
-							if (is_home() && !is_front_page()) :
-						?>
+				<div class="w-100">
+					<article class="w-100">
+						<div class="page_content">
+							<!-- page title -->
+							<div class="page_content__title">
+								<h1>Search Results for : <?php echo get_query_var('s') ?></h1>
+							</div>
+							<!-- page data -->
 
 							<?php
-							endif;
+							if (have_posts()) :
 
-							/* Start the Loop */
-							while (have_posts()) :
-								the_post();
-
-								get_template_part( 'template-parts/content', 'search' );
-
-							endwhile;
+								if (is_home() && !is_front_page()) :
 							?>
 
-						<?php
-						else :
+								<?php
+								endif;
 
-							get_template_part('template-parts/content', 'none');
+								/* Start the Loop */
+								while (have_posts()) :
+									the_post();
 
-						endif;
-						?>
-						
-					</div>
+									get_template_part('template-parts/content', 'search');
 
-				</article>
+								endwhile;
+								?>
+
+							<?php
+							else :
+
+								get_template_part('template-parts/content', 'none');
+
+							endif;
+							?>
+
+						</div>
+					</article>
+
+					<!-- pagination -->
+					<?php
+					require get_template_directory() . '/template-parts/pagination_part.php';
+					?>
+				</div>
+
 			</div>
 		</div>
 	</div>
