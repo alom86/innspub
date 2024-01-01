@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying search results pages
  *
@@ -10,44 +11,67 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+<!-- Main Content -->
+<main class="bg-white">
+	<!-- page breadcumb -->
+	<?php
+	require get_template_directory() . '/template-parts/breadcumb_part.php';
+	?>
 
-		<?php if ( have_posts() ) : ?>
+	<!-- page layout -->
+	<div class="section_gap">
+		<div class="container">
+			<div class="layout_sidebar">
+				<!-- sidebar -->
+				<?php
+				require get_template_directory() . '/template-parts/sidebar_part.php';
+				?>
 
-			<header class="page-header">
-				<h1 class="page-title">
-					<?php
-					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'innspub' ), '<span>' . get_search_query() . '</span>' );
-					?>
-				</h1>
-			</header><!-- .page-header -->
+				<!-- page content -->
+				<article class="w-100">
+					<div class="page_content">
+						<!-- page title -->
+						<div class="page_content__title">
+							<h1>Search Results for : <?php echo get_query_var('s') ?></h1>
+						</div>
+						<!-- page data -->
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+						<?php
+						if (have_posts()) :
 
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
+							if (is_home() && !is_front_page()) :
+						?>
 
-			endwhile;
+							<?php
+							endif;
 
-			the_posts_navigation();
+							/* Start the Loop */
+							while (have_posts()) :
+								the_post();
 
-		else :
+								get_template_part( 'template-parts/content', 'search' );
 
-			get_template_part( 'template-parts/content', 'none' );
+							endwhile;
+							?>
 
-		endif;
-		?>
+						<?php
+						else :
 
-	</main><!-- #main -->
+							get_template_part('template-parts/content', 'none');
+
+						endif;
+						?>
+						
+					</div>
+
+				</article>
+			</div>
+		</div>
+	</div>
+
+</main>
 
 <?php
-get_sidebar();
+
+
 get_footer();

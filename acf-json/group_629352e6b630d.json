@@ -15,7 +15,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "Copyright © 2009-2024 All Rights Reserved by International Network for Natural Sciences [ INNSpub ]",
             "tabs": "all",
             "toolbar": "full",
             "media_upload": 1,
@@ -40,5 +40,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1703488125
+    "modified": 1704092817
 }
