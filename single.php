@@ -51,7 +51,6 @@ get_header();
 									<div class="card-issue__statistics">
 										<span><i class="fa-solid fa-eye"></i> <span class="d-none d-sm-inline">Views</span> (<span class="tptn_counter" id="tptn_counter_<?php echo the_ID(); ?>"><?php echo get_post_views(get_the_ID()); ?></span>)</span>
 
-										<!-- TODO counter -->
 										<span class="view d-none d-sm-inline"><i class="fa-solid fa-download"></i> <span class="d-none d-sm-inline">Download</span>
 											<?php if (get_field('dc')) {
 												echo '(';

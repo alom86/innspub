@@ -27,7 +27,7 @@ About > Office | Contact page
 <!-- Archive > INNSPub Library remove sql query to qp query -->
 <!-- Single article > Download counter functional -->
 
-Search functionality
+<!-- Search functionality -->
 
 Excellence > Ebook publishing
 <!-- Tutorials > FAQs -->
@@ -45,4 +45,4 @@ Create 'Sidebar Links Menu'
 single page remove '|' Home Journals Submission
 Tutorial page change template: Tutorial Page
 editor photo must same ration
-template-part > logo_menu update link
+sidebar logo menu link Theme Option > Sidebar Page Link
