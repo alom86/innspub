@@ -52,6 +52,8 @@ function get_breadcrumb_title()
         return single_tag_title('>', false);
     } elseif (is_category()) {
         return single_cat_title('>', false);
+    } elseif (is_search()) {
+        return 'Search Results For: ' . get_search_query();
     } else {
         return 'Unknown';
     }

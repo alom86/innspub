@@ -3,7 +3,7 @@ International Network for Natural Sciences
 
 #TODO Need to do Dynamic
 <!-- Header > Header Top Right Settings to Theme Options General Settings  -->
-Header > Top header > My Account
+<!-- Header > Top header > My Account -->
 <!-- Home > Banner section (online static) -->
 <!-- Home > About section unique feature list -->
 <!-- Home > Feature section  -->
@@ -25,7 +25,7 @@ About > Office | Contact page
 <!-- Board Members -->
 <!-- single member > Publications list design update dynamic content -->
 <!-- Archive > INNSPub Library remove sql query to qp query -->
-Single article > Download counter functional
+<!-- Single article > Download counter functional -->
 
 Search functionality
 
