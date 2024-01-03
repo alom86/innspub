@@ -43,3 +43,6 @@ single page remove '|' Home Journals Submission
 Tutorial page change template: Tutorial Page
 editor photo must same ration
 sidebar logo menu link Theme Option > Sidebar Page Link
+
+<!-- TODO theme zip SMTP constants value -->
+/inc/constants.php
