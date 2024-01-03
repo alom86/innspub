@@ -1,4 +1,5 @@
 <?php
+
 /**
  * innspub functions and definitions
  *
@@ -7,9 +8,9 @@
  * @package innspub
  */
 
-if ( ! defined( '_S_VERSION' ) ) {
+if (!defined('_S_VERSION')) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+	define('_S_VERSION', '1.0.0');
 }
 
 /**
@@ -19,17 +20,18 @@ if ( ! defined( '_S_VERSION' ) ) {
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function innspub_setup() {
+function innspub_setup()
+{
 	/*
 		* Make theme available for translation.
 		* Translations can be filed in the /languages/ directory.
 		* If you're building a theme based on innspub, use a find and replace
 		* to change 'innspub' to the name of your theme in all the template files.
 		*/
-	load_theme_textdomain( 'innspub', get_template_directory() . '/languages' );
+	load_theme_textdomain('innspub', get_template_directory() . '/languages');
 
 	// Add default posts and comments RSS feed links to head.
-	add_theme_support( 'automatic-feed-links' );
+	add_theme_support('automatic-feed-links');
 
 	/*
 		* Let WordPress manage the document title.
@@ -37,14 +39,14 @@ function innspub_setup() {
 		* hard-coded <title> tag in the document head, and expect WordPress to
 		* provide it for us.
 		*/
-	add_theme_support( 'title-tag' );
+	add_theme_support('title-tag');
 
 	/*
 		* Enable support for Post Thumbnails on posts and pages.
 		*
 		* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		*/
-	add_theme_support( 'post-thumbnails' );
+	add_theme_support('post-thumbnails');
 
 	// This theme uses wp_nav_menu() in one location.
 	require get_template_directory() . '/inc/menu_register.php';
@@ -79,7 +81,7 @@ function innspub_setup() {
 	);
 
 	// Add theme support for selective refresh for widgets.
-	add_theme_support( 'customize-selective-refresh-widgets' );
+	add_theme_support('customize-selective-refresh-widgets');
 
 	/**
 	 * Add support for core custom logo.
@@ -96,7 +98,7 @@ function innspub_setup() {
 		)
 	);
 }
-add_action( 'after_setup_theme', 'innspub_setup' );
+add_action('after_setup_theme', 'innspub_setup');
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -130,7 +132,7 @@ require get_template_directory() . '/inc/cpt_register.php';
 require get_template_directory() . '/inc/acf_option_pages_register.php';
 
 // Post View Count
-require get_template_directory() . '/inc/post_view_download.php';
+require get_template_directory() . '/inc/post_view_counter.php';
 
 // post_published_notification
 require get_template_directory() . '/inc/post_published_notification.php';
@@ -153,7 +155,7 @@ require get_template_directory() . '/inc/customizer.php';
 /**
  * Load Jetpack compatibility file.
  */
-if ( defined( 'JETPACK__VERSION' ) ) {
+if (defined('JETPACK__VERSION')) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
@@ -164,40 +166,44 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * ACF Pro
  */
 
- if ( class_exists('acf') || class_exists('ACF') ) {
-    return; // ACF is active, exit further execution
+if (class_exists('acf') || class_exists('ACF')) {
+	return; // ACF is active, exit further execution
 }
-	// Define path and URL to the ACF plugin.
-	define( 'MY_ACF_PATH', get_stylesheet_directory() . '/includes/acf/' );
-	define( 'MY_ACF_URL', get_stylesheet_directory_uri() . '/includes/acf/' );
+// Define path and URL to the ACF plugin.
+define('MY_ACF_PATH', get_stylesheet_directory() . '/includes/acf/');
+define('MY_ACF_URL', get_stylesheet_directory_uri() . '/includes/acf/');
 
-	// Include the ACF plugin.
-	include_once( MY_ACF_PATH . 'acf.php' );
+// Include the ACF plugin.
+include_once(MY_ACF_PATH . 'acf.php');
 
-	// Customize the URL setting to fix incorrect asset URLs.
-	add_filter('acf/settings/url', 'my_acf_settings_url');
-	function my_acf_settings_url( $url ) {
-		return MY_ACF_URL;
-	}
+// Customize the URL setting to fix incorrect asset URLs.
+add_filter('acf/settings/url', 'my_acf_settings_url');
+function my_acf_settings_url($url)
+{
+	return MY_ACF_URL;
+}
 
 
-	function my_acf_json_save_point( $path ) {
-		return get_stylesheet_directory() . '/acf-json';
-	}
-	add_filter( 'acf/settings/save_json', 'my_acf_json_save_point' );
+function my_acf_json_save_point($path)
+{
+	return get_stylesheet_directory() . '/acf-json';
+}
+add_filter('acf/settings/save_json', 'my_acf_json_save_point');
 
-	function my_acf_json_load_point( $paths ) {
-		// Remove the original path (optional).
-		unset($paths[0]);
-	
-		// Append the new path and return it.
-		$paths[] = get_stylesheet_directory() . '/acf-json';
-	
-		return $paths;    
-	}
-	add_filter( 'acf/settings/load_json', 'my_acf_json_load_point' );
+function my_acf_json_load_point($paths)
+{
+	// Remove the original path (optional).
+	unset($paths[0]);
 
-	// ACF ends
+	// Append the new path and return it.
+	$paths[] = get_stylesheet_directory() . '/acf-json';
 
-	
+	return $paths;
+}
+add_filter('acf/settings/load_json', 'my_acf_json_load_point');
 
+// ACF ends
+
+
+// post_filter_ajax
+require get_template_directory() . '/inc/post_filter_ajax.php';
