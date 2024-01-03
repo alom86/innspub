@@ -262,84 +262,57 @@ get_header();
                             <div class="page_content__title position-relative justify-content-between gap-3 mb-0 h-auto">
                                 <h2><?php the_title(); ?></h2>
                                 <div class="filter" id="journal_filter">
-                                    <!-- TODO filter -->
-                                    <select class="form-select" aria-label="journal_filter">
-                                        <option selected> Most Read</option>
-                                        <option value="1">Articles</option>
-                                        <option value="2">Most Read</option>
-                                        <option value="3">Most Download</option>
+                                    <!-- TODO filter pagination -->
+                                    <select class="form-select" aria-label="journal_filter" data-category-name="IJAAR">
+                                        <option value="">Articles</option>
+                                        <option value="post_views_count" selected>Most Read</option>
+                                        <option value="dc">Most Download</option>
                                     </select>
                                 </div>
                             </div>
 
-                            <?php
-                            // Get the ID of the current post
-                            $current_post_id = get_the_ID();
+                            <div class="show_article_post">
 
-                            $paged = get_query_var("paged") ? get_query_var("paged") : 1;
+                                <?php
+                                // Get the ID of the current post
+                                $current_post_id = get_the_ID();
 
-                            $args = array(
-                                'post_type'      => 'post',
-                                'category_name'  => sanitize_text_field('IJAAR'),
-                                'post_status'    => 'publish',
-                                'posts_per_page' => 10,
-                                'orderby'        => 'meta_value_num',
-                                'paged'          => $paged,
-                                'post__not_in'   => array($current_post_id)  // Exclude the current post
-                            );
+                                $paged = get_query_var("paged") ? get_query_var("paged") : 1;
 
-                            $articles = new WP_Query($args);
-
-                            if ($articles->have_posts()) :
-                                while ($articles->have_posts()) :
-                                    $articles->the_post();
-                                    require get_template_directory() . '/template-parts/journal_post_content.php';
-                                endwhile;
-
-                                // Pagination
-                                $pagination_args = array(
-                                    'prev_text'        => '<i class="fa-solid fa-angle-left"></i>',
-                                    'next_text'        => '<i class="fa-solid fa-angle-right"></i>',
-                                    'type'             => 'array',
-                                    'first_page_text'  => '<i class="fa-solid fa-angles-left"></i>',
-                                    'last_page_text'   => '<i class="fa-solid fa-angles-right"></i>',
-                                    'mid_size'         => 1,
-                                    'total'            => $articles->max_num_pages,
-                                    'current'          => $paged
+                                $args = array(
+                                    'post_type'      => 'post',
+                                    'category_name'  => sanitize_text_field('IJAAR'),
+                                    'post_status'    => 'publish',
+                                    'posts_per_page' => 2,
+                                    'orderby'       => 'post_views_count',
+                                    'meta_key'        => 'post_views_count',
+                                    'order'          => 'DESC',
+                                    'paged'          => $paged,
+                                    'post__not_in'   => array($current_post_id)  // Exclude the current post
                                 );
-
-                                $pagination_links = paginate_links($pagination_args);
-
-                                if ($pagination_links) :
-                                    echo '<nav class="d-flex align-items-center justify-content-center justify-content-sm-between mt-4">';
-                                    echo '<div class="d-none d-sm-inline">';
-                                    echo '<span class="fw-bold">' . esc_html__('Page', 'innspub') . ' ' . $paged . ' ' . esc_html__('of', 'innspub') . ' ' . $articles->max_num_pages . '</span>';
-                                    echo '</div>';
-                                    echo '<ul class="pagination">';
-
-                                    // First page link
-                                    echo '<li class="page-item d-none d-sm-block"><a href="' . esc_url(get_pagenum_link(1)) . '" class="page-link">' . $pagination_args['first_page_text'] . '<span class="sr-only">' . esc_html__('go to first page', 'innspub') . '</span></a></li>';
-
-                                    foreach ($pagination_links as $link) {
-                                        echo '<li class="page-item">' . $link . '</li>';
-                                    }
-
-                                    // Last page link
-                                    echo '<li class="page-item d-none d-sm-block"><a href="' . esc_url(get_pagenum_link($articles->max_num_pages)) . '" class="page-link">' . $pagination_args['last_page_text'] . '<span class="sr-only">' . esc_html__('go to last page', 'innspub') . '</span></a></li>';
-
-                                    echo '</ul>';
-                                    echo '</nav>';
+    
+                                $articles = new WP_Query($args);
+    
+                                if ($articles->have_posts()) :
+                                    while ($articles->have_posts()) :
+                                        $articles->the_post();
+                                        require get_template_directory() . '/template-parts/journal_post_content.php';
+                                    endwhile;
+    
+                                    // Pagination
+                                    require get_template_directory() . '/template-parts/pagination_journal_part.php';
+    
                                 endif;
+    
+                                // Reset post data
+                                wp_reset_postdata();
 
-                            endif;
+                                ?>
 
-                            // Reset post data
-                            wp_reset_postdata();
-                            ?>
+                            </div>
 
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
