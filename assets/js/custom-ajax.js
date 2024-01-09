@@ -12,7 +12,7 @@ jQuery(document).ready(function ($) {
                 action: 'filter_article_posts',
                 selected_option: selectedOption,
                 category_name: category_name,
-                page: 1
+                page: $(this).closest('.pagination').data('page') // Get current page number
             },
             success: function (response) {
                 $('.show_article_post').html(response);

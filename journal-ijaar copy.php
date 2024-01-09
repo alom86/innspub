@@ -277,54 +277,41 @@ get_header();
                                 // Get the ID of the current post
                                 $current_post_id = get_the_ID();
 
-                                // Get the current page number
                                 $paged = get_query_var("paged") ? get_query_var("paged") : 1;
 
-                                // Get the selected option from AJAX (if available)
-                                $selected_option = isset($_POST['selected_option']) ? sanitize_text_field($_POST['selected_option']) : '';
-
-                                // Get the category name from AJAX (if available)
-                                $category_name = isset($_POST['category_name']) ? sanitize_text_field($_POST['category_name']) : '';
-
                                 $args = array(
-                                    'post_type' => 'post',
-                                    'category_name' => $category_name ? $category_name : sanitize_text_field('IJAAR'),
-                                    'post_status' => 'publish',
+                                    'post_type'      => 'post',
+                                    'category_name'  => sanitize_text_field('IJAAR'),
+                                    'post_status'    => 'publish',
                                     'posts_per_page' => 2,
-                                    'orderby' => $selected_option ? $selected_option : 'post_views_count',
-                                    'meta_key' => $selected_option ? $selected_option : 'post_views_count',
-                                    'order' => 'DESC',
-                                    'paged' => $paged,
-                                    'post__not_in' => array($current_post_id), // Exclude the current post
+                                    'orderby'       => 'post_views_count',
+                                    'meta_key'        => 'post_views_count',
+                                    'order'          => 'DESC',
+                                    'paged'          => $paged,
+                                    'post__not_in'   => array($current_post_id)  // Exclude the current post
                                 );
-
-                                // Get the filtered articles
+    
                                 $articles = new WP_Query($args);
-
-                                // Display the filtered articles
+    
                                 if ($articles->have_posts()) :
                                     while ($articles->have_posts()) :
                                         $articles->the_post();
                                         require get_template_directory() . '/template-parts/journal_post_content.php';
                                     endwhile;
-
+    
                                     // Pagination
                                     require get_template_directory() . '/template-parts/pagination_journal_part.php';
-
-                                else :
-                                    echo '<p>' . esc_html__('No articles found.', 'innspub') . '</p>';
+    
                                 endif;
-
+    
                                 // Reset post data
                                 wp_reset_postdata();
-
 
                                 ?>
 
                             </div>
 
                         </div>
-
                     </div>
                 </div>
             </div>
