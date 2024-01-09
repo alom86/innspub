@@ -15,9 +15,29 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Meta content -->
+
+    <!-- dynamic meta data -->
+    <?php
+    // Get the current post (page) object
+    global $post;
+
+    // Check if the current post has custom fields for meta keywords and meta description
+    $meta_keywords = get_post_meta($post->ID, 'meta_keywords', true);
+    $meta_description = get_post_meta($post->ID, 'meta_description', true);
+
+    // Output the meta keywords and meta description or use default values
+    if ($meta_keywords) {
+        echo '<meta name="keywords" content="' . esc_attr($meta_keywords) . '">' . "\n";
+    } else {
+        echo '<meta name="keywords" content="natural sciences, biology journal, biological research, open access journals, journal publication, research journals publisher, peer-reviewed journal publisher, environmental sciences journal, agricultural sciences journal">' . "\n";
+    }
+
+    if ($meta_description) {
+        echo "\t" . '<meta name="description" content="' . esc_attr($meta_description) . '">';
+    } else { ?>
     <meta name="description" content="<?php bloginfo('description'); ?>">
-    <meta name="keywords" content="Natural Sciences, Biology Journal, Biological Research, Open access Journals, Journal Publication, Research Journals Publisher, Peer-reviewed Journal Publisher, Environmental sciences Journal, Agricultural sciences Journal">
+    <?php }
+    ?>
 
     <!-- Favicon Icons  -->
     <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/logo/favicon.ico" type="image/x-icon">
