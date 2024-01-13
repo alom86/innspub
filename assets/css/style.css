@@ -2073,10 +2073,10 @@ img {
   background-color: #F9F9F9;
   width: 150%;
   height: 65px;
-  transform: rotate(35deg);
+  transform: rotate(20deg);
   position: absolute;
   top: 30%;
-  right: -20%;
+  right: -14%;
 }
 .page_content .profile_cheif__label {
   font-size: 20px;

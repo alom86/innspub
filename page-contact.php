@@ -151,7 +151,7 @@ get_header();
                             <!-- page_content__nav -->
                             <div class="page_content__nav">
                                 <a href="<?php echo home_url(); ?>">Home</a>
-                                <!-- TODO counter -->
+                                <!-- TODO static link -->
                                 <a href="https://innspub.net/innspub-journal-list/">Journals</a>
                                 <a href="https://innspub.net/innspub-submission-gateway/">Submission</a>
                             </div>

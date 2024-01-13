@@ -19,7 +19,7 @@ About > Office | Contact page
 <!-- Journals > Affiliated Journal --> theme option already remove page description 
 <!-- Journals > Editorial Board --> page description online static ache theme page content diye dynamic kora hoyeche
 <!-- Authors > Author Instruction --> page description online static ache theme page content diye dynamic kora hoyeche
-<!-- 5 Journal details template > done(5 journal) --> #TODO Published Paper filter 
+<!-- 5 Journal details template > done(5 journal) Published Paper filter #TODO default filter pagination ok but, filter pagination need to do -->
 <!-- Board Members -->
 <!-- single member > Publications list design update dynamic content -->
 <!-- Archive > INNSPub Library remove sql query to qp query -->

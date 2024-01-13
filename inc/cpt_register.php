@@ -537,12 +537,12 @@ function cptui_register_my_cpts()
 	 */
 
 	$labels = [
-		"name" => esc_html__("Indexes", "custom-post-type-ui"),
+		"name" => esc_html__("Indexed In", "custom-post-type-ui"),
 		"singular_name" => esc_html__("Indexe", "custom-post-type-ui"),
 	];
 
 	$args = [
-		"label" => esc_html__("Indexes", "custom-post-type-ui"),
+		"label" => esc_html__("Indexed In", "custom-post-type-ui"),
 		"labels" => $labels,
 		"description" => "",
 		"public" => true,
