@@ -45,7 +45,7 @@
                 endif; ?>
                 )</span>
         </div>
-        <div class="d-xxl-flex gap-4">
+        <div class="d-xl-flex gap-4">
             <div class="profile_cheif__info">
                 <h4>
                     <?php if (!empty(the_field('last_achieved_degree'))) :

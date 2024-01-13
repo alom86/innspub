@@ -11,7 +11,7 @@
 ?>
 
 
-<div class="card journal flex-xl-column flex-xxl-row position-relative mb_60">
+<div class="card journal flex-xl-row position-relative mb_60">
     <div class="journal__img w_journal">
         <?php if (has_post_thumbnail()) : ?>
             <?php the_post_thumbnail(); ?>
@@ -106,10 +106,10 @@
                         </div>
                         <div class="modal-footer">
                             <a class="btn btn_primary" href="
-                                                                <?php if (!empty(the_field('modal_url'))) :
-                                                                    esc_url(the_field('modal_url'));
-                                                                endif; ?>
-                                                                ">
+                                                            <?php if (!empty(the_field('modal_url'))) :
+                                                                esc_url(the_field('modal_url'));
+                                                            endif; ?>
+                                                            ">
                                 Details
                             </a>
                         </div>
@@ -133,10 +133,10 @@
                         </div>
                         <div class="modal-footer">
                             <a class="btn btn_primary" href="
-                                                                <?php if (!empty(the_field('modal_twourl'))) :
-                                                                    esc_url(the_field('modal_twourl'));
-                                                                endif; ?>
-                                                                ">
+                                                            <?php if (!empty(the_field('modal_twourl'))) :
+                                                                esc_url(the_field('modal_twourl'));
+                                                            endif; ?>
+                                                            ">
                                 Details
                             </a>
                         </div>
@@ -146,7 +146,7 @@
 
         </div>
 
-        <div class="journal__links mt-2 d-flex flex-column flex-sm-row justify-content-sm-center justify-content-xl-end gap-3">
+        <div class="journal__links mt-2 d-flex flex-column flex-sm-row justify-content-sm-center flex-xl-wrap-reverse justify-content-xl-end gap-3">
             <a class="btn btn_primary btn_full m-0" href="
                                                 <?php if (!empty(the_field('submit_button_url'))) :
                                                     esc_url(the_field('submit_button_url'));
@@ -156,7 +156,7 @@
                     the_field('submit_button_text');
                 endif; ?>
             </a>
-            <div class="d-flex align-items-center justify-content-between gap-3">
+            <div class="d-flex align-items-center justify-content-between justify-content-xl-end gap-3">
                 <a class="btn btn_secondary m-0" href="
                                                     <?php if (!empty(the_field('copy_right_btn_url'))) :
                                                         the_field('copy_right_btn_url');

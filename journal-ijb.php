@@ -283,7 +283,7 @@ get_header();
                                     'post_type'      => 'post',
                                     'category_name'  => sanitize_text_field('IJB'),
                                     'post_status'    => 'publish',
-                                    'posts_per_page' => 2,
+                                    'posts_per_page' => 10,
                                     'orderby'       => 'post_views_count',
                                     'meta_key'        => 'post_views_count',
                                     'order'          => 'DESC',

@@ -290,7 +290,7 @@ get_header();
                                     'post_type' => 'post',
                                     'category_name' => $category_name ? $category_name : sanitize_text_field('IJAAR'),
                                     'post_status' => 'publish',
-                                    'posts_per_page' => 2,
+                                    'posts_per_page' => 10,
                                     'orderby' => $selected_option ? $selected_option : 'post_views_count',
                                     'meta_key' => $selected_option ? $selected_option : 'post_views_count',
                                     'order' => 'DESC',
