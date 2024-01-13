@@ -82,6 +82,14 @@ a:hover {
   margin-bottom: 60px;
 }
 
+.text-truncate_2 {
+  display: -webkit-box;
+  max-width: 100%;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 address {
   margin-bottom: 0;
 }
@@ -1649,7 +1657,7 @@ img {
   display: none;
 }
 .card_paper h3 {
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 .card_paper h3 a {
   color: #132833;
@@ -1657,7 +1665,7 @@ img {
   font-size: 16px;
 }
 .card_paper__tags {
-  margin-top: 20px;
+  margin-top: 14px;
 }
 .card_paper__tags a {
   font-size: 14px;
@@ -2255,8 +2263,6 @@ img {
   .page_content__contact_type {
     margin: 60px 0;
   }
-}
-@media (min-width: 1400px) {
   .page_content .profile_cheif {
     flex-direction: row;
   }
@@ -2284,12 +2290,20 @@ img {
   font-weight: 700;
   margin-bottom: 0;
 }
+.current-issue .show_article_post {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
 @media (min-width: 768px) {
   .current-issue {
     gap: 20px;
   }
   .current-issue .section_title {
     font-size: 24px;
+  }
+  .current-issue .show_article_post {
+    gap: 20px;
   }
 }
 
