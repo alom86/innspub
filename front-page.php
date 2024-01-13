@@ -240,7 +240,7 @@ get_header();
             <!-- feature -->
             <div class="feature">
                 <h2>Features</h2>
-                <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-xl-4">
+                <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xxl-4">
                     
                     <?php
                     $authorss         = new WP_Query(array(
@@ -278,7 +278,7 @@ get_header();
             <!-- author -->
             <div class="author">
                 <h2>For authors</h2>
-                <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-xl-4">
+                <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xxl-4">
 
                     <?php
                     $authorss         = new WP_Query(array(
