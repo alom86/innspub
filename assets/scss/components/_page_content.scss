@@ -367,7 +367,7 @@
 
     .publication_list {
 
-        &> p {
+        &>p {
             padding: 16px 0;
             border-top: 1px solid $color_line;
             border-bottom: 1px solid $color_line;
@@ -480,9 +480,7 @@
         &__contact_type {
             margin: 60px 0;
         }
-    }
 
-    @media (min-width: 1400px) {
         .profile_cheif {
             flex-direction: row;
 
@@ -517,11 +515,21 @@
         margin-bottom: 0;
     }
 
+    .show_article_post {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
     @media (min-width: 768px) {
         gap: 20px;
 
         .section_title {
             font-size: 24px;
+        }
+
+        .show_article_post {
+            gap: 20px;
         }
     }
 }

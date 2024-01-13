@@ -35,12 +35,20 @@
     if ($meta_description) {
         echo "\t" . '<meta name="description" content="' . esc_attr($meta_description) . '">';
     } else { ?>
-    <meta name="description" content="<?php bloginfo('description'); ?>">
+        <meta name="description" content="<?php bloginfo('description'); ?>">
     <?php }
     ?>
 
     <!-- Favicon Icons  -->
-    <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/logo/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="<?php
+                                    $welcome_home_text = get_field('favicon', 'option'); // Fetch the ACF value
+
+                                    if ($welcome_home_text) : // If ACF field has a value
+                                    ?>
+                                <?php echo $welcome_home_text; ?>
+                            <?php else : // If ACF field is empty or doesn't have a value
+                                echo get_template_directory_uri(); ?>/assets/images/logo/favicon.ico
+                            <?php endif;?>" type="image/x-icon">
 
     <?php wp_head(); ?>
 </head>

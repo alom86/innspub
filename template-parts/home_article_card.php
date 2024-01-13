@@ -10,15 +10,15 @@
         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/publication/publication_file.svg" alt="publication_file">
     </div>
     <div>
-        <h3>
+        <h3 class="text-truncate_2 mt-md-2">
             <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
         </h3>
-        <span>
+        <span class="text-truncate_2">
             <?php if (get_field('authors')) {
                 echo the_field('authors');
             }; ?>
         </span>
-        <div class="card_paper__tags">
+        <div class="card_paper__tags text-truncate_2">
             <?php
             $post_tags = get_the_tags();
             if (!empty($post_tags)) {

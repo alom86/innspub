@@ -36,14 +36,14 @@
     <div class="card-issue__content">
         <img class="d-none d-sm-inline" src="<?php echo get_template_directory_uri(); ?>/assets/images/publication/publication_file.svg" alt="publication_file">
         <div>
-            <h2><a class="card-issue__title text-decoration-underline" href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
-            <div>
+            <h2 class="text-truncate_2"><a class="card-issue__title text-decoration-underline d-inline" href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+            <div class="text-truncate_2">
                 <span class="fw-bold">By: </span>
                 <?php if (get_field('authors')) {
                     echo the_field('authors');
                 }; ?>
             </div>
-            <div class="card_paper__tags mt-0">
+            <div class="card_paper__tags mt-0 text-truncate_2">
                 <?php
                 $post_tags = get_the_tags();
                 if (!empty($post_tags)) {

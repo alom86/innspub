@@ -24,7 +24,7 @@ function filter_article_posts()
         'post_type'      => 'post',
         'category_name'  => sanitize_text_field($category_name),
         'post_status'    => 'publish',
-        'posts_per_page' => 2,
+        'posts_per_page' => 10,
         'orderby'        => $selected_option,
         'meta_key'       => $selected_option,
         'order'          => 'DESC',
