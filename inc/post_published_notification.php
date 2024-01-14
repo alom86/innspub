@@ -51,7 +51,7 @@ function post_published_notification($ID, $post)
     }
 
 
-    require 'PHPMailerAutoload.php';
+    require get_template_directory().'/PHPMailer/PHPMailerAutoload.php';
 
     $mail = new PHPMailer;
 
