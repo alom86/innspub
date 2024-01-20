@@ -104,7 +104,7 @@
                                 <?php endif;
                                 ?>
                         
-                        " class="d-sm-flex gap-1"><span class="d-none d-sm-inline">Submit </span> Manuscript</a>
+                        " class="d-sm-flex gap-1">Submit <span class="d-none d-sm-inline">Manuscript</span></a>
                     </div>
                     <img class="nav-top__right-double_slash d-none d-xl-block" src="<?php echo get_template_directory_uri() ?>/assets/images/shape/double_slash.webp" alt="double_slash">
                     <div class="social d-none d-xl-flex">

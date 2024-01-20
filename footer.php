@@ -110,7 +110,7 @@
                             </div>
                         </div>
 
-                        <div class="col-sm-6 col-xl-4 px-0">
+                        <div class="col-sm-6 col-xl-4 px-xl-0">
                             <div class="footer-item">
                                 <h2 class="footer-item__title"><?php if (!empty(the_field('get_in_touch_', 'option'))) : esc_html(the_field('get_in_touch_', 'option')); endif; ?></h2>
                                 <ul class="footer-item__nav">

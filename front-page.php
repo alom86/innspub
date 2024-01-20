@@ -176,11 +176,11 @@ get_header();
                             <?php else: // If ACF field is empty or doesn't have a value
                             ?>
                             <ul>
-                                <li>Fast-track peer-reviewed by international experts</li>
-                                <li>Continuous and Fast nature publications</li>
-                                <li>Open access for facilitating with a higher number of citations</li>
-                                <li>Covered by renowned abstracting and indexing services</li>
-                                <li>All IJB articles are assigned to CrossRef DOI number</li>
+                                <li>➤ Fast-track peer-reviewed by international experts</li>
+                                <li>➤ Continuous and Fast nature publications</li>
+                                <li>➤ Open access for facilitating with a higher number of citations</li>
+                                <li>➤ Covered by renowned abstracting and indexing services</li>
+                                <li>➤ All IJB articles are assigned to CrossRef DOI number</li>
                             </ul>
                             <?php endif;
                         ?>
