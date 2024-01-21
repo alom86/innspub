@@ -2,7 +2,7 @@
     // max-width: 932px;
 
     p {
-        margin-bottom: 24px;
+        margin-bottom: 20px;
         font-size: 14px;
     }
 
@@ -14,12 +14,20 @@
         font-size: 16px;
         font-weight: 600;
         margin-bottom: 12px;
-        line-height: 24px;
+        line-height: 26px;
     }
 
     ul {
-        margin-bottom: 30px;
+        margin-bottom: 20px;
         list-style-image: url(../images/shape/ul_list_start2.webp);
+        list-style-position: inside;
+        padding-left: 0;
+        font-size: 14px;
+        line-height: 24px;
+
+        li {
+            padding-left: 0;
+        }
     }
 
     &__title {

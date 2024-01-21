@@ -37,6 +37,100 @@
 })(window.jQuery);
 
 
+// feature swiper
+const feature = new Swiper('.feature', {
+  autoplay: false,
+
+  slidesPerView: 1.3,
+  centeredSlides: true,
+  spaceBetween: 10,
+
+  // Responsive breakpoints
+  breakpoints: {
+    // when window width is >= 576px
+    576: {
+      slidesPerView: 2,
+      centeredSlides: false,
+      spaceBetween: 24
+    },
+    // when window width is >= 992px
+    992: {
+      slidesPerView: 3,
+      centeredSlides: false,
+      spaceBetween: 24
+    },
+    // when window width is >= 1200px
+    1400: {
+      slidesPerView: 4,
+      centeredSlides: false,
+      spaceBetween: 24
+    }
+  },
+
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    slidesPerView: 'auto',
+    initialSlide: 1,
+    resistanceRatio: 0,
+    clickable: true
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
+
+// author swiper
+const author = new Swiper('.author', {
+  autoplay: false,
+
+  slidesPerView: 1.3,
+  centeredSlides: true,
+  spaceBetween: 10,
+
+  // Responsive breakpoints
+  breakpoints: {
+    // when window width is >= 576px
+    576: {
+      slidesPerView: 2,
+      centeredSlides: false,
+      spaceBetween: 24
+    },
+    // when window width is >= 992px
+    992: {
+      slidesPerView: 3,
+      centeredSlides: false,
+      spaceBetween: 24
+    },
+    // when window width is >= 1200px
+    1400: {
+      slidesPerView: 4,
+      centeredSlides: false,
+      spaceBetween: 24
+    }
+  },
+
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    slidesPerView: 'auto',
+    initialSlide: 1,
+    resistanceRatio: 0,
+    clickable: true
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
+
 // announcements swiper
 const announcements = new Swiper('.announcements', {
   autoplay: false,

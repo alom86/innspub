@@ -45,7 +45,7 @@
                             the_field('country');
                         endif; ?>.
                     </span>
-                    <h3>
+                    <h3 class="fw-normal">
                         <?php if (!empty(the_field('interested_journal_name'))) :
                             the_field('interested_journal_name');
                         endif; ?>
