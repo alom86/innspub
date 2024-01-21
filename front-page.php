@@ -189,7 +189,7 @@ get_header();
                     <a class="btn btn_primary" href="<?php esc_url(the_field('habout_btnurl', 'option')); ?>"><?php esc_html(the_field('habout_btn', 'option')); ?></a>
                 </div>
 
-                <div class="col">
+                <div class="col pe-xl-2">
                     <div class="about__content">
                         <h2><?php esc_html(the_field('faqs_title', 'option')); ?></h2>
 
