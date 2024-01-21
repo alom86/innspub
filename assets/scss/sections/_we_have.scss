@@ -8,6 +8,12 @@
         color: $color_white;
     }
 
+    h2 {
+        text-transform: uppercase;
+        margin-bottom: 12px;
+        line-height: 40px;
+    }
+
     h2,
     p {
         text-align: center;
@@ -46,8 +52,8 @@
             text-align: start;
         }
 
-        h2 {
-            font-size: 32px;
+        img {
+            height: 100%;
         }
     }
 }

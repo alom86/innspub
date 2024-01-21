@@ -137,14 +137,18 @@ h3 {
 }
 
 ul {
-  list-style-image: url(../images/shape/ul_list_start.webp);
-  list-style-position: inside;
-  padding-left: 0;
+  list-style-type: "★";
+  padding-left: 12px;
   margin-bottom: 0;
-  line-height: 24px;
+  line-height: 32px;
 }
 ul li {
-  margin-bottom: 12px;
+  margin-bottom: 8px;
+  padding-left: 10px;
+}
+ul li::marker {
+  color: #018B40;
+  line-height: 32px;
 }
 
 img {
@@ -611,6 +615,7 @@ img {
 }
 .navbar .navbar-nav .nav-item {
   margin-bottom: 0;
+  padding-left: 0;
 }
 .navbar .navbar-nav .nav-item.active .dropdown-toggle {
   color: #018B40;
@@ -637,6 +642,7 @@ img {
 }
 .navbar .dropdown-menu li {
   margin-bottom: 0;
+  padding-left: 0;
 }
 .navbar .dropdown-menu .active .dropdown-item {
   background-color: #018B40;
@@ -801,6 +807,7 @@ img {
 }
 .footer-item__nav-item {
   margin-bottom: 2px;
+  padding-left: 0;
 }
 .footer-item__nav-link {
   font-size: 14px;
@@ -1556,6 +1563,7 @@ img {
 .nav_tabs .nav-tabs .nav-item {
   width: 90px;
   margin: 0 6px 6px 0;
+  padding-left: 0;
 }
 .nav_tabs .nav-tabs .nav-link {
   background-color: #FFFFFF;
@@ -1631,8 +1639,8 @@ img {
   }
   .nav_tabs.page_content__archives .nav-tabs .nav-link {
     padding: 20px;
-    background-color: #2D3E50;
-    color: #FFFFFF;
+    background-color: #F2F2F2;
+    color: #2D3E50;
     position: relative;
   }
   .nav_tabs.page_content__archives .nav-tabs .nav-link::before {
@@ -1645,7 +1653,7 @@ img {
     top: 40%;
   }
   .nav_tabs.page_content__archives .nav-tabs .nav-link.active, .nav_tabs.page_content__archives .nav-tabs .nav-link:hover {
-    background-color: #132833;
+    background-color: #DBDBDB;
   }
 }
 
@@ -1663,6 +1671,7 @@ img {
 }
 .card_paper h3 {
   margin-bottom: 14px;
+  line-height: 26px;
 }
 .card_paper h3 a {
   color: #132833;
@@ -1785,6 +1794,7 @@ img {
   }
   .sidebar .accordion .menu ul li {
     margin-bottom: 0;
+    padding-left: 0;
   }
   .sidebar .accordion .menu ul a {
     color: #132833;
@@ -1900,7 +1910,7 @@ img {
 }
 
 .page_content p {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   font-size: 14px;
 }
 .page_content h2,
@@ -1911,11 +1921,18 @@ img {
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 12px;
-  line-height: 24px;
+  line-height: 26px;
 }
 .page_content ul {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   list-style-image: url(../images/shape/ul_list_start2.webp);
+  list-style-position: inside;
+  padding-left: 0;
+  font-size: 14px;
+  line-height: 24px;
+}
+.page_content ul li {
+  padding-left: 0;
 }
 .page_content__title {
   min-height: 52px;
@@ -2402,40 +2419,59 @@ img {
   }
 }
 
-.nav-link.btn_img, .accordion-button.btn_img {
-  background-color: #2D3E50;
+.nav-link.btn_img,
+.accordion-button.btn_img {
+  background-color: #F2F2F2;
   padding: 16px;
-  color: #FFFFFF;
+  color: #2D3E50;
   border-radius: 4px 4px 0 0;
   display: flex;
   align-items: center;
 }
-.nav-link.btn_img img, .accordion-button.btn_img img {
+.nav-link.btn_img img,
+.accordion-button.btn_img img {
   width: 80px;
   border-radius: 4px;
   margin-right: 16px;
   box-shadow: 0px 0px 6px 0px #018B40;
 }
-.nav-link.btn_img span, .accordion-button.btn_img span {
+.nav-link.btn_img span,
+.accordion-button.btn_img span {
   font-size: 14px;
   margin-right: 8px;
   font-weight: 700;
   text-align: start;
 }
-.nav-link.btn_img:not(.collapsed), .accordion-button.btn_img:not(.collapsed) {
-  background-color: #132833;
+.nav-link.btn_img:not(.collapsed),
+.accordion-button.btn_img:not(.collapsed) {
+  background-color: #DBDBDB;
+  color: #2D3E50;
 }
-.nav-link.btn_img::after, .accordion-button.btn_img::after {
-  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+.nav-link.btn_img:not(.collapsed)::after,
+.accordion-button.btn_img:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%232D3E50'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
 }
-@media (min-width: 1200px) {
-  .nav-link.btn_img, .accordion-button.btn_img {
+.nav-link.btn_img::after,
+.accordion-button.btn_img::after {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%232D3E50'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+}
+@media (min-width: 768px) {
+  .nav-link.btn_img,
+  .accordion-button.btn_img {
+    background-color: #DBDBDB;
+  }
+}
+@media (min-width: 1400px) {
+  .nav-link.btn_img,
+  .accordion-button.btn_img {
     padding: 20px;
   }
-  .nav-link.btn_img img, .accordion-button.btn_img img {
+  .nav-link.btn_img img,
+  .accordion-button.btn_img img {
     width: 120px;
   }
-  .nav-link.btn_img span, .accordion-button.btn_img span {
+  .nav-link.btn_img span,
+  .accordion-button.btn_img span {
     font-size: 18px;
   }
 }
@@ -2700,6 +2736,14 @@ ul.pagination .page-link:hover, ul.pagination .page-link:focus, ul.pagination .p
 .about__content {
   margin-bottom: 40px;
 }
+.about__content p {
+  line-height: 28px;
+  text-align: justify;
+}
+.about__content ul {
+  list-style-type: "➤";
+  padding-left: 14px;
+}
 .about__bg_shap {
   display: none;
 }
@@ -2718,6 +2762,13 @@ ul.pagination .page-link:hover, ul.pagination .page-link:focus, ul.pagination .p
 }
 .feature h2 {
   margin-bottom: 24px;
+}
+.feature .card p {
+  display: -webkit-box;
+  max-width: 1005;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .why_choose {
@@ -2777,6 +2828,9 @@ ul.pagination .page-link:hover, ul.pagination .page-link:focus, ul.pagination .p
   font-weight: 700;
   color: #132833;
 }
+.why_choose h2 {
+  text-transform: uppercase;
+}
 .why_choose h2,
 .why_choose ul {
   color: #FFFFFF;
@@ -2804,6 +2858,11 @@ ul.pagination .page-link:hover, ul.pagination .page-link:focus, ul.pagination .p
 .we_have p,
 .we_have span {
   color: #FFFFFF;
+}
+.we_have h2 {
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  line-height: 40px;
 }
 .we_have h2,
 .we_have p {
@@ -2835,8 +2894,8 @@ ul.pagination .page-link:hover, ul.pagination .page-link:focus, ul.pagination .p
   .we_have p {
     text-align: start;
   }
-  .we_have h2 {
-    font-size: 32px;
+  .we_have img {
+    height: 100%;
   }
 }
 

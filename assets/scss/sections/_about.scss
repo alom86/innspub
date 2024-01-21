@@ -3,6 +3,16 @@
 
     &__content {
         margin-bottom: 40px;
+
+        p {
+            line-height: 28px;
+            text-align: justify;
+        }
+
+        ul {
+            list-style-type: "➤";
+            padding-left: 14px;
+        }
     }
 
     &__bg_shap {

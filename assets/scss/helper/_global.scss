@@ -82,14 +82,21 @@ h3 {
 }
 
 ul {
-    list-style-image: url(../images/shape/ul_list_start.webp);
-    list-style-position: inside;
-    padding-left: 0;
+    // list-style-type: url(../images/shape/ul_list_start.webp);
+    list-style-type: "★";
+    // list-style-position: inside;
+    padding-left: 12px;
     margin-bottom: 0;
-    line-height: 24px;
+    line-height: 32px;
 
     li {
-        margin-bottom: 12px;
+        margin-bottom: 8px;
+        padding-left: 10px;
+
+        &::marker {
+            color: $color_primary;
+            line-height: 32px;
+        }
     }
 }
 

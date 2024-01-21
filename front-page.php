@@ -25,117 +25,117 @@ get_header();
             <div class="banner__content">
                 <div class="banner__content_item issue" data-aos="fade-up">
                     <span class="banner__content_amount">
-                        <?php 
-                            $issue_value = get_field('issue_value', 'option'); // Fetch the ACF value
+                        <?php
+                        $issue_value = get_field('issue_value', 'option'); // Fetch the ACF value
 
-                            if ($issue_value): // If ACF field has a value
-                            ?>
-                                <?php echo $issue_value; ?>
-                            <?php else: // If ACF field is empty or doesn't have a value
-                            ?>
-                                60
-                            <?php endif;
+                        if ($issue_value) : // If ACF field has a value
+                        ?>
+                            <?php echo $issue_value; ?>
+                        <?php else : // If ACF field is empty or doesn't have a value
+                        ?>
+                            60
+                        <?php endif;
                         ?>
                         +
                     </span>
                     <h2 class="banner__content_title">
-                        <?php 
-                            $issue_title = get_field('issue_title', 'option'); // Fetch the ACF value
+                        <?php
+                        $issue_title = get_field('issue_title', 'option'); // Fetch the ACF value
 
-                            if ($issue_title): // If ACF field has a value
-                            ?>
-                                <?php echo $issue_title; ?>
-                            <?php else: // If ACF field is empty or doesn't have a value
-                            ?>
-                                Issue Released
-                            <?php endif;
+                        if ($issue_title) : // If ACF field has a value
+                        ?>
+                            <?php echo $issue_title; ?>
+                        <?php else : // If ACF field is empty or doesn't have a value
+                        ?>
+                            Issue Released
+                        <?php endif;
                         ?>
                     </h2>
                 </div>
                 <div class="banner__content_item involve" data-aos="fade-up">
                     <span class="banner__content_amount">
-                        <?php 
-                            $involve_value = get_field('involve_value', 'option'); // Fetch the ACF value
+                        <?php
+                        $involve_value = get_field('involve_value', 'option'); // Fetch the ACF value
 
-                            if ($involve_value): // If ACF field has a value
-                            ?>
-                                <?php echo $involve_value; ?>
-                            <?php else: // If ACF field is empty or doesn't have a value
-                            ?>
-                                40
-                            <?php endif;
+                        if ($involve_value) : // If ACF field has a value
+                        ?>
+                            <?php echo $involve_value; ?>
+                        <?php else : // If ACF field is empty or doesn't have a value
+                        ?>
+                            40
+                        <?php endif;
                         ?>
                         +
                     </span>
                     <h2 class="banner__content_title">
-                        <?php 
-                            $involve_title = get_field('involve_title', 'option'); // Fetch the ACF value
+                        <?php
+                        $involve_title = get_field('involve_title', 'option'); // Fetch the ACF value
 
-                            if ($involve_title): // If ACF field has a value
-                            ?>
-                                <?php echo $involve_title; ?>
-                            <?php else: // If ACF field is empty or doesn't have a value
-                            ?>
-                                Involve Universities
-                            <?php endif;
+                        if ($involve_title) : // If ACF field has a value
+                        ?>
+                            <?php echo $involve_title; ?>
+                        <?php else : // If ACF field is empty or doesn't have a value
+                        ?>
+                            Involve Universities
+                        <?php endif;
                         ?>
                     </h2>
                 </div>
                 <div class="banner__content_item global" data-aos="fade-up">
                     <span class="banner__content_amount">
-                        <?php 
-                            $global_reviewer_value = get_field('global_reviewer_value', 'option'); // Fetch the ACF value
+                        <?php
+                        $global_reviewer_value = get_field('global_reviewer_value', 'option'); // Fetch the ACF value
 
-                            if ($global_reviewer_value): // If ACF field has a value
-                            ?>
-                                <?php echo $global_reviewer_value; ?>
-                            <?php else: // If ACF field is empty or doesn't have a value
-                            ?>
-                                100
-                            <?php endif;
+                        if ($global_reviewer_value) : // If ACF field has a value
+                        ?>
+                            <?php echo $global_reviewer_value; ?>
+                        <?php else : // If ACF field is empty or doesn't have a value
+                        ?>
+                            100
+                        <?php endif;
                         ?>
                         +
                     </span>
                     <h2 class="banner__content_title">
-                        <?php 
-                            $reviewer_title = get_field('reviewer_title', 'option'); // Fetch the ACF value
+                        <?php
+                        $reviewer_title = get_field('reviewer_title', 'option'); // Fetch the ACF value
 
-                            if ($reviewer_title): // If ACF field has a value
-                            ?>
-                                <?php echo $reviewer_title; ?>
-                            <?php else: // If ACF field is empty or doesn't have a value
-                            ?>
-                                Global Reviewer
-                            <?php endif;
+                        if ($reviewer_title) : // If ACF field has a value
+                        ?>
+                            <?php echo $reviewer_title; ?>
+                        <?php else : // If ACF field is empty or doesn't have a value
+                        ?>
+                            Global Reviewer
+                        <?php endif;
                         ?>
                     </h2>
                 </div>
                 <div class="banner__content_item happy" data-aos="fade-up">
                     <span class="banner__content_amount">
-                        <?php 
-                            $authors_value = get_field('authors_value', 'option'); // Fetch the ACF value
+                        <?php
+                        $authors_value = get_field('authors_value', 'option'); // Fetch the ACF value
 
-                            if ($authors_value): // If ACF field has a value
-                            ?>
-                                <?php echo $authors_value; ?>
-                            <?php else: // If ACF field is empty or doesn't have a value
-                            ?>
-                                60
-                            <?php endif;
+                        if ($authors_value) : // If ACF field has a value
+                        ?>
+                            <?php echo $authors_value; ?>
+                        <?php else : // If ACF field is empty or doesn't have a value
+                        ?>
+                            60
+                        <?php endif;
                         ?>
                         +
                     </span>
                     <h2 class="banner__content_title">
-                        <?php 
-                            $authors_title = get_field('authors_title', 'option'); // Fetch the ACF value
+                        <?php
+                        $authors_title = get_field('authors_title', 'option'); // Fetch the ACF value
 
-                            if ($authors_title): // If ACF field has a value
-                            ?>
-                                <?php echo $authors_title; ?>
-                            <?php else: // If ACF field is empty or doesn't have a value
-                            ?>
-                                Happy Authors
-                            <?php endif;
+                        if ($authors_title) : // If ACF field has a value
+                        ?>
+                            <?php echo $authors_title; ?>
+                        <?php else : // If ACF field is empty or doesn't have a value
+                        ?>
+                            Happy Authors
+                        <?php endif;
                         ?>
                     </h2>
                 </div>
@@ -155,36 +155,36 @@ get_header();
                     </div>
                     <div class="about__content">
                         <h2>
-                            <?php 
-                                $unique_features_title = get_field('unique_features_title', 'option'); // Fetch the ACF value
+                            <?php
+                            $unique_features_title = get_field('unique_features_title', 'option'); // Fetch the ACF value
 
-                                if ($unique_features_title): // If ACF field has a value
-                                ?>
-                                    <?php echo $unique_features_title; ?>
-                                <?php else: // If ACF field is empty or doesn't have a value
-                                ?>
-                                    Unique features
-                                <?php endif;
+                            if ($unique_features_title) : // If ACF field has a value
+                            ?>
+                                <?php echo $unique_features_title; ?>
+                            <?php else : // If ACF field is empty or doesn't have a value
+                            ?>
+                                Unique Features
+                            <?php endif;
                             ?>
                         </h2>
-                        <?php 
-                            $unique_features_list = get_field('unique_features_list', 'option'); // Fetch the ACF value
+                        <?php
+                        $unique_features_list = get_field('unique_features_list', 'option'); // Fetch the ACF value
 
-                            if ($unique_features_list): // If ACF field has a value
-                            ?>
-                                <?php echo $unique_features_list; ?>
-                            <?php else: // If ACF field is empty or doesn't have a value
-                            ?>
-                            <ul>
-                                <li>➤ Fast-track peer-reviewed by international experts</li>
-                                <li>➤ Continuous and Fast nature publications</li>
-                                <li>➤ Open access for facilitating with a higher number of citations</li>
-                                <li>➤ Covered by renowned abstracting and indexing services</li>
-                                <li>➤ All IJB articles are assigned to CrossRef DOI number</li>
-                            </ul>
-                            <?php endif;
+                        if ($unique_features_list) : // If ACF field has a value
                         ?>
-                        
+                            <?php echo $unique_features_list; ?>
+                        <?php else : // If ACF field is empty or doesn't have a value
+                        ?>
+                            <ul>
+                                <li>Fast-track peer-reviewed by international experts</li>
+                                <li>Continuous and Fast nature publications</li>
+                                <li>Open access for facilitating with a higher number of citations</li>
+                                <li>Covered by renowned abstracting and indexing services</li>
+                                <li>All IJB articles are assigned to CrossRef DOI number</li>
+                            </ul>
+                        <?php endif;
+                        ?>
+
                     </div>
                     <a class="btn btn_primary" href="<?php esc_url(the_field('habout_btnurl', 'option')); ?>"><?php esc_html(the_field('habout_btn', 'option')); ?></a>
                 </div>
@@ -202,7 +202,7 @@ get_header();
 
                                     <div class="accordion-item">
                                         <h3 class="accordion-header">
-                                            <button class="accordion-button <?php echo $fcounts == 1 ? '' : 'collapsed' ?>" type="button" data-bs-toggle="collapse" data-bs-target="#faq_<?php echo  esc_attr($fcounts); ?>" aria-expanded="<?php echo $fcounts == 1 ? 'true' : 'false' ?>" aria-controls="faq_<?php echo  esc_attr($fcounts); ?>">
+                                            <button class="accordion-button <?php echo $fcounts == 1 ? 'pt-0' : 'collapsed' ?>" type="button" data-bs-toggle="collapse" data-bs-target="#faq_<?php echo  esc_attr($fcounts); ?>" aria-expanded="<?php echo $fcounts == 1 ? 'true' : 'false' ?>" aria-controls="faq_<?php echo  esc_attr($fcounts); ?>">
                                                 <?php if (!empty(the_sub_field('faqs_questin'))) : esc_html(the_sub_field('faqs_questin'));
                                                 endif; ?>
                                             </button>
@@ -238,10 +238,11 @@ get_header();
     <section class="section_gap">
         <div class="container">
             <!-- feature -->
-            <div class="feature">
-                <h2>Features</h2>
-                <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xxl-4">
-                    
+            <div class="swiper feature">
+                <h2 class="ps-3 ps-sm-0">Features</h2>
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+
                     <?php
                     $authorss         = new WP_Query(array(
                         'post_type' => 'feature',
@@ -252,7 +253,8 @@ get_header();
                         $authorss->the_post();
                     ?>
 
-                        <div class="col">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
                             <div class="card">
                                 <div class="card__icon">
                                     <!-- <i class="fa-solid fa-globe"></i> -->
@@ -261,24 +263,31 @@ get_header();
                                 </div>
                                 <h3><?php the_title(); ?></h3>
                                 <?php the_content(); ?>
-                                <a class="btn btn_secondary" href="<?php if (!empty('delivery_button_url')) : esc_url(the_field('delivery_button_url')); endif; ?>"><?php if (!empty('delivery_button_text')) : esc_url(the_field('delivery_button_text')); endif; ?></a>
+                                <a class="btn btn_secondary" href="<?php if (!empty('delivery_button_url')) : esc_url(the_field('delivery_button_url'));
+                                                                    endif; ?>"><?php if (!empty('delivery_button_text')) : esc_url(the_field('delivery_button_text'));
+                                                                                endif; ?></a>
                             </div>
                         </div>
-                    
+
                     <?php
                     endwhile;
                     wp_reset_query();
                     ?>
 
-                    
-                
                 </div>
+
+                <!-- If we need pagination -->
+                <div class="swiper-pagination d-lg-none"></div>
+                <!-- navigation buttons -->
+                <div class="swiper-button-prev d-none d-lg-flex"></div>
+                <div class="swiper-button-next d-none d-lg-flex"></div>
             </div>
 
             <!-- author -->
-            <div class="author">
-                <h2>For authors</h2>
-                <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xxl-4">
+            <div class="swiper author">
+                <h2 class="ps-3 ps-sm-0">For Authors</h2>
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
 
                     <?php
                     $authorss         = new WP_Query(array(
@@ -289,7 +298,9 @@ get_header();
                     while ($authorss->have_posts()) :
                         $authorss->the_post();
                     ?>
-                        <div class="col">
+
+                        <!-- Slides -->
+                        <div class="swiper-slide">
                             <div class="card">
                                 <div class="card__img">
                                     <?php the_post_thumbnail(); ?>
@@ -307,7 +318,9 @@ get_header();
                                     <?php endif; ?>
                                 </ul>
 
-                                <a class="btn btn_secondary" href="<?php if (!empty(the_field('button_url'))) : the_field('button_url'); endif;  ?>"><?php if (!empty(the_field('button_text'))) : the_field('button_text'); endif;  ?></a>
+                                <a class="btn btn_secondary" href="<?php if (!empty(the_field('button_url'))) : the_field('button_url');
+                                                                    endif;  ?>"><?php if (!empty(the_field('button_text'))) : the_field('button_text');
+                                                                                endif;  ?></a>
                             </div>
                         </div>
 
@@ -317,7 +330,14 @@ get_header();
                     ?>
 
                 </div>
+
+                <!-- If we need pagination -->
+                <div class="swiper-pagination d-lg-none"></div>
+                <!-- navigation buttons -->
+                <div class="swiper-button-prev d-none d-lg-flex"></div>
+                <div class="swiper-button-next d-none d-lg-flex"></div>
             </div>
+
         </div>
     </section>
 
@@ -381,29 +401,31 @@ get_header();
                         $authorss->the_post();
                     ?>
 
-                    <!-- Slides -->
-                    <div class="swiper-slide">
-                        <div class="card">
-                            <div class="card__img">
-                                <?php the_post_thumbnail(); ?>
-                            </div>
-                            <h3><?php the_title(); ?></h3>
-                            <ul>
-                                <?php if (!empty('first_announcement')) : ?>
-                                    <li><?php esc_html(the_field('first_announcement')); ?></li>
-                                <?php endif; ?>
-                                <?php if (!empty('second_announcement')) : ?>
-                                    <li><?php esc_html(the_field('second_announcement')); ?></li>
-                                <?php endif; ?>
-                                <?php if (!empty('third_announcement')) : ?>
-                                    <li><?php esc_html(the_field('third_announcement')); ?></li>
-                                <?php endif; ?>
-                            </ul>
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card__img">
+                                    <?php the_post_thumbnail(); ?>
+                                </div>
+                                <h3><?php the_title(); ?></h3>
+                                <ul>
+                                    <?php if (!empty('first_announcement')) : ?>
+                                        <li><?php esc_html(the_field('first_announcement')); ?></li>
+                                    <?php endif; ?>
+                                    <?php if (!empty('second_announcement')) : ?>
+                                        <li><?php esc_html(the_field('second_announcement')); ?></li>
+                                    <?php endif; ?>
+                                    <?php if (!empty('third_announcement')) : ?>
+                                        <li><?php esc_html(the_field('third_announcement')); ?></li>
+                                    <?php endif; ?>
+                                </ul>
 
-                            <a class="btn btn_secondary" href="<?php if (!empty(the_field('announce_button_url'))) : the_field('announce_button_url'); endif;  ?>"><?php if (!empty(the_field('announce_button_text'))) : the_field('announce_button_text'); endif;  ?></a>
+                                <a class="btn btn_secondary" href="<?php if (!empty(the_field('announce_button_url'))) : the_field('announce_button_url');
+                                                                    endif;  ?>"><?php if (!empty(the_field('announce_button_text'))) : the_field('announce_button_text');
+                                                                                endif;  ?></a>
+                            </div>
                         </div>
-                    </div>
-                    
+
                     <?php
                     endwhile;
                     wp_reset_query();
@@ -442,45 +464,45 @@ get_header();
             <div class="row g-4 g-md-5 flex-lg-row-reverse row-cols-1 row-cols-lg-2">
                 <div class="col d-lg-flex align-items-center">
                     <img width="720" height="315" src="
-                        <?php 
-                            $counter_up_image = get_field('counter_up_image', 'option'); // Fetch the ACF value
+                        <?php
+                        $counter_up_image = get_field('counter_up_image', 'option'); // Fetch the ACF value
 
-                            if ($counter_up_image): // If ACF field has a value
-                            ?>
+                        if ($counter_up_image) : // If ACF field has a value
+                        ?>
                                 <?php echo $counter_up_image; ?>
-                            <?php else: // If ACF field is empty or doesn't have a value
+                            <?php else : // If ACF field is empty or doesn't have a value
                             ?>
                                 <?php echo get_template_directory_uri(); ?>/assets/images/we_have/we_have_bg_image.webp
                             <?php endif;
-                        ?>
+                            ?>
                     " alt="we_have_bg_image">
 
                 </div>
                 <div class="col">
                     <h2>
-                        <?php 
-                            $counter_up_main_title = get_field('counter_up_main_title', 'option'); // Fetch the ACF value
+                        <?php
+                        $counter_up_main_title = get_field('counter_up_main_title', 'option'); // Fetch the ACF value
 
-                            if ($counter_up_main_title): // If ACF field has a value
-                            ?>
-                                <?php echo $counter_up_main_title; ?>
-                            <?php else: // If ACF field is empty or doesn't have a value
-                            ?>
-                                A title that engages the visitors
-                            <?php endif;
+                        if ($counter_up_main_title) : // If ACF field has a value
+                        ?>
+                            <?php echo $counter_up_main_title; ?>
+                        <?php else : // If ACF field is empty or doesn't have a value
+                        ?>
+                            A title that engages the visitors
+                        <?php endif;
                         ?>
                     </h2>
                     <p>
-                        <?php 
-                            $counter_up_description = get_field('counter_up_description', 'option'); // Fetch the ACF value
+                        <?php
+                        $counter_up_description = get_field('counter_up_description', 'option'); // Fetch the ACF value
 
-                            if ($counter_up_description): // If ACF field has a value
-                            ?>
-                                <?php echo $counter_up_description; ?>
-                            <?php else: // If ACF field is empty or doesn't have a value
-                            ?>
-                                Is a sales copy really omnipotent? Is there a universal formula for writing copy that will definitely lead to a sale?
-                            <?php endif;
+                        if ($counter_up_description) : // If ACF field has a value
+                        ?>
+                            <?php echo $counter_up_description; ?>
+                        <?php else : // If ACF field is empty or doesn't have a value
+                        ?>
+                            Is a sales copy really omnipotent? Is there a universal formula for writing copy that will definitely lead to a sale?
+                        <?php endif;
                         ?>
                     </p>
                     <div class="we_have__cards">
@@ -775,18 +797,18 @@ get_header();
                     while ($journal_post->have_posts()) :
                         $journal_post->the_post();
                     ?>
-                    <!-- Slides -->
-                    <div class="swiper-slide">
-                        <div class="card card_secondary">
-                            <div class="card__journal">
-                                <?php the_post_thumbnail(); ?>
-                            </div>
-                            <div class="card__journal_name">
-                                <a href="<?php the_field('journalmain_btnurl'); ?>"><?php the_title(); ?></a>
-                                <span>Category: <?php the_field('short_name_text'); ?></span>
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <div class="card card_secondary">
+                                <div class="card__journal">
+                                    <?php the_post_thumbnail(); ?>
+                                </div>
+                                <div class="card__journal_name">
+                                    <a href="<?php the_field('journalmain_btnurl'); ?>"><?php the_title(); ?></a>
+                                    <span>Category: <?php the_field('short_name_text'); ?></span>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
                     <?php
                     endwhile;

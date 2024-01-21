@@ -49,11 +49,10 @@ sidebar logo menu link Theme Option > Sidebar Page Link
 
 
 <!-- TODO Home page -->
-ABOUT US > description justify, line-height: 28px
-ABOUT US > Unique features list style "➤"
-Features & Authors> slider hobe as announcement
-INNSPub continuing with Excellence titel style change as "WHY CHOOSE INNSPUB JOURNALS"
-lin-height issu all site
-font size: 16 to 14px
-article single page line gap secttion gap
+<!-- ABOUT US > description justify, line-height: 28px -->
+<!-- ABOUT US > Unique features list style "➤" -->
+<!-- Features & Authors> slider hobe as announcement -->
+<!-- INNSPub continuing with Excellence titel style change as "WHY CHOOSE INNSPUB JOURNALS" -->
+<!-- lin-height issu all site -->
+<!-- article single page line gap secttion gap -->
 <!-- view downloan show problem mobile -->

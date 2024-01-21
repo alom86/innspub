@@ -1,7 +1,8 @@
-.nav-link.btn_img, .accordion-button.btn_img {
-    background-color: $color_natural_description;
+.nav-link.btn_img,
+.accordion-button.btn_img {
+    background-color: $color_secondary;
     padding: 16px;
-    color: $color_white;
+    color: $color_natural_description;
     border-radius: $radius_1 $radius_1 0 0;
     display: flex;
     align-items: center;
@@ -21,21 +22,31 @@
     }
 
     &:not(.collapsed) {
-        background-color: $color_natural_head;
+        background-color: $color_line;
+        color: $color_natural_description;
+
+        &::after {
+            background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%232D3E50'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+        }
     }
 
     &::after {
-        background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+        background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%232D3E50'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
     }
 
     // Responsive
-    @media (min-width: 1200px){
+    @media (min-width: 768px) {
+        background-color: $color_line;
+    }
+
+    @media (min-width: 1400px) {
         padding: 20px;
 
-        img{
+        img {
             width: 120px;
         }
-        span{
+
+        span {
             font-size: 18px;
         }
     }

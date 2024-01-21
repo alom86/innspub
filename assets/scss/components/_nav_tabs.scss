@@ -5,6 +5,7 @@
         .nav-item {
             width: 90px;
             margin: 0 6px 6px 0;
+            padding-left: 0;
         }
 
         .nav-link {
@@ -98,14 +99,12 @@
                 .nav-item {
                     width: auto;
                     margin: 0 0 12px 0;
-
-
                 }
 
                 .nav-link {
                     padding: 20px;
-                    background-color: $color_natural_description;
-                    color: $color_white;
+                    background-color: $color_secondary;
+                    color: $color_natural_description;
                     position: relative;
 
                     &::before {
@@ -119,7 +118,7 @@
                     }
 
                     &.active, &:hover {
-                        background-color: $color_natural_head;
+                        background-color: $color_line;
                     }
                 }
             }
