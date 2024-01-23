@@ -539,30 +539,95 @@ get_header();
                     <div class="nav_tabs">
                         <div class="tab_select">
                             <button class="btn d-md-none" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                IJAAR Publication
+                                IJB Publication
                             </button>
                             <ul class="nav nav-tabs dropdown-menu" id="publicationTab" role="tablist">
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link active" id="ijaar-tab" data-bs-toggle="tab" data-bs-target="#ijaar-tab-pane" type="button" role="tab" aria-controls="ijaar-tab-pane" aria-selected="true">IJAAR Publication</button>
+                                    <button class="nav-link active" id="ijb-tab" data-bs-toggle="tab" data-bs-target="#ijb-tab-pane" type="button" role="tab" aria-controls="ijb-tab-pane" aria-selected="true">IJB Publication</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="jbes-tab" data-bs-toggle="tab" data-bs-target="#jbes-tab-pane" type="button" role="tab" aria-controls="jbes-tab-pane" aria-selected="false">JBES Publication</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="ijaar-tab" data-bs-toggle="tab" data-bs-target="#ijaar-tab-pane" type="button" role="tab" aria-controls="ijaar-tab-pane" aria-selected="false">IJAAR Publication</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" id="ijbb-tab" data-bs-toggle="tab" data-bs-target="#ijbb-tab-pane" type="button" role="tab" aria-controls="ijbb-tab-pane" aria-selected="false">IJBB Publication</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="ijb-tab" data-bs-toggle="tab" data-bs-target="#ijb-tab-pane" type="button" role="tab" aria-controls="ijb-tab-pane" aria-selected="false">IJB Publication</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
                                     <button class="nav-link" id="ijmm-tab" data-bs-toggle="tab" data-bs-target="#ijmm-tab-pane" type="button" role="tab" aria-controls="ijmm-tab-pane" aria-selected="false">IJMM Publication</button>
                                 </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="jbes-tab" data-bs-toggle="tab" data-bs-target="#jbes-tab-pane" type="button" role="tab" aria-controls="jbes-tab-pane" aria-selected="false">JBES Publication</button>
-                                </li>
-
                             </ul>
                         </div>
                         <div class="tab-content" id="publicationTabContent">
+                            <!-- IJB Publication -->
+                            <div class="tab-pane fade show active" id="ijb-tab-pane" role="tabpanel" aria-labelledby="ijb-tab" tabindex="0">
+
+                                <?php
+                                $journalq = array(
+                                    'post_type' => 'post',
+                                    'category_name'  => 'IJB',
+                                    'orderby' => 'date',
+                                    'order' => 'DESC',
+                                    'post_status'    => 'publish',
+                                    'posts_per_page' => 10
+                                );
+                                $journalp = new WP_Query($journalq);
+                                if ($journalp->have_posts()) :
+                                    $countp = 0;
+                                    while ($journalp->have_posts()) :
+                                        $countp++;
+                                        $journalp->the_post();
+                                        global $post; ?>
+
+                                        <!-- item -->
+                                        <?php
+                                        require get_template_directory() . '/template-parts/home_article_card.php';
+                                        ?>
+
+                                <?php
+                                    endwhile;
+                                endif;
+                                wp_reset_query();
+                                ?>
+
+                            </div>
+
+                            <!-- JBES Publication -->
+                            <div class="tab-pane fade" id="jbes-tab-pane" role="tabpanel" aria-labelledby="jbes-tab" tabindex="0">
+
+                                <?php
+                                $journalq = array(
+                                    'post_type' => 'post',
+                                    'category_name'  => 'JBES',
+                                    'orderby' => 'date',
+                                    'order' => 'DESC',
+                                    'post_status'    => 'publish',
+                                    'posts_per_page' => 10
+                                );
+                                $journalp = new WP_Query($journalq);
+                                if ($journalp->have_posts()) :
+                                    $countp = 0;
+                                    while ($journalp->have_posts()) :
+                                        $countp++;
+                                        $journalp->the_post();
+                                        global $post; ?>
+
+                                        <!-- item -->
+                                        <?php
+                                        require get_template_directory() . '/template-parts/home_article_card.php';
+                                        ?>
+
+                                <?php
+                                    endwhile;
+                                endif;
+                                wp_reset_query();
+                                ?>
+
+                            </div>
+
                             <!-- IJAAR Publication -->
-                            <div class="tab-pane fade show active" id="ijaar-tab-pane" role="tabpanel" aria-labelledby="ijaar-tab" tabindex="0">
+                            <div class="tab-pane fade" id="ijaar-tab-pane" role="tabpanel" aria-labelledby="ijaar-tab" tabindex="0">
 
                                 <?php
                                 $journalq = array(
@@ -627,39 +692,6 @@ get_header();
 
                             </div>
 
-                            <!-- IJB Publication -->
-                            <div class="tab-pane fade" id="ijb-tab-pane" role="tabpanel" aria-labelledby="ijb-tab" tabindex="0">
-
-                                <?php
-                                $journalq = array(
-                                    'post_type' => 'post',
-                                    'category_name'  => 'IJB',
-                                    'orderby' => 'date',
-                                    'order' => 'DESC',
-                                    'post_status'    => 'publish',
-                                    'posts_per_page' => 10
-                                );
-                                $journalp = new WP_Query($journalq);
-                                if ($journalp->have_posts()) :
-                                    $countp = 0;
-                                    while ($journalp->have_posts()) :
-                                        $countp++;
-                                        $journalp->the_post();
-                                        global $post; ?>
-
-                                        <!-- item -->
-                                        <?php
-                                        require get_template_directory() . '/template-parts/home_article_card.php';
-                                        ?>
-
-                                <?php
-                                    endwhile;
-                                endif;
-                                wp_reset_query();
-                                ?>
-
-                            </div>
-
                             <!-- IJMM Publication -->
                             <div class="tab-pane fade" id="ijmm-tab-pane" role="tabpanel" aria-labelledby="ijmm-tab" tabindex="0">
 
@@ -693,38 +725,8 @@ get_header();
 
                             </div>
 
-                            <!-- JBES Publication -->
-                            <div class="tab-pane fade" id="jbes-tab-pane" role="tabpanel" aria-labelledby="jbes-tab" tabindex="0">
+                            
 
-                                <?php
-                                $journalq = array(
-                                    'post_type' => 'post',
-                                    'category_name'  => 'JBES',
-                                    'orderby' => 'date',
-                                    'order' => 'DESC',
-                                    'post_status'    => 'publish',
-                                    'posts_per_page' => 10
-                                );
-                                $journalp = new WP_Query($journalq);
-                                if ($journalp->have_posts()) :
-                                    $countp = 0;
-                                    while ($journalp->have_posts()) :
-                                        $countp++;
-                                        $journalp->the_post();
-                                        global $post; ?>
-
-                                        <!-- item -->
-                                        <?php
-                                        require get_template_directory() . '/template-parts/home_article_card.php';
-                                        ?>
-
-                                <?php
-                                    endwhile;
-                                endif;
-                                wp_reset_query();
-                                ?>
-
-                            </div>
                         </div>
                     </div>
                 </div>

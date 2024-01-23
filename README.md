@@ -48,7 +48,7 @@ sidebar logo menu link Theme Option > Sidebar Page Link
 /inc/constants.php
 
 
-<!-- TODO Home page -->
+<!-- TODO Client Issues -->
 <!-- ABOUT US > description justify, line-height: 28px -->
 <!-- ABOUT US > Unique features list style "➤" -->
 <!-- Features & Authors> slider hobe as announcement -->
@@ -56,3 +56,12 @@ sidebar logo menu link Theme Option > Sidebar Page Link
 <!-- lin-height issu all site -->
 <!-- article single page line gap secttion gap -->
 <!-- view downloan show problem mobile -->
+<!-- sidebar link text line height -->
+<!-- card_paper author list line height -->
+<!-- Home latest paper tab sequence: IJB > JBES > IJAAR > IJBB > IJMM -->
+<!-- category archive breadcumb title text hobe -->
+<!-- 'card-issue' button reverse color -->
+<!-- 'card-issue' by: change to people icon -->
+<!-- 'card-issue' key word: kep only 'key' and place it bottom -->
+<!-- article details abstract text 'text-align': 'justify' -->
+<!-- contact page font-size issue ache -->

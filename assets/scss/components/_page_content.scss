@@ -87,8 +87,8 @@
     }
 
     &__contact_type {
-        background-color: $color_natural_description;
-        color: $color_white;
+        background-color: $color_artboard;
+        color: $color_natural_description;
         margin: 40px 0;
         border-radius: $radius_1;
         padding: 30px 14px;
@@ -96,10 +96,12 @@
         flex-direction: column;
         gap: 40px;
         font-size: 14px;
+        border: 1px solid $color_primary;
+        font-size: 14px;
 
         h2 {
             font-size: 20px;
-            font-weight: 700;
+            font-weight: 600;
             color: $color_primary;
             margin-bottom: 20px;
         }
@@ -121,17 +123,16 @@
         margin-bottom: 16px;
         border-radius: $radius_1;
         border: 1px solid $color_primary;
+        font-size: 14px;
 
-        h3 {
-            font-size: 28px;
-            font-weight: 700;
-            margin: 12px 0 20px;
+        img {
+            margin-bottom: 12px;
         }
 
-        h4 {
-            font-size: 16px;
-            font-weight: 400;
-            margin-bottom: 4px;
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
         }
 
         a {

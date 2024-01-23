@@ -13,7 +13,7 @@
         <h3 class="text-truncate_2 mt-md-2">
             <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
         </h3>
-        <span class="text-truncate_2">
+        <span class="text-truncate_2 fs_14">
             <?php if (get_field('authors')) {
                 echo the_field('authors');
             }; ?>

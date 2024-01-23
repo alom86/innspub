@@ -101,8 +101,8 @@
     </div>
 </div>
 
-<!-- Plagiarism Checker -->
-<div class="accordion-item indexed_in">
+<!-- TODO dynamic Plagiarism Checker -->
+<!-- <div class="accordion-item indexed_in">
     <h3 class="accordion-header">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#plagiarism_checker" aria-expanded="false" aria-controls="plagiarism_checker">
             Plagiarism Checker
@@ -111,9 +111,10 @@
     </h3>
     <div id="plagiarism_checker" class="accordion-collapse collapse" data-bs-parent="#accordionSidebar">
         <div class="accordion-body">
-            <!-- TODO dynamic -->
+
+
 
 
         </div>
     </div>
-</div>
+</div> -->

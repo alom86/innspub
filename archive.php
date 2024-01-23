@@ -32,7 +32,9 @@ get_header();
 					<div class="page_content">
 						<!-- page title -->
 						<div class="page_content__title">
-							<h1><?php the_title(); ?></h1>
+							<h1 class="text-uppercase">
+								<?php single_cat_title(); ?>
+							</h1>
 						</div>
 
 						<?php if (have_posts()) : ?>

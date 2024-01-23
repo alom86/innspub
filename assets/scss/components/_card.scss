@@ -345,11 +345,12 @@
     border-radius: $radius_1;
     box-shadow: $shadow_1;
     height: 100%;
+    font-size: 14px;
 
     h2 {
         margin: 16px 0 20px;
         font-size: 20px !important;
-        font-weight: 700 !important;
+        font-weight: 600 !important;
 
         em {
             font-weight: 400;
@@ -448,6 +449,7 @@
 
         p {
             margin-bottom: 0 !important;
+            text-align: justify;
         }
 
         .text {

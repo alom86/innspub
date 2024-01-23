@@ -31,7 +31,19 @@
             <ol class="breadcrumb d-none d-md-flex">
                 <li class="breadcrumb-item"><a href="<?php echo home_url(); ?>">Home</a></li>
                 <li class="breadcrumb-item parent_page"><a href="#"></a></li>
-                <li class="breadcrumb-item active" aria-current="page"><?php echo get_breadcrumb_title(); ?></li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    <?php
+                        echo get_breadcrumb_title();
+                        if (is_month()) {
+                            echo " | Volume ";
+                            the_field('volume');
+                            echo " | Number ";
+                            the_field('number');
+                            echo " | "; ?>
+                        <?php the_time('F, Y');
+                        }
+                    ?>
+                </li>
             </ol>
         </nav>
     </div>
@@ -47,11 +59,11 @@ function get_breadcrumb_title()
     } elseif (is_singular('page')) {
         return get_the_title();
     } elseif (is_archive()) {
-        return get_the_archive_title();
+        return single_cat_title();
     } elseif (is_tag()) {
-        return single_tag_title('>', false);
+        return single_tag_title();
     } elseif (is_category()) {
-        return single_cat_title('>', false);
+        return single_cat_title();
     } elseif (is_search()) {
         return 'Search Results For: ' . get_search_query();
     } else {
