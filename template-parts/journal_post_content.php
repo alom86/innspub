@@ -39,22 +39,12 @@
             <h2 class="text-truncate_2"><a class="card-issue__title text-decoration-underline d-inline" href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
             <div class="d-flex flex-column gap-2">
                 <div class="text-truncate_2">
-                    <span class="fw-bold">By: </span>
+                    <span class="fw-bold me-1"><i class="fa-solid fa-users"></i> </span>
                     <?php if (get_field('authors')) {
                         echo the_field('authors');
                     }; ?>
                 </div>
-                <div class="card_paper__tags mt-0 text-truncate_2">
-                    <?php
-                    $post_tags = get_the_tags();
-                    if (!empty($post_tags)) {
-                        echo '<span class="fw-bold">Key Words: </span>';
-                        foreach ($post_tags as $post_tag) {
-                            echo '<a href="' . get_tag_link($post_tag) . '">' . $post_tag->name . '</a>';
-                        }
-                    }
-                    ?>
-                </div>
+                
                 <div>
                     <span>
                         <?php
@@ -80,14 +70,26 @@
                         <?php the_field('year') ?>.
                     </span>
                 </div>
+                <div>
+                    <?php if (get_field('doi')) {
+                        echo '<span class="fw-bold">DOI: </span>'; ?>
+                        <a href="<?php the_field('doi') ?>" class="text-decoration-underline" target="_blank"><?php echo the_field('doi'); ?></a>
+                    <?php }; ?>
+                </div>
+
                 <div class="d-flex flex-column flex-md-row flex-lg-column flex-xl-row gap-4">
-                    <div>
-                        <?php if (get_field('doi')) {
-                            echo '<span class="fw-bold">DOI: </span>'; ?>
-                            <a href="<?php the_field('doi') ?>" class="text-decoration-underline" target="_blank"><?php echo the_field('doi'); ?></a>
-                        <?php }; ?>
+                    <div class="card_paper__tags mt-0 text-truncate_2">
+                        <?php
+                        $post_tags = get_the_tags();
+                        if (!empty($post_tags)) {
+                            echo '<span class="fw-bold">Key: </span>';
+                            foreach ($post_tags as $post_tag) {
+                                echo '<a href="' . get_tag_link($post_tag) . '">' . $post_tag->name . '</a>';
+                            }
+                        }
+                        ?>
                     </div>
-                    <a class="btn btn_primary ms-auto" href="<?php the_permalink() ?>">Details</a>
+                    <a class="btn btn_secondary ms-auto" href="<?php the_permalink() ?>">Details</a>
                 </div>
             </div>
 

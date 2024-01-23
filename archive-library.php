@@ -143,7 +143,7 @@ $currentYear = date("Y");
                                                                                     $single_post_query = new WP_Query($args_single_post);
                                                                                     if ($single_post_query->have_posts()) :
                                                                                         while ($single_post_query->have_posts()) : $single_post_query->the_post();
-                                                                                            echo "Volume " . get_field('volume') . " > SN. " . get_field('number') . " > " . date('F', mktime(0, 0, 0, $month)) . " Issue";
+                                                                                            echo "Volume " . get_field('volume') . " > N. " . get_field('number') . " > " . date('F', mktime(0, 0, 0, $month)) . " Issue";
                                                                                         endwhile;
                                                                                     endif;
                                                                                     wp_reset_postdata();

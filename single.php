@@ -72,22 +72,12 @@ get_header();
 												<h2><?php the_title(); ?></h2>
 												<div class="d-flex flex-column gap-2">
 													<div>
-														<span class="fw-bold">By: </span>
+														<span class="fw-bold me-1"><i class="fa-solid fa-users"></i> </span>
 														<?php if (get_field('authors')) {
 															echo the_field('authors');
 														}; ?>
 													</div>
-													<div class="card_paper__tags mt-0">
-														<?php
-														$post_tags = get_the_tags();
-														if (!empty($post_tags)) {
-															echo '<span class="fw-bold">Key Words: </span>';
-															foreach ($post_tags as $post_tag) {
-																echo '<a href="' . get_tag_link($post_tag) . '">' . $post_tag->name . '</a>';
-															}
-														}
-														?>
-													</div>
+													
 													<div>
 														<span>
 															<?php
@@ -190,10 +180,20 @@ get_header();
 															echo $certnum;
 															echo '<a class="ccert text-danger" href="cert"> [Generate Certificate]</a>';
 														}
-
 														?>
-
 													</div>
+													<div class="card_paper__tags mt-0">
+														<?php
+														$post_tags = get_the_tags();
+														if (!empty($post_tags)) {
+															echo '<span class="fw-bold">Key: </span>';
+															foreach ($post_tags as $post_tag) {
+																echo '<a href="' . get_tag_link($post_tag) . '">' . $post_tag->name . '</a>';
+															}
+														}
+														?>
+													</div>
+
 												</div>
 											</div>
 										</div>
@@ -241,11 +241,33 @@ get_header();
 							<!-- item -->
 							<div class="accordion-item">
 								<h2 class="accordion-header">
-									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#recommended" aria-expanded="true" aria-controls="recommended">
+									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#references" aria-expanded="false" aria-controls="references">
+										References
+									</button>
+								</h2>
+								<div id="references" class="accordion-collapse collapse" data-bs-parent="#accordion_issue_details">
+									<div class="accordion-body">
+
+										<div id="post_references">
+											<?php the_field('ref_body'); ?>
+										</div>
+
+										<!-- TODO load more -->
+										<!-- <div class="d-flex align-items-center justify-content-center my-3 my-md-4">
+											<button class="btn btn_link" type="button">Load More...</button>
+										</div> -->
+									</div>
+
+								</div>
+							</div>
+							<!-- item -->
+							<div class="accordion-item">
+								<h2 class="accordion-header">
+									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#recommended" aria-expanded="false" aria-controls="recommended">
 										Recommended Citation
 									</button>
 								</h2>
-								<div id="recommended" class="accordion-collapse collapse show" data-bs-parent="#accordion_issue_details">
+								<div id="recommended" class="accordion-collapse collapse" data-bs-parent="#accordion_issue_details">
 									<div class="accordion-body">
 										<h3 class="fs_14 fw-medium">
 											<?php
@@ -292,29 +314,6 @@ get_header();
 									</div>
 								</div>
 							</div>
-							<!-- item -->
-							<div class="accordion-item">
-								<h2 class="accordion-header">
-									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#references" aria-expanded="false" aria-controls="references">
-										References
-									</button>
-								</h2>
-								<div id="references" class="accordion-collapse collapse" data-bs-parent="#accordion_issue_details">
-									<div class="accordion-body">
-
-										<div id="post_references">
-											<?php the_field('ref_body'); ?>
-										</div>
-
-										<!-- TODO load more -->
-										<!-- <div class="d-flex align-items-center justify-content-center my-3 my-md-4">
-											<button class="btn btn_link" type="button">Load More...</button>
-										</div> -->
-									</div>
-
-								</div>
-							</div>
-
 						</div>
 
 
