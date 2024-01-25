@@ -46,7 +46,7 @@ get_header();
 											echo '<span>';
 											the_field('article_types');
 											echo '</span>';
-										}; ?>
+										} ?>
 										<span class="view"><i class="fa-regular fa-calendar-days"></i> <?php echo get_the_date('d/m/Y'); ?></span>
 									</div>
 									<div class="card-issue__statistics">
@@ -57,7 +57,7 @@ get_header();
 												echo '(';
 												the_field('dc');
 												echo ')';
-											}; ?>
+											} ?>
 										</span>
 									</div>
 								</div>
@@ -75,7 +75,7 @@ get_header();
 														<span class="fw-bold me-1"><i class="fa-solid fa-users"></i> </span>
 														<?php if (get_field('authors')) {
 															echo the_field('authors');
-														}; ?>
+														} ?>
 													</div>
 													
 													<div>
@@ -107,7 +107,7 @@ get_header();
 														<?php if (get_field('doi')) {
 															echo '<span class="fw-bold">DOI: </span>'; ?>
 															<a href="<?php the_field('doi') ?>" class="text-decoration-underline" target="_blank"><?php echo the_field('doi'); ?></a>
-														<?php }; ?>
+														<?php } ?>
 													</div>
 													<div>
 														<?php
