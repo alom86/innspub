@@ -32,7 +32,7 @@ function filter_article_posts()
     );
 
     // Get the filtered articles
-    $articles = new WP_Query($args);;
+    $articles = new WP_Query($args);
 
     if ($articles->have_posts()) :
         while ($articles->have_posts()) :
