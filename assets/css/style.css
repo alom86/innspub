@@ -1658,6 +1658,14 @@ img {
   .nav_tabs.page_content__archives .nav-tabs .nav-link.active, .nav_tabs.page_content__archives .nav-tabs .nav-link:hover {
     background-color: #DBDBDB;
   }
+  .nav_tabs.page_content__archives .main_archive_tabs {
+    max-height: 792px;
+  }
+}
+@media (min-width: 1400px) {
+  .nav_tabs.page_content__archives .main_archive_tabs {
+    max-height: 1050px;
+  }
 }
 
 .card_paper {

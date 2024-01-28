@@ -1,4 +1,4 @@
-(function ($) {
+jQuery(document).ready(function ($) {
 
   // $('#header-menu .menu-item-has-children').addClass('dropdown');
   $('#header-menu .menu-item-has-children.dropdown > a')
@@ -92,4 +92,4 @@
   }
 
 
-})(window.jQuery);
+});
