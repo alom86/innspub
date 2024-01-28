@@ -67,7 +67,7 @@ function get_breadcrumb_title()
     } elseif (is_search()) {
         return 'Search Results For: ' . get_search_query();
     } else {
-        return 'Unknown';
+        return get_the_title();
     }
 }
 ?>

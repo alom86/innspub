@@ -46,7 +46,7 @@ $currentYear = date("Y");
                         <!-- page data -->
                         <div class="page_content__archives nav_tabs">
                             <!-- tabs -->
-                            <ul class="nav nav-tabs d-none d-md-flex" id="archivesTab" role="tablist">
+                            <ul class="nav nav-tabs main_archive_tabs d-none d-md-flex" id="archivesTab" role="tablist">
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link btn_img active" id="jbes-tab" data-bs-toggle="tab" data-bs-target="#jbes-tab-pane" type="button" role="tab" aria-controls="jbes-tab-pane" aria-selected="true">
                                         <img width="120" height="161" src="<?php echo get_template_directory_uri(); ?>/assets/images/archives/jbes.webp" alt="jbes">
@@ -80,42 +80,54 @@ $currentYear = date("Y");
                             </ul>
 
                             <div class="tab-content accordion mt-md-0" id="archivesTabContent">
+
                                 <!-- jbes -->
                                 <div class="tab-pane fade show active accordion-item" id="jbes-tab-pane" role="tabpanel" aria-labelledby="jbes-tab" tabindex="0">
                                     <h2 class="accordion-header" id="heading_jbes">
                                         <button class="accordion-button btn_img" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_jbes" aria-expanded="true" aria-controls="collapse_jbes">
-                                            <img width="120" height="161" src="<?php echo get_template_directory_uri(); ?>/assets/images/archives/jbes.webp" alt="jbes">
+                                            <img width="120" height="161" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/archives/jbes.webp" alt="jbes">
                                             <span>Journal of Biodiversity and Environmental Sciences (JBES)</span>
                                         </button>
                                     </h2>
-                                    <div id="collapse_jbes" class="accordion-collapse collapse show  d-md-block" aria-labelledby="heading_jbes" data-bs-parent="#archivesTabContent">
+                                    <div id="collapse_jbes" class="accordion-collapse collapse show d-md-block" aria-labelledby="heading_jbes" data-bs-parent="#archivesTabContent">
                                         <div class="accordion-body">
 
-                                            <div class="accordion year_accordion" id="accordion_jbes">
+                                            <?php
+                                            $args = array(
+                                                'posts_per_page' => -1,
+                                                'post_type' => 'post',
+                                                'category_name' => 'JBES',
+                                                'orderby' => 'date',
+                                                'order' => 'DESC',
+                                                'fields' => 'ids'
+                                            );
 
-                                                <!-- Yearly and Monthly query -->
-                                                <?php
+                                            $query = new WP_Query($args);
+
+                                            if ($query->have_posts()) :
+                                                $post_ids = $query->posts;
+
                                                 $args = array(
-                                                    'posts_per_page' => -1,
                                                     'post_type' => 'post',
-                                                    'category_name' => 'JBES',
-                                                    'orderby' => 'date',
-                                                    'order' => 'DESC'
+                                                    'post__in' => $post_ids,
                                                 );
 
-                                                $query = new WP_Query($args);
+                                                $years_months = array();
 
-                                                if ($query->have_posts()) :
-                                                    $years_months = array();
-                                                    while ($query->have_posts()) : $query->the_post();
-                                                        $year = get_the_date('Y');
-                                                        $month = get_the_date('m');
-                                                        $years_months[$year][] = $month;
-                                                    endwhile;
+                                                foreach ($post_ids as $post_id) {
+                                                    $year = get_the_date('Y', $post_id);
+                                                    $month = get_the_date('m', $post_id);
+                                                    $years_months[$year][] = $month;
+                                                }
 
-                                                    // Loop through years
+                                                // Set current year
+                                                $currentYear = date('Y');
+
+                                            ?>
+                                                <div class="accordion year_accordion" id="accordion_jbes">
+                                                    <?php
                                                     foreach ($years_months as $year => $months) :
-                                                ?>
+                                                    ?>
                                                         <div class="accordion-item">
                                                             <h3 class="accordion-header">
                                                                 <button class="accordion-button <?php echo $year == $currentYear ? '' : 'collapsed' ?>" type="button" data-bs-toggle="collapse" data-bs-target="#jbes_<?php echo $year; ?>" aria-expanded="<?php echo $year == $currentYear ? 'true' : 'false' ?>" aria-controls="jbes_<?php echo $year; ?>">
@@ -126,11 +138,10 @@ $currentYear = date("Y");
                                                                 <div class="accordion-body">
                                                                     <ul>
                                                                         <?php
-                                                                        // Loop through months of the current year
                                                                         foreach (array_unique($months) as $month) :
                                                                         ?>
                                                                             <li>
-                                                                                <a href="<?php echo get_month_link($year, $month); ?>?category_name=jbes">
+                                                                                <a href="<?php echo esc_url(get_month_link($year, $month)); ?>?category_name=jbes">
                                                                                     <?php
                                                                                     $args_single_post = array(
                                                                                         'post_type' => 'post',
@@ -143,7 +154,7 @@ $currentYear = date("Y");
                                                                                     $single_post_query = new WP_Query($args_single_post);
                                                                                     if ($single_post_query->have_posts()) :
                                                                                         while ($single_post_query->have_posts()) : $single_post_query->the_post();
-                                                                                            echo "Volume " . get_field('volume') . " > N. " . get_field('number') . " > " . date('F', mktime(0, 0, 0, $month)) . " Issue";
+                                                                                            echo "Volume " . esc_html(get_field('volume')) . " > N. " . esc_html(get_field('number')) . " > " . esc_html(date('F', mktime(0, 0, 0, $month))) . " Issue";
                                                                                         endwhile;
                                                                                     endif;
                                                                                     wp_reset_postdata();
@@ -155,12 +166,14 @@ $currentYear = date("Y");
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                <?php
+                                                    <?php
                                                     endforeach;
-                                                endif;
-                                                ?>
+                                                    ?>
+                                                </div>
+                                            <?php
+                                            endif;
+                                            ?>
 
-                                            </div>
 
                                         </div>
                                     </div>
@@ -177,31 +190,42 @@ $currentYear = date("Y");
                                     <div id="collapse_ijb" class="accordion-collapse collapse d-md-block" aria-labelledby="heading_ijb" data-bs-parent="#archivesTabContent">
                                         <div class="accordion-body">
 
-                                            <div class="accordion year_accordion" id="accordion_ijb">
+                                            <?php
+                                            $args = array(
+                                                'posts_per_page' => -1,
+                                                'post_type' => 'post',
+                                                'category_name' => 'IJB',
+                                                'orderby' => 'date',
+                                                'order' => 'DESC',
+                                                'fields' => 'ids'
+                                            );
 
-                                                <!-- Yearly and Monthly query -->
-                                                <?php
+                                            $query = new WP_Query($args);
+
+                                            if ($query->have_posts()) :
+                                                $post_ids = $query->posts;
+
                                                 $args = array(
-                                                    'posts_per_page' => -1,
                                                     'post_type' => 'post',
-                                                    'category_name' => 'IJB',
-                                                    'orderby' => 'date',
-                                                    'order' => 'DESC'
+                                                    'post__in' => $post_ids,
                                                 );
 
-                                                $query = new WP_Query($args);
+                                                $years_months = array();
 
-                                                if ($query->have_posts()) :
-                                                    $years_months = array();
-                                                    while ($query->have_posts()) : $query->the_post();
-                                                        $year = get_the_date('Y');
-                                                        $month = get_the_date('m');
-                                                        $years_months[$year][] = $month;
-                                                    endwhile;
+                                                foreach ($post_ids as $post_id) {
+                                                    $year = get_the_date('Y', $post_id);
+                                                    $month = get_the_date('m', $post_id);
+                                                    $years_months[$year][] = $month;
+                                                }
 
-                                                    // Loop through years
+                                                // Set current year
+                                                $currentYear = date('Y');
+
+                                            ?>
+                                                <div class="accordion year_accordion" id="accordion_ijb">
+                                                    <?php
                                                     foreach ($years_months as $year => $months) :
-                                                ?>
+                                                    ?>
                                                         <div class="accordion-item">
                                                             <h3 class="accordion-header">
                                                                 <button class="accordion-button <?php echo $year == $currentYear ? '' : 'collapsed' ?>" type="button" data-bs-toggle="collapse" data-bs-target="#ijb_<?php echo $year; ?>" aria-expanded="<?php echo $year == $currentYear ? 'true' : 'false' ?>" aria-controls="ijb_<?php echo $year; ?>">
@@ -212,11 +236,10 @@ $currentYear = date("Y");
                                                                 <div class="accordion-body">
                                                                     <ul>
                                                                         <?php
-                                                                        // Loop through months of the current year
                                                                         foreach (array_unique($months) as $month) :
                                                                         ?>
                                                                             <li>
-                                                                                <a href="<?php echo get_month_link($year, $month); ?>?category_name=ijb">
+                                                                                <a href="<?php echo esc_url(get_month_link($year, $month)); ?>?category_name=ijb">
                                                                                     <?php
                                                                                     $args_single_post = array(
                                                                                         'post_type' => 'post',
@@ -229,7 +252,7 @@ $currentYear = date("Y");
                                                                                     $single_post_query = new WP_Query($args_single_post);
                                                                                     if ($single_post_query->have_posts()) :
                                                                                         while ($single_post_query->have_posts()) : $single_post_query->the_post();
-                                                                                            echo "Volume " . get_field('volume') . " > SN. " . get_field('number') . " > " . date('F', mktime(0, 0, 0, $month)) . " Issue";
+                                                                                            echo "Volume " . esc_html(get_field('volume')) . " > N. " . esc_html(get_field('number')) . " > " . esc_html(date('F', mktime(0, 0, 0, $month))) . " Issue";
                                                                                         endwhile;
                                                                                     endif;
                                                                                     wp_reset_postdata();
@@ -241,12 +264,14 @@ $currentYear = date("Y");
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                <?php
+                                                    <?php
                                                     endforeach;
-                                                endif;
-                                                ?>
+                                                    ?>
+                                                </div>
+                                            <?php
+                                            endif;
+                                            ?>
 
-                                            </div>
 
                                         </div>
                                     </div>
@@ -263,31 +288,42 @@ $currentYear = date("Y");
                                     <div id="collapse_ijaar" class="accordion-collapse collapse d-md-block" aria-labelledby="heading_ijaar" data-bs-parent="#archivesTabContent">
                                         <div class="accordion-body">
 
-                                            <div class="accordion year_accordion" id="accordion_ijaar">
+                                            <?php
+                                            $args = array(
+                                                'posts_per_page' => -1,
+                                                'post_type' => 'post',
+                                                'category_name' => 'IJAAR',
+                                                'orderby' => 'date',
+                                                'order' => 'DESC',
+                                                'fields' => 'ids'
+                                            );
 
-                                                <!-- Yearly and Monthly query -->
-                                                <?php
+                                            $query = new WP_Query($args);
+
+                                            if ($query->have_posts()) :
+                                                $post_ids = $query->posts;
+
                                                 $args = array(
-                                                    'posts_per_page' => -1,
                                                     'post_type' => 'post',
-                                                    'category_name' => 'IJAAR',
-                                                    'orderby' => 'date',
-                                                    'order' => 'DESC'
+                                                    'post__in' => $post_ids,
                                                 );
 
-                                                $query = new WP_Query($args);
+                                                $years_months = array();
 
-                                                if ($query->have_posts()) :
-                                                    $years_months = array();
-                                                    while ($query->have_posts()) : $query->the_post();
-                                                        $year = get_the_date('Y');
-                                                        $month = get_the_date('m');
-                                                        $years_months[$year][] = $month;
-                                                    endwhile;
+                                                foreach ($post_ids as $post_id) {
+                                                    $year = get_the_date('Y', $post_id);
+                                                    $month = get_the_date('m', $post_id);
+                                                    $years_months[$year][] = $month;
+                                                }
 
-                                                    // Loop through years
+                                                // Set current year
+                                                $currentYear = date('Y');
+
+                                            ?>
+                                                <div class="accordion year_accordion" id="accordion_ijaar">
+                                                    <?php
                                                     foreach ($years_months as $year => $months) :
-                                                ?>
+                                                    ?>
                                                         <div class="accordion-item">
                                                             <h3 class="accordion-header">
                                                                 <button class="accordion-button <?php echo $year == $currentYear ? '' : 'collapsed' ?>" type="button" data-bs-toggle="collapse" data-bs-target="#ijaar_<?php echo $year; ?>" aria-expanded="<?php echo $year == $currentYear ? 'true' : 'false' ?>" aria-controls="ijaar_<?php echo $year; ?>">
@@ -298,11 +334,10 @@ $currentYear = date("Y");
                                                                 <div class="accordion-body">
                                                                     <ul>
                                                                         <?php
-                                                                        // Loop through months of the current year
                                                                         foreach (array_unique($months) as $month) :
                                                                         ?>
                                                                             <li>
-                                                                                <a href="<?php echo get_month_link($year, $month); ?>?category_name=ijaar">
+                                                                                <a href="<?php echo esc_url(get_month_link($year, $month)); ?>?category_name=ijaar">
                                                                                     <?php
                                                                                     $args_single_post = array(
                                                                                         'post_type' => 'post',
@@ -315,7 +350,7 @@ $currentYear = date("Y");
                                                                                     $single_post_query = new WP_Query($args_single_post);
                                                                                     if ($single_post_query->have_posts()) :
                                                                                         while ($single_post_query->have_posts()) : $single_post_query->the_post();
-                                                                                            echo "Volume " . get_field('volume') . " > SN. " . get_field('number') . " > " . date('F', mktime(0, 0, 0, $month)) . " Issue";
+                                                                                            echo "Volume " . esc_html(get_field('volume')) . " > N. " . esc_html(get_field('number')) . " > " . esc_html(date('F', mktime(0, 0, 0, $month))) . " Issue";
                                                                                         endwhile;
                                                                                     endif;
                                                                                     wp_reset_postdata();
@@ -327,12 +362,14 @@ $currentYear = date("Y");
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                <?php
+                                                    <?php
                                                     endforeach;
-                                                endif;
-                                                ?>
+                                                    ?>
+                                                </div>
+                                            <?php
+                                            endif;
+                                            ?>
 
-                                            </div>
 
                                         </div>
                                     </div>
@@ -349,31 +386,42 @@ $currentYear = date("Y");
                                     <div id="collapse_ijbb" class="accordion-collapse collapse d-md-block" aria-labelledby="heading_ijbb" data-bs-parent="#archivesTabContent">
                                         <div class="accordion-body">
 
-                                            <div class="accordion year_accordion" id="accordion_ijbb">
+                                            <?php
+                                            $args = array(
+                                                'posts_per_page' => -1,
+                                                'post_type' => 'post',
+                                                'category_name' => 'IJBB',
+                                                'orderby' => 'date',
+                                                'order' => 'DESC',
+                                                'fields' => 'ids'
+                                            );
 
-                                                <!-- Yearly and Monthly query -->
-                                                <?php
+                                            $query = new WP_Query($args);
+
+                                            if ($query->have_posts()) :
+                                                $post_ids = $query->posts;
+
                                                 $args = array(
-                                                    'posts_per_page' => -1,
                                                     'post_type' => 'post',
-                                                    'category_name' => 'IJBB',
-                                                    'orderby' => 'date',
-                                                    'order' => 'DESC'
+                                                    'post__in' => $post_ids,
                                                 );
 
-                                                $query = new WP_Query($args);
+                                                $years_months = array();
 
-                                                if ($query->have_posts()) :
-                                                    $years_months = array();
-                                                    while ($query->have_posts()) : $query->the_post();
-                                                        $year = get_the_date('Y');
-                                                        $month = get_the_date('m');
-                                                        $years_months[$year][] = $month;
-                                                    endwhile;
+                                                foreach ($post_ids as $post_id) {
+                                                    $year = get_the_date('Y', $post_id);
+                                                    $month = get_the_date('m', $post_id);
+                                                    $years_months[$year][] = $month;
+                                                }
 
-                                                    // Loop through years
+                                                // Set current year
+                                                $currentYear = date('Y');
+
+                                            ?>
+                                                <div class="accordion year_accordion" id="accordion_ijbb">
+                                                    <?php
                                                     foreach ($years_months as $year => $months) :
-                                                ?>
+                                                    ?>
                                                         <div class="accordion-item">
                                                             <h3 class="accordion-header">
                                                                 <button class="accordion-button <?php echo $year == $currentYear ? '' : 'collapsed' ?>" type="button" data-bs-toggle="collapse" data-bs-target="#ijbb_<?php echo $year; ?>" aria-expanded="<?php echo $year == $currentYear ? 'true' : 'false' ?>" aria-controls="ijbb_<?php echo $year; ?>">
@@ -384,11 +432,10 @@ $currentYear = date("Y");
                                                                 <div class="accordion-body">
                                                                     <ul>
                                                                         <?php
-                                                                        // Loop through months of the current year
                                                                         foreach (array_unique($months) as $month) :
                                                                         ?>
                                                                             <li>
-                                                                                <a href="<?php echo get_month_link($year, $month); ?>?category_name=ijbb">
+                                                                                <a href="<?php echo esc_url(get_month_link($year, $month)); ?>?category_name=ijbb">
                                                                                     <?php
                                                                                     $args_single_post = array(
                                                                                         'post_type' => 'post',
@@ -401,7 +448,7 @@ $currentYear = date("Y");
                                                                                     $single_post_query = new WP_Query($args_single_post);
                                                                                     if ($single_post_query->have_posts()) :
                                                                                         while ($single_post_query->have_posts()) : $single_post_query->the_post();
-                                                                                            echo "Volume " . get_field('volume') . " > SN. " . get_field('number') . " > " . date('F', mktime(0, 0, 0, $month)) . " Issue";
+                                                                                            echo "Volume " . esc_html(get_field('volume')) . " > N. " . esc_html(get_field('number')) . " > " . esc_html(date('F', mktime(0, 0, 0, $month))) . " Issue";
                                                                                         endwhile;
                                                                                     endif;
                                                                                     wp_reset_postdata();
@@ -413,17 +460,20 @@ $currentYear = date("Y");
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                <?php
+                                                    <?php
                                                     endforeach;
-                                                endif;
-                                                ?>
+                                                    ?>
+                                                </div>
+                                            <?php
+                                            endif;
+                                            ?>
 
-                                            </div>
 
                                         </div>
                                     </div>
                                 </div>
 
+                                <!-- ijmm -->
                                 <div class="tab-pane fade accordion-item" id="ijmm-tab-pane" role="tabpanel" aria-labelledby="ijmm-tab" tabindex="0">
                                     <h2 class="accordion-header" id="heading_ijmm">
                                         <button class="accordion-button btn_img collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_ijmm" aria-expanded="false" aria-controls="collapse_ijmm">
@@ -434,30 +484,42 @@ $currentYear = date("Y");
                                     <div id="collapse_ijmm" class="accordion-collapse collapse d-md-block" aria-labelledby="heading_ijmm" data-bs-parent="#archivesTabContent">
                                         <div class="accordion-body">
 
-                                            <div class="accordion year_accordion" id="accordion_ijmm">
-                                                <!-- Yearly and Monthly query -->
-                                                <?php
+                                            <?php
+                                            $args = array(
+                                                'posts_per_page' => -1,
+                                                'post_type' => 'post',
+                                                'category_name' => 'IJMM',
+                                                'orderby' => 'date',
+                                                'order' => 'DESC',
+                                                'fields' => 'ids'
+                                            );
+
+                                            $query = new WP_Query($args);
+
+                                            if ($query->have_posts()) :
+                                                $post_ids = $query->posts;
+
                                                 $args = array(
-                                                    'posts_per_page' => -1,
                                                     'post_type' => 'post',
-                                                    'category_name' => 'IJMM',
-                                                    'orderby' => 'date',
-                                                    'order' => 'DESC'
+                                                    'post__in' => $post_ids,
                                                 );
 
-                                                $query = new WP_Query($args);
+                                                $years_months = array();
 
-                                                if ($query->have_posts()) :
-                                                    $years_months = array();
-                                                    while ($query->have_posts()) : $query->the_post();
-                                                        $year = get_the_date('Y');
-                                                        $month = get_the_date('m');
-                                                        $years_months[$year][] = $month;
-                                                    endwhile;
+                                                foreach ($post_ids as $post_id) {
+                                                    $year = get_the_date('Y', $post_id);
+                                                    $month = get_the_date('m', $post_id);
+                                                    $years_months[$year][] = $month;
+                                                }
 
-                                                    // Loop through years
+                                                // Set current year
+                                                $currentYear = date('Y');
+
+                                            ?>
+                                                <div class="accordion year_accordion" id="accordion_ijmm">
+                                                    <?php
                                                     foreach ($years_months as $year => $months) :
-                                                ?>
+                                                    ?>
                                                         <div class="accordion-item">
                                                             <h3 class="accordion-header">
                                                                 <button class="accordion-button <?php echo $year == $currentYear ? '' : 'collapsed' ?>" type="button" data-bs-toggle="collapse" data-bs-target="#ijmm_<?php echo $year; ?>" aria-expanded="<?php echo $year == $currentYear ? 'true' : 'false' ?>" aria-controls="ijmm_<?php echo $year; ?>">
@@ -468,11 +530,10 @@ $currentYear = date("Y");
                                                                 <div class="accordion-body">
                                                                     <ul>
                                                                         <?php
-                                                                        // Loop through months of the current year
                                                                         foreach (array_unique($months) as $month) :
                                                                         ?>
                                                                             <li>
-                                                                                <a href="<?php echo get_month_link($year, $month); ?>?category_name=ijmm">
+                                                                                <a href="<?php echo esc_url(get_month_link($year, $month)); ?>?category_name=ijmm">
                                                                                     <?php
                                                                                     $args_single_post = array(
                                                                                         'post_type' => 'post',
@@ -485,7 +546,7 @@ $currentYear = date("Y");
                                                                                     $single_post_query = new WP_Query($args_single_post);
                                                                                     if ($single_post_query->have_posts()) :
                                                                                         while ($single_post_query->have_posts()) : $single_post_query->the_post();
-                                                                                            echo "Volume " . get_field('volume') . " > SN. " . get_field('number') . " > " . date('F', mktime(0, 0, 0, $month)) . " Issue";
+                                                                                            echo "Volume " . esc_html(get_field('volume')) . " > N. " . esc_html(get_field('number')) . " > " . esc_html(date('F', mktime(0, 0, 0, $month))) . " Issue";
                                                                                         endwhile;
                                                                                     endif;
                                                                                     wp_reset_postdata();
@@ -497,16 +558,19 @@ $currentYear = date("Y");
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                <?php
+                                                    <?php
                                                     endforeach;
-                                                endif;
-                                                ?>
+                                                    ?>
+                                                </div>
+                                            <?php
+                                            endif;
+                                            ?>
 
-                                            </div>
 
                                         </div>
                                     </div>
                                 </div>
+
 
                             </div>
                         </div>
