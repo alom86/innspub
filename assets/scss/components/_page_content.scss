@@ -37,15 +37,15 @@
         align-items: center;
         background-color: $color_primary;
         border-radius: $radius_1 $radius_1 0 0;
-        text-transform: capitalize;
         margin-bottom: 20px;
 
         h1,
         h2 {
             font-size: 16px;
-            font-weight: 700;
+            font-weight: 600;
             margin-bottom: 0;
             color: $color_white;
+            line-height: 1.5;
         }
     }
 
@@ -61,15 +61,11 @@
             margin-bottom: 0;
         }
 
-        ul {
-            li {
-                a {
-                    color: $color_link;
+        a {
+            color: $color_link;
 
-                    &:hover {
-                        color: $color_natural_head;
-                    }
-                }
+            &:hover {
+                color: $color_natural_head;
             }
         }
     }
@@ -459,7 +455,7 @@
 
             h1,
             h2 {
-                font-size: 20px;
+                font-size: 18px;
             }
         }
 

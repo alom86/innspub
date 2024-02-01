@@ -570,7 +570,7 @@ get_header();
                                     'orderby' => 'date',
                                     'order' => 'DESC',
                                     'post_status'    => 'publish',
-                                    'posts_per_page' => 10
+                                    'posts_per_page' => 5
                                 );
                                 $journalp = new WP_Query($journalq);
                                 if ($journalp->have_posts()) :
@@ -603,7 +603,7 @@ get_header();
                                     'orderby' => 'date',
                                     'order' => 'DESC',
                                     'post_status'    => 'publish',
-                                    'posts_per_page' => 10
+                                    'posts_per_page' => 5
                                 );
                                 $journalp = new WP_Query($journalq);
                                 if ($journalp->have_posts()) :
@@ -636,7 +636,7 @@ get_header();
                                     'orderby' => 'date',
                                     'order' => 'DESC',
                                     'post_status'    => 'publish',
-                                    'posts_per_page' => 10
+                                    'posts_per_page' => 5
                                 );
                                 $journalp = new WP_Query($journalq);
                                 if ($journalp->have_posts()) :
@@ -669,7 +669,7 @@ get_header();
                                     'orderby' => 'date',
                                     'order' => 'DESC',
                                     'post_status'    => 'publish',
-                                    'posts_per_page' => 10
+                                    'posts_per_page' => 5
                                 );
                                 $journalp = new WP_Query($journalq);
                                 if ($journalp->have_posts()) :
@@ -702,7 +702,7 @@ get_header();
                                     'orderby' => 'date',
                                     'order' => 'DESC',
                                     'post_status'    => 'publish',
-                                    'posts_per_page' => 10
+                                    'posts_per_page' => 5
                                 );
                                 $journalp = new WP_Query($journalq);
                                 if ($journalp->have_posts()) :
@@ -724,8 +724,6 @@ get_header();
                                 ?>
 
                             </div>
-
-                            
 
                         </div>
                     </div>

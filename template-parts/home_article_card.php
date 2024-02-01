@@ -18,7 +18,7 @@
                 echo the_field('authors');
             }; ?>
         </span>
-        <div class="card_paper__tags text-truncate_2">
+        <div class="card_paper__tags my-2 text-truncate_2">
             <?php
             $post_tags = get_the_tags();
             if (!empty($post_tags)) {

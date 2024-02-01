@@ -1,17 +1,19 @@
 .we_have {
-    background-color: $color_natural_description;
+    background-color: $color_white;
+    padding-top: 0;
 
     h2,
     h3,
     p,
     span {
-        color: $color_white;
+        color: $color_natural_head;
     }
 
     h2 {
         text-transform: uppercase;
         margin-bottom: 12px;
         line-height: 40px;
+        font-weight: 600;
     }
 
     h2,

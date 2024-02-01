@@ -310,7 +310,11 @@ get_header();
                                                 </a>
                                                 <span>(Associate Professor)</span>
 
-                                                <h3>Canada</h3>
+                                                <h3>
+                                                    <?php if (!empty(the_field('country'))) :
+                                                        the_field('country');
+                                                    endif; ?>
+                                                </h3>
                                                 <div class="social">
                                                     <?php
                                                     require get_template_directory() . '/template-parts/profile_social_part.php';
