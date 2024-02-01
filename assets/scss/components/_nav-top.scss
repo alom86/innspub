@@ -191,3 +191,21 @@
         // }
     }
 }
+
+.logged-in {
+    .nav-top {
+        &__right {
+            &::after {
+                top: 46px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            &__right {
+                &::after {
+                    top: 32px;
+                }
+            }
+        }
+    }
+}

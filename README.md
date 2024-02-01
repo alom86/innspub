@@ -65,3 +65,19 @@ sidebar logo menu link Theme Option > Sidebar Page Link
 <!-- 'card-issue' key word: kep only 'key' and place it bottom -->
 <!-- article details abstract text 'text-align': 'justify' -->
 <!-- contact page font-size issue ache -->
+
+<!-- TODO -->
+<!-- editor slide card same height -->
+<!-- we_have section bg color #fff and other section match different color -->
+<!-- latest paper section post show 5 limit -->
+<!-- sidebar indexedin, memberin page link -->
+<!-- index in logo card image size issue -->
+<!-- editor board country name dynamic issue -->
+<!-- single editor summery, publication section remove  -->
+<!-- breadcumb text size 16px, active page text color change to  -->
+<!-- page title font-size 18px -->
+<!-- title font-weight 700 to 600 affiliated journal and related page -->
+<!-- title text transform: initial -->
+<!-- card-issue DOI underline remove -->
+<!-- key label type highlight -->
+<!-- user login top bar issue -->

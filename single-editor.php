@@ -41,7 +41,7 @@ get_header();
 						?>
 
 						<!-- Summary -->
-						<div class="page_content__editor">
+						<!-- <div class="page_content__editor">
 							<div class="page_content__data p-0">
 								<div class="title mb-0 p-md-4">
 									<h2>Summary</h2>
@@ -53,26 +53,23 @@ get_header();
 									endif; ?>
 								</div>
 							</div>
+						</div> -->
 
-						</div>
-
-						<!-- Publications -->
-						<div class="page_content__editor">
+						<!-- Publications Client removed -->
+						<!-- <div class="page_content__editor">
 							<div class="page_content__data p-0">
 								<div class="title mb-0 p-md-4">
 									<h2>Publications</h2>
 								</div>
 
 								<div class="p-3 p-md-4 publication_list">
-									<!-- <div class="reference_item">Improved Technology for Water chest nut Production in Bangladesh submitted to the University Grant Commission (UGC), Bangladesh</div> -->
-
 									<?php if (!empty(the_field('publications_list'))) :
 										the_field('publications_list');
 									endif; ?>
 								</div>
 							</div>
 
-						</div>
+						</div> -->
 
 						<!-- Global Editor -->
 						<div class="page_content__editor slider_maxw">

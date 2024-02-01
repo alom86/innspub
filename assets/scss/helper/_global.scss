@@ -156,6 +156,14 @@ img {
     color: $color_primary;
 }
 
+.text_link {
+    color: $color_link;
+
+    &:hover {
+        color: $color_natural_head;
+    }
+}
+
 
 // Responsive
 @media (min-width: 768px) {

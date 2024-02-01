@@ -202,6 +202,13 @@ img {
   color: #018B40;
 }
 
+.text_link {
+  color: #00A6EE;
+}
+.text_link:hover {
+  color: #132833;
+}
+
 @media (min-width: 768px) {
   .back-to-top {
     width: 48px;
@@ -439,6 +446,15 @@ img {
     height: 38px;
   }
 }
+.logged-in .nav-top__right::after {
+  top: 46px;
+}
+@media (min-width: 768px) {
+  .logged-in .nav-top__right::after {
+    top: 32px;
+  }
+}
+
 .form-control {
   background-color: #F2F2F2;
   border-color: transparent;
@@ -572,7 +588,7 @@ img {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 999;
+  z-index: 999999;
   animation: sticky 0.3s;
 }
 .navbar__brand img {
@@ -1177,7 +1193,6 @@ img {
   border-radius: 4px;
 }
 .journal h2 {
-  font-weight: 700 !important;
   font-size: 16px;
   line-height: 24px;
 }
@@ -1481,6 +1496,7 @@ img {
 }
 .swiper .swiper-slide {
   cursor: move;
+  height: auto;
 }
 .swiper .swiper-slide-prev .card, .swiper .swiper-slide-next .card {
   position: relative;
@@ -1691,6 +1707,11 @@ img {
 }
 .card_paper__tags {
   margin-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  flex-wrap: wrap;
 }
 .card_paper__tags a {
   font-size: 14px;
@@ -1698,12 +1719,9 @@ img {
   text-transform: lowercase;
   text-decoration: none;
   transition: 0.3s;
-}
-.card_paper__tags a:not(:last-child)::after {
-  content: ", ";
-}
-.card_paper__tags a:hover {
-  text-decoration: underline;
+  background-color: #F2F2F2;
+  padding: 4px 6px;
+  border-radius: 4px;
 }
 .card_paper:hover h3 a {
   color: #018B40;
@@ -1890,7 +1908,7 @@ img {
 .card_logo {
   height: 38px;
   background-color: #FFFFFF;
-  padding: 6px 0;
+  padding: 6px 12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1898,7 +1916,8 @@ img {
   box-shadow: 0px 0px 4px 0px rgba(33, 37, 41, 0.25);
 }
 .card_logo img {
-  width: 50px;
+  max-height: 26px;
+  width: auto;
 }
 .card_logo:hover {
   box-shadow: 0px 2px 10px 0px rgba(1, 139, 64, 0.2509803922);
@@ -1908,16 +1927,14 @@ img {
     height: 60px;
   }
   .card_logo img {
-    width: 80px;
+    max-height: 48px;
   }
 }
 @media (min-width: 992px) {
   .card_logo {
+    padding: 12px;
     height: 70px;
     border-radius: 6px;
-  }
-  .card_logo img {
-    width: 95px;
   }
 }
 
@@ -1953,15 +1970,15 @@ img {
   align-items: center;
   background-color: #018B40;
   border-radius: 4px 4px 0 0;
-  text-transform: capitalize;
   margin-bottom: 20px;
 }
 .page_content__title h1,
 .page_content__title h2 {
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 0;
   color: #FFFFFF;
+  line-height: 1.5;
 }
 .page_content__data {
   padding: 20px 14px;
@@ -1974,10 +1991,10 @@ img {
 .page_content__data li:last-child {
   margin-bottom: 0;
 }
-.page_content__data ul li a {
+.page_content__data a {
   color: #00A6EE;
 }
-.page_content__data ul li a:hover {
+.page_content__data a:hover {
   color: #132833;
 }
 .page_content__bg {
@@ -2278,7 +2295,7 @@ img {
   }
   .page_content__title h1,
   .page_content__title h2 {
-    font-size: 20px;
+    font-size: 18px;
   }
   .page_content__data {
     padding: 24px;
@@ -2370,7 +2387,8 @@ img {
   padding: 4px;
 }
 .breadcrumb_section nav .breadcrumb-item .dropdown-menu li {
-  margin-bottom: 8px;
+  margin-bottom: 0;
+  padding-left: 0;
 }
 .breadcrumb_section nav .breadcrumb-item .dropdown-menu a {
   color: #132833;
@@ -2396,7 +2414,7 @@ img {
   transform: translate(-75%, calc(-100% - 5px));
 }
 .breadcrumb_section nav .breadcrumb-item.active {
-  color: #FFFFFF;
+  color: rgba(242, 242, 242, 0.7215686275);
   font-size: 14px;
   font-weight: 600;
   width: 70vw;
@@ -2421,10 +2439,10 @@ img {
     top: 42%;
   }
   .breadcrumb_section nav .breadcrumb-item a {
-    font-size: 20px;
+    font-size: 16px;
   }
   .breadcrumb_section nav .breadcrumb-item.active {
-    font-size: 20px;
+    font-size: 16px;
   }
   .breadcrumb_section nav .breadcrumb-item + .breadcrumb-item::before {
     color: #018B40;
@@ -2843,6 +2861,7 @@ ul.pagination .page-link:hover, ul.pagination .page-link:focus, ul.pagination .p
 }
 .why_choose h2 {
   text-transform: uppercase;
+  font-weight: 600;
 }
 .why_choose h2,
 .why_choose ul {
@@ -2864,18 +2883,20 @@ ul.pagination .page-link:hover, ul.pagination .page-link:focus, ul.pagination .p
 }
 
 .we_have {
-  background-color: #2D3E50;
+  background-color: #FFFFFF;
+  padding-top: 0;
 }
 .we_have h2,
 .we_have h3,
 .we_have p,
 .we_have span {
-  color: #FFFFFF;
+  color: #132833;
 }
 .we_have h2 {
   text-transform: uppercase;
   margin-bottom: 12px;
   line-height: 40px;
+  font-weight: 600;
 }
 .we_have h2,
 .we_have p {

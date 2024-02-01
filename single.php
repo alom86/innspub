@@ -106,7 +106,7 @@ get_header();
 													<div>
 														<?php if (get_field('doi')) {
 															echo '<span class="fw-bold">DOI: </span>'; ?>
-															<a href="<?php the_field('doi') ?>" class="text-decoration-underline" target="_blank"><?php echo the_field('doi'); ?></a>
+															<a href="<?php the_field('doi') ?>" class="text_link" target="_blank"><?php echo the_field('doi'); ?></a>
 														<?php } ?>
 													</div>
 													<div>
@@ -182,7 +182,7 @@ get_header();
 														}
 														?>
 													</div>
-													<div class="card_paper__tags mt-0">
+													<div class="card_paper__tags mt-2">
 														<?php
 														$post_tags = get_the_tags();
 														if (!empty($post_tags)) {
